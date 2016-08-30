@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.info.dao.InfoMapper">  
+	<select id="getSList" parameterType="map" resultType="infoCommand"> <!-- SELECT * FROM 대신 SELECT seq,... 로 항목 모두 나열해도 무관. 이번에는 모두 나열하는 방식으로 함. -->
+		
+		SELECT
+		  info_name,
+		  info_stitle,
+		  info_scontent,
+		  info_img
+		FROM f_info
+		WHERE info_id = #{info_id}
+			
+	</select>
+
+</mapper>

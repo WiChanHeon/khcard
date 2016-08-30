@@ -17,7 +17,7 @@ public class InfoServiceImpl implements InfoService{
 	private InfoMapper infoMapper;
 	
 	@Override
-	public List<InfoCommand> getSList(Map<String, Object> map) {
+	public List<InfoCommand> getSList() {
 		return null;
 	}
 
@@ -25,5 +25,7 @@ public class InfoServiceImpl implements InfoService{
 	public InfoCommand getInfo(String info_id) {
 		return null;
 	}
+
+
 
 }
