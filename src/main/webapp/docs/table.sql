@@ -19,7 +19,8 @@ create table f_member(
 --);
 
 create table f_info(
-	info_name varchar2(10) not null primary key,
+	info_id varchar2(10) not null primary key,
+	info_name varchar2(40) not null,
 	info_img varchar2(200) not null,
 	info_stitle varchar2(50) not null,
 	info_scontent varchar2(200) not null,
