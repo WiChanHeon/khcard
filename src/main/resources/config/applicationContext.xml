@@ -59,6 +59,6 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="kr.spring.board.dao,
 		                                    kr.spring.member.dao,
-		                                    kr.spring.info.dao"/>
+		                                    kr.spring.info.dao"/>  
 	</bean>
 </beans>
