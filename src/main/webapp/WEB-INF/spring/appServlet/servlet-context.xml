@@ -11,6 +11,7 @@
 
 	<!-- 자동 스캔 -->
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
+	<context:component-scan base-package="kr.spring.info.controller"/>
 	
 	<!-- Spring3 Validator -->
 	<mvc:annotation-driven/>
