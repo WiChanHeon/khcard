@@ -39,22 +39,22 @@
     <script type="text/javascript">
         jQuery(function ($) {
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
-                visits = [123, 323, 443, 32],
+                visits = [80, 323, 500, 32],
                 traffic = [
                 {
-                    Source: "Direct", Amount: 323, Change: 53, Percent: 23, Target: 600
+                                     신청번호: "태원", Amount: 323, Change: 53, Percent: 23, Target: 600,ㅇㅇ:24,심사:"<input type='button' value='전송'>"
                 },
                 {
-                    Source: "Refer", Amount: 345, Change: 34, Percent: 45, Target: 567
+                	신청번호: "ㅇㅇ", Amount: 345, Change: 34, Percent: 45, Target: 567
                 },
                 {
-                    Source: "Social", Amount: 567, Change: 67, Percent: 23, Target: 456
+                	신청번호: "Social", Amount: 567, Change: 67, Percent: 23, Target: 456
                 },
                 {
-                    Source: "Search", Amount: 234, Change: 23, Percent: 56, Target: 890
+                	신청번호: "Search", Amount: 234, Change: 23, Percent: 56, Target: 890
                 },
                 {
-                    Source: "Internal", Amount: 111, Change: 78, Percent: 12, Target: 345
+                	신청번호: "Internal", Amount: 111, Change: 78, Percent: 12, Target: 345
                 }];
 
 
@@ -101,10 +101,12 @@
                 rowHover: false,
                 paging: false,
                 columns: [
-                { field: "Source", width: "170px", title: "Source" },
+                { field: "신청번호", width: "170px", title: "신청번호" },
                 { field: "Amount", title: "Amount" },                
                 { field: "Percent", title: "Percent", format: "{0} %" },
                 { field: "Target", title: "Target" },
+                { field: "oo",title:"oo"},
+                { field: "심사",title:"심사상태"}
                 ]
             });            
         });        
