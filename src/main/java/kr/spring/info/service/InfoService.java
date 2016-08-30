@@ -10,5 +10,5 @@ import kr.spring.info.domain.InfoCommand;
 @Transactional
 public interface InfoService {
 	public List<InfoCommand> getSList(Map<String,Object> map);
-	public InfoCommand getInfo(String info_id);  
+	public InfoCommand getInfo(String info_id);
 }
