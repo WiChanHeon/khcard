@@ -30,20 +30,6 @@ public class DonanController {
 		
 		HashMap<String,Object> map = new HashMap<String,Object>();
 		
-		//ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
-		int count= donanService.getRowCount(map);
-
-		PagingUtil page = new PagingUtil(count,rowCount,pageCount,"donan.do");
-
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
-
-		List<DonanCommand> list =null;
-		if(count>0){
-			list= donanService.list(map);
-		}else{
-			list= Collections.emptyList();
-		}
 
 		ModelAndView mav= new ModelAndView();
 		mav.setViewName("donanList");

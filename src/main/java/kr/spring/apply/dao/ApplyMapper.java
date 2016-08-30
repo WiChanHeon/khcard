@@ -1,6 +1,5 @@
 package kr.spring.apply.dao;
 
-import org.apache.ibatis.annotations.Insert;
 
 import kr.spring.apply.domain.ApplyCommand;
 

@@ -1,5 +1,8 @@
 package kr.spring.apply.controller;
 
-public class CardApplyController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class CardApplyController {
+	
 }
