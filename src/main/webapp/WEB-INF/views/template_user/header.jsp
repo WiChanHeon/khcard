@@ -106,7 +106,8 @@
 																			<div class="col-sm-4">
 																				<div class="divider"></div>
 																				<ul class="menu">
-																					<li ><a href="page-services.html"><i class="fa fa-angle-right"></i>Services 1</a></li>
+																					<li><a href="${pageContext.request.contextPath}/info/slist.do">카드비교</a></li>
+																					<li ><a href="page-services-1.html"><i class="fa fa-angle-right"></i>Services 1</a></li>
 																					<li ><a href="page-services-2.html"><i class="fa fa-angle-right"></i>Services 2</a></li>
 																					<li ><a href="page-services-3.html"><i class="fa fa-angle-right"></i>Services 3</a></li>
 																					<li ><a href="page-contact.html"><i class="fa fa-angle-right"></i>Contact 1</a></li>

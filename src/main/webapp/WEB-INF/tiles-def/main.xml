@@ -13,11 +13,16 @@
     	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
     </definition>
     
+    <definition name="pageError" extends="main">
+    	<put-attribute name="title" value="에러페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
+    </definition>
+
     <definition name="sList" extends="main">
 		<put-attribute name="title" value="카드신청 - KH카드"/>
-		<put-attribute name="body" value="/WEB-INF/views/board/boardList.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/info/sList.jsp"/>
 	</definition>
-    
+
 </tiles-definitions>
 
 

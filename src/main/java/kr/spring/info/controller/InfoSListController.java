@@ -19,10 +19,10 @@ public class InfoSListController {
 	
 	@RequestMapping("/info/slist.do")
 	public ModelAndView process(){
-		List<InfoCommand> list = null;
-		list = infoService.getSList();
+		List<InfoCommand> list = infoService.getSList();				
 		
 		ModelAndView mav = new ModelAndView();
+		mav.setViewName("sList");
 		mav.addObject("list", list);
 		
 		return mav;
