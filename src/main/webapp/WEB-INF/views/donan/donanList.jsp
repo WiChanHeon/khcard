@@ -58,5 +58,30 @@
 			</tr>
 		</tbody>
 	</table>
-	<button type="submit" class="btn btn-default">분실 신고</button>
+	<button data-toggle="collapse" data-target="#demo">분실 신고</button>
+
+	<div id="demo" class="collapse">
+		<div class="form-group">
+			<label for="usr">분실일</label> <input type="text" class="form-control"
+				id="usr">
+		</div>
+		<div class="form-group">
+			<label for="pwd">분실장소</label> <input type="password"
+				class="form-control" id="pwd">
+		</div>
+		<div class="form-group">
+			<div class="col-xs-2">
+				<label for="ex1"></label> <input class="form-control"
+					id="ex1" type="text">
+			</div>
+			<div class="col-xs-3">
+				<label for="ex2"></label> <input class="form-control"
+					id="ex2" type="text">
+			</div>
+			<div class="col-xs-4">
+				<label for="ex3"></label> <input class="form-control"
+					id="ex3" type="text">
+			</div>
+		</div>
+	</div>
 </div>
