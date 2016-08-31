@@ -6,10 +6,9 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>
 
-
 <div class="container y_div">
 	<div class="y_clear"></div>
-	<div class="y_center y_nav_menu">
+	<div class="y_nav_menu y_center">
 		<h2><spring:message code="info.slist.title"/></h2>
 		<p>신청하고자 하는 카드종류를 선택해 주세요.</p>
 	

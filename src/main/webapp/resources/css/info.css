@@ -7,6 +7,15 @@
 .y_right{
 	text-align:right;
 }
+.y_floatleft{
+	float:left;
+}
+.y_floatright{
+	float:right;
+}
+.y_clear{
+	clear:both;
+}
 .y_div p{
 	color:#808080;
 }
@@ -20,24 +29,16 @@
 	vertical-align:middle;
 	text-align:center;
 }
-.y_floatleft{
-	float:left;
-}
-.y_floatright{
-	float:right;
-}
-.y_clear{
-	clear:both;
-}
-
-
 
 .y_nav_menu{
 	border-bottom:1px solid silver;
 	position:fixed;
-	background-color:white;
+	left:0;
+	top:60px;
+	background-color:rgba(255,255,255,0.95);
 	width:100%;
 	min-height:150px;
+	z-index:1000;
 }
 .y_div ul{
 	list-style:none;
