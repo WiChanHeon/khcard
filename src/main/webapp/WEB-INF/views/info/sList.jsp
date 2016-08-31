@@ -30,7 +30,7 @@
 		<c:if test="${!empty list}">
 		<c:forEach var="slist" items="${list}">
 		<div class="col-sm-4 y_card">
-			<div><div class="y_name">${slist.info_name} > </div><span class="y_floatright"><button type="button" class="btn btn-default btn-sm" id="${slist.info_id}_button" style="margin:0 10px 0 0;"><span class="glyphicon glyphicon-plus"></span></button></span></div>
+			<div><div class="y_name"><a href="#">${slist.info_name} > </a></div><span class="y_floatright"><button type="button" class="btn btn-default btn-sm" id="${slist.info_id}_button" style="margin:0 10px 0 0;"><span class="glyphicon glyphicon-plus"></span></button></span></div>
 			<div class="y_clear y_liketable"><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}"></div>
 			<div class="y_nexonB">${slist.info_stitle}</div>
 			<div><p>${slist.info_scontent}</p></div>
