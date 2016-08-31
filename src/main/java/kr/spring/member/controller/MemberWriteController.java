@@ -28,7 +28,7 @@ public class MemberWriteController {
 	
 	@RequestMapping(value="/member/write.do",method=RequestMethod.GET)
 	public String form(){
-		return "memberWrite";
+		return "/member/memberWrite";
 	}
 	
 	@RequestMapping(value="/member/write.do",method=RequestMethod.POST)

@@ -2,21 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/confirmId.js"></script>
 <div>
-    <h2><spring:message code="member.write.title"/></h2>
-	<form:form action="write.do" commandName="hcommand" id="register_form">
+    <h2><spring:message code="member.update.title"/></h2>
+	<form:form action="update.do" commandName="command" id="modify_form">
 		<ul>
-			<li>
-				<label for="mem_id">아이디</label>
-				<form:input path="mem_id" maxlength="20"/>
-				<%-- <input type="button" id="confirmId" value="ID중복체크">
-				<span id="id_signed" class="error-color"></span>
-				<img src="${pageContext.request.contextPath}/resources/images/ajax-loader.gif"
-				     width="16" height="16" id="loading" style="display:none;"> --%>
-				<form:errors path="mem_id" class="error-color"/>
-			</li>
 			<li>
 				<label for="mem_name">이름</label>
 				<form:input path="mem_name" maxlength="30"/>

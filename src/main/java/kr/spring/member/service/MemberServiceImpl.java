@@ -1,10 +1,15 @@
 package kr.spring.member.service;
 
+
+
 import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
 
 import kr.spring.member.dao.MemberMapper;
 import kr.spring.member.domain.MemberCommand;
 
+@Service("hcommand")
 public class MemberServiceImpl implements MemberService{
 	
 	@Resource
@@ -17,21 +22,20 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public MemberCommand selectMember(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public MemberCommand selectMember(String mem_id) {
+		return memberMapper.selectMember(mem_id);
 	}
 
 	@Override
 	public void update(MemberCommand member) {
-		// TODO Auto-generated method stub
-		
+		memberMapper.update(member);
 	}
 
 	@Override
-	public void delete(String id) {
-		// TODO Auto-generated method stub
+	public void delete(String mem_id) {
 		
+		memberMapper.delete(mem_id);
 	}
+
 
 }
