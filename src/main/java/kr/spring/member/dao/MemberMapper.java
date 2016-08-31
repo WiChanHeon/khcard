@@ -10,7 +10,7 @@ import kr.spring.member.domain.MemberCommand;
 
 @Repository
 public interface MemberMapper {
-	@Insert("INSERT INTO f_member(mem_num,mem_id,mem_pw,mem_name,mem_email,mem_reg) VALUES (mem_seq.nextval,#{mem_id},#{mem_pw},#{mem_name},#{mem_email},sysdate)")
+	@Insert("INSERT INTO f_member(mem_id,mem_pw,mem_name,mem_email,mem_reg) VALUES (#{mem_id},#{mem_pw},#{mem_name},#{mem_email},sysdate)")
 	public void insert(MemberCommand member);
 	@Select("SELECT * FROM f_member WHERE mem_id = #{mem_id}")
 	public MemberCommand selectMember(String id);
@@ -18,6 +18,8 @@ public interface MemberMapper {
 	public void update(MemberCommand member);
 	@Delete("DELETE FROM f_member WHERE mem_id = #{mem_id}")
 	public void delete(String id);
+	@Select("SELECT COUNT(*) cnt FROM ALL_TABLES WHERE TABLE_NAME = '#{cardNo}'")
+	public boolean cardCheck(String cardNo);
 }
 
 

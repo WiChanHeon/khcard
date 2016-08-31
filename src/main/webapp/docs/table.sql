@@ -1,6 +1,5 @@
 create table f_member(
-	mem_num number not null primary key,
-	mem_id varchar2(20) not null,
+	mem_id varchar2(20) not null primary key,
 	mem_name varchar2(30) not null,
 	mem_pw varchar2(15) not null,
 	mem_cell varchar2(15) not null,

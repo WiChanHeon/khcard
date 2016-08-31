@@ -8,7 +8,6 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class MemberCommand {
-	private int mem_num;
 	@NotEmpty
 	private String mem_id;
 	//메시지 설정은 리소스 번들의 메시지가 우선
@@ -28,14 +27,6 @@ public class MemberCommand {
 			return true;
 		}
 		return false;
-	}
-
-	public int getMem_num() {
-		return mem_num;
-	}
-
-	public void setMem_num(int mem_num) {
-		this.mem_num = mem_num;
 	}
 
 	public String getMem_id() {
@@ -88,7 +79,7 @@ public class MemberCommand {
 
 	@Override
 	public String toString() {
-		return "MemberCommand [mem_num=" + mem_num + ", mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name="
+		return "MemberCommand [ mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name="
 				+ mem_name + ", mem_cell=" + mem_cell + ", mem_email=" + mem_email + ", mem_reg=" + mem_reg + "]";
 	}
 	
