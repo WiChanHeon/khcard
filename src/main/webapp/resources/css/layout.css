@@ -9,3 +9,8 @@
 div{
 	font-family:nexonL,NEXONFootballGothicL;
 }
+@font-face{
+	font-family:nexonB;
+	src:url('../font/NEXONFootballGothicB.eot'),
+		url('../font/NEXONFootballGothicB.woff') format('woff');
+}

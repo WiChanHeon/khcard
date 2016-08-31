@@ -1,6 +1,51 @@
 @CHARSET "UTF-8";
 
-/*SList*/
-.y_div{
+/*sList*/
+.y_center{
 	text-align:center;
+}
+.y_div h2{
+	font-family:nexonl;
+}
+
+.y_nav_menu{
+	border-bottom:1px solid silver;
+	position:fixed;
+	background-color:white;
+	width:100%;
+	min-height:150px;
+}
+.y_div ul{
+	
+}
+.y_div ul li{
+	font-family:nexonl;
+	display:inline;
+	line-height:37px;
+	margin:3px 3px 10px 10px;
+}
+.y_div ul li a{
+	 color:#808080;
+}
+.y_div ul li > a:hover{
+	text-decoration: none;
+	color:#0080ff;
+}
+.y_div ul li > a:focus{
+	text-decoration: none;
+	color:#0080ff;
+	border-bottom:2px solid #0080ff;
+}
+
+.y_nav_content{
+	margin:120px 0 100px 100px;
+	border:1px solid red;
+}
+table.y_card{
+	width:30%;
+	height:400px;
+}
+p.y_nexonB{
+	font-family:nexonB;
+	margin:5px 5px 5px 5px;
 }
