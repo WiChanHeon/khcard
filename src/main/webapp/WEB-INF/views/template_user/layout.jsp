@@ -28,6 +28,7 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="${pageContext.request.contextPath}/resources/user/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 		<!-- Font Awesome CSS -->
 		<link href="${pageContext.request.contextPath}/resources/user/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
