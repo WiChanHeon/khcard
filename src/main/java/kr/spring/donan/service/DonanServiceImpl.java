@@ -24,4 +24,10 @@ public class DonanServiceImpl implements DonanService {
 		return donanMapper.selectBoardList();
 	}
 
+	@Override
+	public void insert(DonanCommand donan) {
+		donanMapper.insert(donan);
+		
+	}
+
 }

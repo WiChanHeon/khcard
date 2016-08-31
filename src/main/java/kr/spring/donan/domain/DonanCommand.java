@@ -2,11 +2,15 @@ package kr.spring.donan.domain;
 
 import java.sql.Date;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class DonanCommand {
 	private int loss_num;
 	private String card_num;
 	private Date loss_reg;
+	@NotEmpty
 	private String loss_memo;
+	
 	public int getLoss_num() {
 		return loss_num;
 	}

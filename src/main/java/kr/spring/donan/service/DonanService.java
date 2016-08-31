@@ -5,6 +5,6 @@ import java.util.List;
 import kr.spring.donan.domain.DonanCommand;
 
 public interface DonanService {
-	
 	List<DonanCommand> selectBoardList();
+	public void insert (DonanCommand donan);
 }

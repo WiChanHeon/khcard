@@ -13,7 +13,7 @@ import kr.spring.donan.domain.DonanCommand;
 import kr.spring.donan.service.DonanService;
 
 @Controller
-public class DonanController {
+public class DonanListController {
 	private Logger log= Logger.getLogger(this.getClass());
 
 	@Resource(name="donanService")
@@ -22,9 +22,11 @@ public class DonanController {
 	@RequestMapping(value = "/donan/list.do")
     public ModelAndView donanList() {
         List<DonanCommand> list = donanService.selectBoardList();
-        ModelAndView mv = new ModelAndView("donanList");
-        mv.addObject("donanList", list);
-         
+        
+        ModelAndView mv = new ModelAndView("list.do");
+        mv.setViewName("/donan/donanList");
+        mv.addObject("list", list);
+     
         return mv;
     }
 	
