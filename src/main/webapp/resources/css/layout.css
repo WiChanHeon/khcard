@@ -6,7 +6,7 @@
 	src:url('../font/NEXONFootballGothicL.eot'),
 		url('../font/NEXONFootballGothicL.woff') format('woff');
 }
-div{
+div,h1,h2,h3,h4,h5,h6,ul,li{
 	font-family:nexonL,NEXONFootballGothicL;
 }
 @font-face{

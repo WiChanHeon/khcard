@@ -19,4 +19,14 @@ public class StringUtil {
 		return str.replaceAll("<", "&lt;")
 				  .replaceAll(">", "&gt;");
 	}
+	
+
+	//HTML 허용하면서 줄바꿈	
+	public static String useBrHtml(String str){
+		if(str == null) return null;
+		
+		return str.replaceAll("\r\n", "<br>")
+				  .replaceAll("\r", "<br>")
+				  .replaceAll("\n", "<br>");
+	}
 }

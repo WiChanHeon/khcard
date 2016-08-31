@@ -6,9 +6,12 @@
 	<select id="getSList" resultType="infoCommand">
 		
 		SELECT
+		  info_id,
 		  info_name,
 		  info_stitle,
-		  info_scontent,
+		  <![CDATA[
+		  REPLACE(REPLACE(REPLACE(info_scontent,'\r\n','<br>'),'\n','<br>'),'\r','<br>') info_scontent,
+		  ]]>
 		  info_img,
 		  cp_afee
 		FROM f_info
