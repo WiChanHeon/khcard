@@ -51,6 +51,10 @@
 
 		<!-- Custom css --> 
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
+		<!-- Custom css : font -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/layout.css">
+		
 	</head>
 
 	<!-- body classes:  -->
