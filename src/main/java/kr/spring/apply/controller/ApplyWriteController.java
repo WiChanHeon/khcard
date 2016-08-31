@@ -22,23 +22,29 @@ public class ApplyWriteController {
 	
 	@ModelAttribute("command")
 	public ApplyCommand initCommand(){
-		return new ApplyCommand();
+		  return new ApplyCommand();
+	  }
+	
+	@RequestMapping(value="/apply/applywrite.do",method=RequestMethod.GET)
+	public String form(){
+		return "/apply/applyWrite";
 	}
 	
-	@RequestMapping(value="/apply/write.do",method=RequestMethod.GET)
-	public String form(){
-		return "applyWrite";
-	}
-	@RequestMapping(value="/apply/write.do",method=RequestMethod.POST)
-	public String submit(@ModelAttribute("command") @Valid ApplyCommand applyCommand,BindingResult result){
-		if(log.isDebugEnabled()){
-			log.debug("applyCommand : " +applyCommand);
-		}
-		if(result.hasErrors()){
-			return form();
-		}
-		applyService.applyinsert(applyCommand);
-		
-		return "redirect:/main/main.do";
-	}
+	@RequestMapping(value="/apply/applywrite.do",method=RequestMethod.POST)
+	  public String submit(@ModelAttribute("command") @Valid ApplyCommand applyCommand,BindingResult result){
+		  
+		  if(log.isDebugEnabled()){
+			  log.debug("memberCommand: " +applyCommand);
+		  }
+		  
+		  
+		  if(result.hasErrors()){
+			  return form();
+		  }
+		  
+		  applyService.applyinsert(applyCommand);
+		  
+		  return "redirect:/main/main.do";
+	  }
+	
 }

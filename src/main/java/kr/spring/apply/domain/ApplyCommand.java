@@ -19,6 +19,7 @@ public class ApplyCommand {
 	private int ap_pass;
 	private String ap_id;
 	private String card_num;
+	
 	public int getAp_num() {
 		return ap_num;
 	}
