@@ -1,6 +1,7 @@
 package kr.spring.info.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -16,14 +17,23 @@ public class InfoServiceImpl implements InfoService{
 	private InfoMapper infoMapper;
 	
 	@Override
-	public List<InfoCommand> getSList() {
-		return infoMapper.getSList();
+	public List<InfoCommand> getAllList() {
+		return infoMapper.getAllList();
+	}
+	
+	@Override
+	public List<InfoCommand> getSList(Map<String, Object> map) {
+		return infoMapper.getSList(map);
 	}
 
 	@Override
 	public InfoCommand getInfo(String info_id) {
 		return null;
 	}
+
+
+
+
 
 
 

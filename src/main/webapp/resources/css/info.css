@@ -5,6 +5,9 @@
 .y_center{
 	text-align:center;
 }
+.y_left{
+	text-align:left;
+}
 .y_right{
 	text-align:right;
 }
@@ -39,8 +42,8 @@
 	top:60px;
 	background-color:rgba(255,255,255,0.95);
 	width:100%;
-	min-height:150px;
-	z-index:1000;
+	min-height:170px;
+	z-index:104;
 }
 .y_div ul{
 	list-style:none;
@@ -65,11 +68,11 @@
 	border-bottom:2px solid #0080ff;
 }
 
+
 /*하단리스트*/
 .y_nav_content{
-	margin:120px 50px 100px 50px;
-	border:1px solid red;
-	min-height:700px;
+	margin:140px 50px 100px 50px;
+	min-height:400px;
 }
 .y_name{
 	font-size:14pt;
@@ -86,12 +89,28 @@
 }
 div.y_card{
 	margin:15px 0;
+	padding:0 40px;
+}
+div.y_nocard{
+	height:400px;
+	width:1200px;
 }
 div.y_card div{
 	min-height:20px;
 }
 div.y_card img {
 	padding:10px 0;
+}
+
+.y_button{
+	padding: 1px 4px;
+	font-size: 10px;
+	/* line-height: 1.5; */
+	border-radius: 3px;
+	margin:5px 0 0 0;
+}
+.y_button > span{
+	color:gray;
 }
 .y_afee{
 	display:inline;
@@ -104,17 +123,25 @@ div.y_card img {
 	cursor:pointer;
 	color:gray;
 }
+#y_compare{
+	position: absolute;
+	z-index: 1071;
+	width:100px;
+	height:300px;
+	background-color:black;
+}
 
-/*몰라-지워도돼*/
+
+/*툴팁깨짐...빡치면날리고기본쓰자*/
 .tooltip {
   position: absolute;
   z-index: 1070;
-  display: block;
-  font-family: nexonL;
+  display: inline-block;
+  font-family: nexonl;
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
-  line-height: 1.42857143;
+  /* line-height: 1.42857143;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -126,7 +153,16 @@ div.y_card img {
   word-wrap: normal;
   white-space: normal;
   filter: alpha(opacity=0);
-  opacity: 0;
+  opacity: 0; */
 
-  line-break: auto;
+  /* line-break: auto; */
 }
+.tooltip-inner {
+  max-width: 300px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+

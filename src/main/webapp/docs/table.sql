@@ -1,6 +1,5 @@
 create table f_member(
-	mem_num number not null primary key,
-	mem_id varchar2(20) not null,
+	mem_id varchar2(20) not null primary key,
 	mem_name varchar2(30) not null,
 	mem_pw varchar2(15) not null,
 	mem_cell varchar2(15) not null,
@@ -27,11 +26,13 @@ create table f_info(
 	info_flag varchar2(4) not null,
 	info_rcm number(1),
 	info_view number(1) default(1),
+	info_order number(3) default(0),
 	cp_afee varchar2(1000) not null,
 	cp_voucher varchar2(1000),
 	cp_benefit varchar2(1000),
 	cp_service varchar2(1000),
-	cp_advice varchar2(1000)
+	cp_advice varchar2(1000),
+	cp_choice number(1) default(0)
 );
 
 create table f_sapply(
@@ -47,12 +48,15 @@ create table f_apply(
 	ap_ename varchar2(30) not null,
 	ap_cell varchar2(15) not null,
 	ap_email varchar2(50) not null,
-	ap_address varchar2(300) not null,
+	ap_postnum varchar2(10) not null,
+	ap_address1 varchar2(300) not null,
+	ap_address2 varchar2(300) null,
 	ap_paydate date not null,
 	ap_bank varchar2(20) not null,
 	ap_banknum varchar2(20) not null,
 	ap_reg date not null,
 	ap_job varchar2(20) not null,
+	ap_job2 varchar2(20) not null,
 	ap_pass number default(0),
 	ap_id varchar2(20),
 	card_num varchar2(16) unique

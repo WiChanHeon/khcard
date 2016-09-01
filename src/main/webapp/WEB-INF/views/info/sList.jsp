@@ -4,38 +4,46 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/layout.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>
 
+
 <div class="container y_div">
-	<div class="y_clear"></div>
 	<div class="y_nav_menu y_center">
+		<div class="y_floatright" style="margin-right:30px;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button><span class="badge">5</span></div>
+		<!-- 카드비교함 시작-->
+		<div id="y_compare" style="display:none;"></div>
+		<!-- 카드비교함 끝 -->
+		<div class="y_clear"></div>
 		<h2><spring:message code="info.slist.title"/></h2>
 		<p>신청하고자 하는 카드종류를 선택해 주세요.</p>
 	
 			<ul>
-				<li><a href="#">추천카드</a></li>
-				<li><a href="#">Premium카드</a></li>
-				<li><a href="#">포인트카드</a></li>
-				<li><a href="#">할인카드</a></li>
-				<li><a href="#">기타카드</a></li>
+				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_rcm=1">추천카드</a></li>
+				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PM">Premium카드</a></li>
+				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PT">포인트카드</a></li>
+				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=CB">할인카드</a></li>
+				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=ETC">기타카드</a></li>
 			</ul>
 	</div>
 	<br><br>
 
-	<div class="y_nav_content">	
+	<div class="row y_nav_content">	
 		<c:if test="${empty list}">
-		<div align="center">등록된 카드가 없습니다.</div>
+		<div class="y_liketable y_nocard">등록된 카드가 없습니다.</div>
 		</c:if>
 		
 		<c:if test="${!empty list}">
 		<c:forEach var="slist" items="${list}">
 		<div class="col-sm-4 y_card">
-			<div><div class="y_name"><a href="#">${slist.info_name} > </a></div><span class="y_floatright"><button type="button" class="btn btn-default btn-sm" id="${slist.info_id}_button" style="margin:0 10px 0 0;"><span class="glyphicon glyphicon-plus"></span></button></span></div>
-			<div class="y_clear y_liketable"><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}"></div>
+			<div><div class="y_name"><a href="#">${slist.info_name} > </a></div><span class="y_floatright"><button type="button" class="btn btn-default y_button" id="${slist.info_id}" data-toggle="tooltip" data-placement="top" title="관심카드 담기"><span class="glyphicon glyphicon-plus"></span></button></span></div>
+			<div class="y_clear"><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}"></div>
 			<div class="y_nexonB">${slist.info_stitle}</div>
-			<div><p>${slist.info_scontent}</p></div>
+			<div><p>${slist.info_scontent_br}</p></div>
 			<div><span class="y_afee" data-toggle="tooltip" title="${slist.cp_afee}">연회비 보기</span></div>
-			
 		</div>
 		</c:forEach>
 		</c:if>
