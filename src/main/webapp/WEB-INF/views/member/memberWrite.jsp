@@ -11,10 +11,10 @@
 			<li>
 				<label for="mem_id">아이디</label>
 				<form:input path="mem_id" maxlength="20"/>
-				<%-- <input type="button" id="confirmId" value="ID중복체크">
+				<input type="button" id="confirmId" value="ID중복체크">
 				<span id="id_signed" class="error-color"></span>
 				<img src="${pageContext.request.contextPath}/resources/images/ajax-loader.gif"
-				     width="16" height="16" id="loading" style="display:none;"> --%>
+				     width="16" height="16" id="loading" style="display:none;">
 				<form:errors path="mem_id" class="error-color"/>
 			</li>
 			<li>

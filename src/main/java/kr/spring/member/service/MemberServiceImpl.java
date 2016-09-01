@@ -2,14 +2,18 @@ package kr.spring.member.service;
 
 
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import kr.spring.member.dao.MemberMapper;
+import kr.spring.member.domain.CardsCommand;
 import kr.spring.member.domain.MemberCommand;
 
-@Service("hcommand")
+@Service("memberService")
 public class MemberServiceImpl implements MemberService{
 	
 	@Resource
@@ -36,6 +40,10 @@ public class MemberServiceImpl implements MemberService{
 		
 		memberMapper.delete(mem_id);
 	}
-
+	@Override
+	public CardsCommand cardsMember(String card_num){
+		return memberMapper.cardsMember(card_num);
+		
+	}
 
 }

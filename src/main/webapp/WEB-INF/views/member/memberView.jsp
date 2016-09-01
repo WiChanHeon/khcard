@@ -7,6 +7,7 @@
 		<li>아이디 : ${member.mem_id}</li>
 		<li>이름 : ${member.mem_name}</li>
 		<li>이메일 : ${member.mem_email}</li>
+		<li>이메일 : ${member.mem_cell}</li>
 		<li>가입날짜 : ${member.mem_reg}</li>
 	</ul>
 	<hr size="1" width="100%">

@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <div>
     <h2><spring:message code="member.update.title"/></h2>
-	<form:form action="update.do" commandName="command" id="modify_form">
+	<form:form action="update.do" commandName="hcommand" id="modify_form">
 		<ul>
 			<li>
 				<label for="mem_name">이름</label>

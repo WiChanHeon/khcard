@@ -3,19 +3,24 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <div>
-	<h2><spring:message code="member.login.title"/></h2>
-	<form:form action="login.do" commandName="command" id="login_form">
+	<h2><spring:message code="member.cards.title"/></h2>
+	<form:form action="cards.do" commandName="hcommand" id="card_form">
 		<form:errors element="div" class="error-color"/>
 		<ul>
 			<li>
-				<label for="id">카드번호</label>
-				<form:input path="id"/>
-				<form:errors path="id" class="error-color"/>
+				<label for="card_num">카드번호</label>
+				<form:input path="card_num" maxlength="16"/>
+				<form:errors path="card_num" class="error-color"/>
 			</li>
 			<li>
-				<label for="passwd">비밀번호</label>
-				<form:password path="passwd"/>
-				<form:errors path="passwd" class="error-color"/>
+				<label for="card_pw">비밀번호</label>
+				<form:password path="card_pw" maxlength="4"/>
+				<form:errors path="card_pw" class="error-color"/>
+			</li>
+			<li>
+				<label for="card_cvc">cvc번호</label>
+				<form:input path="card_cvc" maxlength="3"/>
+				<form:errors path="card_cvc" class="error-color"/>
 			</li>
 			<li class="align-center">
 				<input type="submit" value="전송">

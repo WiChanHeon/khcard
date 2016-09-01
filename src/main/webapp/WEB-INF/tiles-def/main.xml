@@ -11,7 +11,11 @@
     	<put-attribute name="menu" value="/WEB-INF/views/template_user/menu.jsp"/>
     	<put-attribute name="body" value="/WEB-INF/views/main/home.jsp"/>
     	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
-    </definition>  
+    </definition> 
+    <definition name="pageError" extends="main">
+    	<put-attribute name="title" value="오류발생"/>
+    	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
+    </definition>   
 </tiles-definitions>
 
 

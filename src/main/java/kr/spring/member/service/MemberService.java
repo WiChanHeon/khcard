@@ -1,7 +1,11 @@
 package kr.spring.member.service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.transaction.annotation.Transactional;
 
+import kr.spring.member.domain.CardsCommand;
 import kr.spring.member.domain.MemberCommand;
 
 public interface MemberService {
@@ -10,4 +14,5 @@ public interface MemberService {
 	public MemberCommand selectMember(String id);
 	public void update(MemberCommand member);
 	public void delete(String id);
+	public CardsCommand cardsMember(String card_num);
 }

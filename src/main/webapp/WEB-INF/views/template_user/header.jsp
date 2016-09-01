@@ -64,7 +64,7 @@
 													<li class="dropdown ">
 														<a class="dropdown-toggle" data-toggle="dropdown" href="index.html">Home</a>
 														<ul class="dropdown-menu">
-															<li ><a href="index.html">Home Default</a></li>
+															<li ><a href="${pageContext.request.contextPath}/member/cards.do">Home Default</a></li>
 															<li ><a href="index-corporate-1.html">Corporate 1</a></li>
 															<li ><a href="index-corporate-2.html">Corporate 2</a></li>
 															<li ><a href="index-corporate-3.html">Corporate 3</a></li>
