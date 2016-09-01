@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-/*sList*/
+/*------------------------sList Start------------------------*/
 /*공통사용*/
 .y_center{
 	text-align:center;
@@ -69,7 +69,7 @@
 }
 
 
-/*하단리스트*/
+/*하단카드목록*/
 .y_nav_content{
 	margin:140px 50px 100px 50px;
 	min-height:400px;
@@ -97,6 +97,7 @@ div.y_nocard{
 }
 div.y_card div{
 	min-height:20px;
+	max-width:266px;
 }
 div.y_card img {
 	padding:10px 0;
@@ -105,7 +106,6 @@ div.y_card img {
 .y_button{
 	padding: 1px 4px;
 	font-size: 10px;
-	/* line-height: 1.5; */
 	border-radius: 3px;
 	margin:5px 0 0 0;
 }
@@ -114,23 +114,108 @@ div.y_card img {
 }
 .y_afee{
 	display:inline;
+	height:30px;
 	border:1px solid #ccc;
 	border-radius: 4px;
 	padding: 1px 7px;
 	margin:0;
 	font-size: 12px;
 	line-height: 1.5;
-	cursor:pointer;
 	color:gray;
 }
+/*비교함*/
 #y_compare{
+	top:50px;
+	right:50px;
 	position: absolute;
-	z-index: 1071;
-	width:100px;
-	height:300px;
+	z-index:110;
+	width: 120px;
+	height: 300px;
+	padding: 0 20px;
+	background: #4e4e4e;
+}
+#y_compare:after {
+	content: '';	
+	position: absolute;
+	border-style: solid;
+	border-width: 0 6px 11px;
+	border-color: #4e4e4e transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	top: -11px;
+	left: 98px;
+}
+p.y_ctitle{
+	width:80px;
+	margin:15px auto;
+	color:white;
+}
+.y_cimg{
+	margin-bottom:10px;
+	width:80px;
+	height:56px;
 	background-color:black;
 }
+#y_cbtn{
+	margin-top:5px;
+	width:80px;
+	height:30px;
+	color:#4e4e4e;
+}
 
+
+/*추가-제거버튼툴팁*/
+.y_tooltip-top{
+	font-size:9pt;
+	color:#7F7F7F;
+	z-index:1070;
+	position: fixed;
+	width: 80px;
+	height: 20px;
+	padding: 0px;
+	background: #FFFFFF;
+	border: #c0c0c0 solid 1px;
+}
+
+.y_tooltip-top:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 9px 2px 0;
+	border-color: #FFFFFF transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	bottom: -9px;
+	left: 38px;
+}
+.y_tooltip-top:before {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 9px 2px 0;
+	border-color: #c0c0c0 transparent;
+	display: block;
+	width: 0;
+	z-index: 0;
+	bottom: -10px;
+	left: 38px;
+}
+/*연회비툴팁*/
+.y_tooltip-afee{
+	font-size:10pt;
+	color:#7F7F7F;
+	z-index:1070;
+	position: fixed;
+	width: 266px;
+	padding: 3px;
+	background: #FFFFFF;
+	border: #c0c0c0 solid 1px;
+}
+
+
+/*------------------------sList End------------------------*/
 
 /*툴팁깨짐...빡치면날리고기본쓰자*/
 .tooltip {

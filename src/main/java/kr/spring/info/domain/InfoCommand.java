@@ -83,7 +83,7 @@ public class InfoCommand {
 		this.info_order = info_order;
 	}
 	public String getCp_afee() {
-		return cp_afee;
+		return StringUtil.useBrHtml(cp_afee);
 	}
 	public void setCp_afee(String cp_afee) {
 		this.cp_afee = cp_afee;
