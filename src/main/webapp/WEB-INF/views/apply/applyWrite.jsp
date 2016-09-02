@@ -54,7 +54,7 @@
           placeholder="test@test.com 형식"/>
           <form:errors path="ap_email" class="error-color"/>
           
-        </li>
+        </li>   
         <li>
         <label for="ap_postnum">우편번호</label>
         	<%-- <form:input path="ap_postnum" maxlength="50"/>

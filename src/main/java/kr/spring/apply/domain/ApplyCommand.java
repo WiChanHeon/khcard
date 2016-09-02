@@ -20,7 +20,7 @@ public class ApplyCommand {
 	private String ap_cell;
 	@Email
 	@NotEmpty
-	private String ap_email;
+	private String ap_email; 
 	@NotEmpty
 	private String ap_postnum;
 	@NotEmpty
