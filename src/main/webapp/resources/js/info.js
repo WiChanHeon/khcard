@@ -74,11 +74,14 @@ $(document).ready(function(){
     	var count = $('#y_ccount').text();
     	
     	
-    	if($('#'+id+'_tooltip').text()=='관심카드 담기'){ ///추후 카드3개인지도 체크해야 함
+    	////세션값 체크해서 function(selectData)로 세션값 불러오고
+    	//- 바꾸고 장바구니 저장하고 count 저장하기
+    	
+    	if($('#'+id+'_tooltip').text()=='관심카드 담기'){ ///추후 카드3개인지도 체크해야 함, 3개면 담기에 진입 못하게 alert+false 처리
 	    	$('#'+id+' span').removeClass('glyphicon-plus').addClass('glyphicon-minus');   	
 	    	$('#'+id+'_tooltip').text('관심카드 빼기');
 	    	
-	    	/*$.ajax({
+	    	$.ajax({
 	    		type:'post',
 	    		data:{info_id:id},
 	    		url:'choicePlusAjax.do',
@@ -89,7 +92,9 @@ $(document).ready(function(){
 					if(data.result=='success'){
 						$('#y_compare').show();
 						
-						alert(id+' 추가완료'); //test
+						
+						
+						alert(id); //test
 						$('#y_cimg1').text(id); //수정 필요
 						
 						
@@ -109,7 +114,7 @@ $(document).ready(function(){
 				error:function(){
 					alert('네트워크 오류 발생1');
 				}
-	    	});*/
+	    	});
 	    	
 	    	
     	}else if($('#'+id+'_tooltip').text()=='관심카드 빼기'){
@@ -118,7 +123,7 @@ $(document).ready(function(){
         	
         	
         	
-        	/*$.ajax({
+        	$.ajax({
 	    		type:'post',
 	    		data:{info_id:id},
 	    		url:'choiceMinusAjax.do',
@@ -149,7 +154,7 @@ $(document).ready(function(){
 				error:function(){
 					alert('네트워크 오류 발생2');
 				}
-	    	});*/
+	    	});
         	
     	}
     	

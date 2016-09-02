@@ -32,7 +32,7 @@ public class InfoChoiceAjaxController {
 		}
 		
 		//test
-		/*String test_id = (String)session.getAttribute("test_id");
+		String test_id = (String)session.getAttribute("test_id");
 		
 		if(test_id==null){
 			test_id = "kkk";
@@ -52,11 +52,11 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}*/
+		}
 		
 		
 		
-		ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");
+		/*ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");
 		
 		if(al==null){
 			al = new ArrayList<String>();
@@ -64,6 +64,7 @@ public class InfoChoiceAjaxController {
 		}
 		
 		int count = al.size();
+		System.out.println(count);
 		
 		Map<String,String> map = new HashMap<String,String>();
 		
@@ -78,7 +79,7 @@ public class InfoChoiceAjaxController {
 				
 				map.put("result", "success");
 				
-				System.out.println(al.get(1) + "," + al.get(2) + ", " + al.get(3));
+				
 				
 			}else if(count >= 3){ //담긴 개수 3 초과
 				map.put("result", "excess3");
@@ -89,7 +90,7 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}
+		}*/
 		
 		return map;
 	}
@@ -104,13 +105,31 @@ public class InfoChoiceAjaxController {
 		}
 		
 		
-		//test
-		/*String test_id = (String)session.getAttribute("test_id");
+		//비우기용 test
+		/*Map<String,String> map = new HashMap<String,String>();
 		
+		try{
+			
+			if(info_id=="invalid"){ //비우기 테스트 용
+				session.invalidate();
+				map.put("result", "none");
+			}else if(info_id=="removeCount"){ //비우기 테스트 용
+				session.removeAttribute("count");
+				map.put("result", "none");
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			map.put("result", "failure");
+		}*/
+		
+		
+		//test
+		String test_id = (String)session.getAttribute("test_id");
 		
 		Map<String,String> map = new HashMap<String,String>();
 		
 		try{
+			
 			if(test_id==null){
 				map.put("result", "none");
 			}else if(test_id.equals(info_id)){
@@ -122,15 +141,15 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}*/
+		}
 		
 		
-		ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");		
+		/*ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");		
 		int count = al.size();
 		
 		Map<String,String> map = new HashMap<String,String>();
 		
-		/*try{
+		try{
 			
 			if(count > 0 && al.contains(info_id)){ //담긴 카드 있고 비교함에 존재하는 카드
 				al.remove(info_id);
