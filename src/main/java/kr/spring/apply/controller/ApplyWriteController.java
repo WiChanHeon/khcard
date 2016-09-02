@@ -9,7 +9,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.apply.domain.ApplyCommand;
 import kr.spring.apply.service.ApplyService;
@@ -47,7 +46,4 @@ public class ApplyWriteController {
 		  
 		  return "redirect:/main/main.do";
 	  }
-	//주민등록번호 유효성체크
-	
-	
 }

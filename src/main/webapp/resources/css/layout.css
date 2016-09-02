@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+/*전체디자인*/
+@font-face{
+   font-family:nexonL;
+   src:url('../font/NEXONFootballGothicL.eot'),
+      url('../font/NEXONFootballGothicL.woff') format('woff');
+}
+div,h1,h2,h3,h4,h5,h6,ul,li{
+   font-family:nexonL,NEXONFootballGothicL;
+}
+@font-face{
+   font-family:nexonB;
+   src:url('../font/NEXONFootballGothicB.eot'),
+      url('../font/NEXONFootballGothicB.woff') format('woff');
+}

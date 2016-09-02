@@ -5,35 +5,39 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/apply.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<div>
- <h2><spring:message code="apply.write.title"/></h2>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/apply.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/layout.css">
+
+<div class="apply_box">
+ <h2 align="center"><spring:message code="apply.write.title"/></h2>
  <form:form action="applywrite.do" commandName="apply">
- 	<p>카드신청 진행 동의</p>
- 	<p>개인정보를 위해 동의 및 신청자 본인 확인 후 진행합니다.</p>
- 	<hr size="2">
- 	<span>
+ 	<p align="center">카드신청 진행 동의</p>
+ 	<p align="center">개인정보를 위해 동의 및 신청자 본인 확인 후 진행합니다.</p>
+ 	<div align="center">
  	<input type="checkbox" id="allagree" title="개인정보, 고유식별정보 수집 동의" name="allagree">
  	<label for="agreeChk4">전체 동의</label>
  	<input type="checkbox" id="agree" title="개인정보, 고유식별정보 수집 동의" name="agree">
  	<label for="agreeChk4">개인정보 수집 이용에 대한 동의</label>
  	<input type="checkbox" id="agree2" title="개인정보, 고유식별정보 수집 동의" name="agree2">
  	<label for="agreeChk4">고유식별정보의 수집 이용에 대한 동의</label>
- 	</span>
- 	<h2>본인 확인</h2>
- 	<p>신청자 본인 확인을 위한 정보입니다.</p>
- 	<hr> 
- 	<ul>
+ 	</div>
+ 	<h2 align="center">본인 확인</h2>
+ 	<p align="center">신청자 본인 확인을 위한 정보입니다.</p>
+ 	<hr style="border:solid 2px gray;">
+ 	
+ 	<div class="apply_inner">
+ 	<ul class="apply_list">
  		<li>
  		<form name="myForm" method="post">
  		<label for="ap_rrn">주민등록번호</label>
-			<input type="text" id="ap_rrnfront" name="ap_rrnfront" onkeyup="nextgo(this);" maxlength="6"/> 
+			<input type="text" id="ap_rrnfront" name="ap_rrnfront" onkeyup="nextgo(this);" maxlength="6" /> 
 		   - <input type="password" id="ap_rrnrear" name="ap_rrnrear" maxlength="7"/>
-			<input type="button" onclick="checks();" value="검사"/>
+			<input type="button" onclick="checks();" value="검사" class="buttonstyle"/>
  		</form>
  		</li>
  		<li>
- 		<label for="ap_name">한글이름</label>  
-          <form:input path="ap_name" maxlength="5" placeholder="한글 입력만 가능"/>
+ 		<label for="ap_name" >한글이름</label>
+          <form:input path="ap_name" maxlength="5" placeholder="한글 입력만 가능" id="applylabel"/>
           <form:errors path="ap_name" class="error-color"/>
  		</li>
  		<li>
@@ -82,7 +86,7 @@
 				</form:select>
         </li>
         <li>
-        <label for="ap_bank">은행명</label>
+        <label for="ap_bank">은행명/계좌번호</label>
       			<form:select path="ap_bank">
 					<option>선택</option>
 					<option>산업은행</option>
@@ -98,7 +102,7 @@
 					<option>하나은행</option>
 					<option>기타은행</option>
 				</form:select>
-				<label for="ap_banknum">계좌번호</label>  
+				
           <form:input path="ap_banknum" maxlength="20" placeholder="- 없이 입력"/>
           <form:errors path="ap_banknum" class="error-color"/>
         </li>
@@ -129,11 +133,12 @@
 				<form:errors path="ap_job2" class="error-color"/>
         </li>
         <li class="align-center">
-          <input type="submit" value="카드신청">
-          <input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+          <input type="submit" value="카드신청" class="buttonstyle">
+          <input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'" class="buttonstyle">
         </li>
         
  	</ul>
+ 	</div>
  </form:form>
    <!-- 고유번호 		ap_num;		
 		주민번호 		ap_rrn;		

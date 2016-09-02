@@ -31,7 +31,7 @@
 
 		<!-- Font Awesome CSS -->
 		<link href="${pageContext.request.contextPath}/resources/user/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
+		
 		<!-- Fontello CSS -->
 		<link href="${pageContext.request.contextPath}/resources/user/fonts/fontello/css/fontello.css" rel="stylesheet">
 
@@ -52,6 +52,8 @@
 		<!-- Custom css --> 
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
 	</head>
+	<!-- applyCSS -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/apply.css">
 
 	<!-- body classes:  -->
 	<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
