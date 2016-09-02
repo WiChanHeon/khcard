@@ -19,12 +19,18 @@ $(document).ready(function() {
     	  if(flag) {
     	   	$(".p").show();
     	  }else{
-    	   	alert('카드 선택은 필수입니다!');
+    	   	alert('카드가 선택되지 않았습니다.분실하신 카드를 선택하여 주십시오.');
     	  }
     });
    
 });
 </script>
+<style>
+p.groove {border-style: groove;}
+#e{
+    
+}
+</style>
 <div>
    <h2>
       <img
@@ -33,7 +39,7 @@ $(document).ready(function() {
    </h2>
    <h3>분실카드 선택</h3>
 
-		<table class="table table-bordered">
+		<table class="table table-bordered" id="t">
 			<thead>
 				<tr>
 					<th>선택</th>
@@ -90,3 +96,45 @@ $(document).ready(function() {
 		</ul>
 		</div>
 	</form:form>
+
+	<div class="check_zone" style="margin-bottom: 20px">
+	<p class="groove" id="e">이용전 반드시 확인하세요</p>
+	<div class="conts" style="display: block;">
+		<ul class="listDot">
+			<li>분실신고를 하시기전 먼저 카드 승인내역을 확인하시기 바랍니다.&nbsp;<a
+				href="/hpp/HPPUSEN/useDmsA01.shc" class="btn_renewalType type4"><span
+					class="inner">국내이용내역</span></a>&nbsp;<a
+				href="/hpp/HPPUSEN/HppGetListFrnA01.shc"
+				class="btn_renewalType type4"><span class="inner">해외이용내역</span></a></li>
+			<li>법인카드 분실, 해외분실의 경우 1544-7200번으로 즉시 신고하여 주시기 바랍니다.</li>
+			<li>고객님께서 사용하지 않은 승인내역이 있을 경우 또는 재발급 불가 카드 상세 내용 확인을 원하실 경우 콜센터로
+				문의 바랍니다.<br>(평일 09:00 ~ 18:00는 1544-7000번 / 주말 · 공휴일 · 평일 18:00 ~
+				09:00는 1544-7200번)</li>
+			<li>재발급 신청 후에는 기존카드의 분실신고 해제가 불가하오니 이점 양지 바랍니다.</li>
+			<li>분실신고 접수번호가 부여되지 않으면 분실신고가 되지 않는 것 이므로 꼭 확인하시기 바랍니다.</li>
+			<li>월납요금 [통신비/관리비/보험료/전기요금 등등]에 대해 자동납부 중인 경우<br>카드 교체발급으로
+				인해 새로운 카드로 자동납부가 불가할 수 있사오니,<br>해당업체를 통해 별도 카드번호변경 신청을 해주시기
+				바랍니다.
+			</li>
+			<li>체크,현금겸용 카드의 경우 예금인출여부는 별도 확인하시기 바랍니다.</li>
+			<li>체크카드 분실 시 현금겸용기능 정지는 해당 은행으로 별도 요청하시기 바랍니다.(신한,우체국,수협제외)</li>
+			<li>안내<br>법인카드를 분실하셨을 경우와 해외분실의 경우에는 즉시 24시간
+				승인실[☎1544-7200]로 전화하여 신고해 주시기 바랍니다.
+			</li>
+			<li>재발급불가 표시안내
+				<ul>
+					<li>해당기관(직업훈련학교, 보훈청 및 읍, 면, 동사무소)에서 발급된 체크카드일 경우<br>"재발급불가"로
+						표시된 체크카드를 원하실 경우는 해당기관(직업훈련학교, 보훈청 및 읍, 면, 동사무소)으로 재발급 신청해 주십시오.
+					</li>
+					<li>본인 기존 소지한 후불교통체크카드에 계좌연결이 되어 있지 않을 경우<br>후불교통기능은 계좌가
+						있는 체크카드에만 추가하실 수 있으므로, 상담실(☎1544-7474)로 계좌등록 후 재발급 신청 바랍니다.
+					</li>
+					<li>본인 기존 소지한 당사카드에 후불교통 사용제한 코드가 등재되어 있는 경우<br>후불교통 사용제한
+						코드가 등재되어 있어 후불교통기능을 추가하실 수 없으므로, 상담실(☎1544-7474)로 후불교통기능 없는 체크카드로
+						재발급 신청 바랍니다.
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
