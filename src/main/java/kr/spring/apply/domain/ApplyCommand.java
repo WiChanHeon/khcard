@@ -2,23 +2,41 @@ package kr.spring.apply.domain;
 
 import java.sql.Date;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class ApplyCommand {
 	
 	private int ap_num;
+	@NotEmpty
 	private String ap_rrnfront;
+	@NotEmpty
 	private String ap_rrnrear;
+	@NotEmpty
 	private String ap_name;
+	@NotEmpty
 	private String ap_ename;
+	@NotEmpty
 	private String ap_cell;
+	@Email
+	@NotEmpty
 	private String ap_email;
+	@NotEmpty
 	private String ap_postnum;
+	@NotEmpty
 	private String ap_address1;
+	@NotEmpty
 	private String ap_address2;
+	@NotEmpty
 	private String ap_paydate;
+	@NotEmpty
 	private String ap_bank;
+	@NotEmpty
 	private String ap_banknum;
 	private Date ap_reg;
+	@NotEmpty
 	private String ap_job;
+	@NotEmpty
 	private String ap_job2;
 	private int ap_pass;
 	private String ap_id;

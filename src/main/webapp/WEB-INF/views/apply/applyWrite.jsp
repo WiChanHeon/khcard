@@ -5,17 +5,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/apply.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script>
-function checkIdNo() {
-    var isOk = isIdNoCorrect(document.forms["myForm"]["ap_rrnfront"], 
-                                document.forms["myForm"]["app_rrnrear"]);
-    if (isOk == false ) {
-        alert ("올바르지 않은 주민등록번호입니다.");
-        idNoFront.focus();
-    } else if (isOk == true) 
-        alert("올바른 주민등록번호입니다.");    
-}
-</script>
 <div>
  <h2><spring:message code="apply.write.title"/></h2>
  <form:form action="applywrite.do" commandName="apply">
@@ -36,12 +25,10 @@ function checkIdNo() {
  	<ul>
  		<li>
  		<form name="myForm" method="post">
- 		<label for="ap_rrn">주민번호</label>
-         <%--  <form:input path="ap_rrnfront" maxlength="6"/> - <form:input path="ap_rrnrear" maxlength="7"/>
-          <input type="button" id="isIdNoCorrect();" value="체크"/> --%>
-         
-   		 <input type="text" name="ap_rrnfront"> - <input type="text" name="ap_rrnrear">
-   		 <input type="button" value="확인" onclick="checkIdNo()">
+ 		<label for="ap_rrn">주민등록번호</label>
+			<input type="text" id="ap_rrnfront" name="ap_rrnfront" onkeyup="nextgo(this);" maxlength="6"/> 
+		   - <input type="password" id="ap_rrnrear" name="ap_rrnrear" maxlength="7"/>
+			<input type="button" onclick="checks();" value="검사"/>
  		</form>
  		</li>
  		<li>
@@ -72,7 +59,8 @@ function checkIdNo() {
         <label for="ap_postnum">우편번호</label>
         	<%-- <form:input path="ap_postnum" maxlength="50"/>
 			<form:errors path="ap_postnum" class="error-color"/>     --%>
-        	<input name="ap_postnum" type="text" placeholder="우편번호" class="nokey"/>
+			<form:input path="ap_postnum" type="text" placeholder="우편번호" class="nokey"/>
+        	<!-- <input name="ap_postnum" type="text" placeholder="우편번호" class="nokey"/> -->
         	<input value="주소" type="button" onclick="openAddr();"/>
         </li>
         <li>

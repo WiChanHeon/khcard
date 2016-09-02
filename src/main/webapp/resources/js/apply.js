@@ -47,72 +47,54 @@ $(document).ready(function(){
 	});
 	
 });
-//주민번호 체
-function isIdNoCorrect(ap_rrnfront, ap_rrnrear) {
-    var chk = 0;
-    var idFrVal = ap_rrnfront.value;
-    var idRrVal = ap_rrnrear.value;
-    var yy = idFrVal.substring(0,2);
-    var mm = idFrVal.substring(2,4);
-    var dd = idFrVal.substring(4,6);
-    var sex = idRrVal.substring(0,1);
-   
-    if (isNaN(idFrVal) || isNaN(idRrVal)) {
-        if (isNaN(idFrVal)) {
-            ap_rrnfront.value = "";
-            ap_rrnfront.focus();
-        } else if (isNaN(idRrVal)) {
-            ap_rrnrear.value = "";
-            ap_rrnrear.focus();
-        }
-        alert("주민등록번호는 숫자만 가능합니다.");
-        return;
-    }
+//주민번호 체크
+function check_jumin() { 
+ var jumin=document.getElementById('ap_rrnfront').value+document.getElementById('ap_rrnrear').value;
+
+ //주민등록 번호 13자리를 검사한다.
+  var fmt = /^\d{6}[1234]\d{6}$/;  //포멧 설정
+  if (!fmt.test(jumin)) {
+   return false;
+  }
+
+  // 생년월일 검사
+  var birthYear = (jumin.charAt(6) <= "2") ? "19" : "20";
+  birthYear += jumin.substr(0, 2);
+  var birthMonth = jumin.substr(2, 2) - 1;
+  var birthDate = jumin.substr(4, 2);
+  var birth = new Date(birthYear, birthMonth, birthDate);
+
+  if ( birth.getYear() % 100 != jumin.substr(0, 2) ||
+       birth.getMonth() != birthMonth ||
+       birth.getDate() != birthDate) {
+     return false;
+  }
+
+  // Check Sum 코드의 유효성 검사
+  var buf = new Array(13);
+  for (var i = 0; i < 13; i++) buf[i] = parseInt(jumin.charAt(i));
  
-    if (idFrVal.split(" ").join("") == "") {
-        alert("주민등록번호 앞자리를 입력하세요.");
-        ap_rrnfront.focus();
-        return;
-    } else if (idRrVal.split(" ").join("") == "") {
-        alert("주민등록번호 뒷자리를 입력하세요.");
-        ap_rrnrear.focus();
-        return;
-    }
-      
-    if (idFrVal.length != 6) {
-        alert("주민등록번호 앞자리는 6자리로 입력하세요.");
-        ap_rrnfront.focus();
-        return ;
-    } else if (idRrVal.length != 7) {
-        alert("주민등록번호 뒷자리는 7자리로 입력하세요.");
-        ap_rrnrear.focus();
-        return;
-    }    
-      
-    if ((idFrVal.length != 6) || (mm < 1 || mm > 12 || dd < 1)) {
-        alert ("주민등록번호 앞자리가 올바르지 않습니다.");
-        ap_rrnfront.focus();
-        return;
-    } else if ((sex != 1 && sex != 2 ) || (idRrVal.length != 7 )) {
-        alert ("주민등록번호 뒷자리가 올바르지 않습니다.");
-        ap_rrnrear.focus();
-        return;
-    }
-   
-    for (var i = 0; i <= 5 ; i++) {
-        chk = chk + ((i % 8 + 2) * parseInt(idFrVal.substring(i, i+1)));
-    }
-      
-    for (var i = 6; i <=11 ; i++) {
-        chk = chk + ((i % 8 + 2) * parseInt(idRrVal.substring(i-6, i-5)));
-    }
-   
-    chk = 11 - (chk % 11);
-    chk = chk % 10;
-   
-    if (chk != idRrVal.substring(6, 7))   
-        return false;
-      
-    return true;
+  multipliers = [2,3,4,5,6,7,8,9,2,3,4,5];
+  for (var sum = 0, i = 0; i < 12; i++) sum += (buf[i] *= multipliers[i]);
+
+  if ((11 - (sum % 11)) % 10 != buf[12]) {
+     return false;
+  }
+
+  
+  return true;
 }
- 
+
+function checks(){
+ if(check_jumin())//올바른 값이 들어왔을 때 실행될 코드
+  alert("올바른 주민등록번호입니다.");
+ else//올바른 갑이 들어오지 않았을 때 실행될 코드
+  alert("올바르지 않은 주민번호입니다.");
+}
+
+//앞의 텍스트박스에 6자리 글씨가 써지면 자동으로 다음 칸으로 커서가 넘어간다.
+function nextgo(e){  
+  if (e.value.length>=6) {
+   document.getElementById('ap_rrnrear').focus();
+  }
+}
