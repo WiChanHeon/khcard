@@ -52,6 +52,7 @@
 				<!-- 설정파일이 여러개일 경우 아래 태그를 여러개 나열 -->
 				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value> 
 				<beans:value>/WEB-INF/tiles-def/admin.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/donan.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

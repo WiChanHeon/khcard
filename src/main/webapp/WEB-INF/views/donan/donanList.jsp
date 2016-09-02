@@ -10,17 +10,19 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-<style>
-#testDatepicker {
-    width: 10%;
-}
-</style>
 <script>
-$(function() {
-    $( "#testDatepicker" ).datepicker({
-    	showOn: "both", 
-        buttonImage: "${pageContext.request.contextPath}/resources/images/btn_calendar.gif"
+$(document).ready(function() {
+    $("#btn1").click(function(){
+    	
+    	var flag = $('#c').prop('checked');
+    	
+    	  if(flag) {
+    	   	$(".p").show();
+    	  }else{
+    	   	alert('카드 선택은 필수입니다!');
+    	  }
     });
+   
 });
 </script>
 <div>
@@ -40,64 +42,51 @@ $(function() {
 					<th>카드구분</th>
 					<th>카드번호</th>
 					<th>제휴명</th>
-					<th>Casg/교통</th>
+					<th>결제계좌</th>
 					<th>재발급 신청여부</th>
 				</tr>
 			</thead>
 			<tbody>
+				<c:forEach var="a" items="${list}">
 				<tr>
-					<td><input type="checkbox" value=""></td>
+					<td><input type="checkbox" id="c"></td>
 					<td>복수</td>
-					<td>위*헌</td>
-					<td>통합신한</td>
-					<td>4364-****-****-7640</td>
-					<td>S-Choice체크</td>
-					<td>후불</td>
+					<td>${a.ap_name}</td>
+					<td>현대카드</td>
+					<td>${a.card_num}</td>
+					<td>${a.info_id}</td>
+					<td>${a.ap_bank}</td>
 					<td>아니오</td>
 				</tr>
-				<tr>
-					<td><input type="checkbox" value=""></td>
-					<td>복수</td>
-					<td>위*헌</td>
-					<td>통합신한</td>
-					<td>4364-****-****-7640</td>
-					<td>S-Choice체크</td>
-					<td>후불</td>
-					<td>아니오</td>
-				</tr>
+				</c:forEach>
 
 			</tbody>
 		</table>
+		
+		<input type="button" id="btn1" value="분실 신고">
+</div>
 
-	<div class="container">
-		<button type="button" class="btn btn-danger" data-toggle="collapse"
-			data-target="#demo">분실 신고</button>
-		<div id="demo" class="collapse">
+	<form:form action="write.do" commandName="command">
+		<div class="p" style="display:none;">
 			<h3>분실신고 접수</h3>
-			<form>
+			<!-- <div>
 				<label for="date">분실일</label> 
 			<input type="text" id="testDatepicker">
-			</form>
+			</div> -->
+		<ul>
 			
-			<form>
+			<li><label for="loss_reg">분실일</label> 
+				<input type="date" name="loss_reg"></li>
+			<li>
 			<em style="display:block; margin-bottom:3px">ex)삼성동에서 지갑분실</em>
-				<label for="where">분실 장소</label>
-			<input type="text" id="where">
-			</form>
+				<label for="loss_memo">분실 장소</label>
+				<input type="text" name="loss_memo"></li>
 			
-			<label for="phone">연락처</label>
-			<div class="contGp">
-				<input type="text" name="phone_1" id="phone_1" maxlength="4" style="width: 50px;"> <span>-</span> 
-				<input type="text" name="phone_2" id="phone_2" maxlength="4" style="width: 50px;"> <span>-</span>
-				<input type="text" name="phone_3" id="phone_3" maxlength="4" style="width: 50px;">
-			</div>
-			<button type="button" class="btn btn-danger" style="align-right">신고</button>
+			<li><label for="loss_phone">연락처</label>
+				<input type="text" name="loss_phone"></li>
+			
+				<li><input type="submit" value="신고"></li>
+		
+		</ul>
 		</div>
-	</div>
-
-</div>
-      
-      
-      
-
-
+	</form:form>
