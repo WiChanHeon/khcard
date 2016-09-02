@@ -103,6 +103,22 @@ div.y_card img {
 	padding:10px 0;
 }
 
+.y_card-img1:hover{
+	opacity:0.6;
+}
+
+.y_img_btndiv{
+	border:1px solid red;
+	top:0;
+	left:0;
+	position:absolute;
+	margin:0 auto;
+	padding:100px 0;
+}
+.y_img-btn{
+
+}
+
 .y_button{
 	padding: 1px 4px;
 	font-size: 10px;

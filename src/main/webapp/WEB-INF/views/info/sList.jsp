@@ -50,13 +50,31 @@
 		<c:if test="${!empty list}">
 		<c:forEach var="slist" items="${list}">
 		<div class="col-sm-4 y_card">
+			
 			<div class="y_tooltip-top y_liketable" style="display:none;" id="${slist.info_id}_tooltip">관심카드 담기</div>
-			<div><div class="y_name"><a href="#">${slist.info_name} > </a></div><span class="y_floatright"><button type="button" class="btn btn-default y_button" id="${slist.info_id}"><span class="glyphicon glyphicon-plus"></span></button></span></div>
-			<div class="y_clear"><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}"></div>
-			<div class="y_nexonB">${slist.info_stitle}</div>
-			<div><p>${slist.info_scontent_br}</p></div>
-			<div><span class="y_afee" id="${slist.info_id}_afee">연회비 보기</span></div>
-			<div class="y_tooltip-afee" id="${slist.info_id}_afee_view"style="display:none;">${slist.cp_afee}</div>
+			
+			<div>
+				<div class="y_name">
+				<a href="#">${slist.info_name} > </a></div>
+					<span class="y_floatright"> <button type="button" class="btn btn-default y_button" id="${slist.info_id}"><span class="glyphicon glyphicon-plus"></span></button> </span>
+			</div>
+			<div class="y_clear">
+				<img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}" class="y_card-img1" id="${slist.info_id}_img"> 
+				<div class="y_img_btndiv y_liketable" id="${slist.info_id}_img_btnview" style="display:none;"><input type="button" class="btn btn-primary y_img-btn" value="카드선택" onclick="#"></div> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${slist.info_id}' -->
+			</div>
+			<div class="y_nexonB">
+				${slist.info_stitle}
+			</div>
+			<div>
+				<p>${slist.info_scontent_br}</p>
+			</div>
+			<div>
+				<span class="y_afee" id="${slist.info_id}_afee">연회비 보기</span>
+			</div>
+			<div class="y_tooltip-afee" id="${slist.info_id}_afee_view"style="display:none;">
+				${slist.cp_afee}
+			</div>
+			
 		</div>
 		</c:forEach>
 		</c:if>
