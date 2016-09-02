@@ -55,6 +55,6 @@
 		<property name="typeAliasesPackage" value="kr.spring.apply.domain"/>
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="kr.spring.apply.dao"/>  
+		<property name="basePackage" value="kr.spring.apply.dao"/>
 	</bean>
 </beans>

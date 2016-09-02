@@ -9,13 +9,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.apply.domain.ApplyCommand;
 import kr.spring.apply.service.ApplyService;
 
 @Controller
-public class ApplyWriteController {
+public class ApplySimpleWriteController {
 	private Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource(name="applyService")
@@ -26,12 +25,12 @@ public class ApplyWriteController {
 		  return new ApplyCommand();
 	  }
 	
-	@RequestMapping(value="/apply/applywrite.do",method=RequestMethod.GET)
+	@RequestMapping(value="/apply/applysimplewrite.do",method=RequestMethod.GET)
 	public String form(){
-		return "/apply/applyWrite";
+		return "/apply/applysimpleWrite";
 	}
 	
-	@RequestMapping(value="/apply/applywrite.do",method=RequestMethod.POST)
+	@RequestMapping(value="/apply/applysimplewrite.do",method=RequestMethod.POST)
 	  public String submit(@ModelAttribute("apply") @Valid ApplyCommand applyCommand,BindingResult result){
 		  
 		  if(log.isDebugEnabled()){
@@ -47,7 +46,5 @@ public class ApplyWriteController {
 		  
 		  return "redirect:/main/main.do";
 	  }
-	//주민등록번호 유효성체크
-	
 	
 }

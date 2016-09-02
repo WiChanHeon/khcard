@@ -39,23 +39,34 @@ create table f_sapply(
 	sap_name varchar2(30) not null,
 	sap_cell varchar2(15) not null
 );
-
+--ap_paydate varchar2로 변경
+--ap_postnum 추가
+--ap_address1 추가
+--ap_address2 추가
+--ap_job2 추가
+--info_id (FK)추가
 create table f_apply(
 	ap_num number not null primary key,
-	ap_rrn varchar2(13) not null,
+	ap_rrnfront varchar2(6) not null,
+	ap_rrnrear varchar2(7) not null,
 	ap_name varchar2(30) not null,
 	ap_ename varchar2(30) not null,
 	ap_cell varchar2(15) not null,
 	ap_email varchar2(50) not null,
-	ap_address varchar2(300) not null,
-	ap_paydate date not null,
+	ap_postnum varchar2(10) not null,
+	ap_address1 varchar2(20) not null,
+	ap_address2 varchar2(30) not null,
+	ap_paydate varchar2(10) not null,
 	ap_bank varchar2(20) not null,
 	ap_banknum varchar2(20) not null,
 	ap_reg date not null,
 	ap_job varchar2(20) not null,
+	ap_job2 varchar2(20) not null,
 	ap_pass number default(0),
 	ap_id varchar2(20),
+	ap_cardname varchar2(20),
 	card_num varchar2(16) unique
+	constraint apply_info_fk1 foreign key(info_id) references f_info(info_id)
 );
 
 create table f_card(
