@@ -38,6 +38,10 @@ private Logger log = Logger.getLogger(this.getClass());
 	public String submit(@ModelAttribute("hcommand") 
 	                     @Valid CardsCommand cardsCommand,
 	                     BindingResult result){
+		if (memberService.cardsMember(cardsCommand.getCard_num())==null) {
+			result.reject("InvalidCardnum");
+			return form();
+		}
 		CardsCommand cards = memberService.cardsMember(cardsCommand.getCard_num());
 		if(log.isDebugEnabled()){
 			log.debug("cardsCommand : " + cardsCommand);
