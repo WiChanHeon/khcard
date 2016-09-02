@@ -101,10 +101,16 @@ div.y_card div{
 }
 div.y_card img {
 	padding:10px 0;
+	
 }
 
+.y_card-img1{
+	
+}
 .y_card-img1:hover{
 	opacity:0.6;
+	
+	
 }
 
 .y_img_btndiv{
@@ -113,12 +119,10 @@ div.y_card img {
 	left:0;
 	position:absolute;
 	margin:0 auto;
-	padding:100px 0;
+	padding:30px 0;
+	z-index:1000;
+	
 }
-.y_img-btn{
-
-}
-
 .y_button{
 	padding: 1px 4px;
 	font-size: 10px;
@@ -172,6 +176,7 @@ p.y_ctitle{
 	width:80px;
 	height:56px;
 	background-color:black;
+	color:white; /*이미지 교체 시 삭제*/
 }
 #y_cbtn{
 	margin-top:5px;
@@ -218,6 +223,7 @@ p.y_ctitle{
 	bottom: -10px;
 	left: 38px;
 }
+
 /*연회비툴팁*/
 .y_tooltip-afee{
 	font-size:10pt;
@@ -230,6 +236,10 @@ p.y_ctitle{
 	border: #c0c0c0 solid 1px;
 }
 
+
+/*위로이동버튼*/
+.back_to_top{position:fixed;bottom:100px;left:50%;margin-left:380px;text-decoration:none;color:#000000;font-size:12px;padding:1em;display:none;}  
+.back_to_top:hover{background-color:rgba(0, 0, 0, 0.50);color:#000;}  
 
 /*------------------------sList End------------------------*/
 

@@ -15,15 +15,15 @@
 
 <div class="container y_div">
 	<div class="y_nav_menu y_center">
-		<div class="y_floatright" style="margin-right:30px;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge">5</span></div>
+		<div class="y_floatright" style="margin-right:30px;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount">${sessionScope.count}</span></div>
 		
-		<!-- <input type="checkbox" class="btn" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><label for="y_btn-compare">+</label> -->
+		
 		<!-- 카드비교함 시작-->
-		<div id="y_compare" ><!-- style="display:none;"-->
+		<div id="y_compare" style="display:none;"><!-- style="display:none;"-->
 			<p class="y_ctitle">관심카드</p>
-			<div class="y_cimg">1</div>
-			<div class="y_cimg">2</div>
-			<div class="y_cimg">3</div>
+			<div class="y_cimg" id="y_cimg1"></div>
+			<div class="y_cimg" id="y_cimg2"></div>
+			<div class="y_cimg" id="y_cimg3"></div>
 			<input type="button" id="y_cbtn" value="비교하기">
 		</div>
 		<!-- 카드비교함 끝 -->
@@ -59,8 +59,8 @@
 					<span class="y_floatright"> <button type="button" class="btn btn-default y_button" id="${slist.info_id}"><span class="glyphicon glyphicon-plus"></span></button> </span>
 			</div>
 			<div class="y_clear">
-				<img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}" class="y_card-img1" id="${slist.info_id}_img"> 
-				<div class="y_img_btndiv y_liketable" id="${slist.info_id}_img_btnview" style="display:none;"><input type="button" class="btn btn-primary y_img-btn" value="카드선택" onclick="#"></div> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${slist.info_id}' -->
+				<p><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}" class="y_card-img1" id="${slist.info_id}_img"></p> 
+				<div class="y_img_btndiv y_liketable" id="${slist.info_id}_img_btnview" style="display:none;"><input type="button" class="btn btn-primary y_img-btn" value="카드선택" onclick="slist.do#"></div> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${slist.info_id}' -->
 			</div>
 			<div class="y_nexonB">
 				${slist.info_stitle}
@@ -80,4 +80,8 @@
 		</c:if>
 	</div>
 	
+	
+	<!-- 위로 이동 버튼 -->
+	<a href="#" class="back_to_top"></a>  
+
 </div>
