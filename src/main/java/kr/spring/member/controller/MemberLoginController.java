@@ -67,7 +67,7 @@ public class MemberLoginController {
 			}
 		}catch(Exception e){
 			//인증 실패로 폼 호출
-			result.reject("invalidIdOrPassword");
+			result.reject("InvalidIdOrPassword");
 			return form();
 		}
 	}

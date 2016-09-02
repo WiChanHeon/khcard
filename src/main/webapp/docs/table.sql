@@ -142,7 +142,7 @@ create table f_notice(
 
 
 create sequence mem_seq;
---create sequence 0000111122223333_seq; --카드번호시퀀스
+--create sequence 9441160603437272_seq; --카드번호시퀀스
 create sequence sap_seq;
 create sequence ap_seq;
 create sequence loss_seq;

@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<style>
+        form {
+            margin: 30px;
+        }
+</style>   
 <div>
 	<h2><spring:message code="member.cards.title"/></h2>
 	<form:form action="cards.do" commandName="hcommand" id="card_form">
@@ -30,5 +35,3 @@
 		</ul>
 	</form:form>
 </div>
-
-
