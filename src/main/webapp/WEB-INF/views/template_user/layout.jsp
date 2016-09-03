@@ -51,6 +51,7 @@
 
 		<!-- Custom css --> 
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/css/donan.css" rel="stylesheet">
 	</head>
 
 	<!-- body classes:  -->

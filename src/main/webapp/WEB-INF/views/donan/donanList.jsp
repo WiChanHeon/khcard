@@ -4,9 +4,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
@@ -25,62 +25,59 @@ $(document).ready(function() {
    
 });
 </script>
-<style>
-p.groove {border-style: groove;}
-#e{
-    
-}
-</style>
-<div>
+
    <h2>
       <img
          src="${pageContext.request.contextPath}/resources/images/h2_lost01_1.gif"
          alt="분실신고/재발급신청" />
    </h2>
-   <h3>분실카드 선택</h3>
-
-		<table class="table table-bordered" id="t">
-			<thead>
+	<h4>분실카드 선택</h4>
+	<table>
+		<thead>
+			<tr>
+				<th><p align="center">선택</p></th>
+				<th><p align="center">구분</p></th>
+				<th><p align="center">고객명</p></th>
+				<th><p align="center">카드구분</p></th>
+				<th><p align="center">카드번호</p></th>
+				<th><p align="center">제휴명</p></th>
+				<th><p align="center">결제계좌</p></th>
+				<th><p align="center">재발급 신청여부</p></th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="a" items="${list}">
 				<tr>
-					<th>선택</th>
-					<th>구분</th>
-					<th>고객명</th>
-					<th>카드구분</th>
-					<th>카드번호</th>
-					<th>제휴명</th>
-					<th>결제계좌</th>
-					<th>재발급 신청여부</th>
+					<td><p align="center"><input type="checkbox" id="c"></p></td>
+					<td><p align="center">복수</p></td>
+					<td><p align="center">${a.ap_name}</p></td>
+					<td><p align="center">현대카드</p></td>
+					<td><p align="center">${a.card_num}</p></td>
+					<td><p align="center">${a.info_id}</p></td>
+					<td><p align="center">${a.ap_bank}</p></td>
+					<td>
+						<p align="center">
+						<select name="recard">
+						<option value="no">아니오</option>
+						<option value="yes">예</option>
+						</select>
+						</p>
+					</td>
 				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="a" items="${list}">
-				<tr>
-					<td><input type="checkbox" id="c"></td>
-					<td>복수</td>
-					<td>${a.ap_name}</td>
-					<td>현대카드</td>
-					<td>${a.card_num}</td>
-					<td>${a.info_id}</td>
-					<td>${a.ap_bank}</td>
-					<td>아니오</td>
-				</tr>
-				</c:forEach>
+			</c:forEach>
 
-			</tbody>
-		</table>
+		</tbody>
+	</table>
 		
-		<input type="button" id="btn1" value="분실 신고">
-</div>
-
+		<div class="bun">
+		<input type="button" id="btn1" value="분실 신고" class="btn btn-primary">
+		</div>
+	
+	<div id="jub" style="display:none;">
 	<form:form action="write.do" commandName="command">
-		<div class="p" style="display:none;">
-			<h3>분실신고 접수</h3>
-			<!-- <div>
-				<label for="date">분실일</label> 
-			<input type="text" id="testDatepicker">
-			</div> -->
+		
+			<h4>분실신고 접수</h4>
 		<ul>
-			
 			<li><label for="loss_reg">분실일</label> 
 				<input type="date" name="loss_reg"></li>
 			<li>
@@ -91,14 +88,13 @@ p.groove {border-style: groove;}
 			<li><label for="loss_phone">연락처</label>
 				<input type="text" name="loss_phone"></li>
 			
-				<li><input type="submit" value="신고"></li>
+				<li><input type="submit" value="신고" class="btn btn-primary"></li>
 		
 		</ul>
-		</div>
 	</form:form>
-
-	<div class="check_zone" style="margin-bottom: 20px">
-	<p class="groove" id="e">이용전 반드시 확인하세요</p>
+	</div>
+<div class="check_zone" style="margin-bottom: 20px">
+	<p class="eyong">이용전 반드시 확인하세요</p>
 	<div class="conts" style="display: block;">
 		<ul class="listDot">
 			<li>분실신고를 하시기전 먼저 카드 승인내역을 확인하시기 바랍니다.&nbsp;<a
@@ -108,8 +104,9 @@ p.groove {border-style: groove;}
 				class="btn_renewalType type4"><span class="inner">해외이용내역</span></a></li>
 			<li>법인카드 분실, 해외분실의 경우 1544-7200번으로 즉시 신고하여 주시기 바랍니다.</li>
 			<li>고객님께서 사용하지 않은 승인내역이 있을 경우 또는 재발급 불가 카드 상세 내용 확인을 원하실 경우 콜센터로
-				문의 바랍니다.<br>(평일 09:00 ~ 18:00는 1544-7000번 / 주말 · 공휴일 · 평일 18:00 ~
-				09:00는 1544-7200번)</li>
+				문의 바랍니다.<br>(평일 09:00 ~ 18:00는 1544-7000번 / 주말 · 공휴일 · 평일 18:00
+				~ 09:00는 1544-7200번)
+			</li>
 			<li>재발급 신청 후에는 기존카드의 분실신고 해제가 불가하오니 이점 양지 바랍니다.</li>
 			<li>분실신고 접수번호가 부여되지 않으면 분실신고가 되지 않는 것 이므로 꼭 확인하시기 바랍니다.</li>
 			<li>월납요금 [통신비/관리비/보험료/전기요금 등등]에 대해 자동납부 중인 경우<br>카드 교체발급으로
