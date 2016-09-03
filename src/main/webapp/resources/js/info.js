@@ -46,6 +46,7 @@ $(document).ready(function(){
 	
 	
 	//submit할 때 개수 체크할 것! 3개 이상만 submit
+	//비교불가 카드들 버튼 막기 (비교 불가)
 	
 	
 	

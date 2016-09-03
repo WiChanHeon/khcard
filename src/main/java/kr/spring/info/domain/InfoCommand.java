@@ -21,11 +21,6 @@ public class InfoCommand {
 	
 	//줄바꿈용 알리아스 변수
 	private String info_scontent_br;
-	private String cp_afee_br;
-	private String cp_voucher_br;
-	private String cp_benefit_br;
-	private String cp_service_br;
-	private String cp_advice_br;
 	
 	
 	public String getInfo_id() {
@@ -89,25 +84,25 @@ public class InfoCommand {
 		this.cp_afee = cp_afee;
 	}
 	public String getCp_voucher() {
-		return cp_voucher;
+		return StringUtil.useBrHtml(cp_voucher);
 	}
 	public void setCp_voucher(String cp_voucher) {
 		this.cp_voucher = cp_voucher;
 	}
 	public String getCp_benefit() {
-		return cp_benefit;
+		return StringUtil.useBrHtml(cp_benefit);
 	}
 	public void setCp_benefit(String cp_benefit) {
 		this.cp_benefit = cp_benefit;
 	}
 	public String getCp_service() {
-		return cp_service;
+		return StringUtil.useBrHtml(cp_service);
 	}
 	public void setCp_service(String cp_service) {
 		this.cp_service = cp_service;
 	}
 	public String getCp_advice() {
-		return cp_advice;
+		return StringUtil.useBrHtml(cp_advice);
 	}
 	public void setCp_advice(String cp_advice) {
 		this.cp_advice = cp_advice;
@@ -125,36 +120,6 @@ public class InfoCommand {
 	}
 	public void setInfo_scontent_br(String info_scontent_br) {
 		this.info_scontent_br = info_scontent_br;
-	}
-	public String getCp_afee_br() {
-		return StringUtil.useBrHtml(cp_afee_br);
-	}
-	public void setCp_afee_br(String cp_afee_br) {
-		this.cp_afee_br = cp_afee_br;
-	}
-	public String getCp_voucher_br() {
-		return StringUtil.useBrHtml(cp_voucher_br);
-	}
-	public void setCp_voucher_br(String cp_voucher_br) {
-		this.cp_voucher_br = cp_voucher_br;
-	}
-	public String getCp_benefit_br() {
-		return StringUtil.useBrHtml(cp_benefit_br);
-	}
-	public void setCp_benefit_br(String cp_benefit_br) {
-		this.cp_benefit_br = cp_benefit_br;
-	}
-	public String getCp_service_br() {
-		return StringUtil.useBrHtml(cp_service_br);
-	}
-	public void setCp_service_br(String cp_service_br) {
-		this.cp_service_br = cp_service_br;
-	}
-	public String getCp_advice_br() {
-		return StringUtil.useBrHtml(cp_advice_br);
-	}
-	public void setCp_advice_br(String cp_advice_br) {
-		this.cp_advice_br = cp_advice_br;
 	}
 	
 	@Override
