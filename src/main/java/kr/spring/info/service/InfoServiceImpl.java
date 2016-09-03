@@ -25,10 +25,10 @@ public class InfoServiceImpl implements InfoService{
 	public List<InfoCommand> getSList(Map<String, Object> map) {
 		return infoMapper.getSList(map);
 	}
-
+	
 	@Override
-	public InfoCommand getInfo(String info_id) {
-		return null;
+	public List<InfoCommand> getInfo(Map<String, Object> map) {
+		return infoMapper.getInfo(map);
 	}
 
 

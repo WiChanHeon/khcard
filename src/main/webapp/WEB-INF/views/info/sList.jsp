@@ -32,7 +32,13 @@
 			</c:forEach>
 			</c:if>
 			
-			<input type="button" id="y_cbtn" value="비교하기">
+			<form action="compare.do" id="y_compareForm">
+				<input type="hidden" name="card1" value="${sessionScope.choice[0]}">
+				<input type="hidden" name="card2" value="${sessionScope.choice[1]}">
+				<input type="hidden" name="card3" value="${sessionScope.choice[2]}">
+				<input type="submit" id="y_cbtn" value="비교하기">
+			</form>
+			
 		</div>
 		<!-- 카드비교함 끝 -->
 		
@@ -40,7 +46,7 @@
 		<h2><spring:message code="info.slist.title"/></h2>
 		<p>신청하고자 하는 카드종류를 선택해 주세요.</p>
 		
-			<ul>
+			<ul id="y_amenu">
 				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_rcm=1">추천카드</a></li>
 				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PM">Premium카드</a></li>
 				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PT">포인트카드</a></li>

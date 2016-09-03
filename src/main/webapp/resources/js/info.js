@@ -45,6 +45,11 @@ $(document).ready(function(){
 	});
 	
 	
+	//submit할 때 개수 체크할 것! 3개 이상만 submit
+	
+	
+	
+	
 	//위로 이동 버튼 기능
  	var offset = 220;  
     var duration = 500;  
@@ -66,6 +71,21 @@ $(document).ready(function(){
     
     
     /////////////////AJAX////////////////////
+    
+    //안씀...
+    /*function initCForm(){
+    	var choice = data.choice;
+    	
+    	for(var i=0;i<3;i++){
+			$('#y_cimg'+(i+1)).empty();
+			$('#y_compareForm input[name=card'+(i+1)+']').val('');
+			if(choice[i]!=null){
+				$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+				$('#y_compareForm input[name=card'+(i+1)+']').val(choice[i]);
+			}
+		}
+		$('#y_compare').show();
+    }*/
     
     //비교함 카드 빼기 (on 사용)
     $(document).on('click','.y_clink',function(e){
@@ -95,10 +115,12 @@ $(document).ready(function(){
 					}
 					
 					//비교함 비우고 데이터 새로 로딩
-					for(i=0;i<3;i++){
+					for(var i=0;i<3;i++){
 						$('#y_cimg'+(i+1)).empty();
+						$('#y_compareForm input[name=card'+(i+1)+']').val('');
 						if(choice[i]!=null){
 							$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+							$('#y_compareForm input[name=card'+(i+1)+']').val(choice[i]);
 						}
 					}
 					$('#y_compare').show();
@@ -147,10 +169,12 @@ $(document).ready(function(){
 						$('#y_ccount2').text('('+ccount+')');
 						
 						//비교함 비우고 데이터 새로 로딩
-						for(i=0;i<3;i++){
+						for(var i=0;i<3;i++){
 							$('#y_cimg'+(i+1)).empty();
+							$('#y_compareForm input[name=card'+(i+1)+']').val('');
 							if(choice[i]!=null){
 								$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+								$('#y_compareForm input[name=card'+(i+1)+']').val(choice[i]);
 							}
 						}
 						$('#y_compare').show();
@@ -193,10 +217,12 @@ $(document).ready(function(){
 						}
 						
 						//비교함 비우고 데이터 새로 로딩
-						for(i=0;i<3;i++){
+						for(var i=0;i<3;i++){
 							$('#y_cimg'+(i+1)).empty();
+							$('#y_compareForm input[name=card'+(i+1)+']').val('');
 							if(choice[i]!=null){
 								$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+								$('#y_compareForm input[name=card'+(i+1)+']').val(choice[i]);
 							}
 						}
 						$('#y_compare').show();
