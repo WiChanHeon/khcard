@@ -68,19 +68,22 @@ $(document).ready(function(){
     
     /////////////////AJAX////////////////////
     
-    
-    function loadChoiceBtn(){
+    //비교함에서 카드 빼기
+    function minusCard(){
+    	var id = $(this).attr('data-id');
     	
+		$('#'+id+' span').removeClass('glyphicon-minus').addClass('glyphicon-plus');   	
+    	$('#'+id+'_tooltip').text('관심카드 담기');
+    	
+    	return false;
     }
     
     
+    //추가-제거 버튼으로 비교함에 카드 보관하기
     $('.y_button').click(function(){
     	var id = $(this).attr('id');
     	
-    	////세션값 체크해서 function(selectData)로 세션값 불러오고
-    	//- 바꾸고 장바구니 저장하고 count 저장하기
     	if($('#'+id+'_tooltip').text()=='관심카드 담기'){
-
     		$.ajax({
 	    		type:'post',
 	    		data:{info_id:id},
@@ -93,18 +96,18 @@ $(document).ready(function(){
 						var ccount = data.ccount;
 						var choice = data.choice;
 						
-						alert('id:' + id); //test
-						alert(choice[0]+', '+choice[1]+', '+choice[2]+' --- '+ccount);
-						
 				    	$('#'+id+' span').removeClass('glyphicon-plus').addClass('glyphicon-minus');   	
 				    	$('#'+id+'_tooltip').text('관심카드 빼기');
 						$('#y_ccount').text(ccount);
+						$('#y_ccount2').text('('+ccount+')');
 						
-						
-						
-						$('#y_cimg1').text(choice[0]); //수정 필요
-						$('#y_cimg2').text(choice[1]);
-						$('#y_cimg3').text(choice[2]);
+						//비교함 비우고 데이터 새로 로딩
+						for(i=0;i<3;i++){
+							$('#y_cimg'+(i+1)).empty();
+							if(choice[i]!=null){
+								$('#y_cimg'+(i+1)).append('<a href="#" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+							}
+						}
 						$('#y_compare').show();
 						
 					}else if(data.result=='excess3'){
@@ -121,7 +124,6 @@ $(document).ready(function(){
 	    	});
 	    	
     	}else if($('#'+id+'_tooltip').text()=='관심카드 빼기'){
-        	
         	$.ajax({
 	    		type:'post',
 	    		data:{info_id:id},
@@ -134,25 +136,34 @@ $(document).ready(function(){
 						var ccount = data.ccount;
 						var choice = data.choice;
 						
-						
-						alert(id + '제거완료'); //test
-						alert(choice[0]+', '+choice[1]+', '+choice[2]+' --- '+ccount);
-						
 			    		$('#'+id+' span').removeClass('glyphicon-minus').addClass('glyphicon-plus');   	
 			        	$('#'+id+'_tooltip').text('관심카드 담기');
-						$('#y_ccount').text(ccount);
 						
-						$('#y_cimg1').text('').text(choice[0]); //수정 필요
-						$('#y_cimg2').text('').text(choice[1]);
-						$('#y_cimg3').text('').text(choice[2]);
+						if(ccount==0){
+							$('#y_ccount').text('');
+							$('#y_ccount2').text('');
+						}else{
+							$('#y_ccount').text(ccount);
+							$('#y_ccount2').text('('+ccount+')');
+						}
+						
+						//비교함 비우고 데이터 새로 로딩
+						for(i=0;i<3;i++){
+							$('#y_cimg'+(i+1)).empty();
+							if(choice[i]!=null){
+								$('#y_cimg'+(i+1)).append('<a href="#" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+							}
+						}
 						$('#y_compare').show();
 						
-						/*$('#y_compare').hide(2000);*/
+						setTimeout(function(){
+							$('#y_compare').slideUp(300);
+						},2000);
 						
 					}else if(data.result=='none'){
-						alert('더이상 카드를 뺄 수 없습니다.');
+						alert('더 이상 제거할 카드가 없습니다.');
 					}else if(data.result=='wrong'){
-						alert('오류:제거할 카드 없음');
+						alert('오류:제거 대상 카드 없음');
 					}else if(data.result=='failure'){
 						alert('카드 제거 오류');
 					}

@@ -4,26 +4,34 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery-ui.min.css"> --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/layout.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script> --%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>
 
 
 <div class="container y_div">
 	<div class="y_nav_menu y_center">
-		<div class="y_floatright" style="margin-right:30px;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount">${sessionScope.ccount}</span></div>
+		<div class="y_floatright" style="margin:10px 30px 0 0;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount"><c:if test="${sessionScope.ccount > 0}">${sessionScope.ccount}</c:if></span></div>
 		
 		
 		<!-- 카드비교함 시작-->
-		<div id="y_compare" style="display:none;"><!-- style="display:none;"-->
-			<p class="y_ctitle">관심카드</p>
-			<div class="y_cimg" id="y_cimg1">${sessionScope.choice[0]}</div>
-			<div class="y_cimg" id="y_cimg2">${sessionScope.choice[1]}</div>
-			<div class="y_cimg" id="y_cimg3">${sessionScope.choice[2]}</div>
+		<div id="y_compare" style="display:none;">
+			<p class="y_ctitle">관심카드 <span id="y_ccount2"><c:if test="${sessionScope.ccount > 0}">(${sessionScope.ccount})</c:if></span> </p>
+
+			<c:if test="${empty sessionScope.choice}">
+				<div class="y_cimg" id="y_cimg1"></div>
+				<div class="y_cimg" id="y_cimg2"></div>
+				<div class="y_cimg" id="y_cimg3"></div>
+			</c:if>
+			
+			<c:if test="${!empty sessionScope.choice}">
+			<c:forEach var="i" begin="0" end="2">
+				<div class="y_cimg" id="y_cimg${i+1}"> <c:if test="${sessionScope.choice[i]!=null}"><a href="#" data-id="${sessionScope.choice[i]}"><img src="${pageContext.request.contextPath}/resources/images/card/card_${sessionScope.choice[i]}.png"></a></c:if> </div>
+			</c:forEach>
+			</c:if>
+			
 			<input type="button" id="y_cbtn" value="비교하기">
 		</div>
 		<!-- 카드비교함 끝 -->
@@ -93,3 +101,4 @@
 	<a href="#" class="back_to_top"></a>  
 
 </div>
+

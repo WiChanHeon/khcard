@@ -2,7 +2,6 @@ package kr.spring.info.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -30,30 +29,6 @@ public class InfoChoiceAjaxController {
 		if(log.isDebugEnabled()){
 			log.debug("info_id - plus : " + info_id);
 		}
-		
-		//test
-		/*String test_id = (String)session.getAttribute("test_id");
-		
-		if(test_id==null){
-			test_id = "kkk";
-			session.setAttribute("test_id", test_id);
-		}
-		
-		Map<String,String> map = new HashMap<String,String>();
-		
-		try{
-			String sid = (String)session.getAttribute("test_id");
-			if(!sid.equals(info_id)){
-				session.setAttribute("test_id", info_id);
-				map.put("result", "success");
-			}else if(sid.equals(info_id)){
-				map.put("result", "exist");
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-			map.put("result", "failure");
-		}*/
-		
 		
 		
 		ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");
@@ -87,7 +62,6 @@ public class InfoChoiceAjaxController {
 			}else if(al.contains(info_id)){ //이미 존재
 				map.put("result", "exist");
 			}
-			
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
@@ -104,45 +78,6 @@ public class InfoChoiceAjaxController {
 		if(log.isDebugEnabled()){
 			log.debug("info_id - minus : " + info_id);
 		}
-		
-		
-		//비우기용 test
-		/*Map<String,String> map = new HashMap<String,String>();
-		
-		try{
-			
-			if(info_id=="invalid"){ //비우기 테스트 용
-				session.invalidate();
-				map.put("result", "none");
-			}else if(info_id=="removeCount"){ //비우기 테스트 용
-				session.removeAttribute("count");
-				map.put("result", "none");
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-			map.put("result", "failure");
-		}*/
-		
-		
-		//test
-		/*String test_id = (String)session.getAttribute("test_id");
-		
-		Map<String,String> map = new HashMap<String,String>();
-		
-		try{
-			
-			if(test_id==null){
-				map.put("result", "none");
-			}else if(test_id.equals(info_id)){
-				session.invalidate();
-				map.put("result", "success");
-			}else if(!test_id.equals(info_id)){
-				map.put("result", "wrong");
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-			map.put("result", "failure");
-		}*/
 		
 		
 		ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");		
@@ -168,7 +103,6 @@ public class InfoChoiceAjaxController {
 			}else if(!al.contains(info_id)){ //존재하지 않는 카드
 				map.put("result", "wrong");
 			}
-			
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");

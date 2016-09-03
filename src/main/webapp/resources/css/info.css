@@ -103,14 +103,8 @@ div.y_card img {
 	padding:10px 0;
 	
 }
-
-.y_card-img1{
-	
-}
 .y_card-img1:hover{
 	opacity:0.6;
-	
-	
 }
 
 .y_img_btndiv{
@@ -143,10 +137,22 @@ div.y_card img {
 	line-height: 1.5;
 	color:gray;
 }
+
 /*비교함*/
+#y_ccount{
+	position:absolute;
+	top:7px;
+	right:25px;
+	z-index:104;
+	background-color:rgb(265,74,74);
+	color:white;
+}
+span#y_ccount2{
+	font-size:9pt;
+}
 #y_compare{
-	top:50px;
-	right:50px;
+	top:60px;
+	right:30px;
 	position: absolute;
 	z-index:110;
 	width: 120px;
@@ -172,18 +178,19 @@ p.y_ctitle{
 	color:white;
 }
 .y_cimg{
-	margin-bottom:10px;
+	margin-bottom:15px;
 	width:80px;
-	height:56px;
+	height:51px;
 	background-color:black;
 	color:white; /*이미지 교체 시 삭제*/
 }
 #y_cbtn{
-	margin-top:5px;
+	margin-top:4px;
 	width:80px;
 	height:30px;
 	color:#4e4e4e;
 }
+
 
 
 /*추가-제거버튼툴팁*/
