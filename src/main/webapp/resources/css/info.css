@@ -250,37 +250,9 @@ p.y_ctitle{
 
 /*------------------------sList End------------------------*/
 
-/*툴팁깨짐...빡치면날리고기본쓰자*/
+/*부트스트랩 툴팁*/
 .tooltip {
-  position: absolute;
-  z-index: 1070;
-  display: inline-block;
   font-family: nexonl;
   font-size: 12px;
-  font-style: normal;
-  font-weight: normal;
-  /* line-height: 1.42857143;
-  text-align: left;
-  text-align: start;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
-  white-space: normal;
-  filter: alpha(opacity=0);
-  opacity: 0; */
-
-  /* line-break: auto; */
-}
-.tooltip-inner {
-  max-width: 300px;
-  padding: 3px 8px;
-  color: #fff;
-  text-align: center;
-  background-color: #000;
-  border-radius: 4px;
 }
 

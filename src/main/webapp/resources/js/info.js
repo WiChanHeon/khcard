@@ -55,12 +55,11 @@ $(document).ready(function(){
             jQuery('.back_to_top').fadeOut(duration);  
         }  
     });  
-      
     jQuery('.back_to_top').click(function(event) {  
         event.preventDefault();  
         jQuery('html, body').animate({scrollTop: 0}, duration);  
         return false;  
-    })  
+    })
 
     
     
@@ -68,15 +67,61 @@ $(document).ready(function(){
     
     /////////////////AJAX////////////////////
     
-    //비교함에서 카드 빼기
-    function minusCard(){
+    //비교함 카드 빼기 (on 사용)
+    $(document).on('click','.y_clink',function(e){
     	var id = $(this).attr('data-id');
     	
-		$('#'+id+' span').removeClass('glyphicon-minus').addClass('glyphicon-plus');   	
-    	$('#'+id+'_tooltip').text('관심카드 담기');
-    	
-    	return false;
-    }
+    	$.ajax({
+    		type:'post',
+    		data:{info_id:id},
+    		url:'choiceMinusAjax.do',
+    		dataType:'json',
+    		cache:false,
+			timeout:30000,
+			success:function(data){
+				if(data.result=='success'){
+					var ccount = data.ccount;
+					var choice = data.choice;
+					
+		    		$('#'+id+' span').removeClass('glyphicon-minus').addClass('glyphicon-plus');   	
+		        	$('#'+id+'_tooltip').text('관심카드 담기');
+					
+					if(ccount==0){
+						$('#y_ccount').text('');
+						$('#y_ccount2').text('');
+					}else{
+						$('#y_ccount').text(ccount);
+						$('#y_ccount2').text('('+ccount+')');
+					}
+					
+					//비교함 비우고 데이터 새로 로딩
+					for(i=0;i<3;i++){
+						$('#y_cimg'+(i+1)).empty();
+						if(choice[i]!=null){
+							$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+						}
+					}
+					$('#y_compare').show();
+					
+					setTimeout(function(){
+						$('#y_compare').slideUp(300);
+					},2000);
+					
+				}else if(data.result=='none'){
+					alert('더 이상 제거할 카드가 없습니다.');
+				}else if(data.result=='wrong'){
+					alert('오류:제거 대상 카드 없음');
+				}else if(data.result=='failure'){
+					alert('카드 제거 오류');
+				}
+			},
+			error:function(){
+				alert('카드 제거  중 네트워크 오류 발생');
+			}
+    	});	
+
+    	e.preventDefault();
+    });
     
     
     //추가-제거 버튼으로 비교함에 카드 보관하기
@@ -105,7 +150,7 @@ $(document).ready(function(){
 						for(i=0;i<3;i++){
 							$('#y_cimg'+(i+1)).empty();
 							if(choice[i]!=null){
-								$('#y_cimg'+(i+1)).append('<a href="#" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+								$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
 							}
 						}
 						$('#y_compare').show();
@@ -151,7 +196,7 @@ $(document).ready(function(){
 						for(i=0;i<3;i++){
 							$('#y_cimg'+(i+1)).empty();
 							if(choice[i]!=null){
-								$('#y_cimg'+(i+1)).append('<a href="#" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
+								$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
 							}
 						}
 						$('#y_compare').show();
