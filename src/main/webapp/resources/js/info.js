@@ -99,11 +99,13 @@ $(document).ready(function(){
 				    	$('#'+id+' span').removeClass('glyphicon-plus').addClass('glyphicon-minus');   	
 				    	$('#'+id+'_tooltip').text('관심카드 빼기');
 						$('#y_ccount').text(ccount);
-						$('#y_compare').show();
+						
+						
 						
 						$('#y_cimg1').text(choice[0]); //수정 필요
 						$('#y_cimg2').text(choice[1]);
 						$('#y_cimg3').text(choice[2]);
+						$('#y_compare').show();
 						
 					}else if(data.result=='excess3'){
 						alert('카드담기는 3개까지 가능합니다.');
@@ -135,21 +137,15 @@ $(document).ready(function(){
 						
 						alert(id + '제거완료'); //test
 						alert(choice[0]+', '+choice[1]+', '+choice[2]+' --- '+ccount);
-
-						/*if($('.y_cimg').val() == id){
-							var cNum = $(this).text();
-							alert(cNum);
-						}						
-						$('#'+cNum).text('');*/ //수정 필요
 						
 			    		$('#'+id+' span').removeClass('glyphicon-minus').addClass('glyphicon-plus');   	
 			        	$('#'+id+'_tooltip').text('관심카드 담기');
 						$('#y_ccount').text(ccount);
-						$('#y_compare').show();
 						
-						$('#y_cimg1').text(choice[0]); //수정 필요
-						$('#y_cimg2').text(choice[1]);
-						$('#y_cimg3').text(choice[2]);
+						$('#y_cimg1').text('').text(choice[0]); //수정 필요
+						$('#y_cimg2').text('').text(choice[1]);
+						$('#y_cimg3').text('').text(choice[2]);
+						$('#y_compare').show();
 						
 						/*$('#y_compare').hide(2000);*/
 						
