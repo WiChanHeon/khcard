@@ -15,15 +15,15 @@
 
 <div class="container y_div">
 	<div class="y_nav_menu y_center">
-		<div class="y_floatright" style="margin-right:30px;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount">${sessionScope.count}</span></div>
+		<div class="y_floatright" style="margin-right:30px;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount">${sessionScope.ccount}</span></div>
 		
 		
 		<!-- 카드비교함 시작-->
 		<div id="y_compare" style="display:none;"><!-- style="display:none;"-->
 			<p class="y_ctitle">관심카드</p>
-			<div class="y_cimg" id="y_cimg1"></div>
-			<div class="y_cimg" id="y_cimg2"></div>
-			<div class="y_cimg" id="y_cimg3"></div>
+			<div class="y_cimg" id="y_cimg1">${sessionScope.choice[0]}</div>
+			<div class="y_cimg" id="y_cimg2">${sessionScope.choice[1]}</div>
+			<div class="y_cimg" id="y_cimg3">${sessionScope.choice[2]}</div>
 			<input type="button" id="y_cbtn" value="비교하기">
 		</div>
 		<!-- 카드비교함 끝 -->
@@ -49,14 +49,22 @@
 		
 		<c:if test="${!empty list}">
 		<c:forEach var="slist" items="${list}">
-		<div class="col-sm-4 y_card">
-			
-			<div class="y_tooltip-top y_liketable" style="display:none;" id="${slist.info_id}_tooltip">관심카드 담기</div>
-			
+		<div class="col-sm-4 y_card">			
 			<div>
-				<div class="y_name">
-				<a href="#">${slist.info_name} > </a></div>
-					<span class="y_floatright"> <button type="button" class="btn btn-default y_button" id="${slist.info_id}"><span class="glyphicon glyphicon-plus"></span></button> </span>
+				<div class="y_name"><a href="#">${slist.info_name} > </a></div>
+				<c:if test="${empty sessionScope.choice || (sessionScope.choice[0] != slist.info_id && sessionScope.choice[1] != slist.info_id  && sessionScope.choice[2] != slist.info_id)}">
+					<div class="y_tooltip-top y_liketable" style="display:none;" id="${slist.info_id}_tooltip">관심카드 담기</div>
+					<span class="y_floatright">
+						<button type="button" class="btn btn-default y_button" id="${slist.info_id}"><span class="glyphicon glyphicon-plus"></span></button> 
+					</span>				
+				</c:if>
+
+				<c:if test="${!empty sessionScope.choice && (sessionScope.choice[0] == slist.info_id || sessionScope.choice[1] == slist.info_id  || sessionScope.choice[2] == slist.info_id) }">
+					<div class="y_tooltip-top y_liketable" style="display:none;" id="${slist.info_id}_tooltip">관심카드 빼기</div>
+					<span class="y_floatright">
+						<button type="button" class="btn btn-default y_button" id="${slist.info_id}"><span class="glyphicon glyphicon-minus"></span></button> 
+					</span>
+				</c:if>
 			</div>
 			<div class="y_clear">
 				<p><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}" class="y_card-img1" id="${slist.info_id}_img"></p> 

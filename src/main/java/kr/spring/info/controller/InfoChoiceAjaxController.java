@@ -25,14 +25,14 @@ public class InfoChoiceAjaxController {
 	
 	@RequestMapping("/info/choicePlusAjax.do")
 	@ResponseBody
-	public Map<String,String> processPlus(@RequestParam("info_id")String info_id, HttpSession session){
+	public Map<String,Object> processPlus(@RequestParam("info_id")String info_id, HttpSession session){
 		
 		if(log.isDebugEnabled()){
 			log.debug("info_id - plus : " + info_id);
 		}
 		
 		//test
-		String test_id = (String)session.getAttribute("test_id");
+		/*String test_id = (String)session.getAttribute("test_id");
 		
 		if(test_id==null){
 			test_id = "kkk";
@@ -52,21 +52,22 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}
+		}*/
 		
 		
 		
-		/*ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");
+		ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");
 		
 		if(al==null){
 			al = new ArrayList<String>();
 			session.setAttribute("choice", al);
+			session.setAttribute("ccount", 0);
 		}
 		
 		int count = al.size();
 		System.out.println(count);
 		
-		Map<String,String> map = new HashMap<String,String>();
+		Map<String,Object> map = new HashMap<String,Object>();
 		
 		try{
 			
@@ -75,11 +76,11 @@ public class InfoChoiceAjaxController {
 				count++;
 				
 				session.setAttribute("choice", al);
-				session.setAttribute("count", count);
+				session.setAttribute("ccount", count);
 				
+				map.put("choice", al);
+				map.put("ccount", count);
 				map.put("result", "success");
-				
-				
 				
 			}else if(count >= 3){ //담긴 개수 3 초과
 				map.put("result", "excess3");
@@ -90,7 +91,7 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}*/
+		}
 		
 		return map;
 	}
@@ -98,7 +99,7 @@ public class InfoChoiceAjaxController {
 	
 	@RequestMapping("/info/choiceMinusAjax.do")
 	@ResponseBody
-	public Map<String,String> processMinus(@RequestParam("info_id")String info_id, HttpSession session){
+	public Map<String,Object> processMinus(@RequestParam("info_id")String info_id, HttpSession session){
 		
 		if(log.isDebugEnabled()){
 			log.debug("info_id - minus : " + info_id);
@@ -124,7 +125,7 @@ public class InfoChoiceAjaxController {
 		
 		
 		//test
-		String test_id = (String)session.getAttribute("test_id");
+		/*String test_id = (String)session.getAttribute("test_id");
 		
 		Map<String,String> map = new HashMap<String,String>();
 		
@@ -141,13 +142,13 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}
+		}*/
 		
 		
-		/*ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");		
+		ArrayList<String> al = (ArrayList<String>) session.getAttribute("choice");		
 		int count = al.size();
 		
-		Map<String,String> map = new HashMap<String,String>();
+		Map<String,Object> map = new HashMap<String,Object>();
 		
 		try{
 			
@@ -156,11 +157,11 @@ public class InfoChoiceAjaxController {
 				count--;
 				
 				session.setAttribute("choice", al);
-				session.setAttribute("count", count);
+				session.setAttribute("ccount", count);
 				
+				map.put("choice", al);
+				map.put("ccount", count);
 				map.put("result", "success");
-				
-				System.out.println(al.get(1) + "," + al.get(2) + ", " + al.get(3));
 				
 			}else if(count < 1){ //카드 없음
 				map.put("result", "none");
@@ -171,7 +172,7 @@ public class InfoChoiceAjaxController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");
-		}*/
+		}
 		
 		return map;
 	}
