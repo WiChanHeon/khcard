@@ -268,7 +268,7 @@ table#y_ctable{
 	border-top:3px solid gray;
 }
 table#y_ctable tr{
-	border-bottom:1px solid #e1e1e1;
+	border-bottom:1px solid #efefef;
 }
 table#y_ctable tr th{
 	padding:10px 20px;
@@ -277,10 +277,10 @@ table#y_ctable tr th{
 	max-width:100px;
 }
 table#y_ctable tr td{
+	color:#898989;
 	padding:10px 20px;
 	vertical-align:top;
-	border-left:1px solid #e1e1e1;
-	width:30%;
+	border-left:1px solid #efefef;
 }
 .y_cname{
 	font-size:12pt;
