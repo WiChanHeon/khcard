@@ -42,7 +42,9 @@
 		<link href="${pageContext.request.contextPath}/resources/user/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/user/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/user/plugins/hover/hover-min.css" rel="stylesheet">
-		
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 		<!-- the project core CSS file -->
 		<link href="${pageContext.request.contextPath}/resources/user/css/style.css" rel="stylesheet" >
 
@@ -52,6 +54,11 @@
 		<!-- Custom css --> 
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/css/donan.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/donan.js"></script>
 	</head>
 
 	<!-- body classes:  -->

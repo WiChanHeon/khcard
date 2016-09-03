@@ -9,6 +9,11 @@ div.bun{
     margin: auto;
     text-align: right;
 }/*분실 신고 버튼*/
+div.rok{
+	width: 70%;
+    margin: auto;
+    text-align: right;
+}/*신고 등록 버튼*/
 div.check_zone{
 	width: 70%;
     margin: auto;
@@ -35,6 +40,8 @@ td, th {
 th:nth-child(even),th:nth-child(odd) { 
     background-color: #dddddd;
 }/*테이블 최상단*/
-#jub{
-	text-align: auto;
+div.jub{
+	text-align: right;
+	width: 70%;
+    margin: auto;
 }

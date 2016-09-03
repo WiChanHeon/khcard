@@ -43,7 +43,7 @@
 												<div class="header-left clearfix">
 
 													<!-- logo -->
-													<div id="logo" class="logo">
+													<div id="logo" class="logo">	
 														<a href="index.html"><img id="logo_img" src="${pageContext.request.contextPath}/resources/user/images/logo_light_blue.png" alt="The Project"></a>
 													</div>
 
@@ -64,9 +64,9 @@
 													<li class="dropdown ">
 														<a class="dropdown-toggle" data-toggle="dropdown" href="index.html">Home</a>
 														<ul class="dropdown-menu">
-															<li ><a href="index.html">Home Default</a></li>
-															<li ><a href="index-corporate-1.html">Corporate 1</a></li>
-															<li ><a href="index-corporate-2.html">Corporate 2</a></li>
+															<li ><a href="${pageContext.request.contextPath}/main/main.do">메인</a></li>
+															<li ><a href="${pageContext.request.contextPath}/donan/list.do">분실/도난 신고</a></li>
+															<li ><a href="${pageContext.request.contextPath}/gage/list.do">가계부</a></li>
 															<li ><a href="index-corporate-3.html">Corporate 3</a></li>
 															<li class="active"><a href="index-shop.html">Commerce 1</a></li>
 															<li ><a href="index-shop-2.html">Commerce 2</a></li>

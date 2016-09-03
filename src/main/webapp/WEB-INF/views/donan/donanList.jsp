@@ -3,29 +3,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-<script>
-$(document).ready(function() {
-    $("#btn1").click(function(){
-    	
-    	var flag = $('#c').prop('checked');
-    	
-    	  if(flag) {
-    	   	$(".p").show();
-    	  }else{
-    	   	alert('카드가 선택되지 않았습니다.분실하신 카드를 선택하여 주십시오.');
-    	  }
-    });
-   
-});
-</script>
-
    <h2>
       <img
          src="${pageContext.request.contextPath}/resources/images/h2_lost01_1.gif"
@@ -72,28 +49,34 @@ $(document).ready(function() {
 		<div class="bun">
 		<input type="button" id="btn1" value="분실 신고" class="btn btn-primary">
 		</div>
-	
-	<div id="jub" style="display:none;">
-	<form:form action="write.do" commandName="command">
+
+	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
+	<div class="jub" style="display: none;">
+		<h4>분실신고 접수</h4>
+
+		<form>
+			<div class="form-group">
+				<label for="loss_reg">분실일</label> 
+				<input type="date" name="loss_reg">
+			</div>
+			<div class="form-group">
+				<em style="display: block; margin-bottom: 3px; font-size: smaller;">ex)삼성동에서 지갑분실</em> <label
+					for="loss_memo">분실 장소</label> 
+					<input type="text" name="loss_memo">
+			</div>
+			<div class="form-group">
+				<label for="loss_phone">연락처</label> 
+				<input type="text" name="loss_phone">
+			</div>
+			<div class="rok">
+				<input type="submit" id="btn2" value="신고" class="btn btn-primary">
+			</div>
+		</form>
 		
-			<h4>분실신고 접수</h4>
-		<ul>
-			<li><label for="loss_reg">분실일</label> 
-				<input type="date" name="loss_reg"></li>
-			<li>
-			<em style="display:block; margin-bottom:3px">ex)삼성동에서 지갑분실</em>
-				<label for="loss_memo">분실 장소</label>
-				<input type="text" name="loss_memo"></li>
-			
-			<li><label for="loss_phone">연락처</label>
-				<input type="text" name="loss_phone"></li>
-			
-				<li><input type="submit" value="신고" class="btn btn-primary"></li>
-		
-		</ul>
-	</form:form>
 	</div>
-<div class="check_zone" style="margin-bottom: 20px">
+</form:form>
+
+	<div class="check_zone">
 	<p class="eyong">이용전 반드시 확인하세요</p>
 	<div class="conts" style="display: block;">
 		<ul class="listDot">
