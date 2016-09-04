@@ -52,27 +52,30 @@
 
 	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
 	<div class="jub" style="display: none;">
-		<h4>분실신고 접수</h4>
+		
 
 		<form>
+			<h4>분실신고 접수</h4> 
 			<div class="form-group">
+				<font color="red">*</font>
 				<label for="loss_reg">분실일</label> 
 				<input type="date" name="loss_reg">
 			</div>
 			<div class="form-group">
-				<em style="display: block; margin-bottom: 3px; font-size: smaller;">ex)삼성동에서 지갑분실</em> <label
-					for="loss_memo">분실 장소</label> 
+				<em style="display: block; margin-bottom: 3px; font-size: smaller;">ex)삼성동에서 지갑분실</em>
+				 <font color="red">*</font>
+				 <label for="loss_memo">분실 장소</label> 
 					<input type="text" name="loss_memo">
 			</div>
+			
 			<div class="form-group">
-				<label for="loss_phone">연락처</label> 
-				<input type="text" name="loss_phone">
+				<font color="red">*</font>핸드폰번호
+				<input type="text" name="loss_phone" maxLength="12"/>
 			</div>
+		</form>
 			<div class="rok">
 				<input type="submit" id="btn2" value="신고" class="btn btn-primary">
 			</div>
-		</form>
-		
 	</div>
 </form:form>
 

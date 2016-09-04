@@ -3,12 +3,14 @@ $(document).ready(function() {
     	
     	var flag = $('#c').prop('checked');
     	
+    	
     	  if(flag) {
     	   	$(".jub").show();
     	  }else{
-    	   	alert('카드가 선택되지 않았습니다.분실하신 카드를 선택하여 주십시오.');
+    		alert('카드가 선택되지 않았습니다.분실하신 카드를 선택하여 주십시오.');
     	  }
     });
+    
     $("#btn2").click(function(){
     	var x = document.forms["myForm"]["loss_reg"].value;
     	var y = document.forms["myForm"]["loss_memo"].value;
