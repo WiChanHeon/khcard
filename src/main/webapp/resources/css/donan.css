@@ -1,7 +1,7 @@
 p.eyong{
 	border-style: groove;
 	background-color: #dddddd;
-	width: 70%;
+	width: 100%;
     text-align: auto;
 }/*이용 내역*/
 div.bun{
@@ -11,8 +11,8 @@ div.bun{
 }/*분실 신고 버튼*/
 div.rok{
 	width: 70%;
-    margin-left: 230px; 
-    text-align: rkight;  
+    margin-left: 140px; 
+    text-align: right;  
 }/*신고 등록 버튼*/
 div.check_zone{
 	width: 70%;
@@ -41,7 +41,11 @@ th:nth-child(even),th:nth-child(odd) {
     background-color: #dddddd;
 }/*테이블 최상단*/
 div.jub{
-	text-align: right;
+	margin-left: 280px; 
+}
+div.jub1{
+	margin: auto;
+}
+input.day{
 	width: 70%;
-    margin: auto;
 }

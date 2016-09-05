@@ -25,7 +25,7 @@ Logger log = Logger.getLogger(this.getClass());
 
 	@Override
 	public void insert(GageCommand gagewrite) {
-		gageMapper.insert(gagewrite);
+		
 	}
 
 }

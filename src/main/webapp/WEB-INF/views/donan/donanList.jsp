@@ -51,38 +51,41 @@
 		</div>
 
 	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
+	<div class="jub1" style="display: none;">
+	<h4>분실신고 접수</h4>
+	</div>
 	<div class="jub" style="display: none;">
-		
-
 		<form>
-			<h4>분실신고 접수</h4> 
-			<div class="form-group">
+			<div class="form-group1">
 				<font color="red">*</font>
-				<label for="loss_reg">분실일</label> 
+				분실일<br> 
 				<input type="date" name="loss_reg">
 			</div>
-			<div class="form-group">
+			<div class="form-group2">
 				<em style="display: block; margin-bottom: 3px; font-size: smaller;">ex)삼성동에서 지갑분실</em>
 				 <font color="red">*</font>
-				 <label for="loss_memo">분실 장소</label> 
-					<input type="text" name="loss_memo">
+				 분실장소<br> 
+				<input type="text" name="loss_memo">
 			</div>
 			
-			<div class="form-group">
-				<font color="red">*</font>핸드폰번호
-				<input type="text" name="loss_phone" maxLength="12"/>
+			<div class="form-group3">
+				<font color="red">*</font>
+				핸드폰번호<br> 
+				<input type="text" name="loss_phone" maxLength="4">-
+				<input type="text" name="loss_phone" maxLength="4">-
+				<input type="text" name="loss_phone" maxLength="4">
 			</div>
 		</form>
 			<div class="rok">
 				<input type="submit" id="btn2" value="신고" class="btn btn-primary">
 			</div>
 	</div>
-</form:form>
+		</form:form>
 
-	<div class="check_zone">
+	<div class="check_zone" > 
 	<p class="eyong">이용전 반드시 확인하세요</p>
-	<div class="conts" style="display: block;">
-		<ul class="listDot">
+	<div class="nae" style="display :none;">
+		<ul class="listDot"> 
 			<li>분실신고를 하시기전 먼저 카드 승인내역을 확인하시기 바랍니다.&nbsp;<a
 				href="/hpp/HPPUSEN/useDmsA01.shc" class="btn_renewalType type4"><span
 					class="inner">국내이용내역</span></a>&nbsp;<a

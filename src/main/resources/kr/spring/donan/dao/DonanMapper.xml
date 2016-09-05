@@ -7,7 +7,7 @@
 	SELECT
 	ap_name,	
 	card_num,
-	info_id,
+	ap_job,
 	ap_bank
 	FROM
 	f_apply

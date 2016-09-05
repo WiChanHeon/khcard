@@ -5,7 +5,7 @@ $(document).ready(function() {
     	
     	
     	  if(flag) {
-    	   	$(".jub").show();
+    	   	$(".jub").toggle();
     	  }else{
     		alert('카드가 선택되지 않았습니다.분실하신 카드를 선택하여 주십시오.');
     	  }
@@ -30,5 +30,10 @@ $(document).ready(function() {
             return false;
         }
     });
+    	$(".eyong").click(function(){
+	
+    		$(".nae").toggle();
+	    
+    	});
    
 });
