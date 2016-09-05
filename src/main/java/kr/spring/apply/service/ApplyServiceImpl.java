@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.apply.dao.ApplyMapper;
 import kr.spring.apply.domain.ApplyCommand;
+import kr.spring.apply.domain.ApplyEvalCommand;
 
 @Service("applyService")
 public class ApplyServiceImpl implements ApplyService{
@@ -20,8 +21,11 @@ public class ApplyServiceImpl implements ApplyService{
 
 	@Override
 	public ApplyCommand selectApply(String ap_num) {
-		// TODO Auto-generated method stub
-		return null;
+		return applyMapper.selectApply(ap_num);
+	}
+	@Override
+	public ApplyEvalCommand selectApplyEval(String ap_name){
+		return applyMapper.selectApplyEval(ap_name);
 	}
 
 	@Override

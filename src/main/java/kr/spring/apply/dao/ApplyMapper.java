@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import kr.spring.apply.domain.ApplyCommand;
+import kr.spring.apply.domain.ApplyEvalCommand;
 
 @Repository
 public interface ApplyMapper {
@@ -15,9 +17,12 @@ public interface ApplyMapper {
 	@Insert("INSERT INTO f_apply (ap_num,ap_rrnfront,ap_rrnrear,ap_name,ap_ename,ap_cell,ap_email,ap_postnum,ap_address1,ap_address2,ap_paydate,ap_bank,ap_banknum,ap_reg,ap_job,ap_job2) "
 			+ "VALUES (ap_seq.nextval,#{ap_rrnfront},#{ap_rrnrear},#{ap_name},#{ap_ename},#{ap_cell},#{ap_email},#{ap_postnum},#{ap_address1},#{ap_address2},#{ap_paydate},#{ap_bank},#{ap_banknum},sysdate,#{ap_job},#{ap_job2})")
 	public void applyinsert(ApplyCommand apply);
-	public ApplyCommand selectApply(String ap_num);
+	@Select("SELECT * FROM f_apply WHERE ap_name = #{ap_name}")
+	public ApplyCommand selectApply(String ap_name);
 	public void applyupdate(ApplyCommand apply);
 	public void applydelete(String ap_num);
+	@Select("SELECT ap_name,ap_rrnfront,ap_rrnrear FROM f_apply WHERE ap_name=#{ap_name}")
+	public ApplyEvalCommand selectApplyEval(String ap_name);
 	
 }
 /* 고유번호 		ap_num;		

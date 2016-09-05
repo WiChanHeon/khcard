@@ -42,6 +42,16 @@ public class ApplyCommand {
 	private String ap_id;
 	private String card_num;
 	
+	//주민뒷번호 일치 여부 체크
+		public boolean isCheckRrn(String userRrnrear,String userRrnfront){
+			
+			if(ap_rrnfront.equals(userRrnfront)&& ap_rrnrear.equals(userRrnrear)){
+				return true;
+			}
+			
+			return false;
+		} 
+	
 	public int getAp_num() {
 		return ap_num;
 	}

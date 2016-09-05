@@ -25,17 +25,34 @@ ul li input[type="text"],input[type="email"],input[type="password"],select{
 	padding: 7px;
 	
 }
-.buttonstyle{
-   font-size:17px;
-   color:black;
-   margin-left:5px;
-   -moz-border-radius: 10px;
-   -webkit-border-radius: 10px;
-   text-align:center;
-   
-   background: #d1d1d1;
-   background: -webkit-gradient(linear, left top, left bottom, from(#d1d1d1), to(#f1f1f1)); 
-   background: -moz-linear-gradient(top,  #d1d1d1,  #f1f1f1);
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1d1d1', endColorstr='#f1f1f1', GradientType=0);
-   border-top: 1px solid #bcbcbc;
+.error-color{
+	color:red;
 }
+.applybutton{
+    background: #1e75d6;
+    color: #fff;
+    vertical-align: middle;
+}
+.align-center{
+	text-align: center;
+}
+.applyBtn span{
+	display: block;
+    height: 18px;
+    padding: 0 8px 0 0;
+    line-height: 18px;
+}
+.applyBtn, .applyBtn a{
+	display: inline-block;
+    position: relative;
+    padding: 0 0 0 8px;
+    border: 1px solid #e5e5e5;
+    font-family: 'nexonL';
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    background: #fff;
+}
+
+
+
