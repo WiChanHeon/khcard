@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
    <h2>
       <img
          src="${pageContext.request.contextPath}/resources/images/h2_lost01_1.gif"
@@ -53,6 +54,7 @@
 	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
 	<div class="jub1" style="display: none;">
 	<h4>분실신고 접수</h4>
+	<img src="../resources/images/line.png" style="margin: auto; width: 70%;">
 	</div>
 	<div class="jub" style="display: none;">
 		<form>

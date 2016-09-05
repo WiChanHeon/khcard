@@ -8,6 +8,16 @@
     <definition name="gageList" extends="main">
     	<put-attribute name="title" value="가계부"/>
     	<put-attribute name="body" value="/WEB-INF/views/gage/gage.jsp"/>
+    	<put-list-attribute name="cssList">
+        	<add-attribute value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css"/>
+        	<add-attribute value="../resources/css/pqgrid.min.css"/>
+        	<add-attribute value="../resources/css/pqgrid.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+            <add-attribute value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"/>
+        	<add-attribute value="../resources/js/pqgrid.min.js"/>
+        	<add-attribute value="../resources/js/gage_grid.js"/>
+        </put-list-attribute>
     </definition>
 
 </tiles-definitions>

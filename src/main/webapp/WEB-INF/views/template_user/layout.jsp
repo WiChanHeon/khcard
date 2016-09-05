@@ -2,6 +2,9 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%-- stylesheet와 javascript 링크 ignore="true"로 설정하면 null일 때 실행되지 않음--%>
+<tiles:importAttribute name="cssList" ignore="true"/>
+<tiles:importAttribute name="jsList" ignore="true"/>
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -25,7 +28,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-
+		
 		<!-- Bootstrap core CSS -->
 		<link href="${pageContext.request.contextPath}/resources/user/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -43,22 +46,22 @@
 		<link href="${pageContext.request.contextPath}/resources/user/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/user/plugins/hover/hover-min.css" rel="stylesheet">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+		
+		
 		<!-- the project core CSS file -->
 		<link href="${pageContext.request.contextPath}/resources/user/css/style.css" rel="stylesheet" >
 
 		<!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
 		<link href="${pageContext.request.contextPath}/resources/user/css/skins/light_blue.css" rel="stylesheet">
-
-		<!-- Custom css --> 
+		
+		<!-- Custom Scripts -->
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/css/donan.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/js/donan.js"></script>
+		
+		<!--jQuery dependencies-->
+		<c:forEach var="cssName" items="${cssList}">
+			<link rel="stylesheet" href="<c:out value='${cssName}' />"/>
+		</c:forEach>
 	</head>
 
 	<!-- body classes:  -->
@@ -91,6 +94,7 @@
 		<!-- ================================================== -->
 		<!-- Jquery and Bootstap core js files -->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Modernizr javascript -->
@@ -133,5 +137,14 @@
 
 		<!-- Custom Scripts -->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/custom.js"></script>
+		
+		<!-- Custom Scripts1 -->
+		<script src="${pageContext.request.contextPath}/resources/js/donan.js"></script>
+		
+		
+		
+		<c:forEach var="jsName" items="${jsList}">
+			<script src="<c:out value='${jsName}' />"></script>
+		</c:forEach>
 	</body>
 </html>
