@@ -37,37 +37,12 @@ $(document).ready(function(){
 		var imgH =  $('#'+id).height();
 		
 		$('#'+id+'_btnview').css('top','25px').css('left','40px').css('width',imgW).css('height',imgH+30);
-		$('#'+id+'_btnview span.y_img_span').css('top','17px').css('left','0px').css('width',imgW).css('height',imgH);
+		$('#'+id+'_btnview span.y_img_span').css('top','18px').css('left','0px').css('width',imgW).css('height',imgH);
 		$('#'+id+'_btnview').show();
 	});
 	$('.y_img_btndiv').mouseout(function(){
 		$(this).hide();
 	});
-	
-	
-	
-	
-	/*$('.y_card-img1').hover(function(){
-		//$(this).unbind('mouseenter mouseout');
-		var id = $(this).attr('id');
-		var imgW = $('#'+id).width(); 
-		var imgH =  $('#'+id).height();
-		
-		//$('#'+id+'_span').css('top','40px').css('left','40px').css('width',imgW-10).css('height',imgH-10);
-		//$('#'+id+'_span').css('z-index','2');
-		//$('#'+id+'_span').show();
-		
-		
-		$('#'+id+'_btnview').css('top','46px').css('left','40px').css('width',imgW).css('height',imgH);
-		$('#'+id+'_btnview').show();
-		
-		
-	},function(){
-		var id = $(this).attr('id');
-		//$('#'+id+'_btnview').hide();
-		//$('#'+id+'_span').hide();
-	});*/
-	
 	
 	//관심카드가 2개 이상일 때만 비교 가능 체크
 	$('#y_cbtn').click(function(){
@@ -77,37 +52,30 @@ $(document).ready(function(){
 		}
 	});
 	
-	//비교페이지에서 카드 개수에 따라 width 길이 지정
+	//비교페이지에서 카드 개수에 따라 td width 지정
 	if($('#y_ccount2').val() == 2){
 		$('#y_ctable tr td').css('width','45%');
 	}else if($('#y_ccount2').val() == 3){
 		$('#y_ctable tr td').css('width','30%');
 	}
 	
-	
-	
-	
+	//정보 모두 비어있을 경우 tr 지우기
+	$('#y_ctable tr').each(function(index,item){
+		var td1 = $('td:eq(0)',item).text();
+		var td2 = $('td:eq(1)',item).text();
+		var td3 = $('td:eq(2)',item).text();
+		
+		if(td1=='' && td2 =='' && td3 ==''){
+			$(this).empty();
+		}
+	});
 	
 	//비교불가 카드들 버튼 막기 (비교 불가)
 	
 	
 	
 	
-	//위로 이동 버튼 기능
- 	var offset = 220;  
-    var duration = 500;  
-    jQuery(window).scroll(function() {  
-        if (jQuery(this).scrollTop() > offset) {  
-            jQuery('.back_to_top').fadeIn(duration);  
-        } else {  
-            jQuery('.back_to_top').fadeOut(duration);  
-        }  
-    });  
-    jQuery('.back_to_top').click(function(event) {  
-        event.preventDefault();  
-        jQuery('html, body').animate({scrollTop: 0}, duration);  
-        return false;  
-    })
+
 
     
     

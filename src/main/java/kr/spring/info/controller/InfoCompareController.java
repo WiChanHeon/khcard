@@ -34,15 +34,11 @@ public class InfoCompareController {
 		map.put("id2", id2);
 		map.put("id3", id3);
 		
-		List<InfoCommand> list = infoService.getInfo(map);
-		
-		/*int count = (Integer)session.getAttribute("ccount");*/
-		
+		List<InfoCommand> list = infoService.getInfo(map);		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("compareCard");
 		mav.addObject("compare", list);
-		/*mav.addObject("ccount2", count);*/
 		
 		return mav;
 	}
