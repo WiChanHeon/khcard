@@ -16,8 +16,9 @@
 	</div>
 	
 	<div class="y_compare_content">	
+		<input type="hidden" id="y_ccount2" value="${sessionScope.ccount}">
 		
-		<!-- 요소2개/3개일 때 td(ccount 체크해서 td에 width style 추가로 주기) & purple 줄꺠짐현상 + voucher등 표시 -->
+		<!-- voucher 표시 -->
 		<table id="y_ctable">
 			<tr>
 				<th>카드상품</th>
@@ -32,12 +33,12 @@
 				</c:forEach>
 			</tr>
 			
-			<c:if test="${!empty cp.cp_voucher}">
+			<%-- <c:if test="${!empty cp.cp_voucher}">
 			<tr>
 				<th>바우처</th>
 				<td>${cp.cp_voucher}</td>
 			</tr>
-			</c:if>
+			</c:if> --%>
 			
 			<tr>
 				<th>주요혜택</th>

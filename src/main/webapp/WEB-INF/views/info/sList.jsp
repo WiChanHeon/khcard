@@ -82,7 +82,11 @@
 			</div>
 			<div class="y_clear">
 				<p><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}" class="y_card-img1" id="${slist.info_id}_img"></p> 
-				<div class="y_img_btndiv y_liketable" id="${slist.info_id}_img_btnview" style="display:none;"><input type="button" class="btn btn-primary y_img-btn" value="카드선택" onclick="slist.do#"></div> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${slist.info_id}' -->
+				<div class="y_img_btndiv" id="${slist.info_id}_img_btnview" style="display:none;">
+					<span class="y_img_span">
+					<a class="btn btn-primary y_img-btn" onclick="alert('~~')">카드선택</a> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${slist.info_id}' -->
+					</span>
+				</div>				
 			</div>
 			<div class="y_nexonB">
 				${slist.info_stitle}

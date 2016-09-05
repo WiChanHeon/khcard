@@ -31,21 +31,63 @@ $(document).ready(function(){
 	});
 	
 	//카드선택버튼 슬라이드업/다운
-	$('.y_card-img1').hover(function(){
-		/*$(this).unbind('mouseenter mouseout');*/
+	$('.y_card-img1').mouseover(function(){
 		var id = $(this).attr('id');
-	    var imgW = $('#'+id).width(); 
-	    var imgH =  $('#'+id).height();
-		$('#'+id+'_btnview').css('top','46px').css('left','40px').css('width',imgW).css('height',imgH);
-		$('#'+id+'_btnview').show();
+		var imgW = $('#'+id).width(); 
+		var imgH =  $('#'+id).height();
 		
-	},function(){
-		var id = $(this).attr('id');
-		$('#'+id+'_btnview').hide();
+		$('#'+id+'_btnview').css('top','25px').css('left','40px').css('width',imgW).css('height',imgH+30);
+		$('#'+id+'_btnview span.y_img_span').css('top','17px').css('left','0px').css('width',imgW).css('height',imgH);
+		$('#'+id+'_btnview').show();
+	});
+	$('.y_img_btndiv').mouseout(function(){
+		$(this).hide();
 	});
 	
 	
-	//submit할 때 개수 체크할 것! 3개 이상만 submit
+	
+	
+	/*$('.y_card-img1').hover(function(){
+		//$(this).unbind('mouseenter mouseout');
+		var id = $(this).attr('id');
+		var imgW = $('#'+id).width(); 
+		var imgH =  $('#'+id).height();
+		
+		//$('#'+id+'_span').css('top','40px').css('left','40px').css('width',imgW-10).css('height',imgH-10);
+		//$('#'+id+'_span').css('z-index','2');
+		//$('#'+id+'_span').show();
+		
+		
+		$('#'+id+'_btnview').css('top','46px').css('left','40px').css('width',imgW).css('height',imgH);
+		$('#'+id+'_btnview').show();
+		
+		
+	},function(){
+		var id = $(this).attr('id');
+		//$('#'+id+'_btnview').hide();
+		//$('#'+id+'_span').hide();
+	});*/
+	
+	
+	//관심카드가 2개 이상일 때만 비교 가능 체크
+	$('#y_cbtn').click(function(){
+		if($('#y_ccount').text() < 2){
+			alert('관심카드가 2개 이상일 때만 카드비교가 가능합니다.');
+			return false;
+		}
+	});
+	
+	//비교페이지에서 카드 개수에 따라 width 길이 지정
+	if($('#y_ccount2').val() == 2){
+		$('#y_ctable tr td').css('width','45%');
+	}else if($('#y_ccount2').val() == 3){
+		$('#y_ctable tr td').css('width','30%');
+	}
+	
+	
+	
+	
+	
 	//비교불가 카드들 버튼 막기 (비교 불가)
 	
 	
@@ -72,21 +114,6 @@ $(document).ready(function(){
     
     
     /////////////////AJAX////////////////////
-    
-    //안씀...
-    /*function initCForm(){
-    	var choice = data.choice;
-    	
-    	for(var i=0;i<3;i++){
-			$('#y_cimg'+(i+1)).empty();
-			$('#y_compareForm input[name=card'+(i+1)+']').val('');
-			if(choice[i]!=null){
-				$('#y_cimg'+(i+1)).append('<a href="#" class="y_clink" data-id="'+choice[i]+'"><img src="../resources/images/card/card_'+choice[i]+'.png"></a>');
-				$('#y_compareForm input[name=card'+(i+1)+']').val(choice[i]);
-			}
-		}
-		$('#y_compare').show();
-    }*/
     
     //비교함 카드 빼기 (on 사용)
     $(document).on('click','.y_clink',function(e){

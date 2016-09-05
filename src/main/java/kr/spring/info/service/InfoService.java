@@ -11,5 +11,5 @@ import kr.spring.info.domain.InfoCommand;
 public interface InfoService {
 	public List<InfoCommand> getAllList();
 	public List<InfoCommand> getSList(Map<String,Object> map);
-	public List<InfoCommand> getInfo(Map<String,Object> map);
+	public List<InfoCommand> getInfo(Map<String,String> map);
 }

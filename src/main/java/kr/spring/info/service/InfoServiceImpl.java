@@ -27,7 +27,7 @@ public class InfoServiceImpl implements InfoService{
 	}
 	
 	@Override
-	public List<InfoCommand> getInfo(Map<String, Object> map) {
+	public List<InfoCommand> getInfo(Map<String, String> map) {
 		return infoMapper.getInfo(map);
 	}
 
