@@ -15,4 +15,5 @@ public interface MemberService {
 	public void update(MemberCommand member);
 	public void delete(String id);
 	public CardsCommand cardsMember(String card_num);
+	public void updateCards(String mem_id1,String card_num);
 }

@@ -18,7 +18,7 @@ import kr.spring.member.domain.MemberCommand;
 import kr.spring.member.service.MemberService;
 
 @Controller
-public class CardCheckController {
+public class PlusCard {
 private Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource
@@ -28,16 +28,19 @@ private Logger log = Logger.getLogger(this.getClass());
 	public CardsCommand initCommand(){
 		return new CardsCommand();
 	}
-	
-	@RequestMapping(value="/member/cards.do",method=RequestMethod.GET)
-	public String form(){
-		return "/member/cardsCheck";
+	@RequestMapping(value="/member/plusCard.do",method=RequestMethod.GET)
+	public String form() {
+		
+		return "/member/plusCard";
 	}
 	
-	@RequestMapping(value="/member/cards.do",method=RequestMethod.POST)
+	
+	@RequestMapping(value="/member/plusCard.do",method=RequestMethod.POST)
 	public String submit(@ModelAttribute("hcommand") 
 	                     @Valid CardsCommand cardsCommand,
-	                     BindingResult result){
+	                     BindingResult result,HttpSession session){
+		String mem_id = (String)session.getAttribute("userId");
+		cardsCommand.setMem_id1(mem_id); 
 		if (memberService.cardsMember(cardsCommand.getCard_num())==null) {
 			result.reject("InvalidCardnum");
 			return form();
@@ -54,11 +57,11 @@ private Logger log = Logger.getLogger(this.getClass());
 			return form();
 		}
 		memberService.cardsMember(cardsCommand.getCard_num());
-		
 		if (cards.getCard_num().equals(cardsCommand.getCard_num())) {
 			if (cards.getCard_pw().equals(cardsCommand.getCard_pw())) {
 				if (cards.getCard_cvc().equals(cardsCommand.getCard_cvc())) {
-					return "redirect:/member/write.do";
+					memberService.updateCards(mem_id,cardsCommand.getCard_num());
+					return "redirect:/main/main.do";
 				}else {
 					result.reject("InvalidCvc");
 					return form();
@@ -71,6 +74,7 @@ private Logger log = Logger.getLogger(this.getClass());
 			result.reject("InvalidCardnum");
 			return form();
 		}
+		
 		
 	}
 	

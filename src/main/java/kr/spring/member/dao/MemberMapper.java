@@ -25,7 +25,9 @@ public interface MemberMapper {
 	public void delete(String mem_id);
 	@Select("SELECT card_num,card_cvc,card_pw FROM f_card WHERE card_num=#{card_num}")
 	public CardsCommand cardsMember(String card_num);
-
+	@Update("UPDATE F_apply SET ap_id=#{mem_id1} WHERE card_num = #{card_num}")
+	public void updateCards(String mem_id1,String card_num);
+	
 }
 
 

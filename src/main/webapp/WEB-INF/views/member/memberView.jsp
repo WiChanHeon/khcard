@@ -9,11 +9,12 @@
 		<li>이메일 : ${member.mem_email}</li>
 		<li>이메일 : ${member.mem_cell}</li>
 		<li>가입날짜 : ${member.mem_reg}</li>
-		<li>카드번호 : ${apply.card_num}</li>
+		<%-- <li>카드번호 : ${apply.card_num}</li> --%>
 	</ul>
 	<hr size="1" width="100%">
 	<p class="align-right">
 		<input type="button" value="수정" onclick="location.href='update.do'">
+		<input type="button" value="카드추가" onclick="location.href='plusCard.do'">
 		<input type="button" value="회원탈퇴" onclick="location.href='delete.do'">
 	</p>
 </div>

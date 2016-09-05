@@ -46,4 +46,10 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
+	@Override
+	public void updateCards(String mem_id1,String card_num) {
+		memberMapper.updateCards(mem_id1,card_num);
+		
+	}
+
 }

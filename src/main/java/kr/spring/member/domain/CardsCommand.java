@@ -14,6 +14,13 @@ public class CardsCommand {
 	@NotEmpty
 	@Size(min=3,max=3,message="cvc번호는 필수입니다.")
 	private String card_cvc;
+	private String mem_id1;
+	public String getMem_id1() {
+		return mem_id1;
+	}
+	public void setMem_id1(String mem_id1) {
+		this.mem_id1 = mem_id1;
+	}
 	public String getCard_num() {
 		return card_num;
 	}
@@ -34,8 +41,10 @@ public class CardsCommand {
 	}
 	@Override
 	public String toString() {
-		return "CardsCommand [card_num=" + card_num + ", card_pw=" + card_pw + ", card_cvc=" + card_cvc + "]";
+		return "CardsCommand [card_num=" + card_num + ", card_pw=" + card_pw + ", card_cvc=" + card_cvc + ", mem_id1="
+				+ mem_id1 + "]";
 	}
+	
 	
 	
 	
