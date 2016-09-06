@@ -76,11 +76,6 @@ $(document).ready(function(){
 	});
 	
 	
-	//비교불가 카드들 버튼 막기 (비교 불가)
-	
-	
-	
-	
 	//카드추천 인터넷신청,전화신청 버튼
 	$('.y_matchCard').mouseover(function(){
 		var id = $(this).attr('data-id');
@@ -90,7 +85,7 @@ $(document).ready(function(){
 		var y = $(this).offset().top;
 		
 		$('#'+id+'_btnview').css('top',y-20).css('left',x).css('width',imgW).css('height',imgH+30);
-		$('#'+id+'_btnview div.y_img_span').css('top','19px').css('left','-1px').css('width',imgW).css('height',imgH);
+		$('#'+id+'_btnview div.y_img_span').css('top','50px').css('left','0px').css('width',imgW).css('height',imgH);
 		$('#'+id+'_btnview').show();
 	});
 	$('.y_matchCard-btndiv').mouseout(function(){
@@ -98,22 +93,110 @@ $(document).ready(function(){
 	});
 	
 	
+	
+	//비교불가 카드들 버튼 막기 (비교 불가)
+	
+	
+	
+	
+
+	
+	
 	/////////////////카드추천////////////////////
-	$('#quiz0 span:eq(0)').click(function(){
+	$('#quiz0 span:eq(0)').click(function(){ //포인트 -> 연회비,혜택금액
 		$(this).parent().hide();
 		$('#quiz1').show();
 		/*$('#quiz1').show('slide',{direction:'up'},1000);*/
 	});
-		$('#quiz1 span:eq(0)').click(function(){
+		$('#quiz1 span:eq(0)').click(function(){ //연회비 -> 금액
 			$(this).parent().hide();
 			$('#quiz1-1').show();
 		});
-			$('#quiz1-1 span:eq(0)').click(function(){
+			$('#quiz1-1 span:eq(0)').click(function(){ //연회비 - 1만원이하
 				$(this).parent().hide();
-				$('#quiz1-1-1').show();
+				$('#quiz1-1-1').show(); //카드
+			});
+			$('#quiz1-1 span:eq(1)').click(function(){ //연회비 - 1~2만원
+				$(this).parent().hide();
+				$('#quiz1-1-2').show(); //카드
+			});
+			$('#quiz1-1 span:eq(2)').click(function(){ //연회비 - 2~5만원
+				$(this).parent().hide();
+				$('#quiz1-1-3').show(); //카드
+			});
+			$('#quiz1-1 span:eq(3)').click(function(){ //연회비 - 5만원이상
+				$(this).parent().hide();
+				$('#quiz1-1-4').show(); //카드
 			});
 		
-	$('#quiz0 span:eq(1)').click(function(){
+		$('#quiz1 span:eq(1)').click(function(){ //혜택금액 -> 월사용금액,주요사용처
+			$(this).parent().hide();
+			$('#quiz1-2').show();
+		});
+			$('#quiz1-2 span:eq(0)').click(function(){ //월사용금액 -> 금액
+				$(this).parent().hide();
+				$('#quiz1-2-1').show();
+			});
+				$('#quiz1-2-1 span:eq(0)').click(function(){ //월사용금액 - 50만원이하
+					$(this).parent().hide();
+					$('#quiz1-2-1-1').show(); //ZERO
+				});
+				$('#quiz1-2-1 span:eq(1)').click(function(){ //월사용금액 - 50~100만원 -> y,n
+					$(this).parent().hide();
+					$('#quiz1-2-1-2').show();
+				});
+					$('#quiz1-2-1-2 span:eq(0)').click(function(){ //50~100만원 - y
+						$(this).parent().hide();
+						$('#quiz1-2-1-2-1').show(); //M2 xxx
+					});
+					$('#quiz1-2-1-2 span:eq(1)').click(function(){ //50~100만원 - n
+						$(this).parent().hide();
+						$('#quiz1-2-1-2-2').show(); //M1 xxx
+					});
+				$('#quiz1-2-1 span:eq(2)').click(function(){ //월사용금액 - 100~200만원 -> y,n
+					$(this).parent().hide();
+					$('#quiz1-2-1-3').show();
+				});
+					$('#quiz1-2-1-3 span:eq(0)').click(function(){ //50~100만원 - y
+						$(this).parent().hide();
+						$('#quiz1-2-1-3-1').show(); //M2
+					});
+					$('#quiz1-2-1-3 span:eq(1)').click(function(){ //50~100만원 - n
+						$(this).parent().hide();
+						$('#quiz1-2-1-3-2').show(); //M1
+					});
+				$('#quiz1-2-1 span:eq(3)').click(function(){ //월사용금액 - 200만원이상
+					$(this).parent().hide();
+					$('#quiz1-2-1-4').show(); //T3,M3
+				});			
+			
+			$('#quiz1-2 span:eq(1)').click(function(){ //주요사용처 -> 생활,포인트,항공사
+				$(this).parent().hide();
+				$('#quiz1-2-2').show();
+			});
+				$('#quiz1-2-2 span:eq(0)').click(function(){ //생활
+					$(this).parent().hide();
+					$('#quiz1-2-2-1').show(); //ZERO
+				});
+				$('#quiz1-2-2 span:eq(1)').click(function(){ //포인트 -> y,n
+					$(this).parent().hide();
+					$('#quiz1-2-2-2').show();
+				});
+					$('#quiz1-2-2-2 span:eq(0)').click(function(){ //포인트 -> y,n
+						$(this).parent().hide();
+						$('#quiz1-2-2-2-1').show(); //M2
+					});
+					$('#quiz1-2-2-2 span:eq(1)').click(function(){ //포인트 -> y,n
+						$(this).parent().hide();
+						$('#quiz1-2-2-2-2').show(); //M
+					});
+				$('#quiz1-2-2 span:eq(2)').click(function(){ //항공사
+					$(this).parent().hide();
+					$('#quiz1-2-2-3').show(); //T3
+				});
+		
+		
+	$('#quiz0 span:eq(1)').click(function(){ //할인
 		alert('흑흑2');
 	});
     

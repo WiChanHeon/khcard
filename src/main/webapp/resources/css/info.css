@@ -400,6 +400,9 @@ table#y_ctable tr td{
 .y_quiztitle-card{ /*최종카드안내*/
 	font-size:26pt;
 }
+.y_qcard img{
+	padding-top:30px;
+}
 .y_matchCard-btndiv{
 	top:0;
 	left:0;
@@ -417,7 +420,7 @@ table#y_ctable tr td{
 }
 .y_matchCard-btn{
 	position:relative;
-	top:40%;
+	top:55%;
 	z-index:3;
 }
 .y_matchCard-btn2{
@@ -429,6 +432,11 @@ table#y_ctable tr td{
 	color:#fff;
 	background-color:#696969;
 	border:1px solid #696969;
+}
+.y_twoCard{
+	margin-left:70px;
+	padding-left:70px;
+	border-left:1px solid silver;
 }
 
 /*------------------------matchCard End------------------------*/
