@@ -12,44 +12,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import kr.spring.donan.domain.DonanWriteCommand;
-import kr.spring.donan.service.DonanService;
+import kr.spring.donan.domain.GageCommand;
+import kr.spring.donan.service.GageService;
 
 @Controller
-public class DonanWriteController {
+public class GageWriteController {
 	
 	private Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource
-	private DonanService donanService;
+	private GageService gageService;
 	
-	@RequestMapping(value="/donan/write.do",method=RequestMethod.GET)
+	@RequestMapping(value="/gage/write.do",method=RequestMethod.GET)
 	public String form(HttpSession session, Model model){
-		String loss_phone = (String)session.getAttribute("phone");
+		String card_num = (String)session.getAttribute("caradNum");
 
-		DonanWriteCommand command = new DonanWriteCommand();
-		command.setLoss_phone(loss_phone);
+		GageCommand command = new GageCommand();
+		command.setCard_num(card_num);
 
 		model.addAttribute("command",command);
 
-		return "donanWrite";
+		return "gageWrite";
 	}
-	@RequestMapping(value="/donan/write.do",method=RequestMethod.POST)
+	@RequestMapping(value="/gage/write.do",method=RequestMethod.POST)
 	public String submit(@ModelAttribute("command")
-						 DonanWriteCommand donanwriteCommand,
+						 GageCommand gageCommand,
 						 BindingResult result,
 						 SessionStatus status) throws Exception{
 
 		if(log.isDebugEnabled()){
-			log.debug("donanwriteCommand : " + donanwriteCommand );
+			log.debug("gageCommand : " + gageCommand );
 		}
 
 		//±Û µî·Ï
-		donanService.insert(donanwriteCommand);
+		gageService.insert(gageCommand);
 		status.setComplete();
 		
-		return "redirect:/donan/list.do";
+		return "redirect:/gage/list.do";
 	}
 }

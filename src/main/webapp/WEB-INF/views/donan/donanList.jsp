@@ -26,7 +26,7 @@
 		<tbody>
 			<c:forEach var="a" items="${list}">
 				<tr>
-					<td><p align="center"><input type="checkbox" id="c"></p></td>
+					<td><p align="center"><input type="checkbox" id="checkbox"></p></td>
 					<td><p align="center">복수</p></td>
 					<td><p align="center">${a.ap_name}</p></td>
 					<td><p align="center">현대카드</p></td>
@@ -48,7 +48,7 @@
 	</table>
 		
 		<div class="bun">
-		<input type="button" id="btn1" value="분실 신고" class="btn btn-primary">
+		<input type="button" id="btn1" value="분실 신고" class="w3-btn w3-slim">
 		</div>
 
 	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
@@ -67,19 +67,17 @@
 				<em style="display: block; margin-bottom: 3px; font-size: smaller;">ex)삼성동에서 지갑분실</em>
 				 <font color="red">*</font>
 				 분실장소<br> 
-				<input type="text" name="loss_memo">
+				<input type="text" name="loss_memo" autofocus>
 			</div>
 			
 			<div class="form-group3">
 				<font color="red">*</font>
 				핸드폰번호<br> 
-				<input type="text" name="loss_phone" maxLength="4">-
-				<input type="text" name="loss_phone" maxLength="4">-
-				<input type="text" name="loss_phone" maxLength="4">
+				<input type="number" name="loss_phone" maxLength="12">
 			</div>
 		</form>
 			<div class="rok">
-				<input type="submit" id="btn2" value="신고" class="btn btn-primary">
+				<input type="submit" id="btn2" value="신고" class="w3-btn w3-slim">
 			</div>
 	</div>
 		</form:form>

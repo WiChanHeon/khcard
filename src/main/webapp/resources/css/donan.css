@@ -11,7 +11,7 @@ div.bun{
 }/*분실 신고 버튼*/
 div.rok{
 	width: 70%;
-    margin-left: 140px; 
+    margin-left: 110px; 
     text-align: right;  
 }/*신고 등록 버튼*/
 div.check_zone{
@@ -19,7 +19,7 @@ div.check_zone{
     margin: auto;
 }
 h2,h4{
-	margin: auto;
+	margin-left: 120px;
 	width: 70%;
 	padding-top: 15px;
 	padding-bottom: 15px;

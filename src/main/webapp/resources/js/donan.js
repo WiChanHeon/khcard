@@ -1,14 +1,14 @@
 $(document).ready(function() {
     $("#btn1").click(function(){
     	
-    	var flag = $('#c').prop('checked');
+    	var flag = $('#checkbox').prop('checked'); 
     	
     	
     	  if(flag) {
     	   	$(".jub").toggle();
     	   	$(".jub1").toggle();
     	  }else{
-    		alert('카드가 선택되지 않았습니다.분실하신 카드를 선택하여 주십시오.');
+    		alert('카드가 선택되지 않았습니다.\n분실하신 카드를 선택하여 주십시오.');
     	  }
     });
     
@@ -26,7 +26,7 @@ $(document).ready(function() {
             	myForm.loss_memo.focus();
             }else{
             	alert("연락처를 입력하세요!");
-            	myForm.loss_phone.focus();
+            	myForm.loss_phone.focus();	
             }
             return false;
         }
@@ -34,7 +34,6 @@ $(document).ready(function() {
     	$(".eyong").click(function(){
 	
     		$(".nae").toggle();
-	    
     	});
-   
+    
 });

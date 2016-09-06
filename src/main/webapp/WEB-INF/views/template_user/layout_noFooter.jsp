@@ -55,9 +55,8 @@
 		<!-- Custom Scripts -->
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/css/donan.css" rel="stylesheet">
-		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 		<!--jQuery dependencies-->
-		
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 		<%-- <c:forEach var="cssName" items="${cssList}">
 			<link rel="stylesheet" href="<c:out value='${cssName}' />"/>
 		</c:forEach> --%>
@@ -83,9 +82,7 @@
 			<tiles:insertAttribute name="body"/>
 			<!-- 바디 끝 -->
 			<!-- section end -->
-			<!-- 푸터 시작 -->
-			<tiles:insertAttribute name="footer"/>
-			<!-- 푸터 끝 -->
+			
 		</div>
 		<!-- page-wrapper end -->
 
