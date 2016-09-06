@@ -30,15 +30,15 @@ $(document).ready(function(){
 	
 	
 	//연회비 툴팁
-	$('.y_afee').hover(function(){
+	$('.y_afee').mouseover(function(){
 		var id = $(this).attr('id');
 		var x = $(this).offset().left - $(window).scrollLeft();
 		var y = $(this).offset().top - $(window).scrollTop();
 		$('#'+id+'_view').css('top',y).css('left',x);
 		$('#'+id+'_view').show();
-	},function(){
-		var id = $(this).attr('id');
-		$('#'+id+'_view').hide();
+	});
+	$('.y_tooltip-afee').mouseout(function(){
+		$(this).hide();
 	});
 	
 	
@@ -81,15 +81,37 @@ $(document).ready(function(){
 	
 	
 	
+	//카드추천 인터넷신청,전화신청 버튼
+	$('.y_matchCard').mouseover(function(){
+		var id = $(this).attr('data-id');
+		var imgW = $(this).width();
+		var imgH =  $(this).height();
+		var x = $(this).offset().left;
+		var y = $(this).offset().top;
+		
+		$('#'+id+'_btnview').css('top',y-20).css('left',x).css('width',imgW).css('height',imgH+30);
+		$('#'+id+'_btnview div.y_img_span').css('top','19px').css('left','-1px').css('width',imgW).css('height',imgH);
+		$('#'+id+'_btnview').show();
+	});
+	$('.y_matchCard-btndiv').mouseout(function(){
+		$(this).hide();
+	});
+	
+	
 	/////////////////카드추천////////////////////
 	$('#quiz0 span:eq(0)').click(function(){
 		$(this).parent().hide();
 		$('#quiz1').show();
+		/*$('#quiz1').show('slide',{direction:'up'},1000);*/
 	});
 		$('#quiz1 span:eq(0)').click(function(){
 			$(this).parent().hide();
 			$('#quiz1-1').show();
 		});
+			$('#quiz1-1 span:eq(0)').click(function(){
+				$(this).parent().hide();
+				$('#quiz1-1-1').show();
+			});
 		
 	$('#quiz0 span:eq(1)').click(function(){
 		alert('흑흑2');
