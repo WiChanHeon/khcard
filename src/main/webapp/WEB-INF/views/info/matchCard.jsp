@@ -71,21 +71,42 @@
 			
 			<div id="quiz1" style="display:none;">
 				<p class="y_quiztitle">연회비 / 혜택금액 중 어떠한 기준으로 알아보기를 원하시나요?</p>
-				
 				<span>
-					<i class="fa fa-credit-card-alt fa-3x" aria-hidden="true"></i>
+					<i class="fa fa-calendar-check-o fa-3x" aria-hidden="true"></i>
 					<br>
 					연회비로 알아보기
 				</span>
 				<span>
-					<i class="fa fa-credit-card fa-3x" aria-hidden="true"></i>
+					<i class="fa fa-money fa-3x" aria-hidden="true"></i>
 					<br>
 					혜택금액이<br>큰 것으로 알아보기
 				</span>
-				
-				<br>
-				<input type="button" class="btn btn-default y_q_first-btn" value="처음부터" onclick="location.href='matchCard.do'">		
+				<br><input type="button" class="btn btn-default y_q_first-btn" value="처음부터" onclick="location.href='matchCard.do'">		
+			</div><br>
 			
+			<div id="quiz1-1" style="display:none;">
+				<p class="y_quiztitle">원하시는 연회비는 얼마인가요?</p>
+				<span>
+					<i class="fa fa-long-arrow-down fa-3x" aria-hidden="true"></i>
+					<br>
+					1만원 이하
+				</span>
+				<span>
+					<i class="fa fa-arrows-h fa-3x" aria-hidden="true"></i>
+					<br>
+					1~2만원
+				</span>
+				<span>
+					<i class="fa fa-arrows-h fa-3x" aria-hidden="true"></i>
+					<br>
+					2~5만원
+				</span>
+				<span>
+					<i class="fa fa-long-arrow-up fa-3x" aria-hidden="true"></i>
+					<br>
+					5만원 이상
+				</span>
+				<br><input type="button" class="btn btn-default y_q_first-btn" value="처음부터" onclick="location.href='matchCard.do'">		
 			</div><br>
 			
 			

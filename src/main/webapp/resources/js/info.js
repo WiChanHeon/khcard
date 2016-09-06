@@ -86,6 +86,11 @@ $(document).ready(function(){
 		$(this).parent().hide();
 		$('#quiz1').show();
 	});
+		$('#quiz1 span:eq(0)').click(function(){
+			$(this).parent().hide();
+			$('#quiz1-1').show();
+		});
+		
 	$('#quiz0 span:eq(1)').click(function(){
 		alert('흑흑2');
 	});
