@@ -29,13 +29,6 @@ public class InfoSListController {
 			log.debug("info_rcm, info_flag : " + info_rcm + ", " + info_flag);
 		}
 		
-		/* 전체 목록 받을 때(파라미터 받으면 안됨)
-		List<InfoCommand> alist = infoService.getAllList();
-		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("sList");
-		mav.addObject("alist", alist);*/
-		
 		HashMap<String,Object> map = new HashMap<String,Object>();
 		map.put("info_rcm", info_rcm);
 		map.put("info_flag", info_flag);

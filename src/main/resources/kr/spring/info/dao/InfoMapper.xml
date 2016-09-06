@@ -11,7 +11,7 @@
 		  info_stitle,
 		  info_scontent info_scontent_br,
 		  info_img,
-		  cp_afee cp_afee_br
+		  cp_afee
 		FROM f_info
 	</select>
 	

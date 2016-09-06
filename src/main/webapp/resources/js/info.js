@@ -1,5 +1,21 @@
 $(document).ready(function(){
 	
+	
+	//카드선택버튼 슬라이드업/다운
+	$('.y_card-img1').mouseover(function(){
+		var id = $(this).attr('id');
+		var imgW = $('#'+id).width(); 
+		var imgH =  $('#'+id).height();
+		
+		$('#'+id+'_btnview').css('top','25px').css('left','40px').css('width',imgW).css('height',imgH+30);
+		$('#'+id+'_btnview span.y_img_span').css('top','18px').css('left','0px').css('width',imgW).css('height',imgH);
+		$('#'+id+'_btnview').show();
+	});
+	$('.y_img_btndiv').mouseout(function(){
+		$(this).hide();
+	});
+	
+	
 	//추가-제거 버튼 툴팁
 	$('.y_button').hover(function(){
 		var id = $(this).attr('id');
@@ -25,25 +41,13 @@ $(document).ready(function(){
 		$('#'+id+'_view').hide();
 	});
 	
+	
 	//비교함 노출
 	$('#y_btn-compare').on('click',function(){
 		$('#y_compare').toggle();
 	});
 	
-	//카드선택버튼 슬라이드업/다운
-	$('.y_card-img1').mouseover(function(){
-		var id = $(this).attr('id');
-		var imgW = $('#'+id).width(); 
-		var imgH =  $('#'+id).height();
 		
-		$('#'+id+'_btnview').css('top','25px').css('left','40px').css('width',imgW).css('height',imgH+30);
-		$('#'+id+'_btnview span.y_img_span').css('top','18px').css('left','0px').css('width',imgW).css('height',imgH);
-		$('#'+id+'_btnview').show();
-	});
-	$('.y_img_btndiv').mouseout(function(){
-		$(this).hide();
-	});
-	
 	//관심카드가 2개 이상일 때만 비교 가능 체크
 	$('#y_cbtn').click(function(){
 		if($('#y_ccount').text() < 2){
@@ -51,6 +55,7 @@ $(document).ready(function(){
 			return false;
 		}
 	});
+	
 	
 	//비교페이지에서 카드 개수에 따라 td width 지정
 	if($('#y_ccount2').val() == 2){
@@ -70,14 +75,22 @@ $(document).ready(function(){
 		}
 	});
 	
+	
 	//비교불가 카드들 버튼 막기 (비교 불가)
 	
 	
 	
 	
-
-
+	/////////////////카드추천////////////////////
+	$('#quiz0 span:eq(0)').click(function(){
+		$(this).parent().hide();
+		$('#quiz1').show();
+	});
+	$('#quiz0 span:eq(1)').click(function(){
+		alert('흑흑2');
+	});
     
+	
     
     
     

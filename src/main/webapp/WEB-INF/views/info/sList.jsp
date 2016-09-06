@@ -13,13 +13,14 @@
 
 <div class="container y_div">
 	<div class="y_nav_menu y_center">
+
+		<!-- 카드비교함 시작-->
+		<div class="y_mfix" role="카드비교함 고정영역">
 		<div class="y_floatright" style="margin:10px 30px 0 0;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount"><c:if test="${sessionScope.ccount > 0}">${sessionScope.ccount}</c:if></span></div>
 		
-		
-		<!-- 카드비교함 시작-->
 		<div id="y_compare" style="display:none;">
 			<p class="y_ctitle">관심카드 <span id="y_ccount2"><c:if test="${sessionScope.ccount > 0}">(${sessionScope.ccount})</c:if></span> </p>
-
+	
 			<c:if test="${empty sessionScope.choice}">
 				<div class="y_cimg" id="y_cimg1"></div>
 				<div class="y_cimg" id="y_cimg2"></div>
@@ -40,23 +41,31 @@
 			</form>
 			
 		</div>
+		</div>
 		<!-- 카드비교함 끝 -->
 		
-		<div class="y_clear"></div>
-		<h2><spring:message code="info.slist.title"/></h2>
-		<p>신청하고자 하는 카드종류를 선택해 주세요.</p>
 		
-			<ul id="y_amenu">
-				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_rcm=1">추천카드</a></li>
-				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PM">Premium카드</a></li>
-				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PT">포인트카드</a></li>
-				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=CB">할인카드</a></li>
-				<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=ETC">기타카드</a></li>
-			</ul>
-	</div>
-	<br><br>
+		
+		<!-- <div class="y_clear"></div> -->
+		
+		<div class="y_sposition">
+			<h2><spring:message code="info.slist.title"/></h2>
+			<p>신청하고자 하는 카드종류를 선택해 주세요.</p>
+			
+				<ul id="y_amenu">
+					<li><a href="${pageContext.request.contextPath}/info/slist.do?info_rcm=1">추천카드</a></li>
+					<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PM">Premium카드</a></li>
+					<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=PT">포인트카드</a></li>
+					<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=CB">할인카드</a></li>
+					<li><a href="${pageContext.request.contextPath}/info/slist.do?info_flag=ETC">기타카드</a></li>
+				</ul>
+		</div>
+		
+	</div><br><br>
+	
+	
 
-	<div class="row y_nav_content">	
+	<div class="row y_nav_content">
 		<c:if test="${empty list}">
 		<div class="y_liketable y_nocard">등록된 카드가 없습니다.</div>
 		</c:if>

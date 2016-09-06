@@ -107,6 +107,7 @@
 																				<div class="divider"></div>
 																				<ul class="menu">
 																					<li><a href="${pageContext.request.contextPath}/info/slist.do">카드비교</a></li>
+																					<li><a href="${pageContext.request.contextPath}/info/matchCard.do">내게 맞는 카드 찾기</a></li>
 																					<li ><a href="page-services-1.html"><i class="fa fa-angle-right"></i>Services 1</a></li>
 																					<li ><a href="page-services-2.html"><i class="fa fa-angle-right"></i>Services 2</a></li>
 																					<li ><a href="page-services-3.html"><i class="fa fa-angle-right"></i>Services 3</a></li>

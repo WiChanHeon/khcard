@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+
 /*------------------------sList Start------------------------*/
 /*공통사용*/
 .y_center{
@@ -25,7 +26,7 @@
 }
 .y_nexonB{
 	font-family:nexonB;
-	margin:5px auto;
+	margin:5px 0;
 	font-size:11pt;
 }
 .y_liketable{
@@ -73,7 +74,7 @@
 
 /*하단카드목록*/
 .y_nav_content{
-	margin:140px 50px 100px 50px;
+	margin:160px 50px 100px 50px;
 	min-height:400px;
 }
 .y_name{
@@ -112,7 +113,6 @@ div.y_card div{
 }
 div.y_card img {
 	padding:10px 0;
-	
 }
 
 .y_img_btndiv{
@@ -147,10 +147,14 @@ div.y_card img {
 }
 
 /*비교함*/
-#y_ccount{
+#y_btn-compare{
 	position:absolute;
-	top:7px;
-	right:25px;
+	right:50px;
+}
+#y_ccount{
+	position:relative;
+	top:-2px;
+	right:10px;
 	z-index:104;
 	background-color:rgb(265,74,74);
 	color:white;
@@ -160,7 +164,7 @@ span#y_ccount2{
 }
 #y_compare{
 	top:60px;
-	right:30px;
+	right:55px;
 	position: absolute;
 	z-index:110;
 	width: 120px;
@@ -179,6 +183,9 @@ span#y_ccount2{
 	z-index: 1;
 	top: -11px;
 	left: 98px;
+}
+.y_sposition{
+	margin-top:60px;
 }
 p.y_ctitle{
 	width:80px;
@@ -302,6 +309,89 @@ table#y_ctable tr td{
 
 
 /*------------------------compareCard End------------------------*/
+/*------------------------matchCard Start------------------------*/
+
+/*비교함영역*/
+.y_mfix{
+	position:fixed;
+	left:0;
+	top:60px;
+	background-color:rgba(255,255,255,0.95);
+	width:100%;
+	height:60px;
+	z-index:104;
+}
+/*quiz영역*/
+.y_mmenu{
+	left:0;
+	top:60px;
+	background-color:#f7f7f7;
+	width:100%;
+	min-height:170px;
+	z-index:104;	
+	
+}
+/*card영역*/
+.y_mcontent{
+	margin-top:80px;
+	margin-bottom:50px;
+	min-height:400px;
+}
+.y_msubject{
+	margin:0;
+	padding:0 40px;
+	font-family:nexonB;
+	font-size:12pt;
+}
+.y_m_scontent{
+	min-height:60px;
+}
+
+/*quizbox영역*/
+.y_quizbox{
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.y_quizbox div{ /*각 quiz div*/
+	display:inline-block;
+}
+.y_quizbox div p.y_quiztitle{
+	font-size:14pt;
+	margin-bottom:30px;
+}
+.y_quizbox div span{ /*선택지*/
+	float:left;
+	margin:auto 10px;
+	padding:auto 0;
+	width:240px;
+	height:140px;
+	border:1px solid silver;	
+	background-color:#fff;
+	cursor:pointer;
+}
+.y_quizbox div span:hover{
+	border:1px solid #0080ff;	
+	background-color:#0080ff;
+	color:#fff;
+}
+.y_quizbox div span i{
+	margin-top:25px;
+	margin-bottom:20px;
+}
+.y_q_first-btn{ /*처음으로 버튼*/
+	margin-top:50px;
+	background-color:gray;
+	color:#fff;
+	width:150px;
+	height:50px;
+	font-size:12pt;
+}
+.y_q_first-btn:hover{
+	background-color:#5b5b5b;
+	color:#fff;
+}
+
+/*------------------------matchCard End------------------------*/
 
 
 /*부트스트랩 툴팁*/
