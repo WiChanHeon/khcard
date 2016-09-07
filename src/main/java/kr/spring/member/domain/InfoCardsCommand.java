@@ -3,11 +3,19 @@ package kr.spring.member.domain;
 import java.sql.Date;
 
 public class InfoCardsCommand {
-	public Date pay_reg;
-	public int pay_price;
-	public String pay_spot;
-	public float pay_rate;
-	public int pay_point;
+	private String cardnum;
+	private Date pay_reg;
+	private int pay_price;
+	private String pay_spot;
+	private float pay_rate;
+	private int pay_point;
+	
+	public String getCardnum() {
+		return cardnum;
+	}
+	public void setCardnum(String cardnum) {
+		this.cardnum = cardnum;
+	}
 	public Date getPay_reg() {
 		return pay_reg;
 	}
@@ -40,9 +48,10 @@ public class InfoCardsCommand {
 	}
 	@Override
 	public String toString() {
-		return "InfoCardsCommand [pay_reg=" + pay_reg + ", pay_price=" + pay_price + ", pay_spot=" + pay_spot
-				+ ", pay_rate=" + pay_rate + ", pay_point=" + pay_point + "]";
+		return "InfoCardsCommand [cardnum=" + cardnum + ", pay_reg=" + pay_reg + ", pay_price=" + pay_price
+				+ ", pay_spot=" + pay_spot + ", pay_rate=" + pay_rate + ", pay_point=" + pay_point + "]";
 	}
+	
 	
 	
 }

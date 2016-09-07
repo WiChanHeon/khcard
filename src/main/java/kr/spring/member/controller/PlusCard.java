@@ -1,5 +1,8 @@
 package kr.spring.member.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -40,7 +43,6 @@ private Logger log = Logger.getLogger(this.getClass());
 	                     @Valid CardsCommand cardsCommand,
 	                     BindingResult result,HttpSession session){
 		String mem_id = (String)session.getAttribute("userId");
-		cardsCommand.setMem_id1(mem_id); 
 		if (memberService.cardsMember(cardsCommand.getCard_num())==null) {
 			result.reject("InvalidCardnum");
 			return form();

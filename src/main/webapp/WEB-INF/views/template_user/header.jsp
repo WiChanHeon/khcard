@@ -64,10 +64,10 @@
 													<li class="dropdown ">
 														<a class="dropdown-toggle" data-toggle="dropdown" href="index.html">Home</a>
 														<ul class="dropdown-menu">
-															<li ><a href="${pageContext.request.contextPath}/member/cards.do">Home Default</a></li>
-															<li ><a href="${pageContext.request.contextPath}/usage/userUsage.do">Corporate 1</a></li>
-															<li ><a href="${pageContext.request.contextPath}/member/detail.do">Corporate 2</a></li>
-															<li ><a href="index-corporate-3.html">Corporate 3</a></li>
+															<li ><a href="${pageContext.request.contextPath}/member/cards.do">addmember</a></li>
+															<li ><a href="${pageContext.request.contextPath}/member/userUsage.do">usage</a></li>
+															<li ><a href="${pageContext.request.contextPath}/member/detail.do">detail</a></li>
+															<li ><a href="${pageContext.request.contextPath}/member/logout.do">logout</a></li>
 															<li class="active"><a href="index-shop.html">Commerce 1</a></li>
 															<li ><a href="index-shop-2.html">Commerce 2</a></li>
 															<li ><a href="index-portfolio.html">Portfolio/Agency</a></li>
