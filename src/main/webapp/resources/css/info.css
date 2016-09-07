@@ -424,6 +424,7 @@ table#y_ctable tr td{
 	z-index:3;
 }
 .y_matchCard-btn2{
+	margin-left:5px;
 	color:#fff;
 	background-color:gray;
 	border:1px solid gray;

@@ -124,7 +124,7 @@ $(document).ready(function(){
 		$('.y_quizbox').append(output);
 	}
 	
-	/////////////////카드추천////////////////////
+	/////////////////카드추천선택지////////////////////
 	$('#quiz0 span:eq(0)').click(function(){ //포인트 -> 연회비,혜택금액
 		$(this).parent().hide();
 		$('#quiz1').show();
@@ -150,7 +150,6 @@ $(document).ready(function(){
 				$(this).parent().hide();
 				$('#y_answerT3M3').show(); //T3 & M3
 			});
-		
 		$('#quiz1 span:eq(1)').click(function(){ //혜택금액 -> 월사용금액,주요사용처
 			$(this).parent().hide();
 			$('#quiz1-2').show();
@@ -167,14 +166,6 @@ $(document).ready(function(){
 					$(this).parent().hide();
 					$('#y_M-service').show(); //M 플래티넘 서비스
 				});
-								$('#y_M-service span:eq(0)').click(function(){ //y
-									$(this).parent().hide();
-									loadCard('MPE2','현대카드M2 Edition2','강력한 포인트카드'); //M2
-								});
-								$('#y_M-service span:eq(1)').click(function(){ //n
-									$(this).parent().hide();
-									loadCard('ME2','현대카드M Edition2','강력한 포인트카드'); //M
-								});
 				$('#quiz1-2-1 span:eq(2)').click(function(){ //월사용금액 - 100~200만원 -> y,n
 					$(this).parent().hide();
 					$('#y_M-service').show(); //M 플래티넘 서비스
@@ -183,7 +174,6 @@ $(document).ready(function(){
 					$(this).parent().hide();
 					$('#y_answerT3M3').show(); //T3 & M3
 				});			
-			
 			$('#quiz1-2 span:eq(1)').click(function(){ //주요사용처 -> 생활,포인트,항공사
 				$(this).parent().hide();
 				$('#quiz1-2-2').show();
@@ -200,7 +190,6 @@ $(document).ready(function(){
 					$(this).parent().hide();
 					loadCard('T3PE2','현대카드T3 Edition2','트래블  &amp; 마일리지카드'); //T3
 				});
-		
 		
 	$('#quiz0 span:eq(1)').click(function(){ //할인 -> 연회비, 혜택금액
 		$(this).parent().hide();
@@ -242,14 +231,7 @@ $(document).ready(function(){
 					$(this).parent().hide();
 					$('#y_X-service').show(); //X 플래티넘 서비스
 				});
-								$('#y_X-service span:eq(0)').click(function(){ //50~100만원 - y
-									$(this).parent().hide();
-									loadCard('XPE2','현대카드X2 Edition2','쓸수록 커지는 할인카드'); //X2
-								});
-								$('#y_X-service span:eq(1)').click(function(){ //50~100만원 - n
-									$(this).parent().hide();
-									loadCard('XE2','현대카드X Edition2','쓸수록 커지는 할인카드'); //X
-								});
+								
 				$('#quiz2-2-1 span:eq(2)').click(function(){ //월사용금액 - 100~200만원 -> y,n
 					$(this).parent().hide();
 					$('#y_X-service').show(); //X 플래티넘 서비스
@@ -279,6 +261,26 @@ $(document).ready(function(){
 						loadCard('X3PE2','현대카드X3 Edition2','쓸수록 커지는 할인카드'); //X3
 					});
     
+	
+	//M 플래티넘 서비스 - Y, N
+	$('#y_M-service span:eq(0)').click(function(){ //Yes
+		$(this).parent().hide();
+		loadCard('MPE2','현대카드M2 Edition2','강력한 포인트카드'); //M2
+	});
+	$('#y_M-service span:eq(1)').click(function(){ //No
+		$(this).parent().hide();
+		loadCard('ME2','현대카드M Edition2','강력한 포인트카드'); //M
+	});
+	
+	//X 플래티넘 서비스 - Y, N
+	$('#y_X-service span:eq(0)').click(function(){ //Yes
+		$(this).parent().hide();
+		loadCard('XPE2','현대카드X2 Edition2','쓸수록 커지는 할인카드'); //X2
+	});
+	$('#y_X-service span:eq(1)').click(function(){ //No
+		$(this).parent().hide();
+		loadCard('XE2','현대카드X Edition2','쓸수록 커지는 할인카드'); //X
+	});
     
     
     /////////////////AJAX////////////////////
