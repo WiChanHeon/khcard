@@ -125,7 +125,6 @@ $(document).ready(function(){
 	}
 	
 	/////////////////카드추천////////////////////
-	//-----> 결과페이지는 id만 넘겨서 function 불러오는 방법 써보기 (output,append)
 	$('#quiz0 span:eq(0)').click(function(){ //포인트 -> 연회비,혜택금액
 		$(this).parent().hide();
 		$('#quiz1').show();
@@ -138,19 +137,18 @@ $(document).ready(function(){
 			$('#quiz1-1 span:eq(0)').click(function(){ //연회비 - 1만원이하
 				$(this).parent().hide();
 				loadCard('CMH','현대카드M HYBRID','M포인트 적립 하이브리드카드'); //CMH
-				 
 			});
 			$('#quiz1-1 span:eq(1)').click(function(){ //연회비 - 1~2만원
 				$(this).parent().hide();
-				$('#quiz1-1-2').show(); //카드
+				loadCard('ME2','현대카드M Edition2','강력한 포인트카드'); //M
 			});
 			$('#quiz1-1 span:eq(2)').click(function(){ //연회비 - 2~5만원
 				$(this).parent().hide();
-				$('#quiz1-1-3').show(); //카드
+				loadCard('MPE2','현대카드M2 Edition2','강력한 포인트카드'); //M2
 			});
 			$('#quiz1-1 span:eq(3)').click(function(){ //연회비 - 5만원이상
 				$(this).parent().hide();
-				$('#quiz1-1-4').show(); //카드
+				$('#y_answerT3M3').show(); //T3 & M3
 			});
 		
 		$('#quiz1 span:eq(1)').click(function(){ //혜택금액 -> 월사용금액,주요사용처
@@ -163,35 +161,27 @@ $(document).ready(function(){
 			});
 				$('#quiz1-2-1 span:eq(0)').click(function(){ //월사용금액 - 50만원이하
 					$(this).parent().hide();
-					$('#quiz1-2-1-1').show(); //ZERO
+					loadCard('ZRO','현대카드ZERO','조건없는 할인카드'); //ZERO
 				});
 				$('#quiz1-2-1 span:eq(1)').click(function(){ //월사용금액 - 50~100만원 -> y,n
 					$(this).parent().hide();
-					$('#quiz1-2-1-2').show();
+					$('#y_M-service').show(); //M 플래티넘 서비스
 				});
-					$('#quiz1-2-1-2 span:eq(0)').click(function(){ //50~100만원 - y
-						$(this).parent().hide();
-						$('#quiz1-2-1-2-1').show(); //M2 xxx
-					});
-					$('#quiz1-2-1-2 span:eq(1)').click(function(){ //50~100만원 - n
-						$(this).parent().hide();
-						$('#quiz1-2-1-2-2').show(); //M1 xxx
-					});
+								$('#y_M-service span:eq(0)').click(function(){ //y
+									$(this).parent().hide();
+									loadCard('MPE2','현대카드M2 Edition2','강력한 포인트카드'); //M2
+								});
+								$('#y_M-service span:eq(1)').click(function(){ //n
+									$(this).parent().hide();
+									loadCard('ME2','현대카드M Edition2','강력한 포인트카드'); //M
+								});
 				$('#quiz1-2-1 span:eq(2)').click(function(){ //월사용금액 - 100~200만원 -> y,n
 					$(this).parent().hide();
-					$('#quiz1-2-1-3').show();
+					$('#y_M-service').show(); //M 플래티넘 서비스
 				});
-					$('#quiz1-2-1-3 span:eq(0)').click(function(){ //50~100만원 - y
-						$(this).parent().hide();
-						$('#quiz1-2-1-3-1').show(); //M2
-					});
-					$('#quiz1-2-1-3 span:eq(1)').click(function(){ //50~100만원 - n
-						$(this).parent().hide();
-						$('#quiz1-2-1-3-2').show(); //M1
-					});
 				$('#quiz1-2-1 span:eq(3)').click(function(){ //월사용금액 - 200만원이상
 					$(this).parent().hide();
-					$('#quiz1-2-1-4').show(); //T3,M3
+					$('#y_answerT3M3').show(); //T3 & M3
 				});			
 			
 			$('#quiz1-2 span:eq(1)').click(function(){ //주요사용처 -> 생활,포인트,항공사
@@ -200,31 +190,94 @@ $(document).ready(function(){
 			});
 				$('#quiz1-2-2 span:eq(0)').click(function(){ //생활
 					$(this).parent().hide();
-					$('#quiz1-2-2-1').show(); //ZERO
+					loadCard('ZRO','현대카드ZERO','조건없는 할인카드'); //ZERO
 				});
 				$('#quiz1-2-2 span:eq(1)').click(function(){ //포인트 -> y,n
 					$(this).parent().hide();
-					$('#quiz1-2-2-2').show();
+					$('#y_M-service').show(); //M 플래티넘 서비스
 				});
-					$('#quiz1-2-2-2 span:eq(0)').click(function(){ //포인트 -> y,n
-						$(this).parent().hide();
-						$('#quiz1-2-2-2-1').show(); //M2
-					});
-					$('#quiz1-2-2-2 span:eq(1)').click(function(){ //포인트 -> y,n
-						$(this).parent().hide();
-						$('#quiz1-2-2-2-2').show(); //M
-					});
 				$('#quiz1-2-2 span:eq(2)').click(function(){ //항공사
 					$(this).parent().hide();
-					$('#quiz1-2-2-3').show(); //T3
+					loadCard('T3PE2','현대카드T3 Edition2','트래블  &amp; 마일리지카드'); //T3
 				});
 		
 		
-	$('#quiz0 span:eq(1)').click(function(){ //할인
-		alert('흑흑2');
+	$('#quiz0 span:eq(1)').click(function(){ //할인 -> 연회비, 혜택금액
+		$(this).parent().hide();
+		$('#quiz2').show();
 	});
-    
-	
+		$('#quiz2 span:eq(0)').click(function(){ //연회비 -> 금액
+			$(this).parent().hide();
+			$('#quiz2-1').show();
+		});
+			$('#quiz2-1 span:eq(0)').click(function(){ //연회비 - 1만원이하
+				$(this).parent().hide();
+				loadCard('ZRO','현대카드ZERO','조건없는 할인카드'); //ZERO
+			});
+			$('#quiz2-1 span:eq(1)').click(function(){ //연회비 - 1~2만원
+				$(this).parent().hide();
+				loadCard('XE2','현대카드X Edition2','쓸수록 커지는 할인카드'); //X
+			});
+			$('#quiz2-1 span:eq(2)').click(function(){ //연회비 - 2~5만원
+				$(this).parent().hide();
+				loadCard('XPE2','현대카드X2 Edition2','쓸수록 커지는 할인카드'); //X2
+			});
+			$('#quiz2-1 span:eq(3)').click(function(){ //연회비 - 5만원이상
+				$(this).parent().hide();
+				loadCard('X3PE2','현대카드X3 Edition2','쓸수록 커지는 할인카드'); //X3
+			});
+		$('#quiz2 span:eq(1)').click(function(){ //혜택금액 -> 월사용금액,주요사용처
+			$(this).parent().hide();
+			$('#quiz2-2').show();
+		});
+			$('#quiz2-2 span:eq(0)').click(function(){ //월사용금액 -> 금액
+				$(this).parent().hide();
+				$('#quiz2-2-1').show();
+			});
+				$('#quiz2-2-1 span:eq(0)').click(function(){ //월사용금액 - 50만원이하
+					$(this).parent().hide();
+					loadCard('ZRO','현대카드ZERO','조건없는 할인카드'); //ZERO
+				});
+				$('#quiz2-2-1 span:eq(1)').click(function(){ //월사용금액 - 50~100만원 -> y,n
+					$(this).parent().hide();
+					$('#y_X-service').show(); //X 플래티넘 서비스
+				});
+								$('#y_X-service span:eq(0)').click(function(){ //50~100만원 - y
+									$(this).parent().hide();
+									loadCard('XPE2','현대카드X2 Edition2','쓸수록 커지는 할인카드'); //X2
+								});
+								$('#y_X-service span:eq(1)').click(function(){ //50~100만원 - n
+									$(this).parent().hide();
+									loadCard('XE2','현대카드X Edition2','쓸수록 커지는 할인카드'); //X
+								});
+				$('#quiz2-2-1 span:eq(2)').click(function(){ //월사용금액 - 100~200만원 -> y,n
+					$(this).parent().hide();
+					$('#y_X-service').show(); //X 플래티넘 서비스
+				});
+				$('#quiz2-2-1 span:eq(3)').click(function(){ //월사용금액 - 200만원이상
+					$(this).parent().hide();
+					loadCard('X3PE2','현대카드X3 Edition2','쓸수록 커지는 할인카드'); //X3
+				});
+			$('#quiz2-2 span:eq(1)').click(function(){ //주요사용처 -> 5대생활영역, 빈도높은사용처
+				$(this).parent().hide();
+				$('#quiz2-2-2').show();
+			});
+				$('#quiz2-2-2 span:eq(0)').click(function(){ //5대생활영역
+					$(this).parent().hide();
+					loadCard('ZRO','현대카드ZERO','조건없는 할인카드'); //ZERO
+				});
+				$('#quiz2-2-2 span:eq(1)').click(function(){ //빈도높은사용처 -> 5%, 10%
+					$(this).parent().hide();
+					$('#quiz2-2-2-2').show();
+				});
+					$('#quiz2-2-2-2 span:eq(0)').click(function(){ //5% -> y,n
+						$(this).parent().hide();
+						$('#y_X-service').show(); //X 플래티넘 서비스
+					});					
+					$('#quiz2-2-2-2 span:eq(1)').click(function(){ //10%
+						$(this).parent().hide();
+						loadCard('X3PE2','현대카드X3 Edition2','쓸수록 커지는 할인카드'); //X3
+					});
     
     
     
