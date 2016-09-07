@@ -94,13 +94,11 @@ $(document).ready(function(){
 	});
 	
 	
+	//비교불가 카드 관심카드 담기 버튼 삭제
+	$('#TB').hide();
+	$('#CMH').hide();
 	
-	//비교불가 카드들 버튼 막기 (비교 불가)
 	
-	
-	
-	
-
 	//id로 카드 결과 페이지 호출
 	function loadCard(card,info_name,info_stitle){
 		var link1 = "alert('아하1')"; //변경필요
