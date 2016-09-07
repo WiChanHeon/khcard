@@ -2,107 +2,63 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>	
-<style>
-table {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
-	width: 70%;
-	margin-top: 50px;
-	margin-bottom: 50px;
-} /*테이블*/
-input.box1,input.box2,input.box3,input.box4,input.box5,input.box6,input.box7 {
-	width: 70%;
-}
-td, th { 	 
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}/*테이블*/
-div.rok{
-	width: 70%;
-    margin-left: 110px; 
-    text-align: right;  
-}/*저장 정산*/
-body {
-    font-family: "Lato", sans-serif;
-    transition: background-color .5s;
-}
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	
+	
+	<!-- 사이드 메뉴 시작 -->
+	<nav class="w3-sidenav w3-black" style="width:50px;"> 
+		<span style="font-size: 10px; cursor: pointer; margin-left: 20px;" onclick="openNav()">&#9776;
+		</span>
+		<a class="w3-padding-16" href="#"><i class="fa fa-home w3-large"></i></a>
+  		<a class="w3-padding-16" href="#"><i class="fa fa-search w3-large"></i></a>
+ 		<a class="w3-padding-16" href="#"><i class="fa fa-envelope w3-large"></i></a>
+  		<a class="w3-padding-16" href="#"><i class="fa fa-globe w3-large"></i></a>
+  		<a class="w3-padding-16" href="#"><i class="fa fa-trash w3-large"></i></a>
+	</nav>
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 10px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 10px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-
-<div id="mySidenav" class="sidenav">
+		<div style="margin-left:70px">
+	
+	<div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="#section2">보고서</a>
+			<a href="#section2">쓰기</a>
+			<a href="#section2">보고서</a>
 			<a href="#section3">예산쓰기</a>
 			<a href="#section3">희망목표/이야기 0/0</a>
-			<a href="#section3">이달의 자산현황</a>
-			<a href="#section3">자산</a>
-			<a href="#section3">현금잔액</a>
-			<a href="#section3">투자자산</a>
-			<a href="#section3">기타자산</a>
-			<a href="#section3">부채</a>
-			<a href="#section3">대출</a>
-			<a href="#section3">기타부채</a>
-			<a href="#section3">순자산</a>
-			<a href="#section3">이달의 가계</a>
-			<a href="#section3">수입</a>
-			<a href="#section3">이달의 수입</a>
-			<a href="#section3">전월이월</a>
-			<a href="#section3">지출</a>
-			<a href="#section3">현금지출</a>
-			<a href="#section3">카드지출</a>
-			<a href="#section3">수입 - 지출</a>	
-</div>
-
-	<div id="main">
-	<span style="font-size: 15px; cursor: pointer; margin-top: 10px;" onclick="openNav()">&#9776;
-		가계부</span>
+			
+			<div class="w3-accordion">
+   			 <a onclick="myAccFunc1()" href="#">이달의 자산현황 <i class="fa fa-caret-down"></i>
+   			 </a>
+    		<div id="demoAcc1" class="w3-accordion-content w3-white w3-card-4">
+     		    <a href="#section3">자산</a>
+     		 	<a href="#section3">부채</a>
+     		 	<a href="#section3">순자산</a>
+   			 </div>
+  			</div>
+			
+			<div class="w3-accordion">
+   			 <a onclick="myAccFunc2()" href="#">이달의 가계<i class="fa fa-caret-down"></i>
+   			 </a>
+    		<div id="demoAcc2" class="w3-accordion-content w3-white w3-card-4">
+     		    <a href="#section3">수입</a>
+				<a href="#section3">이달의 수입</a>
+				<a href="#section3">전월이월</a>
+				<a href="#section3">지출</a>
+				<a href="#section3">현금지출</a>
+				<a href="#section3">카드지출</a>
+				<a href="#section3">수입 - 지출</a>
+   			 </div>
+  		</div>
+	 </div>
+	</div>
+	<!-- 사이드 메뉴 끝 -->
 	
+	<!-- 상단 차트 시작 -->
+	<div id="chartContainer" style="height: 300px; width: 90%;"></div>
+	<!-- 상단 차트 끝 -->
+	
+	<!-- 하단 입력 메뉴 -->
 	<form:form action="write.do" commandName="command" method="post">
+	
 	<table>
 		<thead>
 			<tr>
@@ -117,28 +73,34 @@ body {
 		</thead>
 		<tbody>
 			<tr>
-				<td><input type="date" class="box1" name="ca_reg"></td>
-				<td><input type="text" class="box2" name="ca_spot"></td>
-				<td><input type="text" class="box3" name="ca_price"></td>
-				<td><input type="text" class="box4" name="card_num"></td>
-				<td><input type="text" class="box5" name="ca_sort"></td>
-				<td><input type="text" class="box6" name="ca_category"></td>
-				<td><input type="text" class="box7" name="ca_memo"></td>
+				<td><input type="date" name="fname" style="border: 0px; width:120px;"></td>
+				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td>
+				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td>
+				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td>
+				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td>
+				<td>
+					<select>
+					<option selected="selected">선택</option>
+					<option>option 1</option>
+					<option>option 2</option>
+					</select></td>
+				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td> 
 			</tr>
 		</tbody>
-	</table>
+			</table>
+		
+			
 		<div class="rok">
 				<input type="submit" class="w3-btn w3-slim" value="정산하기">
-				<input type="submit" class="w3-btn w3-slim" value="저장하기">
-				
+				<input type="submit" class="w3-btn w3-slim" value="저장하기">	
 		</div>
-	</form:form>
-	</div>
-
+	 </form:form>	
+	<!-- 하단 입력 메뉴 끝 -->
+		
 <script>
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("mySidenav").style.width = "200px";
+    document.getElementById("main").style.marginLeft = "200px";
 }
 
 function closeNav() {
@@ -146,4 +108,51 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
 }
-</script>
+
+function myAccFunc1() {
+    var x = document.getElementById("demoAcc1");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-black";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-black", "");
+    }
+}
+function myAccFunc2() {
+    var x = document.getElementById("demoAcc2");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-black";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-black", "");
+    }
+}
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "2016.09.01 - 2016.09.30"              
+		},
+		data: [              
+		{
+			// Change type to "doughnut", "line", "splineArea", etc.
+			type: "column",
+			dataPoints: [
+				{ label: "apple",  y: 10  },
+				{ label: "orange", y: 15  },
+				{ label: "banana", y: 25  },
+				{ label: "mango",  y: 30  },
+				{ label: "grape",  y: 28  }
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+</script>	
+	

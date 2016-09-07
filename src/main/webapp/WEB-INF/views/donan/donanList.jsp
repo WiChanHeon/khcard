@@ -3,13 +3,17 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+	
+   <div class="sangdan">
    <h2>
       <img
          src="${pageContext.request.contextPath}/resources/images/h2_lost01_1.gif"
          alt="분실신고/재발급신청" />
    </h2>
+   </div>
+   <div class="sangdan1">
 	<h4>분실카드 선택</h4>
+   </div>
 	<table>
 		<thead>
 			<tr>
@@ -52,9 +56,12 @@
 		</div>
 
 	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
+	
 	<div class="jub1" style="display: none;">
+	
 	<h4>분실신고 접수</h4>
-	<img src="../resources/images/line.png" style="margin: auto; width: 70%;">
+	<img src="../resources/images/line.png">
+	
 	</div>
 	<div class="jub" style="display: none;">
 		<form>

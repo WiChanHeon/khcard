@@ -1,6 +1,7 @@
 package kr.spring.donan.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -26,6 +27,18 @@ Logger log = Logger.getLogger(this.getClass());
 	@Override
 	public void insert(GageCommand gagewrite) {
 		
+	}
+
+	@Override
+	public int getRowCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<GageCommand> dataGage(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

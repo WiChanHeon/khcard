@@ -1,3 +1,14 @@
+div.sangdan{
+	margin-left: 200px;
+	margin-top: 100px;   
+	width: 70%;
+}/*상단 글씨*/
+div.sangdan1{
+	margin-left: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;    
+	width: 70%;
+}/*상단 글씨*/
 p.eyong{
 	border-style: groove;
 	background-color: #dddddd;
@@ -18,12 +29,6 @@ div.check_zone{
 	width: 70%;
     margin: auto;
 }
-h2,h4{
-	margin-left: 120px;
-	width: 70%;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}/*분실카드선택 글씨*/
 table { 
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -41,11 +46,16 @@ th:nth-child(even),th:nth-child(odd) {
     background-color: #dddddd;
 }/*테이블 최상단*/
 div.jub{
-	margin-left: 280px; 
+	margin-left: 200px;
+	margin-top: 20px;
+	width: 70%;
 }
 div.jub1{
-	margin: auto;
-}
+	margin-left: 200px;
+	margin-top: 20px;
+	width: 100%;
+}/*하단글씨*/
 input.day{
 	width: 70%;
 }
+

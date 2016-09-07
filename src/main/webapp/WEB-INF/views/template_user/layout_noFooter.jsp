@@ -54,9 +54,10 @@
 		
 		<!-- Custom Scripts -->
 		<link href="${pageContext.request.contextPath}/resources/user/css/custom.css" rel="stylesheet">
-		<link href="${pageContext.request.contextPath}/resources/css/donan.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/css/gage.css" rel="stylesheet"> 
 		<!--jQuery dependencies-->
 		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<%-- <c:forEach var="cssName" items="${cssList}">
 			<link rel="stylesheet" href="<c:out value='${cssName}' />"/>
 		</c:forEach> --%>
@@ -89,6 +90,7 @@
 		<!-- JavaScript files placed at the end of the document so the pages load faster -->
 		<!-- ================================================== -->
 		<!-- Jquery and Bootstap core js files -->
+		<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/plugins/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/bootstrap/js/bootstrap.min.js"></script>
