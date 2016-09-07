@@ -54,7 +54,6 @@
 		<div class="bun">
 		<input type="button" id="btn1" value="분실 신고" class="w3-btn w3-slim">
 		</div>
-
 	<form:form action="write.do" commandName="command" onsubmit="return validateForm(this)" method="post" name="myForm">
 	
 	<div class="jub1" style="display: none;">

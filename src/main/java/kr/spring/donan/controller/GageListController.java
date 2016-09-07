@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.donan.domain.GageCommand;
@@ -19,10 +20,11 @@ public class GageListController {
 	@Resource(name="gageService")
 	private GageService gageService;
 	
-	@RequestMapping(value = "/gage/list.do")
+	@RequestMapping(value = "/gage/list.do" ,method=RequestMethod.GET)
     public ModelAndView gageList() { 
-        List<GageCommand> list = gageService.selectBoardList();
         
+		List<GageCommand> list = gageService.selectBoardList();
+       
         ModelAndView mv = new ModelAndView("gagelist.do");
         mv.setViewName("gageList");
         mv.addObject("list", list);

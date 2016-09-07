@@ -1,5 +1,6 @@
 table, td, th {
-    border: 1px;
+    border: 1px solid #ddd;
+    text-align: left; 
 }
 
 table {
@@ -8,17 +9,18 @@ table {
     margin-top: 50px;
     margin-left: 70px;
 }
-
 th{
-    height: 5px;
-    border-style: inset;
+    height: 2px;
+    padding: 10px;
+    background-color: black;
+    color: white;
 }
 td{
-	
+	padding: 10px;
 }
 div.rok{
-	margin-top: 100px;  	
-    margin-left: 1000px;  
+	margin-top: 10%;  	
+    margin-left: 75%;  
      
 }/*저장 정산*/
 body {
@@ -36,7 +38,7 @@ body {
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 10px;
+    padding-top: 120px; 
 }
 
 .sidenav a {

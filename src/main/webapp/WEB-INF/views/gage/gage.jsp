@@ -16,8 +16,9 @@
   		<a class="w3-padding-16" href="#"><i class="fa fa-trash w3-large"></i></a>
 	</nav>
 
-		<div style="margin-left:70px">
-	
+		<div style="margin-left: 70px">
+		
+		
 	<div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<a href="#section2">쓰기</a>
@@ -80,9 +81,18 @@
 				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td>
 				<td>
 					<select>
-					<option selected="selected">선택</option>
-					<option>option 1</option>
-					<option>option 2</option>
+					<option selected="selected">-</option> 
+						<option>식비</option>
+						<option>주거/통신</option>
+						<option>생활용품</option>
+						<option>의복/미용</option>
+						<option>건강/문화</option>
+						<option>교육/육아</option>
+						<option>교통/차량</option>
+						<option>경조사/회비</option>
+						<option>세금/이자</option>
+						<option>용돈/기타</option>
+						<option>미분류</option>
 					</select></td>
 				<td><input type="text" name="fname" style="border: 0px; width:120px;"></td> 
 			</tr>
@@ -94,6 +104,7 @@
 				<input type="submit" class="w3-btn w3-slim" value="정산하기">
 				<input type="submit" class="w3-btn w3-slim" value="저장하기">	
 		</div>
+		
 	 </form:form>	
 	<!-- 하단 입력 메뉴 끝 -->
 		
@@ -133,6 +144,7 @@ function myAccFunc2() {
 }
 
 window.onload = function () {
+	
 	var chart = new CanvasJS.Chart("chartContainer", {
 		title:{
 			text: "2016.09.01 - 2016.09.30"              
@@ -142,12 +154,14 @@ window.onload = function () {
 			// Change type to "doughnut", "line", "splineArea", etc.
 			type: "column",
 			dataPoints: [
-				{ label: "apple",  y: 10  },
-				{ label: "orange", y: 15  },
-				{ label: "banana", y: 25  },
-				{ label: "mango",  y: 30  },
-				{ label: "grape",  y: 28  }
-			]
+				<c:forEach var="a" items="${list}">	
+				{ label: "식비",  y: ${a.ca_price}  },
+				{ label: "주거 통신", y: 15  },
+				{ label: "생활용품", y: 25  },
+				{ label: "의복/미용",  y: 30  },
+				{ label: "건강/문화",  y: 28  }
+				</c:forEach>
+			] 
 		}
 		]
 	});
