@@ -86,7 +86,7 @@ $(document).ready(function(){
 		
 		var btnview = $(this).siblings().first();
 		btnview.css('top',y).css('left',x).css('width',imgW).css('height',imgH+30);
-		$('#'+id+'_btnview div.y_img_span').css('top','30px').css('left','0').css('width',imgW).css('height',imgH);
+		btnview.find('.y_img_span').css('top','15px').css('left','0').css('width',imgW).css('height',imgH);
 		btnview.show();
 	});
 	$(document).on('mouseout','.y_matchCard-btndiv',function(){
