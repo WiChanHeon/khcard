@@ -77,18 +77,19 @@ $(document).ready(function(){
 	
 	
 	//카드추천 인터넷신청,전화신청 버튼
-	$('.y_matchCard').mouseover(function(){
+	$(document).on('mouseover','.y_matchCard',function(){
 		var id = $(this).attr('data-id');
 		var imgW = $(this).width();
 		var imgH =  $(this).height();
 		var x = $(this).offset().left;
 		var y = $(this).offset().top;
 		
-		$('#'+id+'_btnview').css('top',y-20).css('left',x).css('width',imgW).css('height',imgH+30);
-		$('#'+id+'_btnview div.y_img_span').css('top','50px').css('left','0px').css('width',imgW).css('height',imgH);
-		$('#'+id+'_btnview').show();
+		var btnview = $(this).siblings().first();
+		btnview.css('top',y-20).css('left',x).css('width',imgW).css('height',imgH+30);
+		$('#'+id+'_btnview div.y_img_span').css('top','50px').css('left','0').css('width',imgW).css('height',imgH);
+		btnview.show();
 	});
-	$('.y_matchCard-btndiv').mouseout(function(){
+	$(document).on('mouseout','.y_matchCard-btndiv',function(){
 		$(this).hide();
 	});
 	
@@ -100,9 +101,31 @@ $(document).ready(function(){
 	
 	
 
-	
+	//id로 카드 결과 페이지 호출
+	function loadCard(card,info_name,info_stitle){
+		var link1 = "alert('아하1')"; //변경필요
+		var link2 = "alert('어허2')"; //변경필요
+		var link3 = "location.href='matchCard.do'";
+		
+		var output = '';
+		
+		output += '<div id="y_answer">';
+		output += '<p class="y_quiztitle-card">내게 맞는 카드 상품은?</p>';
+		output += '<div class="y_qcard">';
+		output += '<img src="../resources/images/card/card_'+card+'.png" class="y_matchCard" data-id="'+card+'">';
+		output += '<div class="y_matchCard-btndiv" id="'+card+'_btnview" style="display:none;">';
+		output += '<a class="btn btn-primary y_matchCard-btn" onclick="'+link1+'">인터넷신청</a>';
+		output += '<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="'+link2+'">전화신청</a>';
+		output += '<div class="y_img_span"></div></div>';
+		output += '<br><div class="y_name"><a href="#">'+info_name+' ></a></div>';
+		output += '<br><p>'+info_stitle+'</p>';
+		output += '</div><br><input type="button" class="btn btn-default y_q_first-btn" value="처음부터" onclick="'+link3+'"></div>';
+		
+		$('.y_quizbox').append(output);
+	}
 	
 	/////////////////카드추천////////////////////
+	//-----> 결과페이지는 id만 넘겨서 function 불러오는 방법 써보기 (output,append)
 	$('#quiz0 span:eq(0)').click(function(){ //포인트 -> 연회비,혜택금액
 		$(this).parent().hide();
 		$('#quiz1').show();
@@ -114,7 +137,8 @@ $(document).ready(function(){
 		});
 			$('#quiz1-1 span:eq(0)').click(function(){ //연회비 - 1만원이하
 				$(this).parent().hide();
-				$('#quiz1-1-1').show(); //카드
+				loadCard('CMH','현대카드M HYBRID','M포인트 적립 하이브리드카드'); //CMH
+				 
 			});
 			$('#quiz1-1 span:eq(1)').click(function(){ //연회비 - 1~2만원
 				$(this).parent().hide();
