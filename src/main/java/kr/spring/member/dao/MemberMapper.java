@@ -31,8 +31,10 @@ public interface MemberMapper {
 	public void updateCards(@Param("mem_id")String mem_id, @Param("card_num")String card_num);
 	@Select("SELECT card_num FROM f_apply WHERE ap_id=#{user_id}")
 	public List<String> usageCard(String user_id);
-	@Select("SELECT * from f_#{cardnum}")
-	public InfoCardsCommand infoCard(String cardnum);
+	public List<InfoCardsCommand> infoCard(Map<String,String> map);
+	@Select("SELECT card_limit FROM f_card WHERE card_num=#{num}")
+	public List<String> limitCard(String num);
+	
 }
 
 

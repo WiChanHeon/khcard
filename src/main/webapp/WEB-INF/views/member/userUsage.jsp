@@ -26,6 +26,13 @@
 	<img id="imgId" src="${pageContext.request.contextPath}/resources/images/card_ZRO.png">
 	</div>
 	</div>
+	<div>
+		<c:forEach var="card" items="${cards}">
+			<ul>
+				<li>${card}</li>
+			</ul>
+		</c:forEach>
+	</div>
 </div>
 </c:if>
 <c:if test="${empty userId}">

@@ -2,6 +2,7 @@ package kr.spring.member.service;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -59,8 +60,15 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public InfoCardsCommand infoCard(String cardnum) {
-		return memberMapper.infoCard(cardnum);
+	public List<InfoCardsCommand> infoCard(Map<String,String> map) {
+		return memberMapper.infoCard(map);
 	}
 
+	@Override
+	public List<String> limitCard(String num) {
+		
+		return memberMapper.limitCard(num);
+	}
+
+	
 }

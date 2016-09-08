@@ -53,7 +53,6 @@
 				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value> 
 				<beans:value>/WEB-INF/tiles-def/admin.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
-				<beans:value>/WEB-INF/tiles-def/usage.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
