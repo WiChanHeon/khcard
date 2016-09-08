@@ -1,8 +1,12 @@
 @CHARSET "UTF-8";
 
-
 /*------------------------sList Start------------------------*/
 /*공통사용*/
+.y_div img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .y_center{
 	text-align:center;
 }
@@ -38,7 +42,7 @@
 	border-bottom:1px solid silver;
 	position:fixed;
 	left:0;
-	top:60px;
+	top:105px;
 	background-color:rgba(255,255,255,0.95);
 	width:100%;
 	min-height:170px;
@@ -71,7 +75,7 @@
 
 /*하단카드목록*/
 .y_nav_content{
-	margin:160px 50px 100px 50px;
+	margin:200px 50px 100px 50px;
 	min-height:400px;
 }
 .y_name{
@@ -269,7 +273,7 @@ p.y_ctitle{
 	border-bottom:1px solid silver;
 	position:fixed;
 	left:0;
-	top:60px;
+	top:105px;
 	background-color:rgba(255,255,255,0.95);
 	width:100%;
 	min-height:100px;
@@ -278,7 +282,7 @@ p.y_ctitle{
 	
 /*비교본문*/
 .y_compare_content{
-	margin:140px 50px 100px 50px;
+	margin:200px 50px 100px 50px;
 	min-height:400px;
 }
 table#y_ctable{
@@ -319,7 +323,7 @@ table#y_ctable tr td{
 .y_mfix{
 	position:fixed;
 	left:0;
-	top:60px;
+	top:105px;
 	background-color:rgba(255,255,255,0.95);
 	width:100%;
 	height:60px;
@@ -328,10 +332,11 @@ table#y_ctable tr td{
 /*quiz영역*/
 .y_mmenu{
 	left:0;
-	top:60px;
+	/* top:60px; */
+	padding-top:60px;
 	background-color:#f7f7f7;
 	width:100%;
-	min-height:170px;
+	min-height:400px;
 	z-index:104;	
 	
 }

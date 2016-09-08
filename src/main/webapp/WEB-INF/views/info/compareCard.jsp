@@ -3,13 +3,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/layout.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>
-
-
 <script type="text/javascript">
 	//뒤로가기 버튼 막기
 	history.pushState(null, null, "#");

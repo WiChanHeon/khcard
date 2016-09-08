@@ -14,3 +14,29 @@ div,h1,h2,h3,h4,h5,h6,ul,li{
 	src:url('../font/NEXONFootballGothicB.eot'),
 		url('../font/NEXONFootballGothicB.woff') format('woff');
 }
+
+/* Scroll to top */
+.scrollToTop {
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1005;
+  display: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.scrollToTop i {
+  line-height: 50px;
+}
+.scrollToTop:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
