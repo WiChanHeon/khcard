@@ -113,6 +113,7 @@ div.y_card div{
 }
 div.y_card img {
 	padding:10px 0;
+	/* max-width:266px; */
 }
 
 .y_img_btndiv{

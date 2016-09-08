@@ -20,6 +20,17 @@
 	
 	<!-- 사용자 메인 페이지 설정 -->
 	<mvc:view-controller path="/main/main.do" view-name="main"/>
+	<mvc:view-controller path="/detail/TB.do" view-name="cardTheBlack"/>
+	<mvc:view-controller path="/detail/TP.do" view-name="cardThePurple"/>
+	<mvc:view-controller path="/detail/TR.do" view-name="cardTheRed"/>
+	<mvc:view-controller path="/detail/M3.do" view-name="cardM3"/>
+	<mvc:view-controller path="/detail/M2.do" view-name="cardM2"/>
+	<mvc:view-controller path="/detail/M.do" view-name="cardM"/>
+	<mvc:view-controller path="/detail/T3.do" view-name="cardT3"/>
+	<mvc:view-controller path="/detail/X3.do" view-name="cardX3"/>
+	<mvc:view-controller path="/detail/X2.do" view-name="cardX2"/>
+	<mvc:view-controller path="/detail/X.do" view-name="cardX"/>
+	<mvc:view-controller path="/detail/ZR.do" view-name="cardZERO"/>
 	<!-- 관리자 메인 페이지 설정 -->
 	<mvc:view-controller path="/admin/main.do" view-name="adminMain"/>
 	
