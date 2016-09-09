@@ -3,7 +3,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
 	//뒤로가기 버튼 막기
 	history.pushState(null, null, "#");
 	$(window).bind("hashchange", function(){
@@ -15,6 +17,7 @@
 	/* window.onbeforeunload = function(){
 	return '하단의 다시 비교하기 버튼을 사용해주세요.';
 	}; */
+});
 </script>
 
 

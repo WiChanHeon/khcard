@@ -1,5 +1,5 @@
 /*main*/
-.dimmed, .dimmed_2 { /*메인 black 투명도*/
+.dimmed{ /*메인 dimmed 효과*/
     display: none;
     overflow: hidden; 
     position: fixed;
@@ -11,6 +11,17 @@
     background: black;
     opacity: 0;
 }
+
+/*------------------o_main------------------*/
+#o_header{
+	width:100%;
+	height:105px;
+	background-color:#000;
+	transition: all 0.2s;
+}
+
+
+/*------------------o_main------------------*/
 
 
 /*메인 상단 시작*/

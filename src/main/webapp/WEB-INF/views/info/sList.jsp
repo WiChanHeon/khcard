@@ -4,39 +4,38 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container y_div">
-	<div class="y_nav_menu y_center">
 
-		<!-- 카드비교함 시작-->
-		<div class="y_mfix" role="카드비교함 고정영역">
-		<div class="y_floatright" style="margin:10px 30px 0 0;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount"><c:if test="${sessionScope.ccount > 0}">${sessionScope.ccount}</c:if></span></div>
-		
-		<div id="y_compare" style="display:none;">
-			<p class="y_ctitle">관심카드 <span id="y_ccount2"><c:if test="${sessionScope.ccount > 0}">(${sessionScope.ccount})</c:if></span> </p>
+	<!-- 카드비교함 시작-->
+	<div class="y_mfix" role="카드비교함 고정영역">
+	<div class="y_floatright" style="margin:10px 30px 0 0;"><button type="button" class="btn btn-default btn-sm" id="y_btn-compare" data-toggle="tooltip" data-placement="bottom" title="관심카드"><span class="glyphicon glyphicon-plus"></span></button> <span class="badge" id="y_ccount"><c:if test="${sessionScope.ccount > 0}">${sessionScope.ccount}</c:if></span></div>
 	
-			<c:if test="${empty sessionScope.choice}">
-				<div class="y_cimg" id="y_cimg1"></div>
-				<div class="y_cimg" id="y_cimg2"></div>
-				<div class="y_cimg" id="y_cimg3"></div>
-			</c:if>
-			
-			<c:if test="${!empty sessionScope.choice}">
-			<c:forEach var="i" begin="0" end="2">
-				<div class="y_cimg" id="y_cimg${i+1}"> <c:if test="${sessionScope.choice[i]!=null}"><a href="#" class="y_clink" data-id="${sessionScope.choice[i]}"><img src="${pageContext.request.contextPath}/resources/images/card/card_${sessionScope.choice[i]}.png"></a></c:if> </div>
-			</c:forEach>
-			</c:if>
-			
-			<form action="compare.do" id="y_compareForm">
-				<input type="hidden" name="card1" value="${sessionScope.choice[0]}">
-				<input type="hidden" name="card2" value="${sessionScope.choice[1]}">
-				<input type="hidden" name="card3" value="${sessionScope.choice[2]}">
-				<input type="submit" id="y_cbtn" value="비교하기">
-			</form>
-			
-		</div>
-		</div>
-		<!-- 카드비교함 끝 -->
+	<div id="y_compare" style="display:none;">
+		<p class="y_ctitle">관심카드 <span id="y_ccount2"><c:if test="${sessionScope.ccount > 0}">(${sessionScope.ccount})</c:if></span> </p>
+
+		<c:if test="${empty sessionScope.choice}">
+			<div class="y_cimg" id="y_cimg1"></div>
+			<div class="y_cimg" id="y_cimg2"></div>
+			<div class="y_cimg" id="y_cimg3"></div>
+		</c:if>
 		
+		<c:if test="${!empty sessionScope.choice}">
+		<c:forEach var="i" begin="0" end="2">
+			<div class="y_cimg" id="y_cimg${i+1}"> <c:if test="${sessionScope.choice[i]!=null}"><a href="#" class="y_clink" data-id="${sessionScope.choice[i]}"><img src="${pageContext.request.contextPath}/resources/images/card/card_${sessionScope.choice[i]}.png"></a></c:if> </div>
+		</c:forEach>
+		</c:if>
 		
+		<form action="compare.do" id="y_compareForm">
+			<input type="hidden" name="card1" value="${sessionScope.choice[0]}">
+			<input type="hidden" name="card2" value="${sessionScope.choice[1]}">
+			<input type="hidden" name="card3" value="${sessionScope.choice[2]}">
+			<input type="submit" id="y_cbtn" value="비교하기">
+		</form>
+		
+	</div>
+	</div>
+	<!-- 카드비교함 끝 -->
+		
+	<div class="y_nav_menu y_center">
 		
 		<!-- <div class="y_clear"></div> -->
 		

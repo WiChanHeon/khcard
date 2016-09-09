@@ -2,26 +2,27 @@
     pageEncoding="UTF-8"%>
 
 
-<div style="width: 100%; height: 105px; background-color: #000000;">
+<div id="o_header">
 
-
-<!-- opacity: 1 -->
-<span class="dimmed" style="opacity:0.2"></span>
-<ul id="nav" class="dropdown dropdown-linear dropdown-columnar" style=" /* width: 100%; */ width:1640px;">
-<li style="margin-left: 270px;">
-<a href="${pageContext.request.contextPath}/main/main.do"><img alt="logo" src="${pageContext.request.contextPath}/resources/images/logo.png" style="float: left; margin-top: 10px;"></a>
-</li>
-<li class="dir" style="margin-left: 170px;">My Account
-   <ul style="left:0;">
-      <li>이용내역
-         <ul>
-            <li><a href="#">이용대금명세서</a></li>
-            <li><a href="#">이용대금명세서(예정)</a></li>
-            <li><a href="#">이용한도</a></li>
-            <li><a href="#">카드이용내역</a></li>
-            <li><a href="#" style="width: 170px;">포인트/마일리지/할인/캐시백</a></li>
-         </ul>
-      </li>
+	<!-- 메뉴 hover 뒷배경 dimmed 영역 -->
+	<span class="dimmed" style="opacity:0.2"></span>
+	
+	<!-- 메뉴 시작 -->
+	<ul id="nav" class="dropdown dropdown-linear dropdown-columnar" style=" /* width: 100%; */ width:1640px;">
+		<li style="margin-left: 270px;">
+		<a	 href="${pageContext.request.contextPath}/main/main.do"><img alt="logo" src="${pageContext.request.contextPath}/resources/images/logo.png" style="float: left; margin-top: 10px;"></a>
+		</li>
+		<li class="dir" style="margin-left: 170px;">My Account
+		   <ul style="left:0;">
+		      <li>이용내역
+		         <ul>
+		            <li><a href="#">이용대금명세서</a></li>
+		            <li><a href="#">이용대금명세서(예정)</a></li>
+		            <li><a href="#">이용한도</a></li>
+		            <li><a href="#">카드이용내역</a></li>
+		            <li><a href="#" style="width: 170px;">포인트/마일리지/할인/캐시백</a></li>
+		         </ul>
+		     	</li>
       
       <li>이용대금 결제 신청
          <ul>
@@ -126,13 +127,11 @@
       </li>
       <li>카드신청
          <ul>
-            <li><a href="#">카드신청</a></li>
-            <li><a href="#">바로발급서비스</a></li>
+            <li><a href="${pageContext.request.contextPath}/info/slist.do">카드신청</a></li>
             
             <li>카드추천
                <ul>
-                  <li><a href="#">인기/추천카드</a></li>
-                  <li><a href="#">내게 맞는 카드 찾기</a></li>
+                  <li><a href="${pageContext.request.contextPath}/info/matchCard.do">내게 맞는 카드 찾기</a></li>
                </ul>
          </ul>
       </li>
@@ -213,7 +212,7 @@
       </li>
       <li>Space
          <ul>
-            <li><a href="#">VINYL &amp; PLASTIC</a></li>
+            <li><a href="#">VINYL & PLASTIC</a></li>
             <li><a href="#">STORAGE</a></li>
             <li><a href="#">DESIGN LIBRARY</a></li>
             <li><a href="#">TRAVEL LIBRARY</a></li>
