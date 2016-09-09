@@ -110,6 +110,19 @@ div,h1,h2,h3,h4,h5,h6,ul,li{
 #y_makeMenu .main-navigation{ /*메뉴밀림방지위해 최소넓이 지정*/
 	min-width:1382px;
 }
+.y_silyoung{
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50px;
+}
+.y_silyoung img{
+	margin:0 50px;
+}
+.y_silyoung a{
+	color:#0080ff;
+}
+
 
 
 /*복사 스타일*/
@@ -120,6 +133,7 @@ div,h1,h2,h3,h4,h5,h6,ul,li{
   left: 0;
   width: 100%;
   padding: 20px 30px;
+  min-height:250px;
 }
 /* mega menu menu item */
 #y_makeMenu .mega-menu .menu {

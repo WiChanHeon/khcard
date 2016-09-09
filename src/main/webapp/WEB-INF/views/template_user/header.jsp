@@ -23,6 +23,9 @@
 				<ul class="dropdown-menu">
 					<li>
 					
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+	 						
 						<div class="col-sm-2 col-sm-offset-2">
 							<h5>이용내역</h5>
 							<ul class="menu">
@@ -96,7 +99,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">카드 안내 신청</a>
 				<ul class="dropdown-menu">
 					<li>
-					
+						
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+						
 						<div class="col-sm-1 col-sm-offset-2">
 							<h5>카드 안내</h5>
 							<ul class="menu">
@@ -181,7 +187,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">나만의 혜택</a>
 				<ul class="dropdown-menu">
 					<li>
-					
+						
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+						
 						<div class="col-sm-2"> <!--  col-sm-offset-5 -->
 							<ul class="menu">
 								<li><a href="#">Star·Gold Friendship</a></li>
@@ -202,7 +211,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">M혜택 안내</a>
 				<ul class="dropdown-menu">
 					<li>
-					
+						
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+						
 						<div class="col-sm-2 col-sm-offset-6">
 							<h5>M포인트 적립 안내</h5>
 							<ul class="menu">
@@ -246,7 +258,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">금융 안내·신청</a>
 				<ul class="dropdown-menu">
 					<li>
-					
+						
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+						
 						<div class="col-sm-2"> <!-- col-sm-offset-7 -->
 							<ul class="menu">
 								<li><a href="#">장기카드대출(카드론)</a></li>
@@ -266,7 +281,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">컬쳐·라이프스타일</a>
 				<ul class="dropdown-menu">
 					<li>
-					
+						
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+						
 						<div class="col-sm-2 col-sm-offset-4">
 							<h5>Culture</h5>
 							<ul class="menu">
@@ -319,7 +337,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">고객센터</a>
 				<ul class="dropdown-menu">
 					<li>
-					
+						
+						<!-- 실용적인 서비스 안내 -->
+						<span class="y_silyoung"><img src="${pageContext.request.contextPath}/resources/images/img_digital_banner.gif"><br><br>가장 실용적인 Digital 서비스를 <br>경험해 보세요.<br><a href="#">Digital KH카드 프로젝트 ></a></span>
+						
 						<div class="col-sm-2 col-sm-offset-4">
 							<h5>고객상담·문의</h5>
 							<ul class="menu">
