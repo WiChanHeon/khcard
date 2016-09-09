@@ -3,11 +3,11 @@
 
 
 <!-- 메뉴 hover 뒷배경 dimmed 영역 -->
-<span class="dimmed"></span>
+<span class="y_dimmed"></span>
 
 <!-- header 메뉴 -->
-<div class="main-navigation" id="y_header">
-<nav class="navbar navbar-inverse" id="o_header">
+<div class="main-navigation" id="y_makeMenu">
+<nav class="navbar navbar-inverse" id="y_header">
 	<div class="container-fluid">
 	
 		<!-- 로고 -->
