@@ -17,6 +17,7 @@ p.eyong{
 }/*이용 내역*/
 div.bun{
 	width: 70%;
+	padding-top: 15px;
     margin: auto;
     text-align: right;
 }/*분실 신고 버튼*/
@@ -46,9 +47,8 @@ th:nth-child(even),th:nth-child(odd) {
     background-color: #dddddd;
 }/*테이블 최상단*/
 div.jub{
-	margin-left: 200px;
+	margin-left: 20%;
 	margin-top: 20px;
-	width: 70%;
 }
 div.jub1{
 	margin-left: 200px;

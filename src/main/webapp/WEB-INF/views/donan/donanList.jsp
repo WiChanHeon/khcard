@@ -59,7 +59,7 @@
 	<div class="jub1" style="display: none;">
 	
 	<h4>분실신고 접수</h4>
-	<img src="../resources/images/line.png">
+	<img src="../resources/images/line.png" style="width: 70%;">
 	
 	</div>
 	<div class="jub" style="display: none;">

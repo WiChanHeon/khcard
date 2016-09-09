@@ -23,15 +23,19 @@ public class GageDataController {
 	    
 	  @RequestMapping("/gage/gageDataAjax.do")
 	  @ResponseBody
-	  public Map<String, Object> process(@RequestParam("ca_num") int ca_num){
+	  public Map<String, Object> process(
+			  				@RequestParam("ca_sort")int ca_sort,
+			  				@RequestParam("ca_income") int ca_income){
 		  if(log.isDebugEnabled()){
-			  log.debug("ca_num : " + ca_num);
+			  log.debug("ca_sort : " + ca_sort);
+			  log.debug("ca_income : " + ca_income);
 		  }
 		  
 		  HashMap<String, Object> hashMap = new HashMap<String,Object>();
-		  hashMap.put("ca_num", ca_num);
+		  hashMap.put("ca_sort", ca_sort);
+		  hashMap.put("ca_income", ca_income);
 		  
-		  //√— µ•¿Ã≈Õ¿« ∞πºˆ
+		  //√— µ•¿Ã≈Õ¿«¿« ∞πºˆ
 		  int count = gageService.getRowCount(hashMap);
 		  
 		  List<GageCommand> list = null;
@@ -42,8 +46,8 @@ public class GageDataController {
 		  }
 		  
 		  Map<String, Object> map = new HashMap<String, Object>();
-		  
+		  map.put("count", count);
 		  map.put("list", list);
 		  return map;
 	  }
-	}
+}
