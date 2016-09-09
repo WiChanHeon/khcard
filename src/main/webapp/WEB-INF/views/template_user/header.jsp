@@ -6,7 +6,7 @@
 <span class="dimmed"></span>
 
 <!-- header 메뉴 -->
-<div class="main-navigation" >
+<div class="main-navigation" id="y_header">
 <nav class="navbar navbar-inverse" id="o_header">
 	<div class="container-fluid">
 	
@@ -107,7 +107,7 @@
 							</ul>
 						</div>
 						<div class="col-sm-1">
-							<h5 class="o_noneT">none</h5>
+							<h5 class="o_noneT">.</h5>
 							<ul class="menu">
 								<li>포인트 카드</li>
 								<li><a href="${pageContext.request.contextPath}/detail/M3.do">M3</a></li>
@@ -117,7 +117,7 @@
 							</ul>
 						</div>
 						<div class="col-sm-1">
-							<h5 class="o_noneT">none</h5>
+							<h5 class="o_noneT">.</h5>
 							<ul class="menu">
 								<li>할인 카드<li>
 								<li><a href="${pageContext.request.contextPath}/detail/X3.do">X3</a></li>
@@ -127,7 +127,7 @@
 							</ul>
 						</div>
 						<div class="col-sm-1" style="width:150px;">
-							<h5 class="o_noneT">none</h5>
+							<h5 class="o_noneT">.</h5>
 							<ul class="menu">
 								<li>MY BUSINESS카드<li>
 								<li><a href="#">MY BUSINESS카드</a></li>
@@ -141,7 +141,7 @@
 							</ul>
 						</div>
 						<div class="col-sm-1">
-							<h5 class="o_noneT">none</h5>
+							<h5 class="o_noneT">.</h5>
 							<ul class="menu">
 								<li>기타 카드</li>
 								<li><a href="#">체크카드</a></li>
@@ -182,7 +182,7 @@
 				<ul class="dropdown-menu">
 					<li>
 					
-						<div class="col-sm-2 col-sm-offset-5">
+						<div class="col-sm-2"> <!--  col-sm-offset-5 -->
 							<ul class="menu">
 								<li><a href="#">Star·Gold Friendship</a></li>
 								<li><a href="#">보유 바우처</a></li>
@@ -247,7 +247,7 @@
 				<ul class="dropdown-menu">
 					<li>
 					
-						<div class="col-sm-2 col-sm-offset-7">
+						<div class="col-sm-2"> <!-- col-sm-offset-7 -->
 							<ul class="menu">
 								<li><a href="#">장기카드대출(카드론)</a></li>
 								<li><a href="#">단기카드대출(현금서비스)</a></li>

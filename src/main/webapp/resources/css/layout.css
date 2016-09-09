@@ -1,5 +1,7 @@
 @CHARSET "UTF-8";
 
+/*-------------------------------All Start-------------------------------*/
+
 /*전체디자인*/
 @font-face{
 	font-family:nexonL;
@@ -40,3 +42,107 @@ div,h1,h2,h3,h4,h5,h6,ul,li{
 .scrollToTop:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+/*-------------------------------All End-------------------------------*/
+/*-------------------------------Header Start-------------------------------*/
+
+/*기존 스타일 제거*/
+.container-fluid{
+	padding-top:40px; /*메뉴 윗 공백*/
+	padding-bottom:0;
+}
+.navbar-brand{ /*로고공백제어*/
+	padding:10px 15px;
+}
+.navbar-nav>li>a {
+	padding-top:20px;
+	padding-bottom:25px; /*메뉴 hover 공간 늘림*/
+}
+.navbar{ /*테두리 굴곡 제거 + 좌우 공백*/
+	border-radius: 0px;
+	padding:0 10%;	
+}
+.navbar-inverse .navbar-nav>li>a{
+	color:#fff;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>li>a:hover{
+	color: #0080ff;
+    background-color: #fff;
+}
+
+.dropdown-menu{
+	border: none;
+	-webkit-box-shadow: 0 0 0 rgba(0,0,0,.175);
+	box-shadow: 0 0 0 rgba(0,0,0,.175);
+}
+
+/*추가 입력 스타일*/
+.o_leftborder{ /*좌측 회색 선*/
+	border-left:1px solid #e9e9e9;
+}
+.o_noneT{ /*제목공백효과*/
+	color:#fff;
+}
+.dimmed{ /*메인 dimmed 효과*/
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity:0.2;
+}
+#o_header{ /*네비게이션바 위치+스타일+slideUp속도*/
+	width:100%;
+	height:105px;
+	background-color:#000;
+	transition:all 0.2s;
+	z-index:500;
+}
+.dropdown-menu>li>div>h5{ /*소제목 볼드처리*/
+	font-weight:bold;
+}
+.main-navigation{ /*메뉴밀림방지위해 최소넓이 지정*/
+	min-width:1382px;
+}
+
+
+/*복사 스타일*/
+.mega-menu.dropdown {
+  position: static;
+}
+.mega-menu .dropdown-menu {
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+}
+/* mega menu menu item */
+.mega-menu .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-menu .menu > li > a {
+  padding: 5px 0;
+  font-size: 14px;
+  color: #808080;
+  display: block;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+/* mega menu menu item on focus/hover*/
+.mega-menu .menu > li > a:hover,
+.mega-menu .menu > li > a:focus {
+  background-color: #fcfcfc;
+  color: #0080ff;
+  text-decoration: none;
+}
+
+/*-------------------------------Header End-------------------------------*/
+
+
+
+
