@@ -38,6 +38,8 @@
 	<!-- JavaScript -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.matchHeight.js"></script>
+
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/layout.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>

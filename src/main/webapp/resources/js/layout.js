@@ -30,5 +30,22 @@ $(document).ready(function(){
 	});
 	
 	
+	//메뉴 hover 시 배경 dimmed + 서브메뉴 slideUp/Down
+	$('.main-navigation:not(.onclick) .navbar-nav li.dropdown').hover(function(){
+		$(this).addClass('active');
+		$('ul.dropdown-menu', this).stop().slideDown('fast');
+		$('.dimmed').css('display','block');
+		var subH = $('ul.dropdown-menu li div', this).height();
+		/*Math.max();*/
+		/*alert(subH);*/
+		$('ul.dropdown-menu li div', this).matchHeight();
+	},function(){
+		$(this).removeClass('active');
+		$('ul.dropdown-menu', this).stop().slideUp('fast');
+		$('.dimmed').css('display','none');
+	});
+	
+
+
 	
 });
