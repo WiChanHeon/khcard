@@ -1,4 +1,12 @@
-/*main*/
+/*----------------------home Start----------------------*/
+
+
+
+
+/*----------------------home End----------------------*/
+
+
+/*header*/
 .dimmed{ /*메인 dimmed 효과*/
     display: none;
     overflow: hidden; 
@@ -151,7 +159,6 @@ font-size: 12px;
 /* letter-spacing: normal; */
 /* width: 100%;
  */
- width: 1905px;
 }
 
 * html ul.dropdown ul {
