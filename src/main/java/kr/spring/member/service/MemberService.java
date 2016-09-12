@@ -19,5 +19,6 @@ public interface MemberService {
 	public void updateCards(String mem_id1,String card_num);
 	public List<String> usageCard(String user_id);
 	public List<InfoCardsCommand> infoCard(Map<String,String> map);
-	public List<String> limitCard(String num);
+	public Integer limitCard(String num);
+	public Integer monthPrice(Map<String, String> map);
 }

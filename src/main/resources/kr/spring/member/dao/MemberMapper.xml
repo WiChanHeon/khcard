@@ -6,6 +6,9 @@
 	<select id="infoCard" parameterType="map" resultType="InfoCardsCommand">
 		${cardUseTable}
 	</select>
+	<select id="monthPrice" parameterType="map" resultType="Integer">
+		${monthPrice}
+	</select>
 </mapper>
 
 

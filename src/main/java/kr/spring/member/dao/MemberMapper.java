@@ -33,7 +33,9 @@ public interface MemberMapper {
 	public List<String> usageCard(String user_id);
 	public List<InfoCardsCommand> infoCard(Map<String,String> map);
 	@Select("SELECT card_limit FROM f_card WHERE card_num=#{num}")
-	public List<String> limitCard(String num);
+	public Integer limitCard(String num);
+	
+	public Integer monthPrice(Map<String, String> map);
 	
 }
 

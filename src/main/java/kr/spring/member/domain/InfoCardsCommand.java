@@ -9,7 +9,30 @@ public class InfoCardsCommand {
 	private String pay_spot;
 	private float pay_rate;
 	private int pay_point;
+	private String card_bunho;
+	private int month;
+	private int limit;
 	
+	
+	
+	public int getMonth() {
+		return month;
+	}
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	public int getLimit() {
+		return limit;
+	}
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
+	public String getCard_bunho() {
+		return card_bunho;
+	}
+	public void setCard_bunho(String card_bunho) {
+		this.card_bunho = card_bunho;
+	}
 	public int getPay_num() {
 		return pay_num;
 	}
@@ -49,7 +72,11 @@ public class InfoCardsCommand {
 	@Override
 	public String toString() {
 		return "InfoCardsCommand [pay_num=" + pay_num + ", pay_reg=" + pay_reg + ", pay_price=" + pay_price
-				+ ", pay_spot=" + pay_spot + ", pay_rate=" + pay_rate + ", pay_point=" + pay_point + "]";
+				+ ", pay_spot=" + pay_spot + ", pay_rate=" + pay_rate + ", pay_point=" + pay_point + ", card_bunho="
+				+ card_bunho + ", month=" + month + ", limit=" + limit + "]";
 	}
+	
+	
+	
 
 }

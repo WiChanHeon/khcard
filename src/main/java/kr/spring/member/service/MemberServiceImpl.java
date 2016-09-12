@@ -65,10 +65,17 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public List<String> limitCard(String num) {
+	public Integer limitCard(String num) {
 		
 		return memberMapper.limitCard(num);
 	}
 
+	@Override
+	public Integer monthPrice(Map<String, String> map) {
+		
+		return memberMapper.monthPrice(map);
+	}
+
+	
 	
 }
