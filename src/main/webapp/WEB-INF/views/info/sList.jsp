@@ -65,7 +65,7 @@
 		<c:forEach var="slist" items="${list}">
 		<div class="col-sm-4 y_card">			
 			<div>
-				<div class="y_name"><a href="#">${slist.info_name} > </a></div>
+				<div class="y_name"><a href="${pageContext.request.contextPath}/detail/${slist.info_id}.do">${slist.info_name} > </a></div>
 				<c:if test="${empty sessionScope.choice || (sessionScope.choice[0] != slist.info_id && sessionScope.choice[1] != slist.info_id  && sessionScope.choice[2] != slist.info_id)}">
 					<div class="y_tooltip-top y_liketable" style="display:none;" id="${slist.info_id}_tooltip">관심카드 담기</div>
 					<span class="y_floatright">

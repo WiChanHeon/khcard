@@ -42,12 +42,21 @@ $(document).ready(function(){
 			var liX = $(this).offset().left;
 			$('ul.dropdown-menu li div', this).css('left',liX-30);
 		}
-		
 	},function(){
 		$(this).removeClass('active');
 		$('ul.dropdown-menu', this).stop().slideUp('fast');
 		$('.y_dimmed').css('display','none');
 	});
+	
+	
+	//사용하지 않는 메뉴 alert 처리
+	$('#y_header ul.dropdown-menu li a').click(function(){
+		if($(this).attr('href') == '#'){
+			alert('준비중인 메뉴입니다.');
+			return false;
+		}
+	});
+	
 	
 
 

@@ -63,6 +63,10 @@
     <definition name="cardZERO" extends="cardTheBlack">
     	<put-attribute name="body" value="/WEB-INF/views/detail/cardZERO.jsp"/>
     </definition> 
+    
+    <definition name="cardcardMhybrid" extends="cardTheBlack">
+    	<put-attribute name="body" value="/WEB-INF/views/detail/cardMhybrid.jsp"/>
+    </definition> 
 	
 	<!-- Info -->
     <definition name="sList" extends="main">

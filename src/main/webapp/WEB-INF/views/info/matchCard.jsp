@@ -308,7 +308,7 @@
 							<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="alert('!!')">전화신청</a>
 							<div class="y_img_span"></div>
 						</div>	
-					<br><div class="y_name"><a href="#">현대카드T3 Edition2 ></a></div>
+					<br><div class="y_name"><a href="${pageContext.request.contextPath}/detail/T3PE2.do">현대카드T3 Edition2 ></a></div>
 					<br><p>트래블 &amp; 마일리지카드</p>
 					</div>							
 					<div class="y_floatleft y_twoCard">
@@ -318,7 +318,7 @@
 							<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="alert('!!')">전화신청</a>
 							<div class="y_img_span"></div>
 						</div>	
-					<br><div class="y_name"><a href="#">현대카드M3 Edition2 ></a></div>
+					<br><div class="y_name"><a href="${pageContext.request.contextPath}/detail/M3PE2.do">현대카드M3 Edition2 ></a></div>
 					<br><p>강력한 포인트카드</p>
 					</div>
 					<div class="y_clear"></div>							
@@ -344,7 +344,7 @@
 		<c:forEach var="alist" items="${list}">
 		<div class="col-sm-4 y_card">			
 			<div>
-				<div class="y_name"><a href="#">${alist.info_name} > </a></div>
+				<div class="y_name"><a href="${pageContext.request.contextPath}/detail/${alist.info_id}.do">${alist.info_name} > </a></div>
 				<c:if test="${empty sessionScope.choice || (sessionScope.choice[0] != alist.info_id && sessionScope.choice[1] != alist.info_id  && sessionScope.choice[2] != alist.info_id)}">
 					<div class="y_tooltip-top y_liketable" style="display:none;" id="${alist.info_id}_tooltip">관심카드 담기</div>
 					<span class="y_floatright">

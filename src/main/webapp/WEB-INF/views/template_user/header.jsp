@@ -109,27 +109,27 @@
 								<li>Premium카드</li>
 								<li><a href="${pageContext.request.contextPath}/detail/TB.do">the Black</a></li>
 								<li><a href="${pageContext.request.contextPath}/detail/TP.do">the Purple</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/TR.do">the Red</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/TRE2.do">the Red</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-1">
 							<h5 class="o_noneT">.</h5>
 							<ul class="menu">
 								<li>포인트 카드</li>
-								<li><a href="${pageContext.request.contextPath}/detail/M3.do">M3</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/M2.do">M2</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/M.do">M</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/T3.do">T3</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/M3PE2.do">M3</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/MPE2.do">M2</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/ME2.do">M</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/T3PE2.do">T3</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-1">
 							<h5 class="o_noneT">.</h5>
 							<ul class="menu">
 								<li>할인 카드<li>
-								<li><a href="${pageContext.request.contextPath}/detail/X3.do">X3</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/X2.do">X2</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/X.do">X</a></li>
-								<li><a href="${pageContext.request.contextPath}/detail/ZR.do">ZERO</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/X3PE2.do">X3</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/XPE2.do">X2</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/XE2.do">X</a></li>
+								<li><a href="${pageContext.request.contextPath}/detail/ZRO.do">ZERO</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-1" style="width:150px;">
@@ -197,7 +197,7 @@
 								<li><a href="#">보유 바우처</a></li>
 								<li><a href="#">보유 카드 혜택</a></li>
 								<li><a href="#">이용금액/혜택 내역</a></li>
-								<li><a href="#">MY DBUSINESS 안내</a></li>
+								<li><a href="#">MY BUSINESS 안내</a></li>
 								<li><a href="#">이벤트</a></li>
 							</ul>
 						</div>

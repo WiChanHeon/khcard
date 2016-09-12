@@ -308,7 +308,7 @@ table#y_ctable tr td{
 	font-size:12pt;
 	color:#787878;
 }
-.y_cname a:link, .y_name > a:active, .y_name > a:visited{
+.y_cname a:link, .y_cname > a:active, .y_cname > a:visited{
 	color:#646464;
 	text-decoration: none;
 }

@@ -35,7 +35,7 @@ $(document).ready(function(){
 				<th>카드상품</th>
 				<c:forEach var="cp" items="${compare}">	
 				<td>
-					<p class="y_cname"><a href="#">${cp.info_name} > </a></p> 
+					<p class="y_cname"><a href="${pageContext.request.contextPath}/detail/${cp.info_id}.do">${cp.info_name} > </a></p> 
 					<p><img src="${pageContext.request.contextPath}/resources/images/card/${cp.info_img}"></p>
 				</td>
 				</c:forEach>

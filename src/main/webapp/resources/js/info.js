@@ -115,7 +115,7 @@ $(document).ready(function(){
 		output += '<a class="btn btn-primary y_matchCard-btn" onclick="'+link1+'">인터넷신청</a>';
 		output += '<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="'+link2+'">전화신청</a>';
 		output += '<div class="y_img_span"></div></div>';
-		output += '<br><div class="y_name"><a href="#">'+info_name+' ></a></div>';
+		output += '<br><div class="y_name"><a href="../detail/'+card+'.do">'+info_name+' ></a></div>';
 		output += '<br><p>'+info_stitle+'</p>';
 		output += '</div><br><input type="button" class="btn btn-default y_q_first-btn" value="처음부터" onclick="'+link3+'"></div>';
 		
