@@ -58,6 +58,49 @@ $(document).ready(function(){
 	});
 	
 	
+	//푸터 공지 변경
+	$(document).on('click','.o_fnotice h5 a',function(){
+		var num = Number($(this).parent().attr('data-id'));
+		
+		if($(this).attr('data-id') == 'right'){
+			//다음 숫자 계산
+			if(num == 5){ num = 0; }
+			num += 1; 
+			
+			//값 받아오기
+			var noticeHref = $('#o_fnotice-'+num+' span:eq(0)').text();
+			var noticeTitle = $('#o_fnotice-'+num+' span:eq(1)').text();
+			var noticeDate = $('#o_fnotice-'+num+' span:eq(2)').text();
+			
+			//데이터 변경
+			$('#o_fnotice-0 > a').attr('href',noticeHref); //주소
+			$('#o_fnotice-0 > a').text(noticeTitle); //공지 제목
+			$('#o_fnotice-0 > span:eq(1)').text(noticeDate); //공지 날짜
+			$('#o_fnotice-0 span:eq(0) span').text(num+'/5'); //공지 순서
+			$('#o_fnotice-0 span:eq(0)').attr('data-id',num); //내부 번호
+			
+			return false;
+		}
+		if($(this).attr('data-id') == 'left'){
+			//다음 숫자 계산
+			if(num == 1){ num = 6; }
+			num -= 1; 
+			
+			//값 받아오기
+			var noticeHref = $('#o_fnotice-'+num+' span:eq(0)').text();
+			var noticeTitle = $('#o_fnotice-'+num+' span:eq(1)').text();
+			var noticeDate = $('#o_fnotice-'+num+' span:eq(2)').text();
+			
+			//데이터 변경
+			$('#o_fnotice-0 > a').attr('href',noticeHref); //주소
+			$('#o_fnotice-0 > a').text(noticeTitle); //공지 제목
+			$('#o_fnotice-0 > span:eq(1)').text(noticeDate); //공지 날짜
+			$('#o_fnotice-0 span:eq(0) span').text(num+'/5'); //공지 순서
+			$('#o_fnotice-0 span:eq(0)').attr('data-id',num); //내부 번호
+			
+			return false;
+		}
+	});
 
 
 	
