@@ -86,28 +86,26 @@ public class UserUsageController {
 			list2.addAll(memberService.infoCard(map)); //전체 select문 담긴 리스트
 			
 			
-			System.out.println(list2);
+			System.out.println("loof"+list2);
 			
 			for(int j=0;j<list2.size();j++){
 				if (list2.get(j).getCard_bunho()==null) {
 					list2.get(j).setCard_bunho(list.get(i));
-					list2.get(j).setLimit(list4.get(i));
+					list2.get(j).setLimit(list4.get(i)-list3.get(i));
 					list2.get(j).setMonth(list3.get(i));;
 				}
 			}
-			
-			
+			mav.addObject("eyongs"+i, list2.size()+1);
+			System.out.println(list2.size());
 			mav.addObject("cards",list2);
 			
 		}
 		
-		for(int i=0; i<list.size();i++){
-			mav.addObject("num",list.get(i));
-		}
+		mav.addObject("num",list);
 		mav.addObject("gaesoo",list.size());
+		
+		
 		System.out.println(mav.toString());
-		
-		
 		
 		return mav;
 	}

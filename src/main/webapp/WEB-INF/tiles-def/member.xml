@@ -9,6 +9,10 @@
     	<put-attribute name="title" value="회원가입"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberWrite.jsp"/>
     </definition>
+    <definition name="cdetail" extends="main">
+    	<put-attribute name="title" value="카드상세"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/cdetail.jsp"/>
+    </definition>
     <definition name="cardsCheck" extends="main">
     	<put-attribute name="title" value="카드검증"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/cardsCheck.jsp"/>
