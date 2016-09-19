@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 
 public class FileUtil {
 
-	public static String UPLOAD_PATH="F:/javaStudy/workspace/ch15replyBoard/src/main/webapp/upload";
+	public static String UPLOAD_PATH="C:/Users/Snew/Documents/javaStudy/git/khcard/src/main/webapp/upload";
 	
 	public static String rename(String fileName)throws Exception{
 

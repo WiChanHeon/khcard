@@ -52,13 +52,19 @@
 	<bean id="sqlSessionFactory" 
 	             class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="kr.spring.board.domain,
-		                                           kr.spring.member.domain,
-		                                           kr.spring.info.domain"/>
+		<property name="typeAliasesPackage" value="kr.spring.member.domain,
+												   kr.spring.info.domain,
+												   kr.spring.apply.domain,
+												   kr.spring.donan.domain,
+												   kr.spring.card.domain,
+												   kr.spring.admember.domain,
+												   kr.spring.coboard.domain"/>
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="kr.spring.board.dao,
-		                                    kr.spring.member.dao,
-		                                    kr.spring.info.dao"/>  
+		<property name="basePackage" value="kr.spring.member.dao,
+											kr.spring.info.dao,
+											kr.spring.admin.dao,
+											kr.spring.admember.dao,
+											kr.spring.coboard.dao"/>  
 	</bean>
 </beans>
