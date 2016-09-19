@@ -41,7 +41,6 @@
         </div>    
     </div>
     
-메인입니다.
     <!-- /#wrapper -->
 <script type="text/javascript">
         jQuery(function ($) {
@@ -95,7 +94,6 @@
             
             });            
         });        
-    </script>
-    
+    </script>   
 </body>
 </html>
