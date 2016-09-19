@@ -21,4 +21,5 @@ public interface MemberService {
 	public List<InfoCardsCommand> infoCard(Map<String,String> map);
 	public Integer limitCard(String num);
 	public Integer monthPrice(Map<String, String> map);
+	public Integer usageNumber(Map<String, String> map4);
 }

@@ -1,6 +1,10 @@
 package kr.spring.member.controller;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.member.domain.InfoCardsCommand;
 import kr.spring.member.service.MemberService;
 import kr.spring.util.FileUtil;
 import kr.spring.util.StringUtil;
@@ -28,12 +33,17 @@ private Logger log = Logger.getLogger(this.getClass());
 			log.debug("cardnum : " + cardnum);
 		}
 		
+		String sql = "SELECT * FROM F_";
+		Map<String, String> map = new HashMap<String, String>();
+		List<InfoCardsCommand> list = new ArrayList<InfoCardsCommand>();
+		map.put("cardUseTable", sql+cardnum);
+		list.addAll(memberService.infoCard(map));
+		System.out.println(list);
 		
-		
-		
-	
-		
-		return new ModelAndView();
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("uselist", list);
+		mav.addObject("num", cardnum);
+		return mav;
 	}
 	
       

@@ -49,10 +49,25 @@ public class UserUsageController {
 		
 		List<Integer> list4 = new ArrayList<Integer>(); 
 		
+		List<Integer> numlist= new ArrayList<Integer>();
+		
 		String sql= "SELECT * FROM F_";
 		/*Map<String,String> map= new HashMap<String, String>();*/
 		String sql2= "SELECT sum(pay_price) FROM F_";
 		
+		String sql3 ="SELECT count(*) FROM F_";
+		
+		
+		for(int i =0;i<list.size();i++){
+			Map<String, String> map4 = new HashMap<String, String>();
+			sql3+=list.get(i);
+			map4.put("usageNumber",sql3);
+			numlist.add(memberService.usageNumber(map4));
+			System.out.println("numlist : "+numlist.get(i));
+			sql3 ="SELECT count(*) FROM F_";
+		}
+		numlist.set(0, numlist.get(0)+numlist.get(1));
+		System.out.println("카드내용개수 : "+numlist.get(0));
 		SimpleDateFormat formatter = new SimpleDateFormat ( "yyyyMM", Locale.KOREA );
 		Date currentTime = new Date ( );
 		String dTime = formatter.format (currentTime);
@@ -69,6 +84,7 @@ public class UserUsageController {
 			sql2= "SELECT sum(pay_price) FROM F_";
 		}
 		System.out.println("list3 : "+list3);
+		
 		
 		
 		for(int i=0;i<list.size();i++){
@@ -103,7 +119,7 @@ public class UserUsageController {
 		
 		mav.addObject("num",list);
 		mav.addObject("gaesoo",list.size());
-		
+		mav.addObject("cusenumber", numlist.get(0));
 		
 		System.out.println(mav.toString());
 		

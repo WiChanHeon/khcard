@@ -76,6 +76,12 @@ public class MemberServiceImpl implements MemberService{
 		return memberMapper.monthPrice(map);
 	}
 
+	@Override
+	public Integer usageNumber(Map<String, String> map4) {
+		
+		return memberMapper.usageNumber(map4);
+	}
+
 	
 	
 }

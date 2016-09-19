@@ -15,7 +15,7 @@
 			output += '<c:forEach var="card" items="${cards}" varStatus="status">';
 			output += '<c:if test="${status.count==1 }">';
 			output += '<div style="height: 100px;">';
-			output += '이달의 사용금액은 : ${card.month }<br>';
+			output += '이달의 사용금액은 :<a href="cdetail.do?cardnum=<c:forEach var="i" items="${num }" varStatus="status"><c:if test="${status.count==1 }">${i}</c:if></c:forEach>"> ${card.month }</a><br>';
 			output += '</div>';
 			output += '<div style="height: 100px;">';
 			output += '남은 카드한도는 : ${card.limit }<br>';
@@ -34,7 +34,7 @@
 			output += '<c:forEach var="card" items="${cards}" varStatus="status">';
 			output += '<c:if test="${status.count==eyongs0 }">';
 			output += '<div style="height: 100px;">';
-			output += '이달의 사용금액은 :<a href="cdetail.do?cardnum=${num }"> ${card.month }</a><br>';
+			output += '이달의 사용금액은 :<a href="cdetail.do?cardnum=<c:forEach var="i" items="${cards }" varStatus="status"><c:if test="${status.count==cusenumber }">${i.card_bunho}</c:if></c:forEach>">${card.month }</a><br>';
 			output += '</div>';
 			output += '<div style="height: 100px;">';
 			output += '남은 카드한도는 : ${card.limit }<br>';
@@ -70,7 +70,7 @@
 			<c:forEach var="card" items="${cards}"  varStatus="status">
 			<c:if test="${status.count==1 }">
 				<div style="height: 100px;">
-				이달의 사용금액은 : <a href="cdetail.do?cardnum=${num }">${card.month }</a><br>
+				이달의 사용금액은 : <a href="cdetail.do?cardnum=<c:forEach var="i" items="${num }" varStatus="status"><c:if test="${status.count==1 }">${i }</c:if></c:forEach>">${card.month }</a><br>
 				</div>
 				<div style="height: 100px;">
 				남은 카드한도는 : ${card.limit }<br>

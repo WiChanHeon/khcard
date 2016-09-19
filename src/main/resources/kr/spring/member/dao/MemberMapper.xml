@@ -9,6 +9,9 @@
 	<select id="monthPrice" parameterType="map" resultType="Integer">
 		${monthPrice}
 	</select>
+	<select id="usageNumber" parameterType="map" resultType="Integer">
+		${usageNumber}
+	</select>
 </mapper>
 
 
