@@ -1,7 +1,5 @@
 package kr.spring.coboard.domain;
 
-import java.sql.Date;
-
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.spring.util.StringUtil;

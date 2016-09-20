@@ -41,14 +41,16 @@ public class CoboardServiceImpl implements CoboardService{
 	}
 
 	@Override
-	public void updateCoboard(Integer co_num) {
-		coboardMapper.updateCoboard(co_num);
+	public void updateCoboard(CoboardCommand coboard) {
+		coboardMapper.updateCoboard(coboard);
 	}
 
 	@Override
 	public void deleteCoboard(Integer co_num) {
 		coboardMapper.deleteCoboard(co_num);
 	}
+
+	
 
 
 }

@@ -41,25 +41,26 @@
 	<!-- detail 폼 끝 -->
 	
 	<!-- detail 수정폼 시작 -->
-	<form class="panel panel-primary" id="y_code-modify" action="coboardModify.do" method="post" style="display:none;">
+	<form class="panel panel-primary" id="y_code-modify" action="coboardModify.do" enctype="multipart/form-data" method="post" style="display:none;">
 		<div class="panel-heading">
 			<h3 class="panel-title">
 			<span class="form-inline">
 				<b>[${coboard.co_num}]</b> <input type="text" class="form-control input-sm" name="co_title" id="co_title" value="${coboard.co_title}" maxlength="20" placeholder="최대 20자">
+				<input type="hidden" name="co_num" value="${coboard.co_num}">
 				
-				<c:if test="${coboard.co_sort == 0}">
-				<select class="form-control input-sm">
-					<option value="0" selected>게시물</option>
-					<option value="1">공지</option>
-				</select>
-				</c:if>
 				
-				<c:if test="${coboard.co_sort == 1}">
-				<select class="form-control input-sm">
-					<option value="0">게시물</option>
-					<option value="1" selected>공지</option>
+				<select class="form-control input-sm" name="co_sort">
+					<c:if test="${coboard.co_sort == 0}">
+						<option value="0" selected>게시물</option>
+						<option value="1">공지</option>
+					</c:if>
+					
+					<c:if test="${coboard.co_sort == 1}">
+						<option value="0">게시물</option>
+						<option value="1" selected>공지</option>
+					</c:if>
 				</select>
-				</c:if>
+				
 			</span>
 			</h3>
 		</div>
@@ -79,9 +80,20 @@
 				<textarea class="form-control input-sm" name="co_content">${coboard.co_content}</textarea>
 			</div>
 			<hr>
-			<div class="y_right">
-				<input type="submit" value="수정완료">
-				<input type="button" value="수정취소" id="y_code-modify_cancel">
+			<div>
+				<div class="y_floatleft">
+					<c:if test="${empty coboard.co_filename}">
+						<label for="upload">첨부파일 없음</label> <input type="file" name="upload" id="upload">
+					</c:if>
+					<c:if test="${!empty coboard.co_filename}">
+						첨부파일 : ${coboard.co_filename} <span class="y_como-span"><input type="checkbox" name="co_filename" value="삭제"> 파일삭제</span>
+					</c:if>
+				</div>
+				<div class="y_floatright">
+					<input type="submit" value="수정완료">
+					<input type="button" value="수정취소" id="y_code-modify_cancel">
+				</div>
+				<div class="y_clear"></div>
 			</div>
 		</div>
 	</form>

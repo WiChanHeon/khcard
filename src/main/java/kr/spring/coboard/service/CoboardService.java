@@ -18,7 +18,7 @@ public interface CoboardService {
 	@Transactional(readOnly=true)
 	public CoboardCommand selectCoboard(Integer co_num);
 	public void plusHit(Integer co_num);
-	public void updateCoboard(Integer co_num);
+	public void updateCoboard(CoboardCommand coboard);
 	public void deleteCoboard(Integer co_num);
 	
 	//´ñ±Û
