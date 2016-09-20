@@ -14,28 +14,39 @@
 		  to_char(co_reg,'YYYY-MM-DD HH24:MI:SS') co_reg,
 		  co_hit,
 		  co_sort
-		FROM f_coboard
-			<where>
-				<if test="keyword!='' and keyfield=='co_title'">
-					co_title like '%' || #{keyword} || '%'
-				</if>
-				<if test="keyword!='' and keyfield=='co_content'">
-					co_content like '%' || #{keyword} || '%'
-				</if>
-				<if test="keyword!='' and keyfield=='m_id'">
-					m_id like '%' || #{keyword} || '%'
-				</if>
-				<if test="keyword!='' and keyfield=='m_name'">
-					m_name like '%' || #{keyword} || '%'
-				</if>
-				<if test="keyword!='' and keyfield=='all'">
-					co_title like '%' || #{keyword} || '%' or
-					co_content like '%' || #{keyword} || '%' or  
-					m_id like '%' || #{keyword} || '%' or 
-					m_name like '%' || #{keyword} || '%'
-				</if>
-  			</where>
-		ORDER BY co_reg DESC
+		FROM
+			(SELECT
+				a.*,
+				rownum rnum
+			FROM
+				(SELECT
+					*
+				FROM f_coboard
+					<where>
+						<if test="keyword!='' and keyfield=='co_title'">
+							co_title like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='co_content'">
+							co_content like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='m_id'">
+							m_id like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='m_name'">
+							m_name like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='all'">
+							co_title like '%' || #{keyword} || '%' or
+							co_content like '%' || #{keyword} || '%' or  
+							m_id like '%' || #{keyword} || '%' or 
+							m_name like '%' || #{keyword} || '%'
+						</if>
+		  			</where>
+				ORDER BY co_reg DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+		
 	</select>
 	
 	<select id="getCoboardCount" parameterType="map" resultType="integer">

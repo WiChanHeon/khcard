@@ -43,7 +43,7 @@ public class CoboardCommand {
 		this.co_title = co_title;
 	}
 	public String getCo_content() {
-		return StringUtil.useBrHtml(co_content);
+		return co_content;
 	}
 	public void setCo_content(String co_content) {
 		this.co_content = co_content;

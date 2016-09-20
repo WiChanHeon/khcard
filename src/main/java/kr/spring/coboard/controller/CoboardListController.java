@@ -18,10 +18,15 @@ import kr.spring.admember.domain.AdmemberCommand;
 import kr.spring.admember.service.AdmemberService;
 import kr.spring.coboard.domain.CoboardCommand;
 import kr.spring.coboard.service.CoboardService;
+import kr.spring.util.PagingUtil;
 
 @Controller
 public class CoboardListController {
 	private Logger log = Logger.getLogger(this.getClass());
+	
+	//페이징 변수
+	private int rowCount = 5;
+	private int pageCount = 5;
 	
 	@Resource
 	private AdmemberService admemberService;
@@ -38,7 +43,8 @@ public class CoboardListController {
 	@RequestMapping("/admin/coboardList.do")
 	public ModelAndView process(HttpSession session,
 								@RequestParam(value="keyfield",defaultValue="")String keyfield,
-								@RequestParam(value="keyword",defaultValue="")String keyword){
+								@RequestParam(value="keyword",defaultValue="")String keyword,
+								@RequestParam(value="pageNum",defaultValue="1")int currentPage){
 		
 		//관리자 이름 세션 저장
 		if(session.getAttribute("adminName")==null){
@@ -63,11 +69,15 @@ public class CoboardListController {
 		map.put("keyword", keyword);
 		
 		
+		//페이징
+		int count = coboardService.getCoboardCount(map);
+		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount, "coboardList.do");
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+		
+		
 		//게시판 목록 호출
 		List<CoboardCommand> colist = null;
-		int count = coboardService.getCoboardCount(map);
-		System.out.println("count : " + count);
-		
 		if(count > 0){
 			colist = coboardService.getCoboardList(map);
 		}else{
@@ -78,6 +88,7 @@ public class CoboardListController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("coboardList");
 		mav.addObject("colist", colist);
+		mav.addObject("pagingHtml", page.getPagingHtml());
 		
 		return mav;
 	}

@@ -87,7 +87,12 @@
 /*------------------coboardList End------------------*/
 /*------------------coboardDetail Start------------------*/
 /*panel*/
-
+.y_panel-heading{
+	height:51px;
+}
+.y_panel-heading h3{
+	line-height:28px;
+}
 .y_panel-body{
 	background-color:#fff;
 }
@@ -98,12 +103,27 @@
 	display:block;
 	margin:0 auto;
 }
-.y_panel-body p{
-	color:#000;
-}
-.y_panel-body input[type="button"]{
+.y_panel-body input[type="button"], .y_panel-body input[type="submit"]{
 	font-size:11pt;
 	padding:5px 7px;
+}
+#y_code-original_p{ /*본문영역*/
+	color:#000;
+	max-height:300px;
+	overflow:auto;
+	padding:5px 10px;
+}
+
+/*modifyForm*/
+#y_code-modify select, #y_code-modify option, #y_code-modify input[type="text"], #y_code-modify textarea{
+	color:#4c4c4c;
+}
+#y_code-modify textarea{ /*수정폼-본문영역*/
+	margin:5px auto;
+	max-height:300px;
+}
+#y_code-modify #co_title{
+	width:50%;
 }
 
 

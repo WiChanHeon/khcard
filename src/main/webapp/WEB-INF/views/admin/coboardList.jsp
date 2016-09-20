@@ -247,9 +247,11 @@
 				</c:if>
 				
 			</table>
-			
-			
-			
+			<c:if test="${!empty colist}">
+			<div class="y_center">
+				${pagingHtml}
+			</div>
+			</c:if>
 			<!-- 게시판 리스트 끝 -->
 		
 		

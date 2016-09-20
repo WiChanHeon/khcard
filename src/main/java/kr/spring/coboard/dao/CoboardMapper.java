@@ -3,6 +3,7 @@ package kr.spring.coboard.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -23,6 +24,10 @@ public interface CoboardMapper {
 	public CoboardCommand selectCoboard(Integer co_num);
 	@Update("UPDATE f_coboard SET co_hit = co_hit+1 WHERE co_num = #{co_num}")
 	public void plusHit(Integer co_num);
+	@Update("UPDATE f_coboard SET co_title=#{co_title}, co_content=#{co_content}, co_filename=#{co_filename,jdbcType=VARCHAR}, co_sort=#{co_sort} WHERE co_num=#{co_num}")
+	public void updateCoboard(Integer co_num);
+	@Delete("DELETE FROM f_coboard WHERE co_num = #{co_num}")
+	public void deleteCoboard(Integer co_num);
 	
 	//´ñ±Û
 }
