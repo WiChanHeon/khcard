@@ -115,6 +115,21 @@
 }
 
 /*modifyForm*/
+.y_dimmed{
+	display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity:0.2;
+}
+#y_code-modify{
+	z-index:2;
+	position:relative;
+}
 #y_code-modify select, #y_code-modify option, #y_code-modify input[type="text"], #y_code-modify textarea{
 	color:#4c4c4c;
 }
@@ -124,6 +139,11 @@
 }
 #y_code-modify #co_title{
 	width:50%;
+}
+
+/*reply*/
+.y_replyDiv{
+	display:relative;
 }
 
 

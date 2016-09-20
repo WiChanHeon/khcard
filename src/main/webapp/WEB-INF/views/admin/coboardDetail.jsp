@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
+
+	<!-- dimmed -->
+	<div class="y_dimmed"></div>
 	
 	<!-- detail 폼 시작 -->
 	<div class="panel panel-primary" id="y_code-original">
@@ -84,7 +87,22 @@
 	</form>
 	<!-- detail 수정폼 끝 -->
 	
-	
-	
+	<!-- 댓글 영역 시작 -->
+	<div class="y_replyDiv">
+		
+		
+		<div role="test">
+			test
+			test
+			<span style="color:white;">아아아아아</span>
+			<h1>에에에</h1>
+			<button>캬캬캬</button>
+		</div>
+		
+		
+		
+		
+	</div>
+	<!-- 댓글 영역 끝 -->
 	
 </div>

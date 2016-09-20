@@ -39,12 +39,14 @@ $(document).ready(function(){
 		$('#y_code-original').hide();
 		$('#y_code-modify textarea').css('height',Oheight+10); //높이 그대로 불러오기
 		$('#y_code-modify').show();
+		$('.y_dimmed').show();
 	});
 	
 	//수정폼 취소
 	$('#y_code-modify #y_code-modify_cancel').click(function(){
 		$('#y_code-modify').hide();
 		$('#y_code-original').show();
+		$('.y_dimmed').hide();
 	});
 	
 	//수정폼 텍스트 입력 시 textarea 높이 변경
