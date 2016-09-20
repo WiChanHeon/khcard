@@ -6,16 +6,28 @@
 
 <tiles-definitions>
     <definition name="main" template="/WEB-INF/views/template_user/layout.jsp">
-    	<put-attribute name="title" value="khcard"/>
-    	<put-attribute name="header" value="/WEB-INF/views/template_user/header.jsp"/>
-    	<put-attribute name="menu" value="/WEB-INF/views/template_user/menu.jsp"/>
-    	<put-attribute name="body" value="/WEB-INF/views/main/home.jsp"/>
-    	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
-    </definition>  
+       <put-attribute name="title" value="KH카드"/>
+       <put-attribute name="header" value="/WEB-INF/views/template_user/header.jsp"/>
+       <put-attribute name="menu" value="/WEB-INF/views/template_user/menu.jsp"/>
+       <put-attribute name="body" value="/WEB-INF/views/main/home.jsp"/>
+       <put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
+    </definition>
     <definition name="pageError" extends="main">
   		 <put-attribute name="title" value="에러페이지"/>
 		 <put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
  	</definition>
+ 	
+ 	<!-- Apply -->
+ 	<definition name="applyWrite" extends="main">
+  		 <put-attribute name="title" value="카드신청"/>
+		 <put-attribute name="body" value="/WEB-INF/views/apply/applyWrite.jsp"/>
+ 	</definition>
+ 	<definition name="applyEvaluationView" extends="main">
+  		 <put-attribute name="title" value="심사조회"/>
+		 <put-attribute name="body" value="/WEB-INF/views/apply/applyEvaluationView.jsp"/>
+ 	</definition>
+ 
+ 	<!-- Apply end-->
 </tiles-definitions>
 
 

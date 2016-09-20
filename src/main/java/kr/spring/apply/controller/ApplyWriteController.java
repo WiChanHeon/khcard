@@ -27,7 +27,7 @@ public class ApplyWriteController {
 	
 	@RequestMapping(value="/apply/applywrite.do",method=RequestMethod.GET)
 	public String form(){
-		return "/apply/applyWrite";
+		return "applyWrite";
 	}
 	
 	@RequestMapping(value="/apply/applywrite.do",method=RequestMethod.POST)
@@ -37,11 +37,9 @@ public class ApplyWriteController {
 			  log.debug("appplyCommand: " +applyCommand);
 		  }
 		  
-		  
 		  if(result.hasErrors()){
 			  return form();
 		  }
-		  
 		  applyService.applyinsert(applyCommand);
 		  
 		  return "redirect:/main/main.do";

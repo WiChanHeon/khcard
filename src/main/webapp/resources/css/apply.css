@@ -1,58 +1,165 @@
 @CHARSET "UTF-8";
 /*B-list*/
-.apply_box {
+.Bapply_box {
     width: 1030px;
     padding: 48px 0;
     margin: 0 auto;
     border: 1px solid #e1e1e1;
 }
-.apply_inner{
-	padding: 0 40px;
-	margin-top: 2%;
+.Bapply_inner{
+	padding: 0px 40px;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
-.apply_inner ul li label{
+.Bapply_inner ul li label{
 	width:150px;
 	float:left;
 }
-ul.apply_list{
+#Bapply_box ul.Bapply_list{
 	list-style: none;
 	
 }
-ul li{
+#Bapply_box ul li{
 	padding: 15px;
 }
-ul li input[type="text"],input[type="email"],input[type="password"],select{
-	padding: 7px;
-	
+#Bapply_box ul li input[type="text"],#Bapply_box ul li input[type="email"],#Bapply_box ul li input[type="password"],#Bapply_box ul li input select{
+	padding: 7px;	
 }
 .error-color{
 	color:red;
 }
-.applybutton{
+.Bapplybutton{
     background: #1e75d6;
     color: #fff;
     vertical-align: middle;
+    width:100px;
+    height:50px;
+    font-size:12pt;
+    
 }
 .align-center{
 	text-align: center;
 }
-.applyBtn span{
+.BapplyBtn span{
 	display: block;
     height: 18px;
     padding: 0 8px 0 0;
     line-height: 18px;
 }
-.applyBtn, .applyBtn a{
+.BapplyBtn, .BapplyBtn a{
 	display: inline-block;
     position: relative;
-    padding: 0 0 0 8px;
     border: 1px solid #e5e5e5;
     font-family: 'nexonL';
     text-align: center;
     font-size: 12px;
     color: #666;
-    background: #fff;
+    background: #fffb
 }
+/*심사 css*/
+.Border_txt {
+    margin: -1px;
+    font-size: 15px;
+    color: #fff;
+    background: #999;
+}
+#Bapply_box ol{
+	margin:0;
+	padding:0;
 
+}
+#Bapply_box ol, ul, li {
+    list-style: none;
+}
+.Border_txt li {
+    float: left;
+    height: 47px;
+    line-height: 47px;
+    text-align: center;
+    background: url(../images/bg_loan_arrow.png) no-repeat 0 0;
+}
+.Border_txt.type1.align li:first-child {
+    width: 19%;
+    padding-left: 0;
+}
+.Border_txt.type1.align li {
+    width: 19%;
+    padding-left: 10px;
+}
+.Border_txt.type1 li {
+    width: 19%;
+}
+.Border_txt li:first-child {
+    padding-left: 0;
+    background: none;
+}
+.Border_txt:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.Border_info {
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    margin-top: 40px;
+}
+#Bapply_box div {
+    display: block;
+}
+.Bimg_infor.type1 li {
+    margin: 0px;
+    display: block;
+    width: 19.9%;
+    
+}
+.Bimg_infor li:first-child {
+    margin-left: 40px;
+}
+.Bimg_infor li {
+    float: left;
+    position: relative;
+    margin-left: 80px;
+    display: block;
+    font-size: 13px;
+    color: #666;
+}
+.Bimg_infor:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.Bimg_infor li:before {
+    display: block;
+    height: 50px;
+    margin: 0 auto 10px;
+    background: url(../images/sp_apply_step.png) no-repeat 0 0;
+    content: "";
+}
+.Bimg_infor .apply:before {
+    width: 50px;
+    background-position: -206px -57px;
+}
+.Bimg_infor .input:before {
+    width: 50px;
+    background-position: -152px -57px;
+}
+.Bimg_infor .screen:before {
+    width: 50px;
+    background-position: -4px -57px;
+}
+.Bimg_infor .decide:before {
+    width: 50px;
+    background-position: -59px -57px;
+}
+.Bimg_infor .card_receive:before {
+    width: 50px;
+    background-position: -102px -57px;
+}
+/*간편신청*/
+.Bsimple-footer{
+	text-align: inherit;
+	font-size: 9pt;
+}
 
 

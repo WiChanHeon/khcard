@@ -52,32 +52,29 @@ if ((chk.elements[i].name == "answer") &&
 (chk.elements[i].checked))
 checked_items++;
 }
-if (checked_items == 0) 
+if (checked_items < 2) 
 {
-alert("개인정보제공 필수 동의 사항입니다.")
+alert("개인정보와 고유식별정보의 수집 동의는 필수 동의 사항입니다.")
 document.getElementById('allagree').focus();
 return false;
 }
 return true;
 }
-
 $(document).ready(function(){
 	
 	$('.nokey').keyup(function(){
-		alert('적지말고 주소 누르셈');
+		alert('주소 버튼을 눌러주세요.');
 		$('.nokey').val('');
 	});
 	
 });
 //주민번호 체크 apply_register.submit
 function check_jumin() { 
-	var checkRrnDuplicated=0;
 	var jumin=document.getElementById('ap_rrnfront').value+document.getElementById('ap_rrnrear').value;
 
  //주민등록 번호 13자리를 검사한다.
 	var fmt = /^\d{6}[1234]\d{6}$/;  //포멧 설정
 	if (!fmt.test(jumin)) {
-		checkRrnDuplicated=0;
 		return false;
 	}
 
@@ -91,7 +88,6 @@ function check_jumin() {
   if ( birth.getYear() % 100 != jumin.substr(0, 2) ||
        birth.getMonth() != birthMonth ||
        birth.getDate() != birthDate) {
-	  checkRrnDuplicated=0;
      return false;
   }
 
@@ -103,15 +99,21 @@ function check_jumin() {
   for (var sum = 0, i = 0; i < 12; i++) sum += (buf[i] *= multipliers[i]);
 
   if ((11 - (sum % 11)) % 10 != buf[12]) {
-	  checkRrnDuplicated=0;
      return false;
   }
-
-  checkRrnDuplicated=1;
   return true;
-  
-  $('#apply_register').submit(function(){
-		if(checkRrnDuplicated == 0){
+}
+
+function checks(){
+	if(check_jumin()){//올바른 값이 들어왔을 때 실행될 코드
+			alert("주민번호 인증완료.");
+			checkRrnDuplicated = 1
+	}else{//올바른 값이 들어오지 않았을 때 실행될 코드
+			alert("주민번호 인증실패.");
+			checkRrnDuplicated = 2
+	}
+	$('#apply_register').submit(function(){
+		if(check_jumin() == null){
 			alert('주민번호 체크 필수!');
 			if($('#ap_rrnfront').val()==''){
 				$('#id').focus();
@@ -123,12 +125,8 @@ function check_jumin() {
 	});
 }
 
-function checks(){
- if(check_jumin())//올바른 값이 들어왔을 때 실행될 코드
-  alert("올바른 주민등록번호입니다.");
- else//올바른 값이 들어오지 않았을 때 실행될 코드
-  alert("올바르지 않은 주민번호입니다.");
- }
+
+
 
 //앞의 텍스트박스에 6자리 글씨가 써지면 자동으로 다음 칸으로 커서가 넘어간다.
 function nextgo(e){  
@@ -142,39 +140,16 @@ function end(e){
 	   document.getElementById('endRrn').focus();
 	  }
 	}
-$(document).ready(function(){
-	//로그인
-	$('#agreeView, #sublog').click(function(event){
-		
-		var output = '';
-		output += '<div id="mask"></div>';
-		output += '<div class="window">';
-		output += '<img src="../img/x.png" class="close">';
-		output += '<div class="layer">';
-		output += '<div class="titulo">Log In</div>';
-		output += '<div class="center"><img src="../img/logo.png"></div>'
-		output += '<form action="../member/login.do" method="post">';
-		output += '<input type="text" name="id" id="id" required placeholder="ID" class="first">';
-		output += '<input type="password" name="passwd" id="passwd" required placeholder="Password" class="last">';
-		output += '<input type="submit" value="submit" class="enviar">';
-        output += '<div class="olvido">';
-        output += '<a href="#" id="forgotid">Fotgot ID</a> or <a href="#" id="forgotpw">Password?</a>';
-        output += '</div>';        
-		output += '</form>';
-		output += '</div>';
-		output += '</div>';
-		
-		$('#layer').append(output);
-
-		wrapWindowByMask();
-		
-		event.preventDefault();
-	});
-});
 //동의서보기
 $(document).ready(function(){
     $("#myBtn").click(function(){
         $("#myModal").modal();
     });
+});
+//간편신청
+$(function(){
+	$("mySimpleBtn").click(function(){
+		$("#mySimpleModal").modal();
+	});
 });
 

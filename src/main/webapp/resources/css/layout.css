@@ -1,15 +1,296 @@
 @CHARSET "UTF-8";
+
+/*-------------------------------All Start-------------------------------*/
+
 /*전체디자인*/
 @font-face{
-   font-family:nexonL;
-   src:url('../font/NEXONFootballGothicL.eot'),
-      url('../font/NEXONFootballGothicL.woff') format('woff');
+	font-family:nexonL;
+	src:url('../font/NEXONFootballGothicL.eot'),
+		url('../font/NEXONFootballGothicL.woff') format('woff');
 }
 div,h1,h2,h3,h4,h5,h6,ul,li{
-   font-family:nexonL,NEXONFootballGothicL;
+	font-family:nexonL,NEXONFootballGothicL;
 }
 @font-face{
-   font-family:nexonB;
-   src:url('../font/NEXONFootballGothicB.eot'),
-      url('../font/NEXONFootballGothicB.woff') format('woff');
+	font-family:nexonB;
+	src:url('../font/NEXONFootballGothicB.eot'),
+		url('../font/NEXONFootballGothicB.woff') format('woff');
 }
+
+/* Scroll to top */
+.scrollToTop {
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1005;
+  display: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.scrollToTop i {
+  line-height: 40px;
+}
+.scrollToTop:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/*-------------------------------All End-------------------------------*/
+/*-------------------------------Header Start-------------------------------*/
+
+/*기존 스타일 제거*/
+#y_makeMenu .container-fluid{
+	padding-top:40px; /*메뉴 윗 공백*/
+	padding-bottom:0;
+}
+#y_makeMenu .navbar-brand{ /*로고공백제어*/
+	padding:10px 15px;
+}
+#y_makeMenu .navbar-nav>li>a {
+	padding-top:20px;
+	padding-bottom:25px; /*메뉴 hover 공간 늘림*/
+}
+#y_makeMenu .navbar{ /*테두리 굴곡 제거 + 좌우 공백*/
+	border-radius: 0px;
+	padding:0 10%;	
+}
+#y_makeMenu .navbar-inverse .navbar-nav>li>a{
+	color:#fff;
+}
+#y_makeMenu .navbar-inverse .navbar-nav>.active>a, 
+#y_makeMenu .navbar-inverse .navbar-nav>.active>a:hover, 
+#y_makeMenu .navbar-inverse .navbar-nav>.open>a:hover, 
+#y_makeMenu .navbar-inverse .navbar-nav>li>a:hover{
+	color: #0080ff;
+    background-color: #fff;
+}
+#y_makeMenu .dropdown-menu{
+	border: none;
+	-webkit-box-shadow: 0 0 0 rgba(0,0,0,.175);
+	box-shadow: 0 0 0 rgba(0,0,0,.175);
+}
+#y_makeMenu .navbar{
+   margin-bottom:0;
+}
+
+/*추가 입력 스타일*/
+#y_makeMenu .o_leftborder{ /*좌측 회색 선*/
+	border-left:1px solid #e9e9e9;
+}
+#y_makeMenu .o_noneT{ /*제목공백효과*/
+	color:#fff;
+}
+.y_dimmed{ /*메인 dimmed 효과*/
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity:0.2;
+}
+#y_header{ /*네비게이션바 위치+스타일+slideUp속도*/
+	width:100%;
+	height:105px;
+	background-color:#000;
+	transition:all 0.2s;
+	z-index:500;
+}
+#y_makeMenu .dropdown-menu>li>div>h5{ /*소제목 볼드처리*/
+	font-weight:bold;
+}
+#y_makeMenu .main-navigation{ /*메뉴밀림방지위해 최소넓이 지정*/
+	min-width:1382px;
+}
+.y_silyoung{
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50px;
+}
+.y_silyoung img{
+	margin:0 50px;
+}
+.y_silyoung a{
+	color:#0080ff;
+}
+
+
+
+/*복사 스타일*/
+#y_makeMenu .mega-menu.dropdown {
+  position: static;
+}
+#y_makeMenu .mega-menu .dropdown-menu {
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+  min-height:250px;
+}
+/* mega menu menu item */
+#y_makeMenu .mega-menu .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#y_makeMenu .mega-menu .menu > li > a {
+  padding: 5px 0;
+  font-size: 14px;
+  color: #808080;
+  display: block;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+/* mega menu menu item on focus/hover*/
+#y_makeMenu .mega-menu .menu > li > a:hover,
+#y_makeMenu .mega-menu .menu > li > a:focus {
+  background-color: #fcfcfc;
+  color: #0080ff;
+  text-decoration: none;
+}
+
+/*-------------------------------Header End-------------------------------*/
+/*-------------------------------Footer Start-------------------------------*/
+
+/* -----풋터 메신저 아이콘 시작----- */
+.social-links { /*아이콘 정렬*/
+  list-style: none;
+  font-size: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.social-links li { /*아이콘 정렬*/
+  display: inline-block;
+  margin: 0 2px 2px 0;
+}
+.social-links li a { /*원형 아이콘으로 변경*/
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #e7e7e7;
+  color: #cdcdcd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.social-links li a i { /*원형 안에 가운데 정렬*/
+  line-height: 40px;
+}
+.social-links li a:hover { /*원형 안에 가운데 정렬*/
+  background-color: transparent;
+  border-color: #0c9ec7;
+  color: #0c9ec7;
+}
+.social-links.animated-effect-1 li a { /*마우스 온시 터짐 효과*/
+  -webkit-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.social-links.animated-effect-1 li a:hover { /*마우스 온시 아이콘 흰색으로 변경*/
+  color: #ffffff!important;
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.social-links.animated-effect-1 li a:after { /*마우스 오버시 색상 터짐 효과*/
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  content: '';
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  z-index: -1;
+  background-color: #09afdf;
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s, background-color 0.4s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.4s, background-color 0.4s;
+  transition: transform 0.4s, opacity 0.4s, background-color 0.4s;
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  transform: scale(1.4);
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.social-links.animated-effect-1 li a:hover:after { /*마우스 오버시 터짐 효과*/
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0s, opacity 0.3s, background-color 0.3s;
+  -moz-transition: -moz-transform 0s, opacity 0.3s, background-color 0.3s;
+  transition: transform 0s, opacity 0.3s, background-color 0.3s;
+}
+.social-links.circle li a { /*사각 테두리 제거*/
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.social-links.animated-effect-1 li.googleplus a:hover { /*구글 원형 테두리 색상*/
+  border-color: #dd4b39;
+}
+.social-links:not(.animated-effect-1) li.googleplus a:hover, /*구글 원형 안쪽 색상*/
+.colored.social-links li.googleplus a,
+.social-links.animated-effect-1 li.googleplus a:after,
+.btn.googleplus {
+  background-color: #dd4b39;
+  border-color: #dd4b39;
+  color: #fff;
+}
+.social-links:not(.animated-effect-1) li.facebook a:hover,
+.colored.social-links li.facebook a,
+.social-links.animated-effect-1 li.facebook a:after,
+.btn.facebook { /* 페이스북 안쪽 색상과 트위터 안쪽 색상 */
+  background-color: #3b5998;
+  border-color: #3b5998;
+  color: #fff;
+}
+/* -----풋터 메신저 아이콘 끝----- */
+/* -----footer 사용자 디자인 시작----- */
+.subfooter { /* 풋터 배경 */
+  background-color: #f5f5f5;
+  padding: 25px 0;
+  border-top: 1px solid #eaeaea;
+}
+#o_footer a{text-decoration:none; color:#000000;}         
+#o_footer a:hover{color:#0080ff;}                     
+/* nav tag */
+#o_footer nav ul{padding-top:10px;}	/*  상단 여백 10px  */
+#o_footer nav ul li {
+   display:inline;					/*  세로나열을 가로나열로 변경 */
+   border-left:1px solid #999;		/* 각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
+   font:bold 12px;					/* 폰트 설정 - 12px*/
+   padding:0 6px;					/* 각 메뉴 간격 */
+    text-align:center
+}
+#o_footer nav ul li:first-child{border-left:none;} /* 메뉴 분류중 제일 왼쪽의 "|"는 삭제*/
+/* -----footer 사용자 디자인 끝----- */
+
+/*-------------------------------Footer End-------------------------------*/
+
+
+
+

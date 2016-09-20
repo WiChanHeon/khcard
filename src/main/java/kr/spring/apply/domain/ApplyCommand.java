@@ -39,18 +39,19 @@ public class ApplyCommand {
 	@NotEmpty
 	private String ap_job2;
 	private int ap_pass;
-	private String ap_id;
+	private String info_id;
 	private String card_num;
 	
-	//주민뒷번호 일치 여부 체크
-		public boolean isCheckRrn(String userRrnrear,String userRrnfront){
+	//주민번호 일치 여부 체크
+		public boolean isCheckRrn(String userRrnrear){
 			
-			if(ap_rrnfront.equals(userRrnfront)&& ap_rrnrear.equals(userRrnrear)){
+			if(ap_rrnrear.equals(userRrnrear)){
 				return true;
 			}
 			
 			return false;
 		} 
+	
 	
 	public int getAp_num() {
 		return ap_num;
@@ -154,11 +155,11 @@ public class ApplyCommand {
 	public void setAp_pass(int ap_pass) {
 		this.ap_pass = ap_pass;
 	}
-	public String getAp_id() {
-		return ap_id;
+	public String getInfo_id() {
+		return info_id;
 	}
-	public void setAp_id(String ap_id) {
-		this.ap_id = ap_id;
+	public void setInfo_id(String info_id) {
+		this.info_id = info_id;
 	}
 	public String getCard_num() {
 		return card_num;
@@ -173,7 +174,7 @@ public class ApplyCommand {
 				+ ", ap_name=" + ap_name + ", ap_ename=" + ap_ename + ", ap_cell=" + ap_cell + ", ap_email=" + ap_email
 				+ ", ap_postnum=" + ap_postnum + ", ap_address1=" + ap_address1 + ", ap_address2=" + ap_address2
 				+ ", ap_paydate=" + ap_paydate + ", ap_bank=" + ap_bank + ", ap_banknum=" + ap_banknum + ", ap_reg="
-				+ ap_reg + ", ap_job=" + ap_job + ", ap_job2=" + ap_job2 + ", ap_pass=" + ap_pass + ", ap_id=" + ap_id
+				+ ap_reg + ", ap_job=" + ap_job + ", ap_job2=" + ap_job2 + ", ap_pass=" + ap_pass + ", info_id=" + info_id
 				+ ", card_num=" + card_num + "]";
 	}
 }	
