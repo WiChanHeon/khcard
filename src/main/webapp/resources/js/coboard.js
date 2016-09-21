@@ -86,6 +86,7 @@ $(document).ready(function(){
 			
 			//확장자 체크
 			var ext = $(this).val().split('.').pop().toLowerCase();
+			alert(ext);
 			if($.inArray(ext, ['gif','jpg','jpeg','png','bmp'] == -1)){
 				alert('이미지 파일만 업로드할 수 있습니다.');
 				$(this).val('');
