@@ -83,10 +83,11 @@
 			<div>
 				<div class="y_floatleft">
 					<c:if test="${empty coboard.co_filename}">
-						<label for="upload">첨부파일 없음</label> <input type="file" name="upload" id="upload">
+						<input type="file" name="upload" id="upload">
 					</c:if>
 					<c:if test="${!empty coboard.co_filename}">
-						첨부파일 : ${coboard.co_filename} <span class="y_como-span"><input type="checkbox" name="co_filename" value="삭제"> 파일삭제</span>
+						<label for="upload" id="y_upload-del">첨부파일 : ${coboard.co_filename}</label> <span class="y_como-span"><input type="checkbox" name="filedel" id="y_filedel" value="삭제"> 파일삭제</span> 
+						<input type="file" name="upload" id="y_code-modify_delupload" style="display:none;"> 
 					</c:if>
 				</div>
 				<div class="y_floatright">

@@ -140,11 +140,13 @@
 }
 #y_code-modify label{ /*첨부파일 레이블 - inline위함*/
 	float:left;
-	width:150px;
+	width:250px;
 }
 #y_code-modify span.y_como-span{ /*첨부삭제 문구*/
 	color:#4c4c4c;
 	margin:0 10px;
+	float:left;
+	width:100px;
 }
 
 
