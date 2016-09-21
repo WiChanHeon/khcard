@@ -7,22 +7,26 @@
          <!--로그인 영역  -->
          <li class="login-back">
          <br>
+         <div>
          <div class="combine-line">
-         <a href="#"><h3>My Account &gt;</h3></a><h5><a href="#" style="margin-left:35px;">회원가입</h5></a>
+         <h3><a href="#">My Account &gt;</a></h3> <h5><a href="#" style="margin-left:35px;">회원가입</a></h5>
          </div>
          <button type="button" class="btn loginForm"><span>아이디</span></button>
-         <div id="output" style="display:none;">
+         
+         <div id="t_output" style="display:none;">
           <form action="#" method="post">
-           <input type="text" name="mem_id"  placeholder="   아이디" style="height:35px; width: 100%;">
-           <input type="password" name="mem_pw"  placeholder="   비밀번호" style="margin-bottom:3%; height:35px; width: 100%;">
-           <input type="submit" value="로그인" style="width:100%; height:35px;">
+           <input type="text" name="mem_id"  placeholder="   아이디" style="height:35px; width: 240px;"><br>
+           <input type="password" name="mem_pw"  placeholder="   비밀번호" style="margin-bottom:3%; height:35px; width:240px; "><br>
+           <input type="submit" value="로그인" style="width:240px; height:35px;">
           </form> 
          </div>
-            
+            </div>
       </li>
       <li>
+      <div class="login-content0">
        <div class="login-content"><a href="#">신용카드번호 안전을 위해<br>가상카드번호를 간단하게<br> 생성/해지<br>#3 가상카드번호<br>Digital KH 카드>
        </a></div>
+       <div></div>
       </li>
       </ul>
 </div>
@@ -184,3 +188,5 @@
      </div>
    </div>
    </div>
+
+

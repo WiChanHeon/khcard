@@ -94,7 +94,15 @@ $(document).ready(function(){
 	}
 	
 	
-	
+	//삭제 확인
+	$('#y_code-original_delete').click(function(){
+		var co_num = $(this).attr('data-num');
+		var isDelete = confirm('정말 삭제하시겠습니까?');
+		
+		if(isDelete){
+			location.href='coboardDelete.do?co_num='+co_num;
+		}
+	});
 	
 	
 	

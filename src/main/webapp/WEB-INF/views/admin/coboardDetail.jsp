@@ -33,7 +33,7 @@
 			<hr>
 			<div class="y_right">
 				<input type="button" value="수정" id="y_code-original_modify">
-				<input type="button" value="삭제">
+				<input type="button" value="삭제" id="y_code-original_delete" data-num="${coboard.co_num}">
 				<input type="button" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/admin/coboardList.do'">
 			</div>
 		</div>
