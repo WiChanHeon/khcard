@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <div class="row">
                 <div class="col-lg-12">
-                    <h1>Dashboard <small>Statistics and more</small></h1>
+                    <h1>관리자 메인 <small>Statistics and more</small></h1>
                     <div class="alert alert-dismissable alert-warning">
                         <button data-dismiss="alert" class="close" type="button">&times;</button>
                         Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs. 
@@ -13,16 +16,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8">
+           	    <div class="col-md-8">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Visits Based on a 10 days data</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> 총 카드 신청횟수</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-chart1"></div>
+                            <div id="totalApplyCount" style="height: 400px;"></div>
                         </div>
+                  
                     </div>
-                </div>
+        </div>
                 <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -125,10 +129,71 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Sources One month tracking </h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> 최근 카드 신청자 목록 </h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-grid1"></div>
+                        <!--테이블 시작  -->
+				<div>
+				<h3 align="center">카드 신청자 목록</h3>
+				<div class="search-position">
+					<form action="adminMain.do" id="search_form" method="get">
+						<ul class="search">
+							<li><select name="keyfield">
+							        <option value="all">전체</option>
+									<option value="ap_name">신청인</option>
+									<option value="ap_reg">신청일자</option>
+									<option value="ap_rrnfront">주민번호</option>
+									
+							</select></li>
+							<li><input type="text" size="16" name="keyword"></li>
+							<li><input type="submit" value="찾기"></li>
+						</ul>
+					</form>
+				</div>
+					<c:if test="${count==0 }">
+						<h4 class="empty-list">해당하는 신청자 목록이 없습니다.</h4>
+					</c:if>
+					<c:if test="${count>0 }">
+						<table border="1">
+							<tr>
+								<th>신청번호</th>
+								<th>신청인 성명</th>
+								<th>주민번호</th>
+								<th>은행명</th>
+								<th>계좌번호</th>
+								<th>신청일자</th>
+								<th>심사상태</th>
+								
+							</tr>
+							<c:forEach var="article" items="${list }">
+								<tr>
+									<td>${article.ap_num }</td>
+									<td>${article.ap_name }</td>
+									<td>${article.ap_rrnfront}</td>
+									<td>${article.ap_bank }</td>
+									<td>${article.ap_banknum }</td>
+									<td>${article.ap_reg }</td>
+									<c:if test="${article.ap_pass==0 }">
+									<td>대기</td>
+									</c:if>
+									<c:if test="${article.ap_pass==1 }">
+									<td>발급</td>
+									</c:if>
+									<c:if test="${article.ap_pass==2 }">
+									<td>거절</td>
+									</c:if>
+									<c:if test="${article.ap_pass==3 }">
+									<td>보류</td>
+									</c:if>
+									
+								</tr>
+							</c:forEach>
+						</table>
+						<div class="align-center">${pagingHtml }</div>
+					</c:if>
+				</div>
+				<!--테이블 끝  -->
+				<div id="shieldui-grid1"></div>
                         </div>
                     </div>
                 </div>

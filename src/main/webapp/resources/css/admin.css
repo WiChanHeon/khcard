@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+/*T-list*/
+/*리스트*/
+ul.search{
+	width:300px;
+	list-style:none;
+	padding:0;
+	margin:10px auto;
+	float: right;
+}
+ul.search li{
+	margin:0 0 9px 0;
+	padding:0;
+	display: inline;
+	
+
+}
+
+ul.search li input[type="text"]{
+	width:100px;
+}
+table{
+	width:98%;
+	margin:0 auto;
+}
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+.align-center2 {
+	text-align: center;
+	margin-right:4%;
+	margin-top: 4%;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 17px;
+}
+th{
+	background-color: black;
+}
+th#1{
+	
+}
+.empty-list{
+	margin-top: 60px;
+	margin-left: 672px;
+}
+input[type="button"],input[type="submit"]{
+	font-size:17px;
+	color:black;
+	margin-left:5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-align:center;
+	
+	background: #d1d1d1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d1d1d1), to(#f1f1f1)); 
+	background: -moz-linear-gradient(top,  #d1d1d1,  #f1f1f1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1d1d1', endColorstr='#f1f1f1', GradientType=0);
+	border-top: 1px solid #bcbcbc;
+}
+/*로그인폼*/
+#login_form label{
+	font-size:15pt;
+	font-family:"맑은 고딕";
+	width:140px;
+	float:left;
+}
+
+form#login_form{
+	width:500px;
+	margin:0 auto;
+}
+form ul{
+	list-style:none;
+	padding: 0;
+	margin:2px;
+}
+form ul li{
+	margin:0 0 9px 0;
+	padding:0;
+}
+form input[type="text"], form input[type="password"], form textarea, form#login_form input#id{
+	width:350px;
+}
+form input#id{
+	width:150px;
+}
+.error-color{
+	color:red;
+}
+

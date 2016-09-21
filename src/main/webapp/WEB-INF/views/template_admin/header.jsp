@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+   
+    
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -12,10 +15,10 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
-                    <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                    <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
-                    <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
-                    <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
+                    <li class="selected"><a href="adminMain.do"><i class="fa fa-bullseye"></i> 관리자 </a></li>
+                    <li><a href="manageApplyList.do"><i class="fa fa-tasks"></i> 카드 신청관리</a></li>
+                    <li><a href="analysis.do"><i class="fa fa-globe"></i> 카드통계</a></li>
+                    <li><a href="manageMissingList.do"><i class="fa fa-list-ol"></i> 카드 분실관리</a></li>
                     <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
                     <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
                     <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
@@ -46,12 +49,12 @@
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>${sessionScope.adminId}<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a href="admemberdetail.do?m_id=${sessionScope.adminId}"><i class="fa fa-user"></i> Profile</a></li>
                             <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                            <li><a href="logout.do"><i class="fa fa-power-off"></i> Log Out</a></li>
 
                         </ul>
                     </li>

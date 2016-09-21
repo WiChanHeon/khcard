@@ -7,11 +7,37 @@
 <tiles-definitions>
     <definition name="adminMain" template="/WEB-INF/views/template_admin/layout.jsp">
     	<put-attribute name="title" value="kh card 관리자"/>
-    	<put-attribute name="title" value="khcard 관리자"/>
     	<put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
-    	<put-attribute name="menu" value="/WEB-INF/views/template_admin/menu.jsp"/>
     	<put-attribute name="body" value="/WEB-INF/views/admin/home.jsp"/>
     </definition>
+    <definition name="manageApply" extends="adminMain">
+      <put-attribute name="title" value="kh card 발급 관리"/>
+      <put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/admin/manageApply.jsp"/>
+    </definition>
+    <definition name="manageMissing" extends="adminMain">
+      <put-attribute name="title" value="kh card 분실 관리"/>
+      <put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/admin/manageMissing.jsp"/>
+    </definition>
+     <definition name="admemberLogin" extends="adminMain">
+      <put-attribute name="title" value="kh card 관리자 로그인"/>
+      <put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/admin/adMemberLogin.jsp"/>
+    </definition>
+      <definition name="adMemberDetail" extends="adminMain">
+      <put-attribute name="title" value="kh card 관리자 로그인"/>
+      <put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/admin/adMemberDetail.jsp"/>
+    </definition>
+     
+     <definition name="analysis" extends="adminMain">
+      <put-attribute name="title" value="kh card 통계"/>
+      <put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/admin/analysis.jsp"/>
+    </definition>
+    
+    
 </tiles-definitions>
 
 

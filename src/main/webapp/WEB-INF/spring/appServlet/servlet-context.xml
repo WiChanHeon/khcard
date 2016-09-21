@@ -11,7 +11,9 @@
 
 	<!-- 자동 스캔 -->
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
-	<context:component-scan base-package="kr.spring.info.controller"/>
+	<context:component-scan base-package="kr.spring.admin.controller"/>
+	<context:component-scan base-package="kr.spring.admember.controller"/>
+	
 	
 	<!-- Spring3 Validator -->
 	<mvc:annotation-driven/>
@@ -20,8 +22,7 @@
 	
 	<!-- 사용자 메인 페이지 설정 -->
 	<mvc:view-controller path="/main/main.do" view-name="main"/>
-	<!-- 관리자 메인 페이지 설정 -->
-	<mvc:view-controller path="/admin/main.do" view-name="adminMain"/>
+	
 	
 	<!-- messageSource 지정 -->
 	<beans:bean id="messageSource"
@@ -50,8 +51,8 @@
 		<beans:property name="definitions">
 			<beans:list>
 				<!-- 설정파일이 여러개일 경우 아래 태그를 여러개 나열 -->
-				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value> 
 				<beans:value>/WEB-INF/tiles-def/admin.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value> 
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -81,6 +82,16 @@
 		<beans:property name="maxUploadSize" value="52428800"/>
 		<beans:property name="defaultEncoding" value="UTF-8"/>	
 	</beans:bean>
+	<!--로그인여부 체크 (인터셉터)  -->
+	<mvc:interceptors>
+	  <mvc:interceptor>
+	     <mvc:mapping path="/admin/manageApplyList.do"/>
+	     <mvc:mapping path="/admin/admemberdetail.do"/>
+	     <mvc:mapping path="/admin/manageMissingList.do"/>
+	     <mvc:mapping path="/admin/analysis.do"/>
+	     <beans:bean class="kr.spring.admember.interceptor.LogonCheckInterceptor"/>
+	  </mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans:beans>
 
