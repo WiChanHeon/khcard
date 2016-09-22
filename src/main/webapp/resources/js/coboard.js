@@ -39,6 +39,12 @@ $(document).ready(function(){
 		$('#y_code-original_p').html($('#y_code-original_p').html().replace(/\n/g,'<br>'));
 	}
 	
+	//ID 정보 표시용 popover
+	$('[data-toggle="popover"]').popover(); 
+	/*$('.y_detail-idInfo').click(function(){
+		
+	});*/
+	
 	
 	//수정폼 불러오기
 	$('#y_code-original #y_code-original_modify').click(function(){
@@ -71,6 +77,7 @@ $(document).ready(function(){
 			$('#y_code-modify_delupload').hide();
 		}
 	});
+	
 	
 	//업로드 파일 유효성 체크
 	if(location.href.indexOf('coboardList.do') > 0 || location.href.indexOf('coboardDetail.do') > 0){ //페이지 체크

@@ -17,7 +17,7 @@
 		</div>
 		<div class="panel-body y_panel-body">
 			<div class="y_floatleft">
-				<a href="#">${coboard.m_name} (${coboard.m_id})</a>
+				<a style="cursor:pointer;" data-toggle="popover" title="[${coboard.m_name}] 회원 정보" data-content="부서 : ${adminInfo.m_dept} | email : ${adminInfo.m_email} | 연락처 : ${adminInfo.m_cell}">${coboard.m_name} (${coboard.m_id})</a>
 			</div>
 			<div class="y_floatright">
 				${coboard.co_reg}&nbsp;&nbsp; hit:${coboard.co_hit}
@@ -32,8 +32,16 @@
 			</div>
 			<hr>
 			<div class="y_right">
+				<c:if test="${sessionScope.adminId != coboard.m_id}">
+				<input type="button" value="수정" disabled>
+				<input type="button" value="삭제" disabled>
+				</c:if>
+				
+				<c:if test="${sessionScope.adminId == coboard.m_id}">
 				<input type="button" value="수정" id="y_code-original_modify">
 				<input type="button" value="삭제" id="y_code-original_delete" data-num="${coboard.co_num}">
+				</c:if>
+				
 				<input type="button" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/admin/coboardList.do'">
 			</div>
 		</div>
@@ -66,7 +74,7 @@
 		</div>
 		<div class="panel-body y_panel-body">
 			<div class="y_floatleft">
-				<a href="#">${coboard.m_name} (${coboard.m_id})</a>
+				<a style="cursor:pointer;" data-toggle="popover" title="[${coboard.m_name}] 회원 정보" data-content="부서 : ${adminInfo.m_dept} | email : ${adminInfo.m_email} | 연락처 : ${adminInfo.m_cell}">${coboard.m_name} (${coboard.m_id})</a>
 			</div>
 			<div class="y_floatright">
 				${coboard.co_reg}&nbsp;&nbsp; hit:${coboard.co_hit}
@@ -104,13 +112,28 @@
 	<div class="y_replyDiv">
 		
 		
-		<div role="test">
-			test
-			test
-			<span style="color:white;">아아아아아</span>
-			<h1>에에에</h1>
-			<button>캬캬캬</button>
-		</div>
+			<!-- 코멘트 시작 -->
+			<!-- the comment box -->
+			<div class="well">
+				<h4>댓글 :</h4>
+				<form role="form">
+					<div class="form-group">
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">작성</button>
+				</form>
+			</div>
+			<hr>
+			
+			<!-- the comments -->
+			<div class="col-sm-12">
+			<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
+			<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p>
+
+			<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
+			<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well. This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p>
+			</div>
+			<!-- 코멘트 끝 -->
 		
 		
 		

@@ -105,6 +105,11 @@
 	font-size:11pt;
 	padding:5px 7px;
 }
+.y_panel-body input[type="button"]:disabled, .y_panel-body input[type="submit"]:disabled{
+	font-size:11pt;
+	padding:5px 7px;
+	color:silver;
+}
 #y_code-original_p{ /*본문영역*/
 	color:#000;
 	max-height:300px;

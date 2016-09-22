@@ -3,6 +3,7 @@ package kr.spring.coboard.controller;
 import java.io.File;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -22,11 +23,18 @@ public class CoboardModifyController {
 	
 	
 	@RequestMapping(value="/admin/coboardModify.do")
-	public String submit(CoboardCommand coboard, @RequestParam(value="filedel",defaultValue="")String filedel) throws Exception{
+	public String submit(CoboardCommand coboard, @RequestParam(value="filedel",defaultValue="")String filedel, HttpSession session) throws Exception{
 		
 		if(log.isDebugEnabled()){
 			log.debug("coboard : " + coboard);
 			log.debug("filedel : " + filedel);
+		}
+		
+		
+		//수정 도중 세션 만료되었을 경우
+		String adminId = (String)session.getAttribute("adminId");
+		if(adminId == null){
+			return "redirect:/admin/login.do";
 		}
 		
 		

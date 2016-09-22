@@ -1,6 +1,7 @@
 package kr.spring.coboard.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +15,13 @@ public class CoboardDeleteController {
 	private CoboardService coboardService;
 	
 	@RequestMapping("/admin/coboardDelete.do")
-	public String process(@RequestParam("co_num")int co_num){
+	public String process(@RequestParam("co_num")int co_num, HttpSession session){
 		
-		System.out.println("delete진입성공");
+		//삭제 도중 세션 만료되었을 경우
+		String adminId = (String)session.getAttribute("adminId");
+		if(adminId == null){
+			return "redirect:/admin/login.do";
+		}
 		
 		coboardService.deleteCoboard(co_num);
 		
