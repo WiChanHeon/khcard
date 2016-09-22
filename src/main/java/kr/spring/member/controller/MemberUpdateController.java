@@ -32,13 +32,13 @@ public class MemberUpdateController {
 		MemberCommand memberCommand = memberService.selectMember(mem_id);
 		//모델에 저장된 정보는 @SessionAttributes("command")를
 		//통해 세션에 저장
-		model.addAttribute("command", memberCommand);
+		model.addAttribute("hcommand", memberCommand);
 		
 		return "memberModify";
 	}
 	
 	@RequestMapping(value="/member/update.do",method=RequestMethod.POST)
-	public String submit(@ModelAttribute("command")
+	public String submit(@ModelAttribute("hcommand")
 	                     @Valid MemberCommand memberCommand,
 	                     BindingResult result,
 	                     SessionStatus status){

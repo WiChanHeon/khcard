@@ -38,6 +38,8 @@ public interface MemberMapper {
 	public Integer monthPrice(Map<String, String> map);
 	
 	public Integer usageNumber(Map<String, String> map4);
+	
+	public Integer sumPoint(Map<String, String> map);
 }
 
 

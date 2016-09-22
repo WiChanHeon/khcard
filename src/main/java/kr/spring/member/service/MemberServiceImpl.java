@@ -82,6 +82,12 @@ public class MemberServiceImpl implements MemberService{
 		return memberMapper.usageNumber(map4);
 	}
 
+	@Override
+	public Integer sumPoint(Map<String, String> map) {
+		
+		return memberMapper.sumPoint(map);
+	}
+
 	
 	
 }

@@ -21,7 +21,7 @@
 			output += '남은 카드한도는 : ${card.limit }<br>';
 			output += '</div>';
 			output += '<div style="height: 100px;">';
-			output += '남은 포인트는 : ${card.pay_point}';
+			output += '포인트는 : ${card.pay_point}';
 			output += '</div>';
 			output += '</c:if>';
 			output += '</c:forEach>';
@@ -40,7 +40,26 @@
 			output += '남은 카드한도는 : ${card.limit }<br>';
 			output += '</div>';
 			output += '<div style="height: 100px;">';
-			output += '남은 포인트는 : ${card.pay_point}';
+			output += '포인트는 : ${card.pay_point}';
+			output += '</div>';
+			output += '</c:if>';
+			output += '</c:forEach>';
+			
+			document.getElementById("views").innerHTML=output;
+			
+		}else if(selected.value == '2'){
+			document.getElementById("imgId").src = "${pageContext.request.contextPath}/resources/images/card_ME2.png";
+			
+			output += '<c:forEach var="card" items="${cards}" varStatus="status">';
+			output += '<c:if test="${status.count==eyongs0 }">';
+			output += '<div style="height: 100px;">';
+			output += '이달의 사용금액은 :<a href="cdetail.do?cardnum=<c:forEach var="i" items="${cards }" varStatus="status"><c:if test="${status.count==cusenumber1 }">${i.card_bunho}</c:if></c:forEach>">${card.month }</a><br>';
+			output += '</div>';
+			output += '<div style="height: 100px;">';
+			output += '남은 카드한도는 : ${card.limit }<br>';
+			output += '</div>';
+			output += '<div style="height: 100px;">';
+			output += '포인트는 : ${card.pay_point}';
 			output += '</div>';
 			output += '</c:if>';
 			output += '</c:forEach>';
@@ -51,16 +70,17 @@
 	}
 
 </script>
+<div id="ent" style="overflow: auto;">
 <div id="cardsLeft" style="width: 45%;border-right: 1px solid; float: left;">
-	<h2 align="center"><spring:message code="member.usageMain.title"/></h2>
-	<div id="cardss">
+	<h2 align="center">${id}님의 사용내역 메인</h2>
+	<div id="cardss" align="center">
 	<select id="cardcategory" onChange="test();" style="width: 200px; border-left: 1px; " >
 		<option value="123">선택</option>
 		<c:forEach var="i" items="${num }" varStatus="asd">
 		<option value="${asd.index}">${i}</option>
 		</c:forEach>
 	</select>
-	<div id="cardsImage">
+	<div id="cardsImage" align="center">
 	<img id="imgId" src="${pageContext.request.contextPath}/resources/images/card_ZRO.png">
 	</div>
 	</div>
@@ -76,11 +96,12 @@
 				남은 카드한도는 : ${card.limit }<br>
 				</div>
 				<div style="height: 100px;">
-				남은 포인트는 : ${card.pay_point}
+				포인트는 : ${card.pay_point}
 				</div>
 			</c:if>
 			</c:forEach>
 	</div>
+</div>
 </c:if>
 <c:if test="${empty userId}">
 <div>

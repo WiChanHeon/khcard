@@ -40,7 +40,7 @@ public class UserUsageController {
 		if(log.isDebugEnabled()){
 			log.debug("mem_id : " + mem_id);
 		}
-	
+		ModelAndView mav=new ModelAndView();
 		List<String> list = memberService.usageCard(mem_id); //카드번호리스트
 		
 		List<InfoCardsCommand> list2 = new ArrayList<InfoCardsCommand>(); 
@@ -58,7 +58,7 @@ public class UserUsageController {
 		String sql3 ="SELECT count(*) FROM F_";
 		
 		
-		for(int i =0;i<list.size();i++){
+		for(int i =0;i<list.size();i++){//사용내역개수
 			Map<String, String> map4 = new HashMap<String, String>();
 			sql3+=list.get(i);
 			map4.put("usageNumber",sql3);
@@ -66,14 +66,23 @@ public class UserUsageController {
 			System.out.println("numlist : "+numlist.get(i));
 			sql3 ="SELECT count(*) FROM F_";
 		}
-		numlist.set(0, numlist.get(0)+numlist.get(1));
+		if (list.size()==2) {//사용내역개수 조건
+			numlist.set(0, numlist.get(0)+numlist.get(1));
+			mav.addObject("cusenumber", numlist.get(0));
+		}else if (list.size()==3) {
+			numlist.set(2, numlist.get(0)+numlist.get(1)+numlist.get(2));
+			numlist.set(0, numlist.get(0)+numlist.get(1));
+			mav.addObject("cusenumber", numlist.get(0));
+			mav.addObject("cusenumber1", numlist.get(2));
+		}
+		
 		System.out.println("카드내용개수 : "+numlist.get(0));
 		SimpleDateFormat formatter = new SimpleDateFormat ( "yyyyMM", Locale.KOREA );
 		Date currentTime = new Date ( );
 		String dTime = formatter.format (currentTime);
 		dTime += "%";
 		System.out.println(dTime);
-		for(int i=0;i<list.size();i++){
+		for(int i=0;i<list.size();i++){//월별카드사용합계
 			Map<String, String> map2 = new HashMap<String, String>();
 			sql2 += list.get(i);
 			sql2 += " where to_char(pay_reg,'YYYYMM') like '"+dTime+"'";
@@ -87,14 +96,22 @@ public class UserUsageController {
 		
 		
 		
-		for(int i=0;i<list.size();i++){
+		for(int i=0;i<list.size();i++){//카드한도
 			list4.add(memberService.limitCard(list.get(i)));
 			System.out.println("list4 : "+list.get(i));
 		}
 		System.out.println("list4 : "+list4);
 		
 		System.out.println(list);
-		ModelAndView mav=new ModelAndView();
+		
+		List<Integer> sump = new ArrayList<Integer>();
+		String sql5 = "SELECT sum(pay_point) from F_";
+		for(int i=0; i<list.size();i++){
+			Map<String,String> map = new HashMap<String, String>();
+			map.put("sumPoint", sql5+list.get(i));
+			sump.add(i, memberService.sumPoint(map));
+		}
+		
 		mav.setViewName("userUsage");
 		for(int i=0; i<list.size();i++){ //카드번호리스트당 
 			Map<String,String> map = new HashMap<String, String>();
@@ -108,7 +125,8 @@ public class UserUsageController {
 				if (list2.get(j).getCard_bunho()==null) {
 					list2.get(j).setCard_bunho(list.get(i));
 					list2.get(j).setLimit(list4.get(i)-list3.get(i));
-					list2.get(j).setMonth(list3.get(i));;
+					list2.get(j).setMonth(list3.get(i));
+					list2.get(j).setPay_point(sump.get(i));;
 				}
 			}
 			mav.addObject("eyongs"+i, list2.size()+1);
@@ -117,10 +135,12 @@ public class UserUsageController {
 			
 		}
 		
+		
+		
 		mav.addObject("num",list);
 		mav.addObject("gaesoo",list.size());
-		mav.addObject("cusenumber", numlist.get(0));
 		
+		mav.addObject("id", mem_id);
 		System.out.println(mav.toString());
 		
 		return mav;

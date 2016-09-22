@@ -12,6 +12,9 @@
 	<select id="usageNumber" parameterType="map" resultType="Integer">
 		${usageNumber}
 	</select>
+	<select id="sumPoint" parameterType="map" resultType="Integer">
+		${sumPoint}
+	</select>
 </mapper>
 
 

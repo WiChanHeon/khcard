@@ -54,7 +54,7 @@
 				<label for="mem_cell">전화번호</label>
 				<form:input path="mem_cell" maxlength="15"/>
 				<form:errors path="mem_cell" class="error-color"/>
-				<hr style="width: 28%">s
+				<hr style="width: 28%">
 			</li>
 			<li class="align-center">
 				<input type="submit" value="전송">
