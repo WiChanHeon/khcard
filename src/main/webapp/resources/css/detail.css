@@ -973,9 +973,11 @@
     font-size: 13px;
     padding: 0px 8px 18px 18px;
 }
-#minibox_cb1 :hover { /* 마우스 온시 색상변경 */
-   color: black; 
+#minibox_cb1 li:hover{ /* 마우스 온시 색상변경 */
    background-color: white;
+}
+#minibox_cb1 li:hover p{ /* 마우스 온시 색상변경 */
+	color:black;
 }
 /*-------------------------------------------여섯번째 메뉴 끝----------------------------------------------*/
 
