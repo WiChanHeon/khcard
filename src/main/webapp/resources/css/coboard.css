@@ -159,6 +159,20 @@
 .y_replyDiv{
 	display:relative;
 }
-
+.y_ad-commentBox textarea{
+	color:#4c4c4c;
+}
+#y_re-nextBtn{
+	display:none;
+	border-color:#808080;
+}
+.y_reBottom{
+	text-align:center;
+	margin-bottom:80px;
+}
+.y_reName{
+	display:inline-block;
+	min-width:100px;
+}
 
 /*------------------coboardDetail End------------------*/

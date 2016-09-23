@@ -131,7 +131,7 @@ create table f_coboard_re(
 	m_id varchar2(20) not null,
 	m_name varchar2(30) not null,
 	co_re_content varchar2(600) not null,
-	co_re_date date default sysdate not null,	
+	co_re_reg date default sysdate not null,	
 	constraint coboardre_coboard_fk1 foreign key(co_num) references f_coboard(co_num),
 	constraint coboardre_admin_fk2 foreign key(m_id) references f_admin(m_id)
 );

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.coboard.domain.CoboardCommand;
+import kr.spring.coboard.domain.CoboardReplyCommand;
 
 @Transactional
 public interface CoboardService {
@@ -22,4 +23,11 @@ public interface CoboardService {
 	public void deleteCoboard(Integer co_num);
 	
 	//´ñ±Û
+	public void insertCoboardReply(CoboardReplyCommand core);
+	@Transactional(readOnly=true)
+	public int getCoboardReplyCount(Integer co_num);
+	@Transactional(readOnly=true)
+	public List<CoboardReplyCommand> getCoboardReplyList(Map<String,Object> map);
+	public void updateCoboardReply(CoboardReplyCommand core);
+	public void deleteCoboardReply(Integer co_re_num);
 }

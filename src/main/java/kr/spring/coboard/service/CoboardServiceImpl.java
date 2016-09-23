@@ -9,12 +9,14 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.coboard.dao.CoboardMapper;
 import kr.spring.coboard.domain.CoboardCommand;
+import kr.spring.coboard.domain.CoboardReplyCommand;
 
 @Service("coboardService")
 public class CoboardServiceImpl implements CoboardService{
 	@Resource
 	private CoboardMapper coboardMapper;
 	
+	//ºÎ¸ð±Û
 	@Override
 	public void insertCoboard(CoboardCommand coboard) {
 		coboardMapper.insertCoboard(coboard);
@@ -49,6 +51,35 @@ public class CoboardServiceImpl implements CoboardService{
 	public void deleteCoboard(Integer co_num) {
 		coboardMapper.deleteCoboard(co_num);
 	}
+	
+	
+	//´ñ±Û
+	@Override
+	public void insertCoboardReply(CoboardReplyCommand core) {
+		coboardMapper.insertCoboardReply(core);
+	}
+
+	@Override
+	public int getCoboardReplyCount(Integer co_num) {
+		return coboardMapper.getCoboardReplyCount(co_num);
+	}
+
+	@Override
+	public List<CoboardReplyCommand> getCoboardReplyList(Map<String, Object> map) {
+		return coboardMapper.getCoboardReplyList(map);
+	}
+	
+	@Override
+	public void updateCoboardReply(CoboardReplyCommand core) {
+		coboardMapper.updateCoboardReply(core);
+	}
+	
+	@Override
+	public void deleteCoboardReply(Integer co_re_num) {
+		coboardMapper.deleteCoboardReply(co_re_num);
+	}
+
+	
 
 	
 

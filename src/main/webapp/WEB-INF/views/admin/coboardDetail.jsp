@@ -74,7 +74,7 @@
 		</div>
 		<div class="panel-body y_panel-body">
 			<div class="y_floatleft">
-				<a style="cursor:pointer;" data-toggle="popover" title="[${coboard.m_name}] 회원 정보" data-content="부서 : ${adminInfo.m_dept} | email : ${adminInfo.m_email} | 연락처 : ${adminInfo.m_cell}">${coboard.m_name} (${coboard.m_id})</a>
+				<a style="text-decoration:inherit;">${coboard.m_name} (${coboard.m_id})</a>
 			</div>
 			<div class="y_floatright">
 				${coboard.co_reg}&nbsp;&nbsp; hit:${coboard.co_hit}
@@ -113,25 +113,41 @@
 		
 		
 			<!-- 코멘트 시작 -->
-			<!-- the comment box -->
-			<div class="well">
+			<!-- 댓글 작성 박스 -->
+			<div class="well y_ad-commentBox">
 				<h4>댓글 :</h4>
-				<form role="form">
+				<form action="coboardReplyWriteAjax.do" id="y_reWriteForm" method="post">
 					<div class="form-group">
-						<textarea class="form-control" rows="3"></textarea>
+						<input type="hidden" name="co_num" id="co_num" value="${coboard.co_num}">
+						<textarea class="form-control" rows="3" name="co_re_content" maxlength="300"></textarea>
 					</div>
 					<button type="submit" class="btn btn-primary">작성</button>
 				</form>
 			</div>
 			<hr>
 			
-			<!-- the comments -->
-			<div class="col-sm-12">
-			<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
-			<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p>
-
-			<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
-			<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well. This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p>
+			<!-- 댓글 목록 -->
+			<div class="col-sm-12" id="y_ad-comment">
+				
+				
+				
+				
+				<h3><span>백백분식</span> <small>2014/03/07 11:43 PM</small> 
+				<button type="button" class="btn btn-default btn-sm" data-num="item.co_re_num" id="y_re-modifyBtn">수정</button>
+				<button type="button" class="btn btn-default btn-sm" data-num="item.co_re_num" id="y_re-deleteBtn">삭제</button>
+				</h3> 
+				<p>다들 배고프지 않아요? 식사 합시닷</p><br>
+				
+				
+				<h3><span style="cursor:pointer;" data-toggle="popover" title="[] 회원 정보" data-content="부서 : ">백백분식</span> <small>2014/03/07 11:43 PM</small> </h3> 
+				<p>다들 배고프지 않아요? 식사 합시닷</p><br>
+	
+				<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
+				<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well. This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p><br>
+			
+			</div>
+			<div class="col-sm-12 y_reBottom">
+				<button type="button" class="btn btn-default" id="y_re-nextBtn">다음 댓글 보기</button>
 			</div>
 			<!-- 코멘트 끝 -->
 		
