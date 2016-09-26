@@ -16,7 +16,7 @@
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
     <!-- 빈 자동 스캔 - servlet-context.xml에서 Controller를 
     자동 스캔 설정해서 아래 설정에서는 Controller 자동 스캔 제외 -->
-    <context:component-scan base-package="kr.spring">
+    <context:component-scan base-package="kr.spring.donan">
     	<context:exclude-filter type="annotation" 
     	         expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
@@ -52,6 +52,7 @@
 	<bean id="sqlSessionFactory" 
 	             class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
+<<<<<<< HEAD
 		<property name="typeAliasesPackage" value="kr.spring.member.domain,
 												   kr.spring.info.domain,
 												   kr.spring.apply.domain,
@@ -66,5 +67,11 @@
 											kr.spring.admin.dao,
 											kr.spring.admember.dao,
 											kr.spring.coboard.dao"/>  
+=======
+		<property name="typeAliasesPackage" value="kr.spring.donan.domain"/>
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="kr.spring.donan.dao"/>  
+>>>>>>> origin/master
 	</bean>
 </beans>

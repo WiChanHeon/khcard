@@ -1,0 +1,61 @@
+div.sangdan{
+	margin-left: 15%;  
+	margin-top: 100px;   
+	width: 70%;
+}/*상단 글씨*/
+div.sangdan1{
+	margin-left: 15%;
+	margin-top: 20px;
+	margin-bottom: 20px;    
+	width: 70%;
+}/*상단 글씨*/
+p.eyong{
+	border-style: groove;
+	background-color: #dddddd;
+	width: 100%;
+    text-align: auto;
+}/*이용 내역*/
+div.bun{
+	width: 70%;
+	padding-top: 15px;
+    margin: auto;
+    text-align: right;
+}/*분실 신고 버튼*/
+div.rok{
+	width: 70%;
+    margin-left: 110px; 
+    text-align: right;  
+}/*신고 등록 버튼*/
+div.check_zone{
+	width: 70%;
+    margin: auto;
+}
+table { 
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin: auto;
+}/*테이블*/
+
+td, th { 
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}/*테이블*/
+
+th:nth-child(even),th:nth-child(odd) { 
+    background-color: #dddddd;
+}/*테이블 최상단*/
+div.jub{
+	margin-left: 20%;
+	margin-top: 20px;
+}
+div.jub1{
+	margin-left: 200px;
+	margin-top: 20px;
+	width: 100%;
+}/*하단글씨*/
+input.day{
+	width: 70%;
+}
+

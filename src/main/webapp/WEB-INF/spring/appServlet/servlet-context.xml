@@ -11,12 +11,16 @@
 
 	<!-- 자동 스캔 -->
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
+<<<<<<< HEAD
 	<context:component-scan base-package="kr.spring.info.controller"/>
 	<context:component-scan base-package="kr.spring.coboard.controller"/>
 	<context:component-scan base-package="kr.spring.admin.controller"/>
 	<context:component-scan base-package="kr.spring.admember.controller"/>
 	<context:component-scan base-package="kr.spring.admin.controller"/>
 	<context:component-scan base-package="kr.spring.admember.controller"/>
+=======
+	<context:component-scan base-package="kr.spring.donan.controller"/>
+>>>>>>> origin/master
 	
 	<!-- Spring3 Validator -->
 	<mvc:annotation-driven/>

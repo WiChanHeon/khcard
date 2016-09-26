@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.donan.dao.DonanMapper">  
+	<select id="selectBoardList" parameterType="list" resultType="DonanListCommand">
+	SELECT
+	ap_name,	
+	card_num,
+	ap_job,
+	ap_bank
+	FROM
+	f_apply
+</select>
+
+</mapper>
