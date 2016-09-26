@@ -4,33 +4,41 @@
 .t_content-area {
    height: 1100px;
    min-width: 1381px;
-   width: 1870px;
-   clear: both;
+   width: 1400px;
+   /* clear: both; */
+   margin: 0 auto;
+   
 }
+
 
 #t_main .content_topbox {
    height: 27.3%;
-   width: 18%;
+   width: 25%;
    margin-top: 2.6%;
    border: 1px solid #aaaaaa;
-   margin-left: 14%;
+   /* margin-left: 14%; */
+   
    float: left;
    background-image: url('../images/main/bg_login_3.jpg');
    background-position:50%;
    height: 60.9%;
 }
+#t_main .content_topbox4,#t_main .content_bottombox4{
+   /* margin-right: 14%; */
+} 
 
 #t_main .content_topbox2, #t_main .content_topbox3, #t_main .content_topbox4 {
    border: 1px solid #aaaaaa;
    border-left: none;
-   width: 18%;
+   width: 25%;
    height: 60.9%;
    float: left;
    margin-top: 2.6%;
 }
-#t_main .content_topbox4,#t_main .content_bottombox4{
-   margin-right: 14%;
-} 
+#t_output{
+   
+   position: absolute;
+}
 #t_main .eachmenu {
    list-style: none;
    width: auto;
@@ -41,9 +49,9 @@
 
 #t_main div.login-content {
    
-   left:335px;
-   top:650px;
-   width:300px;
+   margin-left:14px;
+   margin-top:350px;
+   width:210px;
     position: absolute;
 }
 
@@ -63,22 +71,24 @@
 
 #t_main button.btn {
    margin-top: 7%;
-   width: 99%;
+   width: 240px;
 }
 
 #t_main .content_bottombox {
    height: 27.3%;
-   width: 18%;
+   width: 25%;
    border: 1px solid #aaaaaa;
    border-top: none;
    float: left;
    margin-bottom: 2.6%;
-   margin-left: 14%;
+   /* margin-left: 14%; */
+   clear:both;
+   
 }
 
 #t_main .content_bottombox2, #t_main .content_bottombox3, #t_main .content_bottombox4 {
    height: 27.3%;
-   width: 18%;
+   width: 25%;
    border: 1px solid #aaaaaa;
    border-top: none;
    float: left;
@@ -86,7 +96,7 @@
    margin-bottom: 2.6%;
 }
 
-#t_main .combine-line h3, #t_main .combine-line h5 {
+#t_main .combine-line h3,#t_main .combine-line h5 {
    display: inline;
    color: white;
 }
@@ -129,10 +139,10 @@
 #t_main .explainHr a {
    color: black;
 }
-#t_main div#output{
-   margin-top:5%;
+#t_main div#t_output{
+   margin-top:10px;
 }
-#t_main div#output form input[type="text"], form input[type="password"]{
+#t_main div#t_output form input[type="text"], form input[type="password"]{
    size: 30;
 }
 
@@ -238,4 +248,4 @@
 
 #t_main a.linebox:focus span.btn { 
    text-decoration: underline;
-}
+} 

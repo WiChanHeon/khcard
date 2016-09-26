@@ -64,7 +64,7 @@
     	<put-attribute name="body" value="/WEB-INF/views/detail/cardZERO.jsp"/>
     </definition> 
     
-    <definition name="cardcardMhybrid" extends="cardTheBlack">
+    <definition name="cardMhybrid" extends="cardTheBlack">
     	<put-attribute name="body" value="/WEB-INF/views/detail/cardMhybrid.jsp"/>
     </definition> 
 	

@@ -48,7 +48,6 @@
 		<put-attribute name="title" value="사내 게시판"/>
 		<put-attribute name="body" value="/WEB-INF/views/admin/coboardDetail.jsp"/>
 	</definition>
-      
      
      <definition name="analysis" extends="adminMain">
       <put-attribute name="title" value="kh card 통계"/>

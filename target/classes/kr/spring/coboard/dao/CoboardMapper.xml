@@ -75,5 +75,28 @@
 			</where>
 	</select>
 	
+	
+	<select id="getCoboardReplyList" parameterType="map" resultType="coboardReplyCommand">
+		
+		SELECT
+		  co_re_num,
+		  co_num,
+		  m_id,
+		  m_name,
+		  to_char(co_re_reg,'YYYY-MM-DD HH24:MI:SS') co_re_reg,
+		  co_re_content
+		FROM
+			(SELECT
+				a.*,
+				rownum rnum
+			FROM
+				(SELECT
+					*
+				FROM f_coboard_re WHERE co_num = #{co_num} ORDER BY co_re_reg DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+		
+	</select>
 
 </mapper>

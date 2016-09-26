@@ -1,1 +1,1034 @@
 @CHARSET "UTF-8";
+/* -------------------------------------------the black 시작---------------------------------------------- */
+.o_box_card_1{ /* black 상단 이미지*/
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_TB.jpg');
+   position: relative;
+   background-size: cover; 
+}
+.o_box_card_purple{ /* purple 상단이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_TP.jpg');
+   position: relative;
+   background-size: cover; 
+}
+.o_box_card_red{ /* red 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_TR.jpg');
+   position: relative;
+   background-size: cover; 
+}
+.o_box_card_mthree{ /* m3 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_M3.jpg');
+   position: relative;
+   background-size: cover;
+}
+.o_box_card_mtwo{ /* m2 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_M2.jpg');
+   position: relative;
+   background-size: cover;
+}
+.o_box_card_m{ /* m 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_M.jpg');
+   position: relative;
+   background-size: cover;
+}
+.o_box_card_tthree{ /* t3 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_T3.jpg');
+   position: relative;
+   background-size: cover;
+}
+.o_box_card_xthree{ /* x3 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_X3.jpg');
+   position: relative;
+   background-size: cover;
+}
+.o_box_card_xtwo{ /* x2 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_X2.jpg');
+   position: relative;
+   background-size: cover;   
+}
+.o_box_card_x{ /* x 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_X.jpg');
+   position: relative;
+   background-size: cover;   
+}
+.o_box_card_zero{ /* zero 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_ZERO.jpg');
+   position: relative;
+   background-size: cover;   
+}
+.o_box_content{ /*상단 이미지 가운데*/
+   height: 349px;
+   top: 363px;
+   position: absolute;
+    /* top: 450px; */
+    left: 50%;
+    z-index: 1;
+    width: 1200px;
+    margin-left: -600px;
+}
+.o_box_tit tit_up{ /*상단 이미지 가운데 상단텍스트*/
+   padding-top: 42px;
+   position: relative;;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+}
+.o_card_text1{
+   animation: itemAni 1.1s ease;
+   opacity: 1;
+   font-size: 40px;
+   font-weight: normal;
+   margin-top: 40px;
+   text-align: center;
+   color: #FFF;
+}
+.o_card_smailtext1{ /*Invitation Only 박스 */
+   font-size: 21px;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+.o_table1{
+   margin-top: 30px;
+   margin-left: 300px;
+   border: 1px; 
+   width: 600px;
+   text-align: center;
+   color: #FFF;
+   font-size: 15px;
+   list-style: none;
+}
+.o_table2{
+   margin-left: 557px;
+   height: 130px;
+   width: 86px;
+   text-align: center;
+   color: #FFF;
+   font-size: 15px;
+   list-style: none;
+   /*tr행 td각셀  */   
+}
+.o_table3{
+   height: 1900px;
+   margin-left: 49%;
+}
+/* -------------------------------------------the black 끝---------------------------------------------- */
+
+/* -------------------------------------------두번째 메뉴 시작---------------------------------------------- */
+.o_bottom1{ /* 카드 상세설명 백그라운드 */
+   width: 100%;
+   height: 636px;
+   background-image: url('../images/card_detail/background2.png');
+   position: relative;
+   opacity: 0.9;
+}
+.o_bottom1_purple{ /* purple 백그라운드 */
+   width: 100%;
+   height: 636px;
+   background-color: #FFF;
+   position: relative;
+}
+.o_bottom1_red{ /* red 백그라운드 */
+   width: 100%;
+   height: 636px;
+   background-color: #FFF;
+   position: relative;
+}
+.o_bottom1_mthree{ /* m3 백그라운드 */
+   width: 100%;
+   height: 636px;
+   background-color: #FFF;
+   position: relative;
+}
+.o_card_box1{ /* 카드를 씌우고 있는 박스 */
+    padding-top: 191px;
+    margin-left: 20%;
+}
+.o_card_box1_xthree{
+   padding-top: 74px;
+    margin-left: 20%;
+}
+.o_card_box2 li{ /* ul로 띄워져 있는 3박스 만들기  */
+   list-style: none; 
+   float: left; 
+   border-top: 1px solid; 
+   padding-top: 10px;
+   width: 176px;
+   height: 136px;
+   margin-left: 20px;
+}
+.o_boxtext2{ /* 카드 옆 글씨색상과 넓이 */
+   width: 700px;
+   color: #FFF;
+   padding-left: 20px;   
+}
+.o_boxtext2_purple{ /* purple 카드 옆 상세설명 */
+   width: 700px;
+   color: #000;
+   padding-left: 20px;
+   padding-bottom: 140px;
+}
+.o_boxtext2_red{ /* red 카드 옆 상세설명 */
+   width: 700px;
+   color: #000;
+   padding-left: 20px;
+   padding-bottom: 140px;
+}
+.o_boxtext2_mthree{ /* t2 카드 옆 상세설명 */
+   width: 700px;
+   color: #000;
+   padding-left: 20px;
+   height: 394px;
+}
+.o_boxtext2_tthree{ /* t3 카드 옆 상세설명 */
+   padding-top: 30px;
+   width: 700px;
+   color: #000;
+   padding-left: 20px;
+   padding-bottom: 140px;
+}
+.o_boxtext2_xthree{ /* x3 카드 옆 상세설명 */
+   width: 700px;
+   color: #000;
+   padding-bottom: 80px;
+   padding-left: 20px;
+   height: 394px;
+}
+.o_boxtext2_xtwo{ /* x2 카드 옆 상세설명 */
+   width: 700px;
+   color: #000;
+   padding-left: 20px;
+   height: 394px;
+}
+.o_card_box2_xthree li{ /* x3 ul로 띄워져 있는 2박스 만들기  */
+   list-style: none; 
+   float: left; 
+   border-top: 1px solid; 
+   padding-top: 10px;
+   width: 233px;
+   height: 136px;
+   margin-left: 20px;
+}
+.o_boxtext2_xthree3{
+   width: 100%;
+   height: 13px;
+   text-align: center;
+   font-size: 13px;
+    color: #1e75d6;
+    margin-top: 30px;
+}
+
+/* -------------------------------------------두번째 메뉴 끝---------------------------------------------- */
+
+/* -------------------------------------------세번째 메뉴 시작---------------------------------------------- */
+.o_card_pattern{ /* 세번째 메뉴 바탕화면  */
+   width: 100%;
+   height: 542px;
+   background-image: url('../images/card_detail/card_pattern.png');
+   opacity: 0.9;
+}
+.o_card_pattern_purple{ /* purple 세번째 메뉴 바탕화면  */
+   width: 100%;
+   height: 542px;
+   background-color: #311836;
+}
+.o_card_pattern_red{ /* red 세번째 메뉴 바탕화면  */
+   width: 100%;
+   height: 542px;
+   background-image: url('../images/card_detail/bg_card_red.png');
+}
+.o_card_pattern2{ /* 세번째 테이블 가장큰 테두리  */
+   padding-top: 94px;
+    padding-bottom: 60px;
+}
+.o_card_pattern3{ /* 세번째 테이블 상단 메뉴 */
+   text-align: center;
+}
+.o_card_pattern4{ /* 세번째 테이블 첫번째 텍스트 the Black Voucher*/
+   font-size: 21px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFF;
+}
+.o_card_pattern5{ /* 세번째 테이블 두번째 텍스트 the Black 회원만을 위한 프리미엄 기프트 바우처*/
+   margin-top: 7px;
+    font-size: 34px;
+    line-height: 44px;
+    text-align: center;
+    color: #FFF;
+}
+.o_card_pattern6{ /* 세번째 테이블 세번째 텍스트 바우처 자세히 보기>*/
+   margin: 25px 0 1px;
+   color: #1e75d6;
+   position: relative;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+}
+.o_card_pattern6_purple{ /* purple 세번째 테이블 세번째 텍스트 */
+   margin: 25px 0 1px;
+   color: #FFF;
+   position: relative;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+}
+.o_card_pattern6_red{ /* red 세번째 테이블 세번째 텍스트 */
+   margin: 25px 0 1px;
+   color: #FFF;
+   position: relative;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+}
+.o_card_pattern7{ /* 세번째 테이블 하단 메뉴*/
+    margin-top: 40px;
+    margin-bottom: 93px;
+    margin-left: 23%;
+}
+.o_card_pattern7_purple{ /* purple 세번째 테이블 하단 메뉴 */
+   margin-top: 40px;
+    margin-bottom: 93px;
+    margin-left: 23%;
+}
+.o_card_pattern7_red{ /* red 세번째 테이블 하단 메뉴 */
+   margin-top: 40px;
+    margin-bottom: 93px;
+    margin-left: 32%;
+}
+
+
+/* m3 세번째 메뉴 시작 */
+.o_card_tree1_mthree{ /* m3가장큰테두리  */
+   width: 100%;
+   height: 508px;
+   background: #fafafa;
+   border-bottom: 3px solid white;
+}
+.o_card_four1_m1_mthree{ /* m3 가운데 테두리 첫번째 텍스트 */
+   padding-top: 98px;
+   font-size: 21px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+}
+.o_card_three_mthree{ /* m3 세번째에서 두번째 일상 사용처와 M포인트 들어가는 부분 */
+   width: 100%;
+   height: 473px;
+}
+.o_card_t_left_mthree{ /* m3 세번째 두번째 에서 왼쪽 */
+   float: left;
+   width: 50%;
+   height: 473px;
+   background: #fafafa;
+   border-right: 3px solid white;
+   border-bottom: 3px solid white;
+}
+.o_card_t_l_r_mthree{ /* m3 세번째에서 두번째 에서 왼쪽의 오른쪽으로 */
+   float: right;
+   width: 518px;
+   height: 473px;
+   padding: 63px 33px 58px 33px;
+}
+.o_card_t_l_r_m_mthree{ /* m3 세번째에서 두번째에서 왼쪽의 오른쪽 첫번째  테두리 */
+   width: 448px;
+   height: 80px;
+}
+.o_card_t_l_rl_t_mthree{ /* m3 세번째에서 두번째에서 왼쪽의 오른쪽 첫번째  테두리에서 첫번째 텍스트 */
+   font-size: 17px;
+   text-align: center;
+}
+.o_card_t_l_rl_t2_mthree{ /* m3 세번째에서 두번째에서 왼쪽의 오른쪽 첫번째  테두리에서 두번째 텍스트 */
+   margin: 14px;
+   font-size: 15px;
+   color: #666;
+   line-height: 24ps;
+   text-align: center;
+}
+.o_card_t_i_t_mthree{ /* m3 m3 세번째에서 두번째에서 왼쪽의 오른쪽 두번째 테두리*/
+   width: 448px;
+   height: 264px;
+   margin-top: 8px;
+   list-style: none;
+   text-align: center;
+   padding-left: 0px;
+}
+.o_card_t_i1_mthree{ /* m3 세번째에서 두번째에서 왼쪽의 오른쪽 두번째 테두리의 오른쪽 테두리*/
+   float: left;
+   width: 33.3%;
+   height: 114px;
+   margin-top: 18px;
+}
+.o_card_t_i1_t1_mthree{ /* m2 주유/정비 그림들 밑에 첫번째 텍스트들 */
+   margin: 8px 0 0;
+   font-size: 15px;
+   color: #000;
+}
+.o_card_t_l_rl_t2_mthree{ /* m2 주유/정비 그림들 밑에 두번째 텍스트들 */
+   margin: 4px 0 0;
+   color: #666;
+   font-size: 13px;
+   line-height: 22px;
+}
+.o_card_t_right_mthree{ /* m3 세번째에서 두번째에서 오른쪽 큰테두리 */
+   float: right;
+   width: 50%;
+   height: 473px;
+   background: #fafafa;
+   border-left: 3px solid white;
+   border-bottom: 3px solid white;
+}
+.o_card_t_r_l_mthree{ /* m3 세번째에서 두번째에서 오른쪽 에서 왼쪽으로 보낸 테두리 */
+   float: left;
+   width: 518px;
+   height: 473px;
+   padding: 63px 33px 58px 33px;
+}
+.o_card_t_i_t2_mthree{ /* m3 세번째에서 두번째에서 왼쪽의 오른쪽 두번째 테두리*/
+   width: 448px;
+   height: 264px;
+   margin-top: 8px;
+   list-style: none;
+   text-align: center;
+   padding-left: 0px;
+}
+.o_card_three_mthree2{ /* m3 세번째칸 큰테두리*/
+   width: 100%;
+   height: 394px;
+}
+.o_card_t_left_mthree2{ /* m3 세번째에서 왼쪽 */
+   float: left;
+   width: 50%;
+   height: 394px;
+   background: #fafafa;
+   border-right: 3px solid white;
+   border-top: 3px solid white;
+}
+.o_card_t_l_r_mthree2{ /* m3 세번째에서 두번째 에서 왼쪽의 오른쪽으로 */
+   float: right;
+   width: 518px;
+   height: 394px;
+   padding: 63px 33px 58px 33px;
+}
+.o_card_t_right_mthree2{/* m3 세번째에서 오른쪽 테두리 */
+   float: right;
+   width: 50%;
+   height: 394px;
+   background: #fafafa;
+   border-left: 3px solid white;
+   border-top: 3px solid white;
+}
+.o_card_t_r_l_mthree2{ /* m3 세번째에서 오른쪽에서 왼쪽 테두리 */
+   float: left;
+   width: 518px;
+   height: 394px;
+   padding: 63px 33px 58px 33px;
+}
+/* m3 세번째 메뉴 끝 */
+/* -------------------------------------------세번째 메뉴 끝---------------------------------------------- */
+
+/* -------------------------------------------네번째 메뉴 시작---------------------------------------------- */
+.o_card_four{ /* 네번째 상단 가장 큰테두리 */
+   width: 100%;
+   height: 522px;
+   border: 1px solid;
+}
+.o_card_f_left{ /* 네번째 상단 왼쪽 테두리 */
+   float: left;
+   width: 50%;
+   height: 522px;
+   background: #1b1b1b;
+   border-right: 3px solid black;
+   border-bottom: 3px solid black;
+   background: #1b1b1b;
+}
+.o_card_f_l_r{ /* 네번째 상단 왼쪽 테두리에서 오른쪽으로 보냄 */
+   float: right;
+   width: 518px;
+   height: 522px;
+}
+.o_card_f_l_r_m{ /* 네번째 상단 왼쪽 테두리에서 오른쪽으로 보내서 텍스트 사용할 큰 테두리 */
+   width: 516px;
+   height: 337px;
+   color: #FFF;
+    margin-top: 94px;
+   text-align: center;     
+}
+.o_card_f_l_rl_t{ /* 네번째 상단 왼쪽,오른쪽 첫번째 텍스트 */
+   font-size: 21px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFF;
+}
+.o_card_f_l_rl_t2{ /* 네번째 상단 왼쪽 오른쪽 두,세번째 텍스트 */
+    margin-top: 7px;
+    font-size: 34px;
+    line-height: 44px;
+   font-weight: normal;
+   text-align: center;           
+}
+.o_card_f_l_rl_t3{ /* 네번째 상단 컨시어지, 리워드 */
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    color: #1e75d6;
+    background: none;
+    line-height: 1;
+    text-align: center;   
+}
+.o_card_f_i_t{ /* 그림 들어갈 테이블 */
+   width: 514px;
+   height: 132px;
+   margin-top: 39px;
+   text-align: center;
+   padding-left: 0px;
+}
+.o_card_f_i1{ /* 1번째 그림  모니터*/
+   float: left;
+    width: 240px;
+    list-style: none;
+}
+.o_card_f_i1_t1{ /* 1,2,3번 그림 밑에 첫번째 텍스트 */
+    margin-top: 17px;
+    font-size: 17px;
+    margin-bottom: 9px;
+    display: block;
+    line-height: 22px;   
+}
+.o_card_f_i1_t2{ /* 1,2,3번 그림 밑에 두번째 텍스트 */
+    min-height: 44px;
+    font-size: 13px;
+    color: #666;
+   list-style: none;   
+}
+.o_card_f_i2{ /* 2번째 그림 비행기 */
+    float: left;
+    width: 240px;
+    margin-left: 24px;
+   list-style: none;   
+}
+.o_card_f_i_t2{ /* 그림들어갈 테이블 */
+   width: 514px;
+   height: 132px;
+   margin-top: 39px;
+   text-align: center;
+   padding-left: 25%;
+}
+.o_card_f_i3{
+   float: none;
+    width: 240px;
+    list-style: none;
+    margin-left: 8px;       
+}
+.o_card_f_i1_ti{ /* 3번째 그림 텍스트로 교체 */
+   height: 40px;
+   font-size: 20px;
+}
+.o_card_f_right{ /* 네번째 상단 오른쪽 테두리 */
+   float: right;
+   width: 50%;
+   height: 522px;
+   background: #1b1b1b;
+   border-left: 3px solid black;
+   border-bottom: 3px solid black;
+}
+.o_card_f_r_l{ /* 네번째 상단 오른쪽 테두리에서 왼쪽으로 보냄 */
+   float: left;
+   width: 518px;
+   height: 522px;
+}
+.o_card_four1{ /* 네번째 하단 테두리 */
+   width: 100%;
+   height: 470px;
+   background: #1b1b1b;
+   border-top: 3px solid black;
+}
+.o_card_four1_purple{ /* purple 네번째 테두리 */
+   width: 100%;
+   height: 631px;
+   background: #fafafa;
+}
+.o_card_four1_red{ /* red 네번째 테두리 */
+   width: 100%;
+   height: 492px;
+   background: #fafafa;
+}
+.o_card_four1_zero{ /* zero 네번째 테두리 */
+   width: 100%;
+   height: 466px;
+}
+.o_card_four1_m{ /* 네번째 하단 안쪽 테두리 */
+   text-align: center;
+}
+.o_card_four1_m1{ /* 네번째 하단 첫번째 텍스트 */
+   font-size: 21px;
+    line-height: 30px;
+    color: #FFF;
+    text-align: center;
+}
+.o_card_four1_m1_purple{ /* purple 네번째 테두리 첫번째 텍스트 */
+   padding-top: 98px;
+   font-size: 21px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+}
+.o_card_four1_m1_zero{ /* zero 네번째 테두리 첫번째 텍스트 */
+   padding-top: 74px;
+   font-size: 21px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+}
+.o_card_four1_m1_red{ /* red 네번째 테두리 첫번째 텍스트 */
+   padding-top: 98px;
+   font-size: 21px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+}
+.o_card_four_m2{ /* 네번째 하단 두번째 텍스트 */
+    margin-top: 7px;
+    font-size: 34px;
+    line-height: 44px;
+    font-weight: normal;
+    text-align: center;
+    color: #FFF;   
+}
+.o_card_four_m2_purple{ /* purple 세번째 하단 두번째 텍스트 */
+   margin-top: 7px;
+    font-size: 34px;
+    line-height: 44px;
+    font-weight: normal;
+    text-align: center;
+    color: #000;
+}
+.o_card_four_m2_red{ /* red 세번째 하단 두번째 텍스트 */
+   margin-top: 7px;
+    font-size: 34px;
+    line-height: 44px;
+    font-weight: normal;
+    text-align: center;
+    color: #000;
+}
+.o_card_four_m3{ /* 네번째 하단 3그림 큰 테두리 */
+   width: 768px;
+   height: 163px;
+    margin-top: 33px;
+    margin-left: 30%;
+    list-style: none;
+   text-align: center;
+   padding-left: 0px;         
+}
+.o_card_four_m3_purple{ /* purple 세번째 하단 그림 큰 테두리 */
+   width: 768px;
+   height: 163px;
+    margin-top: 33px;
+    margin-left: 34%;
+    list-style: none;
+   text-align: center;
+   padding-left: 0px;  
+}
+.o_card_four_m3_red{ /* red 세번째 하단 3그림 큰 테두리 */
+   width: 768px;
+   height: 163px;
+    margin-top: 33px;
+    margin-left: 38%;
+    list-style: none;
+   text-align: center;
+   padding-left: 0px;  
+}
+.o_card_four_m3_i1{ /* 네번째 하단 메뉴중 1,2,3번째 그림 */
+   margin-left: 0;
+    float: left;
+    width: 240px;
+   list-style: none;            
+}
+.o_card_four_m3_i1_purple{
+   margin-left: 0;
+    float: left;
+    width: 600px;
+   list-style: none;
+}
+.o_card_four_m3_t1{ /* 네번째 하단 메뉴중 1,2,3번째 그림 밑에 1번째 텍스트 */
+   margin-top: 17px;
+    font-size: 17px;
+    margin-bottom: 9px;
+    display: block;
+    line-height: 22px;
+   color: #FFF;       
+}
+.o_card_four_m3_t1_purple{ /* purple 네번째 하단 메뉴중 1,2,3번째 그림 밑에 1번째 텍스트 */
+   margin-top: 17px;
+    font-size: 17px;
+    margin-bottom: 9px;
+    display: block;
+    line-height: 22px;
+   color: #000;       
+}
+.o_card_four_m3_t1_red{ /* red 세번째 하단 메뉴중 1,2 번째 그림 밑에 1번째 텍스트 */
+   margin-top: 17px;
+    font-size: 17px;
+    margin-bottom: 9px;
+    display: block;
+    line-height: 22px;
+   color: #000;
+}
+.o_card_four_m3_t1_zero{ /* purple 네번째 하단 메뉴중 1,2,3번째 그림 밑에 1번째 텍스트 */
+   margin-top: 15px;
+    font-size: 13px;
+    color: #666;
+    line-height: 22px;       
+}
+.o_card_four_m3_t2{ /* 네번째 하단 메뉴중 1,2,3번째 그림 밑에 2번째 텍스트 */
+   min-height: 44px;
+    font-size: 13px;
+    color: #666;
+    display: block;
+    line-height: 22px;
+    list-style: none;
+    margin-bottom: 0px;   
+}
+.o_card_four_m3_t2_purple{
+   font-size: 13px;
+    color: #666;
+    line-height: 22px;
+}
+.o_card_four_m3_t3{ /* 네번째 하단 메뉴중 1,2,3번째 그림 밑에 3번째 텍스트 */
+    margin: 9px 0 0 0;   
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    color: #1e75d6;
+    background: none;
+    line-height: 1;   
+}
+/* m3 네번째 시작 */
+.o_card_four_mthree{ /* m3 네번째 큰 테두리 */
+   width: 100%;
+   height: 564px;
+   background: #000;
+}
+.o_card_four1_mthree{ /* m3 네번째 상단 빈공간 */
+   width: 100%;
+   height: 98px;
+}
+.o_card_four1_t1_mthree{ /* m3 네번째 첫번째 텍스트 */
+   color: #FFF;
+   text-align: center;
+   font-size: 21px;
+}
+.o_card_four1_t2_mthree{ /* m3 네번째 두번째 텍스트 */
+   margin: 11px 0 0;
+   font-size: 34px;
+   line-height: 44px;
+   color: #FFF;
+   text-align: center;
+}
+.o_card_four1_t3_mthree{ /* m3 네번째 두번째 텍스트 */
+   margin: 23px 0 0;
+   text-align: center;
+   font-size: 13px;
+   color: #1e75d6;
+}
+.o_card_four2_mthree{ /* m3 하단 큰 테두리 */
+   width: 100%;
+   height: 218px;
+   margin: 39px auto 94px;
+   padding-left: 0px; 
+}
+.o_card_four2_left_mthree{ /* m3 하단 왼쪽 테두리 */
+   float: left;
+   width: 50%;
+   height: 218px;
+}
+.o_card_four2_left_r_mthree{ /* m3 하단 왼쪽에서 오른쪽테두리 */
+   float: right;
+   width: 516px;
+   height: 218px;
+   text-align: center;   
+}
+.o_card_four2_t1_mthree{ /* m3 하단 왼쪽에서 오른쪽 테두리 첫번째 텍스트 */
+   font-size: 17px;
+   color: #999;
+   margin-bottom: 0px;
+}
+.o_card_four2_left_r_box1_mthree{ /* m3 하단 왼쪽에서 오른쪽 테두리 안쪽 작은 테두리 */
+   margin: 14px 0 0;
+    text-align: center;
+   width: 516px;
+   height: 120px;
+   padding-left: 0px;
+}
+.o_card_four2_t2_mthree{ /* m3 하단 왼쪽에서 오른쪽테두리 안쪽테두리 작은테두리 안에 텍스트  */
+   font-size: 13px;
+    line-height: 24px;
+    color: #999;
+    list-style: none;
+    text-align: center;
+}
+.o_card_four2_right_mthree{ /* m3 하단 오른쪽 테두리 */
+   float: right;
+   width: 50%;
+   height: 218px;
+}
+.o_card_four2_right_l_mthree{ /* m3 하단 오른쪽 테두리 */
+   float: left;
+   width: 516px;
+   height: 218px;
+   text-align: center;   
+}
+/* m3 네번째 끝 */
+
+
+
+/*-------------------------------------------네번째 메뉴 끝----------------------------------------------*/
+
+/*-------------------------------------------다섯번째 메뉴 시작----------------------------------------------*/
+.o_card_five{ /* 다섯번째 큰 배경 및 중앙*/
+   width: 100%;
+   height: 447px;
+   margin: 94px 0;
+}
+.o_card_five_box1{ /* 다섯번째 큰 배경 및 중앙,하단에 텍스트가 들어갈 부분 */
+   width: 100%;
+    margin: 0 auto 0px;   
+}
+.o_card_five_box1_t1{ /* 다섯번째 상단,하단 1번째 텍스트*/
+    font-size: 21px;
+    line-height: 30px;
+    text-align: center;   
+}
+.o_card_five_box1_t2{ /* 다섯번째 상단,하단 2번째 텍스트*/
+   margin-top: 7px;
+    font-size: 34px;
+    line-height: 44px;
+    text-align: center;      
+}
+.o_card_five_box1_t3{ /* 다섯번째 상단,하단 3번째 텍스트*/
+    margin-top: 23px;
+    text-align: center;
+    font-size: 13px;
+    color: #1e75d6;
+}
+.o_card_five_box2{ /* 다섯번째 큰 배경 및 중앙에 그림이 들어갈 부분 */
+   width: 1080px;
+    margin: 40px 0 40px;
+    padding-left: 0px;
+    margin-bottom: 11px;
+    margin-left: 22%;
+}
+.o_card_five_box_i1{ /* 그림 사이즈 */
+   width: 328px;
+   height: 185px;
+   list-style: none;
+   margin-left: 24px;
+   float: left;
+}
+.o_card_five_box_t1{ /* 그림 밑에 첫번째 텍스트 */
+    font-size: 15px;
+    line-height: 24px;
+    color: #000;   
+}
+.o_card_five_box_t2{ /* 그림 밑에 두번째 텍스트 */
+    margin-top: 2px;
+    line-height: 22px;
+    color: #666;
+}
+.o_card_five_box3{ /* 다섯번째 하단 큰 테두리 */
+   width: 100%;
+   height: 374px;
+   margin: 94px 0;   
+}
+               /* 다섯번째 하단 텍스트는 상단꺼를 동일하게 적용 */
+.o_card_five_box4{ /* 다섯번째 하단 이미지 테두리 */
+   width: 1080px;
+    margin: 40px 0 40px;
+    padding-left: 0px;
+    margin-bottom: 11px;
+    margin-left: 22%;
+}
+.o_card_five_box4_i1{ /* 다섯번째 하단 1,2,3,4 이미지들 크기 */
+   width: 240px;
+   height: 135px;
+   list-style: none;
+   margin-left: 24px;
+   float: left;
+}
+.o_card_five_box4_t1{ /* 다섯번째 하단 1,2,3,4 첫번째 텍스트  */
+   font-size: 15px;
+    line-height: 24px;
+    color: #000;   
+}
+.o_card_five_box4_t2{ /* 다섯번째 하단 1,2,3,4 두번째 텍스트  */
+   margin-top: 2px;
+    line-height: 22px;
+    color: #666;
+}
+/*-------------------------------------------다섯번째 메뉴 끝----------------------------------------------*/
+
+/*-------------------------------------------여섯번째 메뉴 시작----------------------------------------------*/
+.o_card_six{ /* 여섯번째 큰 테두리 balck */
+   width: 100%;
+   height: 940px;
+   background-image: url('../images/card_detail/card_life_style_0.jpg');
+}
+.o_card_six_purple{ /* 여섯번째 큰 테두리 purple */
+   width: 100%;
+   height: 940px;
+   background-image: url('../images/card_detail/card_life_style_1.jpg');
+}
+.o_card_six_red{ /* 여섯번째 큰 테두리 red */
+   width: 100%;
+   height: 940px;
+   background-image: url('../images/card_detail/card_life_style_2.jpg');
+}
+.o_card_six_mthree{ /* 여섯번째 큰 테두리 m3 */
+   width: 100%;
+   height: 940px;
+   background-image: url('../images/card_detail/card_life_style_3.jpg');
+}
+.o_card_six_mtwo{ /* 여섯번째 큰 테두리 m2 */
+   width: 100%;
+   height: 940px;
+   background-image: url('../images/card_detail/card_life_style_4.jpg');
+}
+.o_card_six_m{ /* 여섯번째 큰 테두리 m */
+   width: 100%;
+   height: 940px;
+   background-image: url('../images/card_detail/card_life_style_5.jpg');
+}
+.o_card_six_box1{ /* 여섯번째 가운데 테두리 */
+    width: 1000px;
+    height: 744px;
+    margin-left: 23%;
+    padding-top: 202px;
+    z-index: 1;
+}
+.o_card_six_box1_t1{ /* 여섯번째 첫번째 텍스트 */
+   font-size: 21px;
+    line-height: 30px;
+    color: #FFF;
+    text-align: center;
+}
+.o_card_six_box1_t2{ /* 여섯번째 두번째 텍스트 */
+   margin: 7px 0 23px;
+    font-size: 34px;
+    line-height: 44px;
+    color: #FFF;
+    text-align: center;
+}
+.o_card_six_box1_t3{ /* 여섯번째 세번째 텍스트 */
+    font-size: 13px;
+    color: #FFF;
+    text-align: center;
+}
+.o_card_six_box2 { /* 여섯번째 세번째 텍스트 밑에 사각 테두리 */
+   padding-left: 15%;
+   width: 100%;
+   margin-top: 27px;
+   list-style: none;
+}
+.o_card_six_minibox1 { /* 여섯번째 작은 텍스트들 */
+   width: 152px;
+   height: 152px;
+    float: left;
+    margin: 12px;
+    text-align: left;
+    border: 2px solid white;
+}
+.o_card_six_minibox1_t1{ /* 여섯번째 작은 텍스트들 첫번째 텍스트  */
+   padding: 17px 8px 0px 18px;
+   color: #FFF;
+   font-size: 15px;
+    line-height: 20px;           
+}
+.o_card_six_minibox1_t2{ /* 여섯번째 작은 텍스트들 두번째 텍스트 */
+   margin-top: 8px;
+    font-size: 13px;
+    padding: 0px 8px 18px 18px;
+}
+#minibox_cb1 li:hover{ /* 마우스 온시 색상변경 */
+   background-color: white;
+}
+#minibox_cb1 li:hover p{ /* 마우스 온시 색상변경 */
+	color:black;
+}
+/*-------------------------------------------여섯번째 메뉴 끝----------------------------------------------*/
+
+/*-------------------------------------------일곱번째 메뉴 시작----------------------------------------------*/
+.o_card_saven{ /* 일곱번째 가장 큰 테두리 */
+   width: 100%;
+   height: 586px;
+    margin: 94px 0;
+}
+.o_card_saven_box1{ /* 일곱번째 가운데 테두리  */
+   width: 1032px;
+   height: 586px;
+    margin: 0 auto 120px;
+    border-bottom: 1px solid #777572;
+}
+.o_card_saven_minibox1{ /* 일곱번테 첫번째 텍스트 테두리 */
+   margin-bottom: 16px;
+    list-style: none;
+    }
+.o_card_saven_minibox1_t1{ /* 일곱번째 첫번째 텍스트 */
+   font-size: 15px;
+    color: #000;
+}
+.o_card_saven_minibox2{
+   height: 555px;
+   padding-left: 20px;
+   font-size: 13px;
+    color: #666;
+}
+.o_card_saven_minibox2_t1{
+   padding-top: 5px;
+}
+.o_card_saven_minibox2_tb1{
+   width: 420px;
+   height: 164px;
+   
+}
+.o_card_saven_minibox2_tb1 li{
+    display:inline;
+   padding: 8px 5px;
+   width: 126px;
+   text-align: center; 
+}
+.o_card_saven_minibox2_tb1 li{
+   list-style: none; 
+   float: left; 
+   border-top: 1px solid #777572;
+   padding-top: 10px;
+   margin-top: 10px;
+   width: 136px;
+   height: 24px;
+}           
+
+/*-------------------------------------------일곱번째 메뉴 끝----------------------------------------------*/

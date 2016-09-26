@@ -32,6 +32,12 @@ public class CoboardWriteController {
 			log.debug("coboardCommand : " + coboardCommand);
 		}
 		
+		//작성 도중 세션 만료되었을 경우
+		String adminId = (String)session.getAttribute("adminId");
+		if(adminId == null){
+			return "coboardLogout";
+		}
+		
 		//파일 이름 변경
 		String newName = "";
 		if(!coboardCommand.getUpload().isEmpty()){

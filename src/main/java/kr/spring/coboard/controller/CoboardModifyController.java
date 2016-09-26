@@ -3,6 +3,7 @@ package kr.spring.coboard.controller;
 import java.io.File;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -20,20 +21,24 @@ public class CoboardModifyController {
 	@Resource
 	private CoboardService coboardService;
 	
-	
 	@RequestMapping(value="/admin/coboardModify.do")
-	public String submit(CoboardCommand coboard, @RequestParam(value="filedel",defaultValue="")String filedel) throws Exception{
+	public String submit(CoboardCommand coboard, @RequestParam(value="filedel",defaultValue="")String filedel, HttpSession session) throws Exception{
 		
 		if(log.isDebugEnabled()){
 			log.debug("coboard : " + coboard);
 			log.debug("filedel : " + filedel);
 		}
 		
+		//수정 도중 세션 만료되었을 경우
+		String adminId = (String)session.getAttribute("adminId");
+		if(adminId == null){
+			return "coboardLogout";
+		}
+		
 		
 		String newName = "";
 		boolean delFile = false;
 		int co_num = coboard.getCo_num();
-		
 		
 		//기존 파일 있을 경우 파일명 저장
 		CoboardCommand oldCoboard = coboardService.selectCoboard(coboard.getCo_num());

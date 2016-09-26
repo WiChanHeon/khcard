@@ -64,11 +64,7 @@ input[type="button"],input[type="submit"]{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1d1d1', endColorstr='#f1f1f1', GradientType=0);
 	border-top: 1px solid #bcbcbc;
 }
-<<<<<<< HEAD
-/* 로그인폼 */
-=======
 /*로그인폼*/
->>>>>>> origin/taewon
 #login_form label{
 	font-size:15pt;
 	font-family:"맑은 고딕";

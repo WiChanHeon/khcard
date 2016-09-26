@@ -105,6 +105,11 @@
 	font-size:11pt;
 	padding:5px 7px;
 }
+.y_panel-body input[type="button"]:disabled, .y_panel-body input[type="submit"]:disabled{
+	font-size:11pt;
+	padding:5px 7px;
+	color:silver;
+}
 #y_code-original_p{ /*본문영역*/
 	color:#000;
 	max-height:300px;
@@ -154,6 +159,20 @@
 .y_replyDiv{
 	display:relative;
 }
-
+.y_ad-commentBox textarea{
+	color:#4c4c4c;
+}
+#y_re-nextBtn{
+	display:none;
+	border-color:#808080;
+}
+.y_reBottom{
+	text-align:center;
+	margin-bottom:80px;
+}
+.y_reName{
+	display:inline-block;
+	min-width:100px;
+}
 
 /*------------------coboardDetail End------------------*/

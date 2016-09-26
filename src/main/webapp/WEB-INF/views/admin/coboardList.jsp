@@ -167,29 +167,6 @@
 			<!-- 글쓰기 끝 -->
 			
 			
-			<!-- 코멘트 시작 -->
-			<!-- the comment box -->
-			<%-- <div class="well">
-				<h4>Leave a Comment:</h4>
-				<form role="form">
-					<div class="form-group">
-						<textarea class="form-control" rows="3"></textarea>
-					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
-			</div>
-			<hr> --%>
-			
-			<!-- the comments -->
-			<!-- <h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
-			<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p>
-
-			<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
-			<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well. This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p> -->
-			<!-- 코멘트 끝 -->
-			
-			
-			
 			<!-- 게시판 리스트 시작 -->
 			<!-- 검색바 -->
 			<c:if test="${empty param.keyword || param.keyword==''}">
