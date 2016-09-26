@@ -6,7 +6,7 @@ import java.util.Map;
 import kr.spring.donan.domain.GageCommand;
 
 public interface GageService {
-	List<GageCommand> selectBoardList();
+	public List<GageCommand> list(Map<String,Object> map);
 	public int getRowCount(Map<String,Object> map);
 	public void insert (GageCommand gagewrite);
 	

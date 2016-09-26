@@ -46,7 +46,7 @@ public class DonanWriteController {
 			log.debug("donanwriteCommand : " + donanwriteCommand );
 		}
 
-		//글 등록
+		//도난 등록
 		donanService.insert(donanwriteCommand);
 		status.setComplete();
 		

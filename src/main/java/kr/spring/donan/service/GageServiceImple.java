@@ -19,9 +19,9 @@ Logger log = Logger.getLogger(this.getClass());
     private GageMapper gageMapper;
 
 	@Override
-	public List<GageCommand> selectBoardList() {
+	public List<GageCommand> list(Map<String, Object> map) {
 		
-		return gageMapper.selectBoardList();
+		return gageMapper.list(map);
 	}
 
 	@Override

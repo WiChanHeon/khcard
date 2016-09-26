@@ -3,10 +3,91 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript"> 
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
 
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
 
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      
+					function drawChart() {
+
+						// Create the data table.
+						var data = google.visualization
+								.arrayToDataTable([
+										[ 'Month', 'Bolivia', 'Ecuador',
+												'Madagascar',
+												'Papua New Guinea', 'Rwanda'],
+										[ '2016/05', 165, 938, 522, 998, 450],
+										[ '2016/06', 135, 1120, 599, 1268, 288],
+										[ '2016/07', 157, 1167, 587, 807, 397],
+										[ '2016/08', 139, 1110, 615, 968, 215],
+										[ '2016/09', 136, 691, 629, 1026, 366] ]);
+
+						var options = {
+							title : '',
+							vAxis : {
+								title : '이용내역'
+							},
+							hAxis : {
+								title : '월별 사용내역'
+							},
+							seriesType : 'bars',
+							series : {
+								5 : {
+									type : 'line'
+								}
+							}
+						};
+
+						var chart = new google.visualization.ComboChart(
+								document.getElementById('chart_div'));
+						chart.draw(data, options);
+					}
+
+					function myAccFunc1() {
+						var x = document.getElementById("demoAcc1");
+						if (x.className.indexOf("w3-show") == -1) {
+							x.className += " w3-show";
+							x.previousElementSibling.className += " w3-black";
+						} else {
+							x.className = x.className.replace(" w3-show", "");
+							x.previousElementSibling.className = x.previousElementSibling.className
+									.replace(" w3-black", "");
+						}
+					}
+					function myAccFunc2() {
+						var x = document.getElementById("demoAcc2");
+						if (x.className.indexOf("w3-show") == -1) {
+							x.className += " w3-show";
+							x.previousElementSibling.className += " w3-black";
+						} else {
+							x.className = x.className.replace(" w3-show", "");
+							x.previousElementSibling.className = x.previousElementSibling.className
+									.replace(" w3-black", "");
+						}
+					}
+					function date() {
+					    var x = document.getElementById("mySelect").value;
+					    document.getElementById("demo").innerHTML = "You selected: " + x;
+					}
+					$('#fromDate').on('change', function() {
+				        $('#toDate').prop('min', $(this).val());
+				    });
+				    $('#toDate').on('change', function() {
+				        $('#fromDate').prop('max', $(this).val());
+				    });
+		</script>
+  </head>
 	<!-- 사이드 메뉴 시작 -->
-	<nav class="w3-sidenav w3-card-2" style="width:140px; background-color: #E6E8ED;">
+	<nav class="w3-sidenav w3-card-2" style="width:15%; background-color: #E9EBEF;">
 			
 			<div class="pont">
 			<a href="#section2"><img src="../resources/images/write.png" style="display: inline-block;">쓰기</a>
@@ -39,200 +120,72 @@
    			 </div>
    			 </div>
 	</nav>
-			
-	<div>
-		<h2 style="text-align: center;">2016.09.01 - 2016.09.30</h2>		
-	</div>		
-	<div class="w3-container" style="margin-left:130px">
-  
 	<!-- 사이드 메뉴 끝 -->
-	<div class="container">
-		<ul class="nav nav-tabs">
-			<li><a href="#">지출</a></li>
-			<li><a href="#">수입</a></li>
-			<li><a href="#">달력</a></li>
-		</ul>
-		<br>
-		<!-- 상단 차트 시작 -->
-		<div id="chartContainer" style="height: 300px; width: 90%;"></div>
-		<!-- 상단 차트 끝 -->
+	
+	
+	<!--기간 조회 메뉴바  시작-->
+	<div style="margin-left:20%; margin-top:2%; margin-bottom:1px;">     
+	<ul class="w3-pagination w3-white-black">  
+		<li><a class="w3-dark-grey">조회기간</a></li>
+	</ul>
 	</div>
-		<!-- 하단 입력 메뉴 -->
-		<form id="data_form">
+	
+	<form id="date" action="date.do">
+	<div id="mySelect" class="w3-btn-bar w3-border w3-show-inline-block" style="width:70%; margin-left:20%; margin-top:1px; margin-bottom:1px;">
+  		<button class="w3-btn" value="today">당일</button>
+  		<button class="w3-btn" value="week">일주일</button>
+  		<button class="w3-btn" value="month">1개월</button>
+  		<button class="w3-btn" value="3month">3개월</button>
+		<ul class="w3-pagination w3-white-black"> <li><a class="w3-dark-grey">기간설정</a></li></ul>
+    <div>
+        <label for="fromDate">시작일 :</label>
+        <input type="date" id="fromDate" required="" />~
+        <label for="toDate">종료일 :</label>
+        <input type="date" id="toDate" required="" />
+    </div>
+   	 <input type="submit" value="조회"/>
+	</div>
+	</form>
+
+	<!-- 기간 조회 메뉴바 끝  -->
+	
+	<!-- 사용 내역 테이블 -->
+	<form id="data_form">
 		<!-- <div class="button">
 			<button onclick="add_tr()">항목 추가</button>
 			<button onclick="delete_tr()">항목 삭제</button>
 		</div> -->
-		<table>
-				<thead>
+		<table style="margin-left:20%; width: 70%;">    
+			<thead>
+				<tr>
+					<th>카드번호</th>
+					<th>승인일자</th>
+					<th>승인금액</th>
+					<th>가맹점명</th>
+					<th>비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="article" items="${list}">
 					<tr>
-						<th>날짜</th>
-						<th>현금</th>
-						<th>수입입력</th>
-						<th>분류</th>
-						<th>메모</th>
+						<td>${article.card_num}</td>
+						<td>${article.ca_reg}</td>
+						<td>${article.ca_price}</td>
+						<td>${article.ca_spot}</td>
+						<td>${article.ca_memo}</td>
 					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-						<input type="date" name="ca_reg" id="ca_reg"
-							style="border: 0px; width: 100%;"></td>
-						<td><input type="text" name="ca_sort" id="ca_sort"
-							style="border: 0px; width: 100%;"></td>
-						<td><input type="text" name="ca_income" id="ca_income" 
-							style="border: 0px; width: 100%;"></td>
-						<td><select>
-								<option selected="selected" id="ca_category">-</option>
-								<option value="food">식비</option>
-								<option value="etc">미분류</option>
-						</select></td>
-						<td><input type="text" name="ca_memo" id="ca_memo"
-							style="border: 0px; width: 120px;"></td>
-					</tr>
-				</tbody>
-			</table>
+				</c:forEach>
+			</tbody>
+		</table>
 
 
-			<div class="rok">
-				<input type="submit" class="w3-btn w3-slim" value="정산하기"> <input
-					type="submit" class="w3-btn w3-slim" value="저장하기">
-			</div>
-		</form>
-
-	</div>
+		<!-- <div class="rok">
+			<input type="submit" class="w3-btn w3-slim" value="정산하기"> <input
+				type="submit" class="w3-btn w3-slim" value="저장하기">
+		</div> -->
+	</form> 	
+	<!-- 사용내역 끝 -->
 	
-
-	<!-- 하단 입력 메뉴 끝 -->
-		
-<script>
-function myAccFunc1() {
-    var x = document.getElementById("demoAcc1");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-black";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className =
-        x.previousElementSibling.className.replace(" w3-black", "");
-    }
-}
-function myAccFunc2() {
-    var x = document.getElementById("demoAcc2");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-black";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className =
-        x.previousElementSibling.className.replace(" w3-black", "");
-    }
-}
-//행개수
-var count = 1;
-//최대 행개수
-var full_count = 5;
-  //행추가
-  function add_tr() {
- //최대 행개수보다 크면 리턴
- if(count>full_count){
-  alert("최대5개까지만 가능합니다.");
-  return;
- }
- 
- //추가할 HTML
- var add_cell1 = "<input type=date name=ca_reg"+count+" id=ca_reg"+count+" size=10>"; 
- var add_cell2 = "<input type=text name=ca_sort"+count+" id=ca_sort"+count+" size=10>";
- var add_cell3 = "<input type=text name=ca_income"+count+"id=ca_income"+count+" size=10>";
- var add_cell4 = "<input type=text name=ca_memo"+count+"id=ca_memo"+count+" size=10>";
- 
- //행추가할 테이블 가져오기
- var table_name = document.getElementById("table");
- 
- //tr만들기
- var new_row = table_name.insertRow();
- 
- //td만들기
- var new_cell1 = new_row.insertCell();
- var new_cell2 = new_row.insertCell();
- var new_cell3 = new_row.insertCell();
- var new_cell4 = new_row.insertCell();
-
- //td안에 넣을 HTML
- new_cell1.innerHTML = add_cell1;
- new_cell2.innerHTML = add_cell2;
- new_cell3.innerHTML = add_cell3;
- new_cell4.innerHTML = add_cell4;
- //행추가할때마다 행개수 +1
- count++;
-  }
-
-  //행삭제
-  function delete_tr() {
- //행삭제할 테이블 가져오기
-    var table = document.getElementById('table');
- 
- //행이 하나밖에 없으면 삭제하지 않기
-    if (table.rows.length < 2){
-     alert("더이상 삭제할수 없습니다.");
-     return;
-    }
- 
- //tr삭제하기
-    table.deleteRow(table.rows.length - 1);
- //삭제할때마다 행개수 -1
- count--;
-  }
-  
-  
-/* $(document).ready(function(){
-	
-	var inputData,i;
-    
-	   inputData = [];
-	
-	//데이터 입력 폼에 내용 입력시  데이터 배열에 담기
-		$("#ca_sort").focusin(function(){
-	        $(this).val('');
-	});
-	    $("#ca_category").focusin(function(){
-	    	$(this).val('');
-	});
-	   
-	   for (i=0;i<fLen;i++) {
-	        text += inputData[i];
-	    }    
-	   <c:forEach var="a" items="${list}">
-	   document.getElementById("demo").innerHTML = text;
-	   </c:forEach>
-}); */
-	
-window.onload = function () {
-	
-	var chart = new CanvasJS.Chart("chartContainer",
-	{
-		legend: {
-			maxWidth: 350,
-			itemWidth: 120
-		},
-		data: [
-		{
-			type: "pie",
-			showInLegend: true,
-			legendText: "{indexLabel}",
-			dataPoints: [
-			 			<c:forEach var="a" items="${list}">
-			 				{ label: "식비",  y: ${a.ca_price}  },
-			 				{ label: "주거 통신", y: ${a.ca_spot} },
-			 				{ label: "생활용품", y: 25  },
-			 				{ label: "의복/미용",  y: 30  },
-			 				{ label: "건강/문화",  y: 28  }
-			 			] 
-			 			</c:forEach>
-		}
-		]
-	});
-	chart.render();
-}
-</script>	
-	
+	<!-- 차트 시작 -->
+		<div id="chart_div" style="width: 70%; height: 500px; margin-left:20%;"></div>
+		<!-- 차트 끝 -->

@@ -3,16 +3,13 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="kr.spring.donan.dao.GageMapper">  
-	<select id="selectBoardList" parameterType="list" resultType="GageCommand">
+	<select id="list" parameterType="map" resultType="GageCommand">
 	SELECT
 	card_num,
 	ca_reg,
 	ca_price,
 	ca_spot,
-	ca_sort,
-	ca_category,
-	ca_memo,
-	ca_income
+	ca_memo
 	FROM
 	f_ca
 </select>

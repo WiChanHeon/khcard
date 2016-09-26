@@ -74,6 +74,7 @@ create table f_loss(
 	card_num varchar2(16) not null,
 	loss_reg date not null,
 	loss_memo varchar2(100),
+	loss_stat varchar2(1)
 	constraint loss_card_fk1 foreign key(card_num) references f_card(card_num)
 );
 

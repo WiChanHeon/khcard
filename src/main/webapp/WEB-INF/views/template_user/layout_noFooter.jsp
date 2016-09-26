@@ -58,6 +58,8 @@
 		<!--jQuery dependencies-->
 		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		
 		<%-- <c:forEach var="cssName" items="${cssList}">
 			<link rel="stylesheet" href="<c:out value='${cssName}' />"/>
 		</c:forEach> --%>
@@ -94,7 +96,8 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/plugins/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/bootstrap/js/bootstrap.min.js"></script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment-with-locales.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
 		<!-- Modernizr javascript -->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/plugins/modernizr.js"></script>
 
@@ -138,7 +141,7 @@
 		
 		<!-- Custom Scripts1 -->
 		<script src="${pageContext.request.contextPath}/resources/js/donan.js"></script>
-
+		
 		<%-- <c:forEach var="jsName" items="${jsList}">
 			<script src="<c:out value='${jsName}' />"></script>
 		</c:forEach> --%>
