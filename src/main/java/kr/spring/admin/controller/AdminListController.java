@@ -49,6 +49,19 @@ public class AdminListController {
 		 
 		 //ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
 		 int count=adminService.applyGetRowCount(map);
+	     //Ä«µåº° ÃÑ ½ÅÃ» °¹¼ö
+		 int xpe2Count=adminService.getCardApplyCount("XPE2");
+		 int tbCount=adminService.getCardApplyCount("TB");
+		 int tpCount=adminService.getCardApplyCount("TP");
+		 int tre2Count=adminService.getCardApplyCount("TRE2");
+		 int me2Count=adminService.getCardApplyCount("ME2");
+		 int mpe2Count=adminService.getCardApplyCount("MPE2");
+		 int m3pe2Count=adminService.getCardApplyCount("M3PE2");
+		 int t3pe2Count=adminService.getCardApplyCount("T3PE2");
+		 int xe2Count=adminService.getCardApplyCount("XE2");
+		 int x3pe2Count=adminService.getCardApplyCount("X3PE2");
+		 int zroCount=adminService.getCardApplyCount("ZRO");
+		 int cmhCount=adminService.getCardApplyCount("CMH");
 		 
 		  //ÆäÀÌÂ¡ À¯Æ¿ °´Ã¼»ý¼º
 		  PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"adminMain.do");
@@ -68,7 +81,21 @@ public class AdminListController {
 		  mav.addObject("count",count);
 		  mav.addObject("list",list);
 		  mav.addObject("pagingHtml",page.getPagingHtml());
+		  //Ä«µåº° ½ÅÃ» È½¼ö 
+		  mav.addObject("xpe2Count",xpe2Count);
+		  mav.addObject("tbCount",tbCount);
+		  mav.addObject("tpCount",tpCount);
+		  mav.addObject("tre2Count",tre2Count);
+		  mav.addObject("me2Count",me2Count);
+		  mav.addObject("mpe2Count",mpe2Count);
+		  mav.addObject("m3pe2Count",m3pe2Count);
+		  mav.addObject("t3pe2Count",t3pe2Count);
+		  mav.addObject("xe2Count",xe2Count);
+		  mav.addObject("x3pe2Count",x3pe2Count);
+		  mav.addObject("zroCount",zroCount);
+		  mav.addObject("cmhCount",cmhCount);
 		  
+		  System.out.println("===================="+zroCount);
 		  
 		  return mav;
 		

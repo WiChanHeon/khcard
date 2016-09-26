@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>    
@@ -12,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/css/local.css" />
-
+	
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/bootstrap/js/bootstrap.min.js"></script>
 
@@ -26,6 +27,15 @@
     <!-- coboard -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/coboard.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/coboard.js"></script>
+    
+    <!--모리스차트  -->
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    
+   <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+   <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script> 
     
 </head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css">
@@ -43,13 +53,16 @@
     
     <!-- /#wrapper -->
 <script type="text/javascript">
+ 
+ 
+ 
         jQuery(function ($) {
             var performance = [90, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
                 visits = [30, 323, 500, 32];
              
 
 
-            $("#shieldui-chart1").shieldChart({
+           $("#shieldui-chart1").shieldChart({
                 theme: "dark",
 
                 primaryHeader: {
@@ -94,6 +107,31 @@
             
             });            
         });        
-    </script>   
+        
+         Morris.Bar({
+        	  element: 'totalApplyCount',
+        	  data: [
+        	    { y: 'XPE2', a: ${xpe2Count}  },
+        	    { y: 'TB', a: ${tbCount}   },
+        	    { y: 'TP', a: ${tpCount}   },
+        	    { y: 'TRE2', a: ${tre2Count}  },
+        	    { y: 'ME2', a: ${me2Count}  },
+        	    { y: 'MPE2', a: ${mpe2Count}  },
+        	    { y: 'M3', a: ${m3pe2Count} },
+        	    { y: 'T3PE2', a: ${t3pe2Count} },
+        	    { y: 'XE2', a: ${xe2Count} },
+        	    { y: 'X3PE2', a: ${x3pe2Count} },
+        	    { y: 'ZRO', a: ${zroCount} },
+        	    { y: 'CMH', a: ${cmhCount} }
+           	  ],
+        	  xkey: 'y',
+        	  ykeys: ['a'],
+        	  labels: ['총 카드신청 수']
+        	});
+         
+         
+
+    </script>
+     
 </body>
 </html>

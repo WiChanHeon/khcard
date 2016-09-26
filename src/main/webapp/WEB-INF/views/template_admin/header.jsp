@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -19,7 +18,7 @@
 	        <li><a href="manageApplyList.do"><i class="fa fa-tasks"></i> 카드 신청관리</a></li>
 	        <li><a href="${pageContext.request.contextPath}/admin/coboardList.do"><i class="fa fa-globe"></i> 사내게시판</a></li>
 	        <li><a href="manageMissingList.do"><i class="fa fa-list-ol"></i> 카드 분실관리</a></li>
-	        <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
+	        <li><a href="analysis.do"><i class="fa fa-font"></i> 카드통계</a></li>
 	        <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
 	        <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
 	        <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>

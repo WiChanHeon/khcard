@@ -24,4 +24,7 @@ public interface AdminService {
 	public void createPersonalCard(Map<String,String> create_table);
 	public void deleteCardInfo(String card_num);
 	public void dropPersonalCard(Map<String,String> drop_table);
+	public int getCardApplyCount(String info_id);
+	public int getCurrentMonthApplyCount(String info_id);
+	public int getCardMonthApplyCount(String getCardMonthApplyCount,String info_id );
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
@@ -31,4 +32,10 @@ public interface AdminMapper {
    public void deleteCardInfo(String card_num);
    @Select("${drop_table}")
    public void dropPersonalCard(Map<String,String> drop_table);
+   @Select("SELECT COUNT(*) FROM f_apply WHERE info_id = #{info_id}")
+   public int getCardApplyCount(String info_id);
+   @Select("SELECT COUNT(*) FROM f_apply WHERE ap_reg LIKE TO_CHAR(ADD_MONTHS(sysdate, 0),'YY/MM') || '%' AND info_id = #{info_id}")
+   public int getCurrentMonthApplyCount(String info_id);
+   @Select("SELECT COUNT(*) FROM f_apply WHERE ap_reg LIKE #{ap_reg} and info_id=#{info_id}")
+   public int getCardMonthApplyCount(@Param(value = "ap_reg") String ap_reg, @Param(value = "info_id") String info_id );
 }

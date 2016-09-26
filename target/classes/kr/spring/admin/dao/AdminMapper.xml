@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.admin.dao.AdminMapper">  
+  <select id="applyList" parameterType="map" resultType="applyCommand">
+  
+    SELECT
+      ap_num,
+      ap_rrnfront,
+      ap_rrnrear,
+      ap_name,
+      ap_ename,
+      ap_cell,
+      ap_email,
+      ap_postnum,
+      ap_address1,
+      ap_address2,
+      ap_paydate,
+      ap_bank,
+      ap_banknum,
+      ap_reg,
+      ap_job,
+      ap_job2,
+      ap_pass,
+      ap_id,
+      info_id,
+      card_num
+     FROM (SELECT
+             a.*,
+             rownum rnum
+           FROM (SELECT
+                   *
+                 FROM f_apply
+                    <where>
+                 <if test="keyword !='' and keyfield == 'ap_name'">
+                 ap_name like '%' ||#{keyword} || '%'
+                 </if>
+                 <if test="keyword !='' and keyfield == 'ap_reg'">
+                 ap_reg like '%' ||#{keyword} || '%'
+                 </if>
+                  <if test="keyword !='' and keyfield == 'ap_rrnfront'">
+                 ap_rrnfront like '%' ||#{keyword} || '%'
+                 </if>
+                  <if test="keyword !='' and keyfield == 'all'">
+                    ap_name like '%' ||#{keyword} || '%' or
+                   ap_reg like '%' ||#{keyword} || '%' or
+                  ap_rrnfront like '%' ||#{keyword} || '%'
+                 </if>
+                 </where>
+                 ORDER BY ap_num ASC)a)
+    <![CDATA[
+     WHERE rnum >= #{start} AND rnum <= #{end}    
+    ]]>   
+  </select>
+  
+  <select id="applyGetRowCount" parameterType="map" resultType="Integer">
+	SELECT
+	count(*)
+	FROM f_apply
+	<where>
+		<if test="keyword !='' and keyfield == 'ap_name'">
+			ap_name like '%' ||#{keyword} || '%'
+		</if>
+		<if test="keyword !='' and keyfield == 'ap_reg'">
+			ap_reg like '%' ||#{keyword} || '%'
+		</if>
+		<if test="keyword !='' and keyfield == 'ap_rrnfront'">
+			ap_rrnfront like '%' ||#{keyword} || '%'
+		</if>
+		<if test="keyword !='' and keyfield == 'all'">
+			ap_name like '%' ||#{keyword} || '%' or
+			ap_reg like '%' ||#{keyword} || '%' or
+			ap_rrnfront like '%' ||#{keyword} || '%'
+		</if>
+	</where> 
+  </select>
+  
+  <select id="missingList" parameterType="map" resultType="DonanCommand">
+  
+    SELECT
+     loss_num,
+     card_num,
+     loss_reg,
+     loss_memo
+     FROM (SELECT
+             a.*,
+             rownum rnum
+           FROM (SELECT
+                   *
+                 FROM f_loss
+                    <where>
+                 <if test="keyword !='' and keyfield == 'card_num'">
+                 card_num like '%' ||#{keyword} || '%'
+                 </if>
+                 <if test="keyword !='' and keyfield == 'loss_reg'">
+                 loss_reg like '%' ||#{keyword} || '%'
+                 </if>
+                  <if test="keyword !='' and keyfield == 'loss_num'">
+                 loss_num like '%' ||#{keyword} || '%'
+                 </if>
+                  <if test="keyword !='' and keyfield == 'all'">
+                    card_num like '%' ||#{keyword} || '%' or
+                   loss_reg like '%' ||#{keyword} || '%' or
+                  loss_num like '%' ||#{keyword} || '%'
+                 </if>
+                 </where>
+                 ORDER BY loss_num ASC)a)
+    <![CDATA[
+     WHERE rnum >= #{start} AND rnum <= #{end}    
+    ]]>   
+  </select>
+  
+  <select id="missingGetRowCount" parameterType="map" resultType="Integer">
+	SELECT
+	count(*)
+	FROM f_loss
+	<where>
+		<if test="keyword !='' and keyfield == 'card_num'">
+			card_num like '%' ||#{keyword} || '%'
+		</if>
+		<if test="keyword !='' and keyfield == 'loss_reg'">
+			loss_reg like '%' ||#{keyword} || '%'
+		</if>
+		<if test="keyword !='' and keyfield == 'loss_num'">
+			loss_num like '%' ||#{keyword} || '%'
+		</if>
+		<if test="keyword !='' and keyfield == 'all'">
+			card_num like '%' ||#{keyword} || '%' or
+			loss_reg like '%' ||#{keyword} || '%' or
+			loss_num like '%' ||#{keyword} || '%'
+		</if>
+	</where> 
+  </select>
+
+</mapper>
+
+
+
+
+
+
+

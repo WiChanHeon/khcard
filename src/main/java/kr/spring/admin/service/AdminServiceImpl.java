@@ -77,5 +77,22 @@ public class AdminServiceImpl implements AdminService{
 		adminMapper.dropPersonalCard(drop_table);
 		
 	}
+	
+	@Override
+	public int getCardApplyCount(String info_id) {
+		
+		return adminMapper.getCardApplyCount(info_id);
+	}
 
+	@Override
+	public int getCurrentMonthApplyCount(String info_id) {
+		
+		return adminMapper.getCurrentMonthApplyCount(info_id);
+	}
+
+	@Override
+	public int getCardMonthApplyCount(String ap_reg, String info_id) {
+		// TODO Auto-generated method stub
+		return adminMapper.getCardMonthApplyCount(ap_reg, info_id);
+	}
 }

@@ -82,8 +82,12 @@
 	<definition name="matchCard" extends="main">
 		<put-attribute name="title" value="내게 맞는 카드 찾기 - KH카드"/>
 		<put-attribute name="body" value="/WEB-INF/views/info/matchCard.jsp"/>
-	</definition>
-
+	</definition> 
+	
+     <definition name="pageError" extends="main">
+     <put-attribute name="title" value="에러페이지"/>
+     <put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
+    </definition>
 </tiles-definitions>
 
 

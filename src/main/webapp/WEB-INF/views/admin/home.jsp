@@ -1,30 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>    
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <div class="row">
-    <div class="col-lg-12">
-        <h1>관리자 메인 <small>Statistics and more</small></h1>
-        <div class="alert alert-dismissable alert-warning">
-            <button data-dismiss="alert" class="close" type="button">&times;</button>
-            Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs. 
-            <br />
-            This theme uses the <a href="https://www.shieldui.com">ShieldUI</a> JavaScript library for the 
-            additional data visualization and presentation functionality illustrated here.
-        </div>
-    </div>
-</div>
+                <div class="col-lg-12">
+                    <h1>관리자 메인 <small>Statistics and more</small></h1>
+                    <div class="alert alert-dismissable alert-warning">
+                        <button data-dismiss="alert" class="close" type="button">&times;</button>
+                        Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs. 
+                        <br />
+                        This theme uses the <a href="https://www.shieldui.com">ShieldUI</a> JavaScript library for the 
+                        additional data visualization and presentation functionality illustrated here.
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-8">
+           	    <div class="col-md-8">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Visits Based on a 10 days datas</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> 총 카드 신청횟수</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-chart1"></div>
+                            <div id="totalApplyCount" style="height: 400px;"></div>
                         </div>
+                  
                     </div>
-                </div>
+        </div>
                 <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -134,7 +137,8 @@
 				<div>
 				<h3 align="center">카드 신청자 목록</h3>
 				<div class="search-position">
-					<form action="applyList.do" id="search_form" method="get">
+					<!-- <form action="applyList.do" id="search_form" method="get"> -->
+					<form action="adminMain.do" id="search_form" method="get">
 						<ul class="search">
 							<li><select name="keyfield">
 							        <option value="all">전체</option>
@@ -163,7 +167,7 @@
 								<th>심사상태</th>
 								
 							</tr>
-							<c:forEach var="article" items="${list }">
+							<c:forEach var="article" items="${list}">
 								<tr>
 									<td>${article.ap_num }</td>
 									<td>${article.ap_name }</td>

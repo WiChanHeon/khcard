@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.coboard.dao.CoboardMapper">  
+	
+	<select id="getCoboardList" parameterType="map" resultType="coboardCommand">
+		
+		SELECT
+		  co_num,
+		  m_id,
+		  m_name,
+		  co_title,
+		  to_char(co_reg,'YYYY-MM-DD HH24:MI:SS') co_reg,
+		  co_hit,
+		  co_sort
+		FROM
+			(SELECT
+				a.*,
+				rownum rnum
+			FROM
+				(SELECT
+					*
+				FROM f_coboard
+					<where>
+						<if test="keyword!='' and keyfield=='co_title'">
+							co_title like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='co_content'">
+							co_content like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='m_id'">
+							m_id like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='m_name'">
+							m_name like '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield=='all'">
+							co_title like '%' || #{keyword} || '%' or
+							co_content like '%' || #{keyword} || '%' or  
+							m_id like '%' || #{keyword} || '%' or 
+							m_name like '%' || #{keyword} || '%'
+						</if>
+		  			</where>
+				ORDER BY co_reg DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+		
+	</select>
+	
+	<select id="getCoboardCount" parameterType="map" resultType="integer">
+		SELECT
+		  count(*)
+		FROM f_coboard
+			<where>
+				<if test="keyword!='' and keyfield=='co_title'">
+					co_title like '%' || #{keyword} || '%'
+				</if>
+				<if test="keyword!='' and keyfield=='co_content'">
+					co_content like '%' || #{keyword} || '%'
+				</if>
+				<if test="keyword!='' and keyfield=='m_id'">
+					m_id like '%' || #{keyword} || '%'
+				</if>
+				<if test="keyword!='' and keyfield=='m_name'">
+					m_name like '%' || #{keyword} || '%'
+				</if>
+				<if test="keyword!='' and keyfield=='all'">
+					co_title like '%' || #{keyword} || '%' or
+					co_content like '%' || #{keyword} || '%' or  
+					m_id like '%' || #{keyword} || '%' or 
+					m_name like '%' || #{keyword} || '%'
+				</if>
+			</where>
+	</select>
+	
+
+</mapper>
