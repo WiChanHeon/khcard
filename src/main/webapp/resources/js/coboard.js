@@ -241,17 +241,20 @@ $(document).ready(function(){
 		var originalReply = $('#reNo'+co_re_num).html(); //취소용 내용 복사
 		
 		//form붙이기
-		$('#reNo'+co_re_num).prepend('<form action="coboardReplyModifyAjax.do" method="post">');
-		$('#reNo'+co_re_num).prepend('<input type="hidden" name="co_re_num" value="'+co_re_num+'">');
-		$('#reNo'+co_re_num).append('</form>');
+		var modifyReply = '';
+		modifyReply += '<form action="coboardReplyModifyAjax.do" method="post" id="y_reModifyForm">';
+		modifyReply += originalReply;
+		modifyReply += '<input type="hidden" name="co_re_num" value="'+co_re_num+'"></form>';
+		$('#reNo'+co_re_num).html(modifyReply);
 		
 		//버튼 2종 submit-취소 버튼으로 변경
 		$('#reNo'+co_re_num+' button').remove();
 		$('#reNo'+co_re_num+' h3').append('<button type="submit" class="btn btn-sm btn-primary">수정</button> ');
 		$('#reNo'+co_re_num+' h3').append('<button type="button" class="btn btn-sm btn-default y_re-modifyCancel" data-num="co_re_num">취소</button>');
 		
-		var modify = '<textarea class="form-control input-sm" name="co_re_content" style="height:'+(Oheight+10)+'px;">'+co_re_content+'</textarea>';
-		$('#reNo'+co_re_num+' .y_reContent').html(modify);
+		//수정 내용 textarea로 교체
+		var modify = '<textarea class="form-control input-sm" name="co_re_content" style="height:'+(Oheight+10)+'px; color:#4c4c4c;">'+co_re_content+'</textarea>';
+		$('#reNo'+co_re_num+' .y_reContent').html(modify).css('margin-bottom','0');
 		
 		
 		//댓글 수정 취소
@@ -259,12 +262,48 @@ $(document).ready(function(){
 			$('#reNo'+co_re_num).html(originalReply);
 		});
 		
-		//댓글 수정 진행
 		
 		
 		
 	});
 	
+	//댓글 수정 진행
+	$(document).on('submit','#y_reModifyForm',function(e){
+		
+		//유효성 체크
+		if($('textarea', this).val() == ''){
+			alert('내용을 입력하세요.');
+			$('textarea', this).focus();
+			return false;
+		}
+		
+		//댓글 수정 ajax
+		var data = $(this).serialize();
+		
+		$.ajax({
+			type:'post',
+			data:data,
+			url:'coboardReplyModifyAjax.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){				
+				if(data.result == 'success'){
+					initReForm(); //폼초기화
+					replyList(1,$('#co_num').val()); //목록 호출
+				}else if(data.result == 'logout'){
+					alert('로그인 해야 작성할 수 있습니다.');
+				}else if(data.result == 'failure'){
+					alert('댓글 수정 오류 ');
+				}
+			},
+			error:function(){
+				alert('댓글 수정 시 네트워크 오류 발생')
+			}
+		});
+		
+		e.preventDefault();
+	});
 	
 	
 	//댓글 삭제

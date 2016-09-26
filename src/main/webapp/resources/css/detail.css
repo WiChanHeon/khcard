@@ -77,6 +77,13 @@
    position: relative;
    background-size: cover;   
 }
+.o_box_card_mhybrid{ /* mhybrid 상단 이미지 */
+   height: 971px;  
+   margin-top:-105px; 
+   background-image: url('../images/card_detail/visual_CHECK.jpg');
+   position: relative;
+   background-size: cover;   
+}
 .o_box_content{ /*상단 이미지 가운데*/
    height: 349px;
    top: 363px;
@@ -582,6 +589,11 @@
    width: 100%;
    height: 466px;
 }
+.o_card_four1_cmh{ /* Mhybrid 세번째 테두리 */
+   width: 100%;
+   height: 432px;
+   margin: 94px 0 94px 0px;
+}
 .o_card_four1_m{ /* 네번째 하단 안쪽 테두리 */
    text-align: center;
 }
@@ -805,6 +817,47 @@
 }
 /* m3 네번째 끝 */
 
+/* cmh 세번째 시작 */
+.o_card_four1_m1_cmh{ /* mhybrid 세번째 테두리 첫번째 텍스트 */
+   font-size: 21px;
+   height: 432px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+}
+.o_card_four_m3_cmh{ /* mhybrid 그림 테두리 */
+   width: 768px;
+   height: 108px;
+    margin-top: 33px;
+    margin-left: 34%;
+    list-style: none;
+   text-align: center;
+   padding-left: 0px;  
+}
+.o_card_therr_box1_cmh{ /* mhybrid 그림 밑에 큰 테두리 */
+   list-style: none;
+   text-align: center;
+   margin-left: 38%;
+}
+.o_card_therr_minibox1_cmh{   /* mhybrid 세번째 그림 밑에 작은 테두리 테두리  */
+   text-align: center;
+   float: left;
+   height: 123px;
+   margin: 0 0 0 46px;
+}
+.o_card_therr_t1_cmh{ /* mhybrid 세번째 밑에 첫번째 텍스트 */
+   color: #5a7b89;
+    font-size: 34px;
+}
+.o_card_therr_t2_cmh{ /* mhybrid 세번째 밑에 두번째 텍스트 */
+    font-size: 17px;
+    line-height: 24px;
+}
+.o_card_therr_t3_cmh{ /* mhybrid 세번째 밑에 세번째 텍스트 */
+    font-size: 13px;
+    color: #666;
+}    
+/* cmh 세번째 끝 */
 
 
 /*-------------------------------------------네번째 메뉴 끝----------------------------------------------*/
@@ -977,7 +1030,7 @@
    background-color: white;
 }
 #minibox_cb1 li:hover p{ /* 마우스 온시 색상변경 */
-	color:black;
+   color:black;
 }
 /*-------------------------------------------여섯번째 메뉴 끝----------------------------------------------*/
 

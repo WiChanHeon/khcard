@@ -134,6 +134,7 @@
 	position:relative;
 }
 #y_code-modify select, #y_code-modify option, #y_code-modify input[type="text"], #y_code-modify textarea{
+	/*글씨색 조금 진하게*/
 	color:#4c4c4c;
 }
 #y_code-modify textarea{ /*수정폼-본문영역*/
@@ -153,7 +154,6 @@
 	float:left;
 	width:100px;
 }
-
 
 /*reply*/
 .y_replyDiv{
