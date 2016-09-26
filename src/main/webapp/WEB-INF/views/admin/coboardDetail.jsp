@@ -136,7 +136,7 @@
 				<button type="button" class="btn btn-default btn-sm" data-num="item.co_re_num" id="y_re-modifyBtn">수정</button>
 				<button type="button" class="btn btn-default btn-sm" data-num="item.co_re_num" id="y_re-deleteBtn">삭제</button>
 				</h3> 
-				<p>다들 배고프지 않아요? 식사 합시닷</p><br>
+				<p>다들 배고프지 않아요? 식사 합시닷f</p><br>
 				
 				
 				<h3><span style="cursor:pointer;" data-toggle="popover" title="[] 회원 정보" data-content="부서 : ">백백분식</span> <small>2014/03/07 11:43 PM</small> </h3> 
