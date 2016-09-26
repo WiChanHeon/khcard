@@ -52,45 +52,39 @@
  
  
         jQuery(function ($) {
-            var performance = [90, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
-                visits = [30, 323, 500, 32];
-             
-
-
-           $("#shieldui-chart1").shieldChart({
-                theme: "dark",
-
-                primaryHeader: {
-                    text: "Visitors"
-                },
-                exportOptions: {
-                    image: false,
-                    print: false
-                },
-                dataSeries: [{
-                    seriesType: "area",
-                    collectionAlias: "Q Data",
-                    data: performance
-                }]
-            });
+               
+               var browsersPopularity = [
+                                         ["XPE2",${xpe2Count} ],
+                                         ["TB", ${tbCount}],
+                                         ["TP", ${tpCount}],
+                                         ["TRE2",${tre2Count} ],
+                                         ["ME2", ${me2Count}],
+                                         ["MPE2",${mpe2Count}],
+                                         ["M3",${m3pe2Count}],
+                                         ["T3PE2",${t3pe2Count}],
+                                         ["XE2",${xe2Count}],
+                                         ["X3PE2",${x3pe2Count}],
+                                         ["ZRO",${zroCount}],
+                                         ["CMH",${cmhCount}]
+                                       ];
 
             $("#shieldui-chart2").shieldChart({
                 theme: "dark",
                 primaryHeader: {
-                    text: "Traffic Per week"
+                    text: "최다 신청 카드"
                 },
                 exportOptions: {
-                    image: false,
-                    print: false
+                    image: true,
+                    print: true
                 },
                 dataSeries: [{
                     seriesType: "pie",
-                    collectionAlias: "traffic",
-                    data: visits
+                    collectionAlias: "신청수",
+                    data: browsersPopularity
                 }]
             });
 
-            $("#shieldui-grid1").shieldGrid({
+             $("#shieldui-grid1").shieldGrid({
                 dataSource: {
                     data: traffic
                 },
@@ -101,7 +95,7 @@
                 paging: false,
             
             });            
-        });        
+        });    
         
          Morris.Bar({
         	  element: 'totalApplyCount',

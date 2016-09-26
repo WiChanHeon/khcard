@@ -32,10 +32,9 @@ public class AnalysisMonthAjaxController {
 			log.debug("ap_reg :"+ ap_reg);
 
 		}
-		System.out.println(ap_reg+"ddddddddddddddd");
 		String ap_reg2= ap_reg;
 		Map<String,Object> map = new HashMap<String,Object>(); 
-
+        ModelAndView mav= new ModelAndView();
 		
 		try {
 			String userId=(String) session.getAttribute("adminId");
@@ -81,6 +80,7 @@ public class AnalysisMonthAjaxController {
 			map.put("ap_reg2", ap_reg2);
 			map.put("current_reg", current_reg);
 			
+	
 				
 			}
 		}catch (Exception e) {

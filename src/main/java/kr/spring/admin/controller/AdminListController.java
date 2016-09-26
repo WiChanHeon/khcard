@@ -51,6 +51,7 @@ public class AdminListController {
 		 
 		 //ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
 		 int count=adminService.applyGetRowCount(map);
+		 
 	     //Ä«µåº° ÃÑ ½ÅÃ» °¹¼ö
 		 int xpe2Count=adminService.getCardApplyCount("XPE2");
 		 int tbCount=adminService.getCardApplyCount("TB");
@@ -97,7 +98,7 @@ public class AdminListController {
 		  mav.addObject("zroCount",zroCount);
 		  mav.addObject("cmhCount",cmhCount);
 		  
-		  System.out.println("===================="+zroCount);
+		 
 		  
 		  return mav;
 		

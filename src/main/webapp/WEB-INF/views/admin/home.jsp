@@ -202,7 +202,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Logins per week</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> KH Card 신청현황</h3>
                         </div>
                         <div class="panel-body">
                             <div id="shieldui-chart2"></div>

@@ -92,8 +92,14 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public int getCardMonthApplyCount(String ap_reg, String info_id) {
-		// TODO Auto-generated method stub
+		
 		return adminMapper.getCardMonthApplyCount(ap_reg, info_id);
+	}
+
+	@Override
+	public int getCardYearApplyCount(String ap_reg, String info_id) {
+		
+		return adminMapper.getCardYearApplyCount(ap_reg, info_id);
 	}
 
 

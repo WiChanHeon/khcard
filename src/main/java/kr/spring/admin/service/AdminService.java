@@ -3,6 +3,7 @@ package kr.spring.admin.service;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.apply.domain.ApplyCommand;
@@ -27,4 +28,5 @@ public interface AdminService {
 	public int getCardApplyCount(String info_id);
 	public int getCurrentMonthApplyCount(String info_id);
 	public int getCardMonthApplyCount(String getCardMonthApplyCount,String info_id );
+	public int getCardYearApplyCount(String ap_reg,String info_id);
 }

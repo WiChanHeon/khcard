@@ -38,4 +38,7 @@ public interface AdminMapper {
    public int getCurrentMonthApplyCount(String info_id);
    @Select("SELECT COUNT(*) FROM f_apply WHERE ap_reg LIKE #{ap_reg} and info_id=#{info_id}")
    public int getCardMonthApplyCount(@Param(value = "ap_reg") String ap_reg, @Param(value = "info_id") String info_id );
+   @Select("SELECT COUNT(*) FROM f_apply WHERE ap_reg LIKE #{ap_reg} and info_id=#{info_id}")
+   public int getCardYearApplyCount(@Param(value="ap_reg") String ap_reg, @Param(value="info_id") String info_id);
+   
 }

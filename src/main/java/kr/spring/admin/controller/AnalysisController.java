@@ -49,6 +49,18 @@ public class AnalysisController {
 		 
 		 
 		 //전 년대비
+		 int xpe2CurrentYearCount=adminService.getCardYearApplyCount("16%", "XPE2");
+		 int tbCurrentYearCount=adminService.getCardYearApplyCount("16%", "TB");
+		 int tpCurrentYearCount=adminService.getCardYearApplyCount("16%", "TP");
+		 int tre2CurrentYearCount=adminService.getCardYearApplyCount("16%", "TRE2");
+		 int me2CurrentYearCount=adminService.getCardYearApplyCount("16%","ME2");
+		 int mpe2CurrentYearCount=adminService.getCardYearApplyCount("16%","MPE2");
+		 int m3pe2CurrentYearCount=adminService.getCardYearApplyCount("16%","M3PE2");
+		 int t3pe2CurrentYearCount=adminService.getCardYearApplyCount("16%","T3PE2");
+		 int xe2CurrentYearCount=adminService.getCardYearApplyCount("16%","XE2");
+		 int x3pe2CurrentYearCount=adminService.getCardYearApplyCount("16%","X3PE2");
+		 int zroCurrentYearCount=adminService.getCardYearApplyCount("16%","ZRO");
+		 int cmhCurrentYearCount=adminService.getCardYearApplyCount("16%","CMH");
 		
 		 ModelAndView mav= new ModelAndView();
 		 mav.setViewName("analysis");
@@ -79,6 +91,20 @@ public class AnalysisController {
 		  mav.addObject("x3pe2CurrentMonthCount",x3pe2CurrentMonthCount);
 		  mav.addObject("zroCurrentMonthCount",zroCurrentMonthCount);
 		  mav.addObject("cmhCurrentMonthCount",cmhCurrentMonthCount);
+		  
+		  //전년
+		  mav.addObject("xpe2CurrentYearCount",xpe2CurrentYearCount);
+		  mav.addObject("tbCurrentYearCount",tbCurrentYearCount);
+		  mav.addObject("tpCurrentYearCount",tpCurrentYearCount);
+		  mav.addObject("tre2CurrentYearCount",tre2CurrentYearCount);
+		  mav.addObject("me2CurrentYearCount",me2CurrentYearCount);
+		  mav.addObject("mpe2CurrentYearCount",mpe2CurrentYearCount);
+		  mav.addObject("m3pe2CurrentYearCount",m3pe2CurrentYearCount);
+		  mav.addObject("t3pe2CurrentYearCount",t3pe2CurrentYearCount);
+		  mav.addObject("xe2CurrentYearCount",xe2CurrentYearCount);
+		  mav.addObject("x3pe2CurrentYearCount",x3pe2CurrentYearCount);
+		  mav.addObject("zroCurrentYearCount",zroCurrentYearCount);
+		  mav.addObject("cmhCurrentYearCount",cmhCurrentYearCount);
 		  
 		 
 		  
