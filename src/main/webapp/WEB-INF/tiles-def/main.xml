@@ -12,9 +12,6 @@
     	<put-attribute name="body" value="/WEB-INF/views/main/home.jsp"/>
     	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
     </definition>
-<<<<<<< HEAD
-    
-=======
     
     <definition name="donanList" extends="main">
     	<put-attribute name="title" value="분실/도난 신고"/>
@@ -28,7 +25,6 @@
     	<put-attribute name="body" value="/WEB-INF/views/gage/gage.jsp"/>
     </definition>
     
->>>>>>> origin/master
     <definition name="pageError" extends="main">
     	<put-attribute name="title" value="에러페이지"/>
     	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>

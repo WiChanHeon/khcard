@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 create table f_member(
 	mem_id varchar2(20) not null primary key,
 	mem_name varchar2(30) not null,
@@ -312,5 +311,3 @@ create sequence ca_seq;
 create sequence log_seq;
 create sequence co_seq;
 create sequence co_re_seq;
->>>>>>> origin/master
-create sequence noti_seq;

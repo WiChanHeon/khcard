@@ -38,4 +38,8 @@ public interface AdminMapper {
    public int getCurrentMonthApplyCount(String info_id);
    @Select("SELECT COUNT(*) FROM f_apply WHERE ap_reg LIKE #{ap_reg} and info_id=#{info_id}")
    public int getCardMonthApplyCount(@Param(value = "ap_reg") String ap_reg, @Param(value = "info_id") String info_id );
+   @Select("SELECT COUNT(*) FROM f_apply WHERE ap_reg LIKE #{ap_reg} and info_id=#{info_id}")
+   public int getCardYearApplyCount(@Param(value="ap_reg") String ap_reg, @Param(value="info_id") String info_id);
+   @Insert("INSERT INTO f_log(log_num,m_id,log_reg,log_content) VALUES(log_seq.nextval,#{m_id},sysdate,#{log_content})")
+   public void insertLog(@Param(value="m_id") String m_id,@Param(value="log_content") String log_content);
 }
