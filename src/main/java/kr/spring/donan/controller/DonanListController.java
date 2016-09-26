@@ -21,11 +21,11 @@ public class DonanListController {
 	
 	@RequestMapping(value = "/donan/list.do")
     public ModelAndView donanList() {
-        List<DonanListCommand> list = donanService.selectBoardList();
+        List<DonanListCommand> dlist = donanService.selectBoardList();
         
         ModelAndView mv = new ModelAndView("list.do");
         mv.setViewName("donanList");
-        mv.addObject("list", list);
+        mv.addObject("dlist", dlist);
      
         return mv;
     }

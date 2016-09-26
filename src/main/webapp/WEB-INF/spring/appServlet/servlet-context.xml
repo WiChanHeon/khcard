@@ -16,7 +16,6 @@
 	<context:component-scan base-package="kr.spring.admin.controller"/>
 	<context:component-scan base-package="kr.spring.admember.controller"/>
 	<context:component-scan base-package="kr.spring.admin.controller"/>
-	<context:component-scan base-package="kr.spring.admember.controller"/>
 	<context:component-scan base-package="kr.spring.donan.controller"/>
 	
 	<!-- Spring3 Validator -->
@@ -98,16 +97,6 @@
 		<beans:property name="maxUploadSize" value="52428800"/>
 		<beans:property name="defaultEncoding" value="UTF-8"/>	
 	</beans:bean>
-	<!--로그인여부 체크 (인터셉터)  -->
-	<mvc:interceptors>
-	  <mvc:interceptor>
-	     <mvc:mapping path="/admin/manageApplyList.do"/>
-	     <mvc:mapping path="/admin/admemberdetail.do"/>
-	     <mvc:mapping path="/admin/manageMissingList.do"/>
-	     <mvc:mapping path="/admin/analysis.do"/>
-	     <beans:bean class="kr.spring.admember.interceptor.LogonCheckInterceptor"/>
-	  </mvc:interceptor>
-	</mvc:interceptors>
 	
 	<!--로그인여부 체크 (인터셉터)  -->
 	<mvc:interceptors>
@@ -121,9 +110,3 @@
 	</mvc:interceptors>
 	
 </beans:beans>
-
-
-
-
-
-

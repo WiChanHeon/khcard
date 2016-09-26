@@ -23,9 +23,7 @@
     <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
     
-    <!-- coboard -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/coboard.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/coboard.js"></script>
+    
     
     <!--모리스차트  -->
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
@@ -35,6 +33,10 @@
     
    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script> 
+
+	<!-- coboard -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/coboard.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/coboard.js"></script>
     
 </head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css">
@@ -51,7 +53,7 @@
     </div>
     
     <!-- /#wrapper -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
  
  
  
@@ -131,6 +133,6 @@
          
 
     </script>
-     
+      -->
 </body>
 </html>

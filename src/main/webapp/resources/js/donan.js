@@ -31,9 +31,10 @@ $(document).ready(function() {
             return false;
         }
     });
-    	$(".eyong").click(function(){
-	
-    		$(".nae").toggle();
-    	});
+    
+    
+	$(".eyong").click(function(){
+		$(".nae").toggle();
+	});
     
 });

@@ -58,8 +58,7 @@
 												   kr.spring.donan.domain,
 												   kr.spring.card.domain,
 												   kr.spring.admember.domain,
-												   kr.spring.coboard.domain,
-												   kr.spring.donan.domain"/>
+												   kr.spring.coboard.domain"/>
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="kr.spring.member.dao,

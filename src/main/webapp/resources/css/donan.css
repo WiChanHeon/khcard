@@ -1,61 +1,65 @@
-div.sangdan{
+#w_div div.sangdan{
 	margin-left: 15%;  
 	margin-top: 100px;   
 	width: 70%;
 }/*상단 글씨*/
-div.sangdan1{
+#w_div div.sangdan1{
 	margin-left: 15%;
 	margin-top: 20px;
 	margin-bottom: 20px;    
 	width: 70%;
 }/*상단 글씨*/
-p.eyong{
+#w_div p.eyong{
 	border-style: groove;
+	border-radius : 4px;
 	background-color: #dddddd;
 	width: 100%;
     text-align: auto;
+	cursor:pointer;
+	padding:5px;
 }/*이용 내역*/
-div.bun{
+#w_div div.bun{
 	width: 70%;
 	padding-top: 15px;
     margin: auto;
     text-align: right;
 }/*분실 신고 버튼*/
-div.rok{
+#w_div div.rok{
 	width: 70%;
     margin-left: 110px; 
     text-align: right;  
 }/*신고 등록 버튼*/
-div.check_zone{
+#w_div div.check_zone{
 	width: 70%;
-    margin: auto;
+    margin: 30px auto;
+    margin-bottom: 100px;
 }
-table { 
+#w_div table { 
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 70%;
     margin: auto;
 }/*테이블*/
 
-td, th { 
+#w_div td, #w_div th { 
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }/*테이블*/
 
-th:nth-child(even),th:nth-child(odd) { 
+#w_div th:nth-child(even), #w_div th:nth-child(odd) { 
     background-color: #dddddd;
 }/*테이블 최상단*/
-div.jub{
+#w_div div.jub{
 	margin-left: 20%;
 	margin-top: 20px;
 }
-div.jub1{
+#w_div div.jub1{
 	margin-left: 200px;
 	margin-top: 20px;
 	width: 100%;
 }/*하단글씨*/
-input.day{
+#w_div input.day{
 	width: 70%;
 }
 
