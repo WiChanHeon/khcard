@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -19,23 +20,16 @@ public interface ApplyMapper {
 	@Insert("INSERT INTO f_apply (ap_num,ap_rrnfront,ap_rrnrear,ap_name,ap_ename,ap_cell,ap_email,ap_postnum,ap_address1,ap_address2,ap_paydate,ap_bank,ap_banknum,ap_reg,ap_job,ap_job2) "
 			+ "VALUES (ap_seq.nextval,#{ap_rrnfront},#{ap_rrnrear},#{ap_name},#{ap_ename},#{ap_cell},#{ap_email},#{ap_postnum},#{ap_address1},#{ap_address2},#{ap_paydate},#{ap_bank},#{ap_banknum},sysdate,#{ap_job},#{ap_job2})")
 	public void applyinsert(ApplyCommand apply);
-	@Select("SELECT * FROM f_apply WHERE ap_name = #{ap_name}")
-	public ApplyCommand selectApply(String ap_name);
-	
+	@Select("SELECT * FROM f_apply WHERE ap_rrnfront = #{ap_rrnfront} AND ap_rrnrear = #{ap_rrnrear} AND ap_name = #{ap_name}")
+	public List<ApplyCommand> selectApply(Map<String,Object> map);
+	@Select("SELECT count(*) FROM f_apply WHERE ap_rrnfront = #{ap_rrnfront} AND ap_rrnrear = #{ap_rrnrear} AND ap_name = #{ap_name}" )
+	public int ApplyCount(@Param(value="ap_name") String ap_name ,@Param(value="ap_rrnrear") String ap_rrnrear);
 	//간편카드신청
 	public List<ApplySimpleCommand> getApplySimpleList(Map<String,Object> map);
 	@Insert("INSERT INTO f_sapply (sap_num,sap_name,sap_cell) VALUES (sap_seq.nextval,#{sap_name},#{sap_cell})")
 	public void applySimpleinsert(ApplySimpleCommand applySimple);
 	@Select("SELECT * FROM f_sapply WHERE ap_num = #{ap_num}")
 	public ApplySimpleCommand selectApplySimple(int sap_num);
-	
-	/*//심사결과
-	public List<ApplyEvalCommand> applyEvalList(Map<String,Object> map);
-	
-	public void ApplyEvaluation(ApplyCommand apply);
-	@Select("SELECT ap_name,ap_pass,info_id,ap_reg FROM f_apply WHERE ap_name = #{ap_name}")
-	public ApplyEvalCommand selectApplyEval(String ap_name);*/
-	
 	
 }
 /* 고유번호 		ap_num;		

@@ -1,11 +1,15 @@
 package kr.spring.apply.controller;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +34,9 @@ public class ApplyEvalCheckController {
 	 
 	 @RequestMapping(value="/apply/applyEvalView.do", method=RequestMethod.GET)
 	 public String form(){
+		 
+
+		 
 		 return "applyEvaluationView";
 	 }
 	 
@@ -38,18 +45,42 @@ public class ApplyEvalCheckController {
 	 public String submit(@ModelAttribute("apply")
 	                      @Valid ApplyCommand applyCommand,
 			              BindingResult result,
-			              HttpSession session){
+			              Model model){
+		 
+		 
 		 
 		 if(log.isDebugEnabled()){
-			 log.debug("applyCommand : " + applyCommand);
-		 }
-		 //유효성 체크
-		 if(result.hasFieldErrors("ap_name") || result.hasFieldErrors("ap_rrnrear")){
-			 return form();
+			  log.debug("applyCommand : " + applyCommand);
+		  }
+		  
+		 if(result.hasFieldErrors("ap_name") || result.hasFieldErrors("ap_rrnfront") || result.hasFieldErrors("ap_rrnrear")){
+			 return "applyEvaluationView";
 		 }
 		 
+		 if(applyCommand != null){
+			 HashMap<String,Object> map = new HashMap<String, Object>();
+			 map.put("ap_name",	applyCommand.getAp_name());
+			 map.put("ap_rrnfront", applyCommand.getAp_rrnfront());
+			 map.put("ap_rrnrear", applyCommand.getAp_rrnrear());
+			 
+			 List<ApplyCommand> apply2= applyService.selectApply(map);
+			 
+			 boolean apok = false;
+			 
+			 apok = true;
+			 
+			 model.addAttribute("apply2", apply2);
+			 model.addAttribute("apok",apok);
+			 
+		 }
+		 return "applyEvaluationView";
+		 
+		 
+		 
+		 
+		 
 		 //신청자 체크
-		 try{
+		 /*try{
 			 ApplyCommand apply= applyService.selectApply(applyCommand.getAp_name());
 			 boolean check= false;
 			 
@@ -68,13 +99,8 @@ public class ApplyEvalCheckController {
 		 }catch(Exception e){
 			 //인증 실패로 폼 호출
 			 result.reject("InvalidNameOrRrn");
-			 return form();
+			 return "applyEvaluationView";
 			 
-		 }
-	
-			 
-		 
-		 
-	 }
-	 
+		 }*/
+	 } 
 }

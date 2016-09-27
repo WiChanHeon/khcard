@@ -64,6 +64,10 @@
     color: #fff;
     background: #999;
 }
+.Bapply_box ul li label{
+	width: 150px;
+	float: left;
+}
 #Bapply_box ol{
 	margin:0;
 	padding:0;
@@ -136,23 +140,23 @@
     background: url(../images/sp_apply_step.png) no-repeat 0 0;
     content: "";
 }
-.Bimg_infor .apply:before {
+.Bimg_infor .Bapply:before {
     width: 50px;
     background-position: -206px -57px;
 }
-.Bimg_infor .input:before {
+.Bimg_infor .Binput:before {
     width: 50px;
     background-position: -152px -57px;
 }
-.Bimg_infor .screen:before {
+.Bimg_infor .Bscreen:before {
     width: 50px;
     background-position: -4px -57px;
 }
-.Bimg_infor .decide:before {
+.Bimg_infor .Bdecide:before {
     width: 50px;
     background-position: -59px -57px;
 }
-.Bimg_infor .card_receive:before {
+.Bimg_infor .Bcard_receive:before {
     width: 50px;
     background-position: -102px -57px;
 }
@@ -162,4 +166,8 @@
 	font-size: 9pt;
 }
 
+li a{
+	color: black;
+	
+}
 

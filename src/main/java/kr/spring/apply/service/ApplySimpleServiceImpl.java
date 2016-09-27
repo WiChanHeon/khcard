@@ -1,5 +1,6 @@
 package kr.spring.apply.service;
 
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -21,5 +22,10 @@ public class ApplySimpleServiceImpl implements ApplySimpleService{
 	public ApplySimpleCommand selectApplySimple(int sap_num) {
 		return applyMapper.selectApplySimple(sap_num);
 	}
-	
 }
+
+/*
+SELECT
+   count(*)
+   FROM f_apply where ap_name = #{ap_name} and ap_rrnrear = #{ap_rrnrear};
+*/

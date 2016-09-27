@@ -86,7 +86,6 @@ $(function(){
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
 </div>
@@ -99,18 +98,15 @@ $(function(){
  	<h2 align="center">본인 확인</h2>
  	<p align="center">신청자 본인 확인을 위한 정보입니다.</p>
  	<hr style="border:solid 2px gray;">
- 	
  	<div class="Bapply_inner">
  	<ul class="Bapply_list">
  		<li>
- 		
  		<label for="ap_rrn">주민등록번호</label>
 			<form:input type="text" path="ap_rrnfront" name="ap_rrnfront" onkeyup="nextgo(this);" maxlength="6" /> 
 		   - <form:input type="password" path="ap_rrnrear" name="ap_rrnrear" onkeyup="end(this);" maxlength="7"/>
 			<input type="button" onclick="checks();" value="확인" id="endRrn"/>
 			<span class="error-color"></span>
 			<form:errors path="ap_rrnfront" class="error-color"/><hr>
- 		
  		</li>
  		<li>
  		<label for="ap_name" >한글이름</label>
@@ -140,13 +136,12 @@ $(function(){
         </li>   
         <li>
         <label for="ap_postnum">우편번호</label>
-        	<%-- <form:input path="ap_postnum" maxlength="50"/>
-			<form:errors path="ap_postnum" class="error-color"/>     --%>
 			<form:input path="ap_postnum" type="text" placeholder="우편번호" class="nokey"/>
-        	<!-- <input name="ap_postnum" type="text" placeholder="우편번호" class="nokey"/> -->
         	<input value="주소" type="button" onclick="openAddr();"/>
         	<form:errors path="ap_postnum" class="error-color"/>
+        <br><br>
         </li>
+        
         <li>
         <label for="address1">자택주소</label>
         	<input name="ap_address1" type="text" placeholder="주소" class="nokey"/>

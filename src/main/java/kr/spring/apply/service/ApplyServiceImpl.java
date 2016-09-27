@@ -28,12 +28,21 @@ public class ApplyServiceImpl implements ApplyService{
 	}
 
 	@Override
-	public ApplyCommand selectApply(String ap_name) {
-		return applyMapper.selectApply(ap_name);
+	public List<ApplyCommand> selectApply(Map<String,Object> map) {
+		return applyMapper.selectApply(map);
 	}
 	/*@Override
 	public ApplyEvalCommand selectApplyEval(String ap_name){
 		return applyMapper.selectApplyEval(ap_name);
 	}*/
+
+	@Override
+	public int ApplyCount(String ap_name, String ap_rrnrear) {
+		// TODO Auto-generated method stub
+		return applyMapper.ApplyCount(ap_name, ap_rrnrear);
+	}
+
+
+	
 	
 }
