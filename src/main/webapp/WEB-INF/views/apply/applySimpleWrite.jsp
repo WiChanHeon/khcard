@@ -10,6 +10,7 @@
 	<div class="Bapply_inner">
 	<ul class="align-center">
 	<li><h2>카드 간편 신청</h2></li>
+	<li>카드 : ${param.info_id} <input type="hidden" name="info_id" value="${param.info_id}"></li>
 	<li>지금 카드신청이 어려우시면, KH카드 전문 상담원의 상담이 가능합니다.
 		지금 간편하게 성명,휴대전화번호를 남겨주세요.</li>
 	<li><hr size="2"></li>	

@@ -26,6 +26,10 @@
   		 <put-attribute name="title" value="심사조회"/>
 		 <put-attribute name="body" value="/WEB-INF/views/apply/applyEvaluationView.jsp"/>
  	</definition>
+ 	<definition name="applySimpleWrite" extends="main">
+  		 <put-attribute name="title" value="카드간편신청"/>
+		 <put-attribute name="body" value="/WEB-INF/views/apply/applySimpleWrite.jsp"/>
+ 	</definition>
  
  	<!-- Apply end-->
 </tiles-definitions>

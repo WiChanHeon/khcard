@@ -22,10 +22,13 @@
  	<li>카드수령</li>
  	</ol><br>
 </div>
- <h2><spring:message code="apply.evalcheck.title"/></h2>
+
+<br><br>
+ <h2 class="align-center"><spring:message code="apply.evalcheck.title"/></h2>
+ <br><br>
 	<form:form action="applyEvalView.do" commandName="apply" id="apply_form">
       <form:errors element="div" class="error-color"/>
-      <ul>
+      <ul class="Bevaluation">
           <li>
            <label for="ap_name">성명</label>
            <form:input path="ap_name" maxlength="5"/>
@@ -36,21 +39,21 @@
            <label for="ap_rrnrear">주민번호</label>  <form:input path="ap_rrnfront" maxlength="6"/> -
            <form:password path="ap_rrnrear" maxlength="7"/>
            <form:errors path="ap_rrnrear" class="error-color"/>
+           <br><br><br>
          </li>
-         <li class="align-center">
-           <input type="submit" value="확인" class="Bapplybutton">
-         </li>
-          <li></li>
+         
       </ul>
+         <div class="align-center">
+           <input type="submit" value="확인" class="Bapplybutton">
+           <br><br><br><br>
+         </div>
 	</form:form>
-      <div>
-	
-	
+    <div id="BevalTable">
 	<c:if test="${!empty apply2 && apok}">
 	<%-- <h2><spring:message code="apply.detail.title" arguments="${apply.ap_name}"/></h2> --%>
-	<table border="1">
-      
-		<tr>
+	<div class="align-center">
+	<table class="Btable">
+		<tr class='even'>
 			<th>신청번호</th>
 			<th>성명</th>
 			<th>카드명</th>
@@ -58,28 +61,29 @@
 			<th>상태</th>
 		</tr>
 		<c:forEach var="apply2" items="${apply2}">
-		<tr>
-			<th>${apply2.ap_num }</th>
-			<th>${apply2.ap_name}</th>
-			<th>${apply2.info_id}</th>
-			<th>${apply2.ap_reg}</th>
+		<tr class='even'>
+			<td>${apply2.ap_num }</td>
+			<td>${apply2.ap_name}</td>
+			<td>${apply2.info_id}</td>
+			<td>${apply2.ap_reg}</td>
 			<c:if test="${apply2.ap_pass == 0 }">
-			<th>고객님께서 신청하신 카드가 정상적으로 심사 접수 되었고, 현재 발급 진행중입니다.</th>
+			<td>고객님께서 신청하신 카드가 정상적으로 심사 접수 되었고, 현재 발급 진행중입니다.</td>
 			</c:if>
 			<c:if test="${apply2.ap_pass == 1 }">
-			<th>축하드립니다. 고객님께서 신청하신 카드가 정상적으로 심사 승인되어 10영업일 안으로 발송됩니다.</th>
+			<td>축하드립니다. 고객님께서 신청하신 카드가 정상적으로 심사 승인되어 10영업일 안으로 발송됩니다.</td>
 			</c:if>
 			<c:if test="${apply2.ap_pass == 2 }">
-			<th>고객님께서는 저희 KH카드 심사조건에 맞지 않아 카드발급이 거절되었습니다.</th>
+			<td>고객님께서는 저희 KH카드 심사조건에 맞지 않아 카드발급이 거절되었습니다.</td>
 			</c:if>
 			<c:if test="${apply2.ap_pass == 3 }">
-			<th>죄송합니다. 고객님께서 신청하신 카드가 정상적으로 접수되었으나 심사 보류중에 있어 몇 가지 확인차 연락 후 진행됩니다.</th>
+			<td>죄송합니다. 고객님께서 신청하신 카드가 정상적으로 접수되었으나 심사 보류중에 있어 몇 가지 확인차 연락 후 진행됩니다.</td>
 			</c:if>
 			
 		</tr>
 		</c:forEach>
 		
 	</table>
+	</div>
 	</c:if>
 	<c:if test="${empty apply2 && apok}">
 	<div>
@@ -88,8 +92,6 @@
 	</div>
 	</c:if>
 	<br>
-	
-	
 	<%-- <c:if test="${!empty applyName}">
 	<li class="align-center">
 	<input type="button" value="조회완료" class="Bapplybutton" onclick="location.href='${pageContext.request.contextPath}/apply/checkout.do'">

@@ -10,41 +10,21 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --%>
-<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/applysimple.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
 $(function(){
 	window.onbeforeunload = function(){
 		return '새로고침 or 뒤로가기 내용 초기화 경고';
 	};
 }); 
-</script> -->
-<%-- <form:form action="applywrite.do" commandName="sapply" id="Bapply_register" name="sapagree">
-	<div class="Bapply_inner">
- 	<ul class="Bapply_list">
- 		<li>
- 		<label for="sap_name" >성명</label>
-          <form:input path="sap_name" maxlength="5" placeholder="한글 입력만 가능" id="applylabel" onkeypress="fn_han();"/>
-          <form:errors path="ap_name" class="error-color"/>
-        <hr>
- 		</li>
-        <li>
- 		<label for="sap_cell">휴대전화</label>  
-          <form:input path="sap_cell" maxlength="11" onkeydown="fn_number(this)" 
-          placeholder="- 없이 입력"/>
-          <form:errors path="ap_cell" class="error-color"/><hr>
-        </li>
-        <li class="align-center">
-          <input type="submit" value="카드신청" class="Bapplybutton">
-          <input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'" class="Bapplybutton">
-        </li>
-       
- 	</ul>
- 	</div>
-</form:form> --%>
+</script> 
 <div class="Bapply_box">
  <h2 align="center"><spring:message code="apply.write.title"/></h2>
+
+ 		
  <%-- <h2 align="center"><spring:message code="info.cardid.title"/></h2> --%>
  <form:form action="applywrite.do" commandName="apply" id="Bapply_register" name="apagree" onsubmit="return frmchk();">
+ 	 신청카드 : ${param.info_id} <input type="hidden" name="info_id" value="${param.info_id}">
  	<p align="center">카드신청 진행 동의</p>
  	<p align="center">개인정보를 위해 동의 및 신청자 본인 확인 후 진행합니다.</p>
  	<div align="center">
@@ -100,6 +80,7 @@ $(function(){
  	<hr style="border:solid 2px gray;">
  	<div class="Bapply_inner">
  	<ul class="Bapply_list">
+ 		
  		<li>
  		<label for="ap_rrn">주민등록번호</label>
 			<form:input type="text" path="ap_rrnfront" name="ap_rrnfront" onkeyup="nextgo(this);" maxlength="6" /> 

@@ -38,6 +38,8 @@ create table f_sapply(
 	sap_num number not null primary key,
 	sap_name varchar2(30) not null,
 	sap_cell varchar2(15) not null
+	info_id varchar2(10),
+	constraint apply_info_fk1 foreign key(info_id) references f_info(info_id)
 );
 --ap_paydate varchar2로 변경
 --ap_postnum 추가

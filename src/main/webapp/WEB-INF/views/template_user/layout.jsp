@@ -46,6 +46,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/apply.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/applysimple.js"></script>
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
