@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.spring.coboard.domain.CoboardCommand;
 import kr.spring.coboard.service.CoboardService;
+import kr.spring.util.FileUtil;
 
 @Controller
 public class CoboardDeleteController {
@@ -23,7 +25,16 @@ public class CoboardDeleteController {
 			return "coboardLogout";
 		}
 		
+		
+		//파일 체크
+		CoboardCommand coboard = coboardService.selectCoboard(co_num);
+		String fileName = coboard.getCo_filename();
+		
+		//게시물 삭제
 		coboardService.deleteCoboard(co_num);
+		
+		//파일 있는 경우 삭제
+		if(fileName!=null){ FileUtil.removeFile(fileName); }
 		
 		return "redirect:/admin/coboardList.do";
 	}

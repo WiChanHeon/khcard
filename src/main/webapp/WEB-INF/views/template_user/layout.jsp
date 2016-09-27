@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/detail.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/donan.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/apply.css">
 
 </head>
 <body>
@@ -42,11 +43,13 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.matchHeight.js"></script>
+	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/layout.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/info.js"></script>	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/donan.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/apply.js"></script>
 
 </body>
 </html>

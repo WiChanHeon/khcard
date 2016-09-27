@@ -17,6 +17,7 @@
 	<context:component-scan base-package="kr.spring.admember.controller"/>
 	<context:component-scan base-package="kr.spring.admin.controller"/>
 	<context:component-scan base-package="kr.spring.donan.controller"/>
+	<context:component-scan base-package="kr.spring.apply.controller"/>
 	
 	<!-- Spring3 Validator -->
 	<mvc:annotation-driven/>

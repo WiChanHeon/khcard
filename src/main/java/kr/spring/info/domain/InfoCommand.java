@@ -17,7 +17,6 @@ public class InfoCommand {
 	private String cp_benefit;
 	private String cp_service;
 	private String cp_advice;
-	private int cp_choice;
 	
 	//줄바꿈용 알리아스 변수
 	private String info_scontent_br;
@@ -107,12 +106,6 @@ public class InfoCommand {
 	public void setCp_advice(String cp_advice) {
 		this.cp_advice = cp_advice;
 	}
-	public int getCp_choice() {
-		return cp_choice;
-	}
-	public void setCp_choice(int cp_choice) {
-		this.cp_choice = cp_choice;
-	}
 	
 	//줄바꿈용 알리아스
 	public String getInfo_scontent_br() {
@@ -128,7 +121,7 @@ public class InfoCommand {
 				+ ", info_stitle=" + info_stitle + ", info_scontent=" + info_scontent + ", info_flag=" + info_flag
 				+ ", info_rcm=" + info_rcm + ", info_view=" + info_view + ", info_order=" + info_order + ", cp_afee="
 				+ cp_afee + ", cp_voucher=" + cp_voucher + ", cp_benefit=" + cp_benefit + ", cp_service=" + cp_service
-				+ ", cp_advice=" + cp_advice + ", cp_choice=" + cp_choice + "]";
+				+ ", cp_advice=" + cp_advice + "]";
 	}
 	
 }

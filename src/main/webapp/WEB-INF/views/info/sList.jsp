@@ -83,7 +83,7 @@
 			<div class="y_clear">
 				<p><img src="${pageContext.request.contextPath}/resources/images/card/${slist.info_img}" class="y_card-img1" id="${slist.info_id}_img"></p> 
 				<div class="y_img_btndiv" id="${slist.info_id}_img_btnview" style="display:none;">
-					<a class="btn btn-primary y_img-btn" onclick="alert('~~')">카드선택</a> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${slist.info_id}' -->
+					<a class="btn btn-primary y_img-btn" onclick="location.href='${pageContext.request.contextPath}/apply/applywrite.do?info_id=${slist.info_id}&info_name=${slist.info_name}'">카드선택</a>
 					<span class="y_img_span">
 					
 					</span>

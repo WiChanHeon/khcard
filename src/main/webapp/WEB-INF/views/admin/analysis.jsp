@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%-- <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/analysis.js"></script>   --%>
+    <!--모리스차트  -->
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
    
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+   <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>  
 <div class="row">
    <div class="col-lg-12">
       <h1>
@@ -673,3 +680,82 @@ $(document).ready(function(){
        
 });
 </script> 
+ <!-- /#wrapper -->
+ <script type="text/javascript">
+ 
+ 
+ 
+        jQuery(function ($) {
+               
+               var browsersPopularity = [
+                                         ["XPE2",${xpe2Count} ],
+                                         ["TB", ${tbCount}],
+                                         ["TP", ${tpCount}],
+                                         ["TRE2",${tre2Count} ],
+                                         ["ME2", ${me2Count}],
+                                         ["MPE2",${mpe2Count}],
+                                         ["M3",${m3pe2Count}],
+                                         ["T3PE2",${t3pe2Count}],
+                                         ["XE2",${xe2Count}],
+                                         ["X3PE2",${x3pe2Count}],
+                                         ["ZRO",${zroCount}],
+                                         ["CMH",${cmhCount}]
+                                       ];
+
+            $("#shieldui-chart2").shieldChart({
+                theme: "dark",
+                primaryHeader: {
+                    text: "최다 신청 카드"
+                },
+                exportOptions: {
+                    image: true,
+                    print: true
+                },
+                dataSeries: [{
+                    seriesType: "pie",
+                    collectionAlias: "신청수",
+                    data: browsersPopularity
+                }]
+            });
+
+             $("#shieldui-grid1").shieldGrid({
+                dataSource: {
+                    data: traffic
+                },
+                sorting: {
+                    multiple: true
+                },
+                rowHover: false,
+                paging: false,
+            
+            });            
+        });    
+        
+         Morris.Bar({
+             element: 'totalApplyCount',
+             data: [
+               { y: 'XPE2', a: ${xpe2Count}  },
+               { y: 'TB', a: ${tbCount}   },
+               { y: 'TP', a: ${tpCount}   },
+               { y: 'TRE2', a: ${tre2Count}  },
+               { y: 'ME2', a: ${me2Count}  },
+               { y: 'MPE2', a: ${mpe2Count}  },
+               { y: 'M3', a: ${m3pe2Count} },
+               { y: 'T3PE2', a: ${t3pe2Count} },
+               { y: 'XE2', a: ${xe2Count} },
+               { y: 'X3PE2', a: ${x3pe2Count} },
+               { y: 'ZRO', a: ${zroCount} },
+               { y: 'CMH', a: ${cmhCount} }
+                ],
+             xkey: 'y',
+             ykeys: ['a'],
+             labels: ['총 카드신청 수']
+           });
+         
+         
+
+    </script>
+     
+
+</body>
+</html>

@@ -48,7 +48,7 @@
                   ap_rrnfront like '%' ||#{keyword} || '%'
                  </if>
                  </where>
-                 ORDER BY ap_num ASC)a)
+                 ORDER BY ap_num DESC)a)
     <![CDATA[
      WHERE rnum >= #{start} AND rnum <= #{end}    
     ]]>   
@@ -105,7 +105,7 @@
                   loss_num like '%' ||#{keyword} || '%'
                  </if>
                  </where>
-                 ORDER BY loss_num ASC)a)
+                 ORDER BY loss_num DESC)a)
     <![CDATA[
      WHERE rnum >= #{start} AND rnum <= #{end}    
     ]]>   

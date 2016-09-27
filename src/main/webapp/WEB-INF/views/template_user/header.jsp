@@ -169,7 +169,7 @@
 						<div class="col-sm-2 o_leftborder">
 							<h5>발급조회·수령등록</h5>
 							<ul class="menu">
-								<li><a href="#">카드발급조회</a></li>
+								<li><a href="${pageContext.request.contextPath}/apply/applyEvalView.do">카드발급조회</a></li>
 								<li><a href="#">카드신청안심서비스</a></li>
 								<li><a href="#">카드수령등록</a></li>
 								<li><a href="#">카드비밀번호 등록/변경</a></li>

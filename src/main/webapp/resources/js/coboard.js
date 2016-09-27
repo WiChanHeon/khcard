@@ -40,7 +40,7 @@ $(document).ready(function(){
 	}
 	
 	//ID 정보 표시용 popover
-	/*$('[data-toggle="popover"]').popover();*/
+	$('[data-toggle="popover"]').popover();
 	
 	
 	//수정폼 불러오기

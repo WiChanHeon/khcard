@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <div class="y_div">
 	
 	<!-- 카드비교함 시작-->
@@ -304,8 +305,8 @@
 					<div class="y_floatleft">
 					<img src="${pageContext.request.contextPath}/resources/images/card/card_T3PE2.png" class="y_matchCard" data-id="T3PE2">
 						<div class="y_matchCard-btndiv" id="T3PE2_btnview" style="display:none;">
-							<a class="btn btn-primary y_matchCard-btn" onclick="alert('~~')">인터넷신청</a> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${alist.info_id}' -->
-							<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="alert('!!')">전화신청</a>
+							<a class="btn btn-primary y_matchCard-btn" onclick="location.href='${pageContext.request.contextPath}/apply/applywrite.do?info_id=T3PE2&info_name=현대카드T3 Edition2'">인터넷신청</a>
+							<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="location.href='${pageContext.request.contextPath}/apply/applysimplewrite.do?info_id=T3PE2&info_name=현대카드T3 Edition2'">전화신청</a>
 							<div class="y_img_span"></div>
 						</div>	
 					<br><div class="y_name"><a href="${pageContext.request.contextPath}/detail/T3PE2.do">현대카드T3 Edition2 ></a></div>
@@ -314,8 +315,8 @@
 					<div class="y_floatleft y_twoCard">
 					<img src="${pageContext.request.contextPath}/resources/images/card/card_M3PE2.png" class="y_matchCard" data-id="M3PE2">
 						<div class="y_matchCard-btndiv" id="M3PE2_btnview" style="display:none;">
-							<a class="btn btn-primary y_matchCard-btn" onclick="alert('~~')">인터넷신청</a> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${alist.info_id}' -->
-							<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="alert('!!')">전화신청</a>
+							<a class="btn btn-primary y_matchCard-btn" onclick="location.href='${pageContext.request.contextPath}/apply/applywrite.do?info_id=M3PE2&info_name=현대카드M3 Edition2'">인터넷신청</a>
+							<a class="btn y_matchCard-btn y_matchCard-btn2" onclick="location.href='${pageContext.request.contextPath}/apply/applysimplewrite.do?info_id=M3PE2&info_name=현대카드M3 Edition2'">전화신청</a>
 							<div class="y_img_span"></div>
 						</div>	
 					<br><div class="y_name"><a href="${pageContext.request.contextPath}/detail/M3PE2.do">현대카드M3 Edition2 ></a></div>
@@ -362,7 +363,7 @@
 			<div class="y_clear">
 				<p><img src="${pageContext.request.contextPath}/resources/images/card/${alist.info_img}" class="y_card-img1" id="${alist.info_id}_img"></p> 
 				<div class="y_img_btndiv" id="${alist.info_id}_img_btnview" style="display:none;">
-					<a class="btn btn-primary y_img-btn" onclick="alert('~~')">카드선택</a> <!-- location.href='${pageContext.request.contextPath}/apply/writeto.do?info_id=${alist.info_id}' -->
+					<a class="btn btn-primary y_img-btn" onclick="location.href='${pageContext.request.contextPath}/apply/applywrite.do?info_id=${alist.info_id}&info_name=${alist.info_name}'">카드선택</a>
 					<span class="y_img_span"></span>
 				</div>				
 			</div>

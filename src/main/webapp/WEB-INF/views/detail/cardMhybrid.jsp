@@ -81,7 +81,7 @@
                <img src="${pageContext.request.contextPath}/resources/images/card_detail/sp_plus_m.png">                  
             </li>
          </ul>
-         <ul class="o_card_therr_box1_cmh">
+         <ul class="o_card_four_m4_cmh">
             <li class="o_card_therr_minibox1_cmh">
                <p class="o_card_therr_t1_cmh">0.5%</p>
                <p class="o_card_therr_t2_cmh">M포인트 적립</p>
@@ -91,7 +91,7 @@
                <p class="o_card_therr_t1_cmh">1%</p>
                <p class="o_card_therr_t2_cmh">M포인트 적립</p>
                <p class="o_card_therr_t3_cmh">월100만원 이상 이용 시</p>
-            </li>
+            </li>   
          </ul>
       </div>
    </div>
@@ -105,7 +105,7 @@
          <p>M포인트 사용</p>
          <p class="o_card_four_m2_purple">일상생활, 쇼핑, 자동차 구매, Gift카드 등<br>다양한 사용처에서 M포인트 사용</p>
          <p class="o_card_four_m3_t3">마일리지 자세히 보기 ></p>
-         <ul class="o_card_four_m3_purple">
+         <ul class="o_card_four_m3_cmh">
             <li class="o_card_four_m3_i1_purple">
                <img src="${pageContext.request.contextPath}/resources/images/card_detail/m3_m_point.png">
                   <p class="o_card_four_m3_t1_purple">현대카드M 100 Club</p>

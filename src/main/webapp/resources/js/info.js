@@ -100,9 +100,10 @@ $(document).ready(function(){
 	
 	
 	//id로 카드 결과 페이지 호출
-	function loadCard(card,info_name,info_stitle){
-		var link1 = "alert('아하1')"; //변경필요
-		var link2 = "alert('어허2')"; //변경필요
+	function loadCard(card,info_name,info_stitle){		
+		
+		var link1 = "location.href='../apply/applywrite.do?info_id="+card+"&info_name="+info_name+"'"; //인터넷신청
+		var link2 = "location.href='../apply/applysimplewrite.do?info_id="+card+"&info_name="+info_name+"'"; //전화신청
 		var link3 = "location.href='matchCard.do'";
 		
 		var output = '';
@@ -122,11 +123,11 @@ $(document).ready(function(){
 		$('.y_quizbox').append(output);
 	}
 	
+	
 	/////////////////카드추천선택지////////////////////
 	$('#quiz0 span:eq(0)').click(function(){ //포인트 -> 연회비,혜택금액
 		$(this).parent().hide();
 		$('#quiz1').show();
-		/*$('#quiz1').show('slide',{direction:'up'},1000);*/
 	});
 		$('#quiz1 span:eq(0)').click(function(){ //연회비 -> 금액
 			$(this).parent().hide();

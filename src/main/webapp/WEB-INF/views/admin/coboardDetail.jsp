@@ -2,14 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/bootstrap/js/bootstrap.min.js"></script>
-<script>
-	$(document).ready(function(){
-		$('[data-toggle="popover"]').popover();
-	});
-</script>
-
 <div class="container">
 
 	<!-- dimmed -->
