@@ -32,7 +32,7 @@ public class CoboardReplyWriteAjaxController {
 		if(log.isDebugEnabled()){
 			log.debug("CoboardReplyCommand : " + core);
 		}
-				
+		
 		Map<String, String> map = new HashMap<String, String>();
 		
 		try{

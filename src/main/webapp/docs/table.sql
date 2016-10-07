@@ -37,12 +37,15 @@ create table f_info(
 create table f_sapply(
 	sap_num number not null primary key,
 	sap_name varchar2(30) not null,
-	sap_cell varchar2(15) not null
+	sap_cell varchar2(15) not null,
+	info_id varchar2(10) not null,
+	constraint sapply_info_fk1 foreign key(info_id) references f_info(info_id)
 );
 
 create table f_apply(
 	ap_num number not null primary key,
-	ap_rrn varchar2(13) not null,
+	ap_rrnfront varchar2(6) not null,
+	ap_rrnrear varchar2(7) not null,
 	ap_name varchar2(30) not null,
 	ap_ename varchar2(30) not null,
 	ap_cell varchar2(15) not null,
@@ -50,15 +53,18 @@ create table f_apply(
 	ap_postnum varchar2(10) not null,
 	ap_address1 varchar2(300) not null,
 	ap_address2 varchar2(300) null,
-	ap_paydate date not null,
+	ap_paydate varchar2(2) not null,
 	ap_bank varchar2(20) not null,
 	ap_banknum varchar2(20) not null,
 	ap_reg date not null,
-	ap_job varchar2(20) not null,
+	ap_job varchar2(40) not null,
 	ap_job2 varchar2(20) not null,
 	ap_pass number default(0),
+	ap_status number default(0),
 	ap_id varchar2(20),
-	card_num varchar2(16) unique
+	card_num varchar2(16) unique,
+	info_id varchar2(10) not null,
+	constraint apply_info_fk1 foreign key(info_id) references f_info(info_id)
 );
 
 create table f_card(
@@ -76,21 +82,8 @@ create table f_loss(
 	loss_num number not null primary key,
 	card_num varchar2(16) not null,
 	loss_reg date not null,
-	loss_memo varchar2(100),
+	loss_memo number default(0) not null,
 	constraint loss_card_fk1 foreign key(card_num) references f_card(card_num)
-);
-
-create table f_ca(
-	ca_num number not null primary key,
-	card_num varchar2(16) not null,
-	ca_reg date not null,
-	ca_price number not null,
-	ca_spot varchar2(20) not null,
-	ca_sort number(1) default(0),
-	ca_category number(2) default(0),
-	ca_memo varchar2(100),
-	ca_income number,
-	constraint ca_card_fk1 foreign key(card_num) references f_card(card_num)
 );
 
 create table f_admin(
@@ -101,14 +94,6 @@ create table f_admin(
 	m_email varchar2(50) not null,
 	m_position varchar2(16) not null,
 	m_dept varchar2(30) not null
-);
-
-create table f_log(
-	log_num number not null primary key,
-	m_id varchar2(20) not null,
-	log_reg date not null,
-	log_content varchar2(100) not null,
-	constraint log_admin_fk1 foreign key(m_id) references f_admin(m_id)
 );
 
 create table f_coboard(
@@ -124,46 +109,22 @@ create table f_coboard(
 	constraint coboard_admin_fk1 foreign key(m_id) references f_admin(m_id)
 );
 
-create table f_coboard(
-	co_num number not null primary key,
-	m_id varchar2(20) not null,
-	m_name varchar2(30) not null,
-	co_title varchar2(40) not null,
-	co_content clob not null,
-	co_reg date not null,
-	co_hit number default(0),
-	co_sort number(1) default(0),
-	constraint coboard_admin_fk1 foreign key(m_id) references f_admin(m_id)
-);
-
 create table f_coboard_re(
 	co_re_num number not null primary key,
 	co_num number not null,
 	m_id varchar2(20) not null,
 	m_name varchar2(30) not null,
 	co_re_content varchar2(600) not null,
-	co_re_date date not null,	
+	co_re_reg date default sysdate not null,	
 	constraint coboardre_coboard_fk1 foreign key(co_num) references f_coboard(co_num),
 	constraint coboardre_admin_fk2 foreign key(m_id) references f_admin(m_id)
 );
 
-create table f_notice(
-	noti_num number not null primary key,
-	noti_title varchar2(20) not null,
-	noti_content clob not null,
-	noti_reg date not null,
-	m_id varchar2(20) not null,
-	noti_writer varchar2(16) default('관리자'),
-	constraint notice_admin_fk1 foreign key(m_id) references f_admin(m_id)
-);
 
 
-create sequence mem_seq;
 --create sequence 0000111122223333_seq; --카드번호시퀀스
 create sequence sap_seq;
 create sequence ap_seq;
 create sequence loss_seq;
-create sequence ca_seq;
-create sequence log_seq;
 create sequence co_seq;
 create sequence co_re_seq;

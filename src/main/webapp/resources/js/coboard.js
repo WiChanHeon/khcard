@@ -101,10 +101,17 @@ $(document).ready(function(){
 	//삭제 확인
 	$('#y_code-original_delete').click(function(){
 		var co_num = $(this).attr('data-num');
-		var isDelete = confirm('정말 삭제하시겠습니까?');
+		var core_count = $('#y_core_count').attr('data-num',co_num).text();
+		var isDelete = false;
 		
-		if(isDelete){
-			location.href='coboardDelete.do?co_num='+co_num;
+		if(core_count == 0 || core_count == null){
+			isDelete = confirm('정말 삭제하시겠습니까?');
+			
+			if(isDelete){
+				location.href='coboardDelete.do?co_num='+co_num;
+			}
+		}else{
+			alert('댓글이 있는 게시물은 삭제할 수 없습니다.');
 		}
 	});
 	
@@ -186,12 +193,9 @@ $(document).ready(function(){
 	}
 	
 	
-	
-	
 	//등록 폼 초기화
 	function initReForm(){
 		$('textarea').val('');
-		
 	}
 	
 	
@@ -217,7 +221,8 @@ $(document).ready(function(){
 			success:function(data){
 				if(data.result == 'success'){
 					initReForm(); //폼초기화
-					replyList(1,$('#co_num').val()); //목록 호출
+					location.reload(); //페이지 새로고침
+					//replyList(1,$('#co_num').val()); //목록 호출
 				}else if(data.result == 'logout'){
 					alert('로그인 해야 작성할 수 있습니다.'); //coboardLogout.jsp로 바로 연결할 수 있나?
 				}else if(data.result == 'failure'){
@@ -233,77 +238,95 @@ $(document).ready(function(){
 	});
 	
 	
-	//댓글 수정폼 로드
-	$(document).on('click','#y_re-modifyBtn',function(){
-		var co_re_num = $(this).attr('data-num');
-		var co_re_content = $('#reNo'+co_re_num+' .y_reContent').text();
-		var Oheight = $('#reNo'+co_re_num+' .y_reContent').height();
-		var originalReply = $('#reNo'+co_re_num).html(); //취소용 내용 복사
+	//댓글 수정
+	if(location.href.indexOf('coboardDetail.do') > 0){		
+		var originalReply;
+		var co_re_numM;
 		
-		//form붙이기
-		var modifyReply = '';
-		modifyReply += '<form action="coboardReplyModifyAjax.do" method="post" id="y_reModifyForm">';
-		modifyReply += originalReply;
-		modifyReply += '<input type="hidden" name="co_re_num" value="'+co_re_num+'"></form>';
-		$('#reNo'+co_re_num).html(modifyReply);
-		
-		//버튼 2종 submit-취소 버튼으로 변경
-		$('#reNo'+co_re_num+' button').remove();
-		$('#reNo'+co_re_num+' h3').append('<button type="submit" class="btn btn-sm btn-primary">수정</button> ');
-		$('#reNo'+co_re_num+' h3').append('<button type="button" class="btn btn-sm btn-default y_re-modifyCancel" data-num="co_re_num">취소</button>');
-		
-		//수정 내용 textarea로 교체
-		var modify = '<textarea class="form-control input-sm" name="co_re_content" style="height:'+(Oheight+10)+'px; color:#4c4c4c;">'+co_re_content+'</textarea>';
-		$('#reNo'+co_re_num+' .y_reContent').html(modify).css('margin-bottom','0');
+		//댓글 수정폼 로드
+		$(document).on('click','#y_re-modifyBtn',function(){
+			
+			if($('#y_reModifyForm').html() != null){
+				alert('이미 수정 중인 댓글이 있습니다.');
+				return false;
+			}
+			
+			co_re_numM = $(this).attr('data-num');
+			var co_re_content = $('#reNo'+co_re_numM+' .y_reContent').text();
+			var Oheight = $('#reNo'+co_re_numM+' .y_reContent').height();
+		    originalReply = $('#reNo'+co_re_numM).html();
+			
+			//form붙이기
+			var modifyReply = '';
+			modifyReply += '<form action="coboardReplyModifyAjax.do" method="post" id="y_reModifyForm">';
+			modifyReply += originalReply;
+			modifyReply += '<input type="hidden" name="co_re_num" value="'+co_re_numM+'"></form>';
+			$('#reNo'+co_re_numM).html(modifyReply);
+			
+			//버튼 2종 submit-취소 버튼으로 변경
+			$('#reNo'+co_re_numM+' button').remove();
+			$('#reNo'+co_re_numM+' h3').append('<button type="submit" class="btn btn-sm btn-primary" data-num="co_re_num">수정</button> ');
+			$('#reNo'+co_re_numM+' h3').append('<button type="button" class="btn btn-sm btn-default y_re-modifyCancel" data-num="co_re_num">취소</button>');
+			
+			//수정 내용 textarea로 교체
+			var modify = '<textarea class="form-control input-sm" name="co_re_content" style="height:'+(Oheight+10)+'px; color:#4c4c4c;">'+co_re_content+'</textarea>';
+			$('#reNo'+co_re_numM+' .y_reContent').html(modify).css('margin-bottom','0');
+		});
 		
 		
 		//댓글 수정 취소
 		$(document).on('click','.y_re-modifyCancel',function(){
-			$('#reNo'+co_re_num).html(originalReply);
+			$('#reNo'+co_re_numM).html(originalReply);
 		});
 		
 		
-		
-		
-	});
-	
-	//댓글 수정 진행
-	$(document).on('submit','#y_reModifyForm',function(e){
-		
-		//유효성 체크
-		if($('textarea', this).val() == ''){
-			alert('내용을 입력하세요.');
-			$('textarea', this).focus();
-			return false;
-		}
-		
-		//댓글 수정 ajax
-		var data = $(this).serialize();
-		
-		$.ajax({
-			type:'post',
-			data:data,
-			url:'coboardReplyModifyAjax.do',
-			dataType:'json',
-			cache:false,
-			timeout:30000,
-			success:function(data){				
-				if(data.result == 'success'){
-					initReForm(); //폼초기화
-					replyList(1,$('#co_num').val()); //목록 호출
-				}else if(data.result == 'logout'){
-					alert('로그인 해야 작성할 수 있습니다.');
-				}else if(data.result == 'failure'){
-					alert('댓글 수정 오류 ');
-				}
-			},
-			error:function(){
-				alert('댓글 수정 시 네트워크 오류 발생')
+		//댓글 수정 진행
+		$(document).on('submit','#y_reModifyForm',function(e){
+			
+			//유효성 체크
+			if($('textarea', this).val() == ''){
+				alert('내용을 입력하세요.');
+				$('textarea', this).focus();
+				return false;
 			}
+			
+			//댓글 수정 ajax
+			var data = $(this).serialize();
+			
+			$.ajax({
+				type:'post',
+				data:data,
+				url:'coboardReplyModifyAjax.do',
+				dataType:'json',
+				cache:false,
+				timeout:30000,
+				success:function(data){	
+					if(data.result == 'success'){
+						var modiContent = $('#reNo'+co_re_numM+' textarea').val();
+						
+						//본문 내용만 바꾸기
+						$('#reNo'+co_re_numM).html(originalReply);						
+						$('#reNo'+co_re_numM+' .y_reContent').html(modiContent);
+						
+						//내용 update
+						originalReply = $('#reNo'+co_re_numM).html();
+	
+						//폼초기화
+						initReForm(); 
+					}else if(data.result == 'logout'){
+						alert('로그인 해야 작성할 수 있습니다.');
+					}else if(data.result == 'failure'){
+						alert('댓글 수정 오류 ');
+					}
+				},
+				error:function(){
+					alert('댓글 수정 시 네트워크 오류 발생')
+				}
+			});
+			
+			e.preventDefault();
 		});
-		
-		e.preventDefault();
-	});
+	}
 	
 	
 	//댓글 삭제

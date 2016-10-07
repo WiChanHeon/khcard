@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.admin.service.AdminService;
 import kr.spring.apply.domain.ApplyCommand;
-import kr.spring.donan.domain.DonanCommand;
+
 import kr.spring.util.PagingUtil;
 
 @Controller

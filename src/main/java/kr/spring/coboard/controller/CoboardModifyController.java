@@ -35,6 +35,12 @@ public class CoboardModifyController {
 			return "coboardLogout";
 		}
 		
+		//접속ID와 작성ID가 일치하지 않을 경우
+		String writer = coboard.getM_id();
+		if(!adminId.equals(writer)){
+			return "coboardMismatch";
+		}
+		
 		
 		String newName = "";
 		boolean delFile = false;

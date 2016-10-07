@@ -46,6 +46,6 @@ public class ApplySimpleWriteController {
 		  }
 		  applySimpleService.applySimpleinsert(applySimpleCommand);
 		  
-		  return "redirect:/main/main.do";
+		  return "applySimpleComplete";
 	  }
 }

@@ -25,7 +25,8 @@
       ap_pass,
       ap_id,
       info_id,
-      card_num
+      card_num,
+      ap_status
      FROM (SELECT
              a.*,
              rownum rnum
@@ -54,41 +55,92 @@
     ]]>   
   </select>
   
-  <select id="applyGetRowCount" parameterType="map" resultType="Integer">
-	SELECT
-	count(*)
-	FROM f_apply
-	<where>
-		<if test="keyword !='' and keyfield == 'ap_name'">
-			ap_name like '%' ||#{keyword} || '%'
-		</if>
-		<if test="keyword !='' and keyfield == 'ap_reg'">
-			ap_reg like '%' ||#{keyword} || '%'
-		</if>
-		<if test="keyword !='' and keyfield == 'ap_rrnfront'">
-			ap_rrnfront like '%' ||#{keyword} || '%'
-		</if>
-		<if test="keyword !='' and keyfield == 'all'">
-			ap_name like '%' ||#{keyword} || '%' or
-			ap_reg like '%' ||#{keyword} || '%' or
-			ap_rrnfront like '%' ||#{keyword} || '%'
-		</if>
-	</where> 
-  </select>
-  
-  <select id="missingList" parameterType="map" resultType="DonanCommand">
+    <select id="simpleApplyList" parameterType="map" resultType="simpleApplyCommand">
   
     SELECT
-     loss_num,
-     card_num,
-     loss_reg,
-     loss_memo
+      *
      FROM (SELECT
              a.*,
              rownum rnum
            FROM (SELECT
                    *
-                 FROM f_loss
+                 FROM f_sapply
+                    <where>
+                 <if test="keyword !='' and keyfield == 'info_id'">
+                 info_id like '%' ||#{keyword} || '%'
+                 </if>
+                 <if test="keyword !='' and keyfield == 'sap_name'">
+                 sap_name like '%' ||#{keyword} || '%'
+                 </if>
+                  <if test="keyword !='' and keyfield == 'sap_cell'">
+                 sap_cell like '%' ||#{keyword} || '%'
+                 </if>
+                  <if test="keyword !='' and keyfield == 'all'">
+                    info_id like '%' ||#{keyword} || '%' or
+                   sap_name like '%' ||#{keyword} || '%' or
+                  sap_cell like '%' ||#{keyword} || '%'
+                 </if>
+                 </where>
+                 ORDER BY sap_num DESC)a)
+    <![CDATA[
+     WHERE rnum >= #{start} AND rnum <= #{end}    
+    ]]>   
+  </select>
+  
+  <select id="applyGetRowCount" parameterType="map" resultType="Integer">
+   SELECT
+   count(*)
+   FROM f_apply
+   <where>
+      <if test="keyword !='' and keyfield == 'ap_name'">
+         ap_name like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'ap_reg'">
+         ap_reg like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'ap_rrnfront'">
+         ap_rrnfront like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'all'">
+         ap_name like '%' ||#{keyword} || '%' or
+         ap_reg like '%' ||#{keyword} || '%' or
+         ap_rrnfront like '%' ||#{keyword} || '%'
+      </if>
+   </where> 
+  </select>
+  
+    <select id="simpleApplyGetRowCount" parameterType="map" resultType="Integer">
+   SELECT
+   count(*)
+   FROM f_sapply
+   <where>
+      <if test="keyword !='' and keyfield == 'info_id'">
+         info_id like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'sap_name'">
+         sap_name like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'sap_cell'">
+         sap_cell like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'all'">
+         info_id like '%' ||#{keyword} || '%' or
+         sap_name like '%' ||#{keyword} || '%' or
+         sap_cell like '%' ||#{keyword} || '%'
+      </if>
+   </where> 
+  </select>
+  
+  <select id="missingList" parameterType="map" resultType="DonanCommand">
+  
+    SELECT
+       *
+     FROM (SELECT
+             a.*,
+             rownum rnum
+           FROM (SELECT
+                   *
+                 FROM f_loss LEFT JOIN (SELECT card_num,ap_status FROM f_apply) USING(card_num) 
                     <where>
                  <if test="keyword !='' and keyfield == 'card_num'">
                  card_num like '%' ||#{keyword} || '%'
@@ -105,36 +157,35 @@
                   loss_num like '%' ||#{keyword} || '%'
                  </if>
                  </where>
-                 ORDER BY loss_num DESC)a)
+                 ORDER BY loss_reg DESC)a)
     <![CDATA[
      WHERE rnum >= #{start} AND rnum <= #{end}    
     ]]>   
   </select>
   
   <select id="missingGetRowCount" parameterType="map" resultType="Integer">
-	SELECT
-	count(*)
-	FROM f_loss
-	<where>
-		<if test="keyword !='' and keyfield == 'card_num'">
-			card_num like '%' ||#{keyword} || '%'
-		</if>
-		<if test="keyword !='' and keyfield == 'loss_reg'">
-			loss_reg like '%' ||#{keyword} || '%'
-		</if>
-		<if test="keyword !='' and keyfield == 'loss_num'">
-			loss_num like '%' ||#{keyword} || '%'
-		</if>
-		<if test="keyword !='' and keyfield == 'all'">
-			card_num like '%' ||#{keyword} || '%' or
-			loss_reg like '%' ||#{keyword} || '%' or
-			loss_num like '%' ||#{keyword} || '%'
-		</if>
-	</where> 
+   SELECT
+   count(*)
+   FROM f_loss
+   <where>
+      <if test="keyword !='' and keyfield == 'card_num'">
+         card_num like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'loss_reg'">
+         loss_reg like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'loss_num'">
+         loss_num like '%' ||#{keyword} || '%'
+      </if>
+      <if test="keyword !='' and keyfield == 'all'">
+         card_num like '%' ||#{keyword} || '%' or
+         loss_reg like '%' ||#{keyword} || '%' or
+         loss_num like '%' ||#{keyword} || '%'
+      </if>
+   </where> 
   </select>
 
 </mapper>
-
 
 
 

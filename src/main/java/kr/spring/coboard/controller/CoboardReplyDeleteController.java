@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.spring.coboard.domain.CoboardReplyCommand;
 import kr.spring.coboard.service.CoboardService;
 
 @Controller
@@ -21,6 +22,13 @@ public class CoboardReplyDeleteController {
 		String adminId = (String)session.getAttribute("adminId");
 		if(adminId == null){
 			return "coboardLogout";
+		}
+		
+		//접속ID와 작성ID가 일치하지 않을 경우
+		CoboardReplyCommand core = coboardService.selectCoboardReply(co_re_num);
+		String writer = core.getM_id();
+		if(!adminId.equals(writer)){
+			return "coboardMismatch";
 		}
 		
 		coboardService.deleteCoboardReply(co_re_num);

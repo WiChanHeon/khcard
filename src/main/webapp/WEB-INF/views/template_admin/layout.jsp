@@ -32,6 +32,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/coboard.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/coboard.js"></script>
     
+    <!-- loss -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/missingCard.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/donan.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/confirmCard.js"></script>
+    
 </head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css">
 <body>

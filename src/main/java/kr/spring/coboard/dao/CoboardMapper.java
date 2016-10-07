@@ -35,6 +35,8 @@ public interface CoboardMapper {
 	public void insertCoboardReply(CoboardReplyCommand core);
 	@Select("SELECT count(*) FROM f_coboard_re WHERE co_num = #{co_num}")
 	public int getCoboardReplyCount(Integer co_num);
+	@Select("SELECT * FROM f_coboard_re WHERE co_re_num = #{co_re_num}")
+	public CoboardReplyCommand selectCoboardReply(Integer co_re_num);
 		//xml에 sql문 작성
 	public List<CoboardReplyCommand> getCoboardReplyList(Map<String,Object> map);
 	@Update("UPDATE f_coboard_re SET co_re_content=#{co_re_content} WHERE co_re_num = #{co_re_num}")

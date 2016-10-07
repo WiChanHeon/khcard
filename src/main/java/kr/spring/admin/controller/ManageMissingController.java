@@ -23,7 +23,9 @@ public class ManageMissingController {
 	//서비스를 사용하기위해 리소스 가져옴
 	@Resource
 	private AdminService adminService;
-
+	
+    
+	
 	//한 글에 보여줄 글 갯수와, 페이지 카운트
 	private int rowCount=10;
 	private int pageCount=10;
@@ -39,7 +41,7 @@ public class ManageMissingController {
 			log.debug("keyfield :"+keyfield);
 			log.debug("keyword :"+keyword);
 		} 
-
+		
 		//해쉬맵에 키와 값의 쌍으로 저장
 		HashMap<String,Object> map= new HashMap<String,Object>();
 		map.put("keyfield",keyword );

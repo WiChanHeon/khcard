@@ -69,7 +69,7 @@
    </div>
    <div class="content_topbox3">
    <ul class="eachmenu">
-    <h3><a href="#" class="acolor">M혜택 안내&gt;</a></h3>
+    <h3><a href="#" class="acolor">M혜택 안내 &gt;</a></h3>
    </ul>
    <div class="img">
     <a href="#"><img src="${pageContext.request.contextPath }/resources/images/main/benefit1.PNG" alt="KH 혜택 안내" /></a>
@@ -78,7 +78,7 @@
           <a href="#" >50% KH 포인트 Special</a><br/>
      </div>
      <ul class="eachmenu">
-    <h3><a href="#" class="acolor">X혜택 안내&gt;</a></h3>
+    <h3><a href="#" class="acolor">X혜택 안내 &gt;</a></h3>
    </ul>
    <div class="img">
     <a href="#"><img src="${pageContext.request.contextPath }/resources/images/main/benefit2.PNG" alt="KH 혜택 안내" /></a>

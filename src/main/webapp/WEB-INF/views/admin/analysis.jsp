@@ -187,7 +187,7 @@ $(document).ready(function(){
                           if(totalSelectYearCount==0){
                              b_output+="비교 년도 데이터가 없기 때문에 증감률을 계산 할 수 없습니다 <br><br>"
                           }else{
-                          b_output+=data.ap_reg2+"년에 비해 총 카드 신청률  "+increasePercentResult+"% <b style='color:green;'>증가</b><br><br>";
+                          b_output+=data.ap_reg2+"년에 비해 총 카드 신청률  "+Math.floor(increasePercentResult)+"% <b style='color:green;'>증가</b><br><br>";
                           }
                        }else if(totalCurrentYearCount==totalSelectYearCount){
                           b_output+="총 카드 신청률 "+data.ap_reg2+"년과 <b style='color:blue;'>변동없음</b><br><br>";
@@ -196,7 +196,7 @@ $(document).ready(function(){
                           if(totalSelectYearCount==0){
                              b_output+="현 년도의 데이터가 없기 때문에 증감률을 계산 할 수 없습니다.<br><br>"
                           }else{
-                          b_output+=data.ap_reg2+"년도에 비해 총 카드 신청률  "+increasePercentResult+"% 만큼 <b style='color:red;'>감소</b><br><br>";
+                          b_output+=data.ap_reg2+"년도에 비해 총 카드 신청률  "+Math.floor(increasePercentResult)+"% 만큼 <b style='color:red;'>감소</b><br><br>";
                           }
                        }
                     
@@ -375,7 +375,7 @@ $(document).ready(function(){
                    if(totalSelectMonthCount==0){
                       a_output+="비교 월의 데이터가 없기 때문에 증감률을 계산 할 수 없습니다 <br><br>"
                    }else{
-                   a_output+=data.ap_reg2+"월에 비해 총 카드 신청률  "+increasePercentResult+"% <b style='color:green;'>증가</b><br><br>";
+                   a_output+=data.ap_reg2+"월에 비해 총 카드 신청률  "+Math.floor(increasePercentResult)+"% <b style='color:green;'>증가</b><br><br>";
                    }
                 }else if(totalCurrentMonthCount==totalSelectMonthCount){
                    a_output+="총 카드 신청률 "+data.ap_reg2+"월과 <b style='color:blue;'>변동없음</b><br><br>";
@@ -384,7 +384,7 @@ $(document).ready(function(){
                    if(totalSelectMonthCount==0){
                       a_output+="현 월의 데이터가 없기 때문에 증감률을 계산 할 수 없습니다.<br><br>"
                    }else{
-                   a_output+=data.ap_reg2+"월에 비해 총 카드 신청률  "+increasePercentResult+"% 만큼 <b style='color:red;'>감소</b><br><br>";
+                   a_output+=data.ap_reg2+"월에 비해 총 카드 신청률  "+Math.floor(increasePercentResult)+"% 만큼 <b style='color:red;'>감소</b><br><br>";
                    }
                 }
              

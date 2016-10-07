@@ -29,7 +29,7 @@
 				<form:errors path="m_pw" class="error-color" /></li>
 			<br/>
 			<li class="align-center" style="margin-left: 20%"><input
-				type="submit" value="전송" > <input
+				type="submit" value="로그인" > <input
 				type="button" value="메인으로"
 				onclick="location.href='${pageContext.request.contextPath}/admin/adminMain.do'"
 				class="buttonstyle"></li>

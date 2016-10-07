@@ -6,126 +6,12 @@
 <div class="container">
 	<div class="row">
 		
-		<!-- 좌측 영역 -->
-		<div class="col-sm-9">
-		<h2>최신글</h2>
 		
-			<!-- 자유게시판 시작 -->
-			<div class="row">
-			<div class="col-xs-12">
-				<h3>Article Title</h3>
-				<p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-             Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-             dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-             Aliquam in felis sit amet augue.
-				</p>
-					<div class="text-center">
-						<a href="#"><i class="fa fa-plus"></i>Full Story</a>
-						<a href="#"><i class="fa fa-comment"></i>12 Comments</a>
-						<a href="#"><i class="fa fa-share"></i>11 Shares</a>
-					</div>
-			</div>
-			</div>
-			<hr>
-			
-			
-			<div class="row">
-			<div class="col-xs-12">
-				<h2>Article Title</h2>
-				<p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-             Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-             dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-             Aliquam in felis sit amet augue.
-				</p>
-					<div class="text-center">
-						<a href="#"><i class="fa fa-plus"></i>Full Story</a>
-						<a href="#"><i class="fa fa-comment"></i>12 Comments</a>
-						<a href="#"><i class="fa fa-share"></i>11 Shares</a>
-					</div>
-			</div>
-			</div>
-			<hr>
-			
-			<div class="row">
-			<div class="col-xs-12">
-				<h2>Article Title</h2>
-				<p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-             Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-             dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-             Aliquam in felis sit amet augue.
-				</p>
-					<div class="text-center">
-						<a href="#"><i class="fa fa-plus"></i>Full Story</a>
-						<a href="#"><i class="fa fa-comment"></i>12 Comments</a>
-						<a href="#"><i class="fa fa-share"></i>11 Shares</a>
-					</div>
-			</div>
-			</div>
-			<hr>
-			<!-- 자유게시판 끝 -->
-			
-			
-		</div>
-		<!-- 좌측 영역 끝 -->
-			
-			
-		<!-- 우측 내부 공지 시작-->
-		<div class="col-sm-3">
-		<h2>사내 공지</h2>
-		
-			<div class="row">
-			<div class="col-xs-12">
-				
-
-				<div class="panel panel-default">
-					<div class="panel-heading">News</div>
-					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-					</div>
-					
-					<div class="text-center">
-						<a href="#"><i class="fa fa-plus"></i>Full Story</a>
-					</div>
-				</div>
-				<hr>
-				
-				
-                   <div class="panel panel-default">
-					<div class="panel-heading">News</div>
-					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-					</div>
-					
-					<div class="text-center">
-						<a href="#"><i class="fa fa-plus"></i>Full Story</a>
-					</div>
-				</div>
-				<hr>
-				
-				<div class="panel panel-default">
-					<div class="panel-heading">News</div>
-					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-					</div>
-					
-					<div class="text-center">
-						<a href="#"><i class="fa fa-plus"></i>Full Story</a>
-					</div>
-				</div>
-				<hr>
-
-			</div>
-			</div>
-		</div>
-		<!-- 우측 내부 공지 끝 -->
 		
 		
 		<!-- 하단 영역 시작 -->
 		<div class="col-sm-12">
-		<h2>자유게시판</h2>
+		<h2>사내게시판</h2>
 			
 			<!-- 글쓰기 시작 -->
 			<div class="y_right y_cowrite-btn">
@@ -215,7 +101,7 @@
 					<c:forEach var="colist" items="${colist}">
 					<tr class="No${colist.co_sort}">
 						<td>${colist.co_num}</td>
-						<td class="y_left"><a href="${pageContext.request.contextPath}/admin/coboardDetail.do?co_num=${colist.co_num}">${colist.co_title}</a></td>
+						<td class="y_left"><a href="${pageContext.request.contextPath}/admin/coboardDetail.do?co_num=${colist.co_num}">${colist.co_title}</a> <c:if test="${colist.co_re_count != 0}">&nbsp;&nbsp;<span class="badge y_badge">&nbsp;${colist.co_re_count}&nbsp;</span></c:if> </td>
 						<td>${colist.m_name} (${colist.m_id}) </td>
 						<td>${colist.co_reg}</td>
 						<td>${colist.co_hit}</td>

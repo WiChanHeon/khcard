@@ -117,7 +117,7 @@
          <nav>
             <ul class="text-center">
                <li><a href="#">서울특별시 강남구 역삼동 823-42 그랑프리 빌딩 4F</a></li>
-               <li><a href="#">대표이사 위찬헌</a></li>
+               <li><a href="#">대표이사 김용만</a></li>
                <li><a href="#">사업자등록번호 118-82-02004</a></li>
             </ul>
          </nav>

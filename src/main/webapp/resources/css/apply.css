@@ -258,3 +258,18 @@ a:hover {
 .Bevaluation li{
 	margin-left: 200px;
 }
+.Bapplycbutton{
+    background: #1e75d6;
+    color: #fff;
+    width:80px;
+    height:40px;
+    font-size:10pt;
+}
+.BapplyP{
+	color:gray;
+	font-size:12pt;
+}
+.Bsimpleform{
+   width: 50%;
+   margin : 0 auto;
+}

@@ -64,7 +64,7 @@ $(document).ready(function(){
 		});
 		
 		}else{
-			return;
+			return false;
 		}
 		
 	});
@@ -223,7 +223,7 @@ $(document).ready(function(){
 	   });
 	   
 	 }else{
-		 return;
+		 return false;
 	 }
 	   
    });

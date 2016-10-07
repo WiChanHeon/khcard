@@ -26,7 +26,7 @@
            	    <div class="col-md-8">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Visits Based on a 10 days datas</h3>
+                           
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> 총 카드 신청횟수</h3>
                         </div>
                         <div class="panel-body">

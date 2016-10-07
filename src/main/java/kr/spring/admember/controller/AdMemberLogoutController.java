@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdMemberLogoutController {
 
-	@RequestMapping("/admin/logout.do")
-	public String process(HttpSession session){
-		
-		//·Î±×¾Æ¿ô 
-		session.invalidate();
-		
-		return "redirect:/admin/adminMain.do";
-	}
+   @RequestMapping("/admin/logout.do")
+   public String process(HttpSession session){
+      
+      //·Î±×¾Æ¿ô 
+      session.removeAttribute("adminId");
+      
+      return "redirect:/admin/adminMain.do";
+   }
 }
-

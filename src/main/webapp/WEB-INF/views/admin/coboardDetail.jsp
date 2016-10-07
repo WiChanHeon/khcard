@@ -13,6 +13,7 @@
 			<h3 class="panel-title">
 				<b>[${coboard.co_num}]</b> ${coboard.co_title}
 				<c:if test="${coboard.co_sort == 1}"> <code>공지</code> </c:if>
+				<span id="y_core_count" data-num="${coboard.co_num}" style="display:none;">${co_re_count}</span>
 			</h3>
 		</div>
 		<div class="panel-body y_panel-body">
@@ -55,7 +56,7 @@
 			<span class="form-inline">
 				<b>[${coboard.co_num}]</b> <input type="text" class="form-control input-sm" name="co_title" id="co_title" value="${coboard.co_title}" maxlength="20" placeholder="최대 20자">
 				<input type="hidden" name="co_num" value="${coboard.co_num}">
-				
+				<input type="hidden" name="m_id" value="${coboard.m_id}">
 				
 				<select class="form-control input-sm" name="co_sort">
 					<c:if test="${coboard.co_sort == 0}">
@@ -129,21 +130,8 @@
 			<!-- 댓글 목록 -->
 			<div class="col-sm-12" id="y_ad-comment">
 				
-				
-				
-				
-				<h3><span>백백분식</span> <small>2014/03/07 11:43 PM</small> 
-				<button type="button" class="btn btn-default btn-sm" data-num="item.co_re_num" id="y_re-modifyBtn">수정</button>
-				<button type="button" class="btn btn-default btn-sm" data-num="item.co_re_num" id="y_re-deleteBtn">삭제</button>
-				</h3> 
-				<p>다들 배고프지 않아요? 식사 합시닷f</p><br>
-				
-				
-				<h3><span style="cursor:pointer;" data-toggle="popover" title="[] 회원 정보" data-content="부서 : ">백백분식</span> <small>2014/03/07 11:43 PM</small> </h3> 
-				<p>다들 배고프지 않아요? 식사 합시닷</p><br>
-	
-				<h3>Blog contents <small>2014/03/07 11:43 PM</small> </h3>
-				<p>This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well. This is a very interesting blog, well structured and organized. Would be great if you included more information on other IT topics as well.</p><br>
+				<h3><span style="cursor:pointer;" data-toggle="popover" title="[] 회원 정보" data-content="부서 : ">Test</span> <small>2014/03/07 11:43 PM</small> </h3> 
+				<p>이 메시지가 나오면 게시판 댓글 오류가 발생한 것입니다.</p><br>
 			
 			</div>
 			<div class="col-sm-12 y_reBottom">

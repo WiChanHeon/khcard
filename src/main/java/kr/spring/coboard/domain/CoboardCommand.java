@@ -15,6 +15,7 @@ public class CoboardCommand {
 	private String co_reg;
 	private int co_hit;
 	private int co_sort;
+	private int co_re_count;
 	
 	public int getCo_num() {
 		return co_num;
@@ -76,11 +77,17 @@ public class CoboardCommand {
 	public void setCo_sort(int co_sort) {
 		this.co_sort = co_sort;
 	}
+	public int getCo_re_count() {
+		return co_re_count;
+	}
+	public void setCo_re_count(int co_re_count) {
+		this.co_re_count = co_re_count;
+	}
 	
 	@Override
 	public String toString() {
 		return "CoboardCommand [co_num=" + co_num + ", m_id=" + m_id + ", m_name=" + m_name + ", co_title=" + co_title
-				+ ", co_content=" + co_content + ", co_filename=" + co_filename + ", co_reg=" + co_reg + ", co_hit="
-				+ co_hit + ", co_sort=" + co_sort + "]";
+				+ ", co_content=" + co_content + ", upload=" + upload + ", co_filename=" + co_filename + ", co_reg="
+				+ co_reg + ", co_hit=" + co_hit + ", co_sort=" + co_sort + ", co_re_count=" + co_re_count + "]";
 	}
 }

@@ -7,6 +7,16 @@ public class DonanCommand {
   private String card_num;
   private Date loss_reg;
   private String loss_memo;
+  private int ap_status;
+  
+  
+  
+public int getAp_status() {
+	return ap_status;
+}
+public void setAp_status(int ap_status) {
+	this.ap_status = ap_status;
+}
 public int getLoss_num() {
 	return loss_num;
 }

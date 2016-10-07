@@ -46,7 +46,11 @@ public class CoboardDetailController {
 		//글쓴이 정보
 		AdmemberCommand adminInfo = admemberService.selectAdMember(writer);
 		
+		//댓글 개수
+		int count = coboardService.getCoboardReplyCount(co_num);
+		
 		model.addAttribute("coboard", command);
+		model.addAttribute("co_re_count", count);
 		model.addAttribute("adminInfo", adminInfo);
 		
 		return "coboardDetail";

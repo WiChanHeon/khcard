@@ -30,6 +30,12 @@ public class CoboardDeleteController {
 		CoboardCommand coboard = coboardService.selectCoboard(co_num);
 		String fileName = coboard.getCo_filename();
 		
+		//접속ID와 작성ID가 일치하지 않을 경우
+		String writer = coboard.getM_id();
+		if(!adminId.equals(writer)){
+			return "coboardMismatch";
+		}
+		
 		//게시물 삭제
 		coboardService.deleteCoboard(co_num);
 		

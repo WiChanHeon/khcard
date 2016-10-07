@@ -42,23 +42,22 @@ $( function() {
     })
 });
 //개인정보 유효성
-function frmchk() 
-{
-var chk = document.apagree;
-var checked_items = 0;
-for (i=0;i<chk.elements.length;i++) //특정 영역을 체크 할때는 숫자로 대신 한다 예: for(i=3;i<21;i++)
-{
-if ((chk.elements[i].name == "answer") &&
-(chk.elements[i].checked))
-checked_items++;
-}
-if (checked_items < 2) 
-{
-alert("개인정보와 고유식별정보의 수집 동의는 필수 동의 사항입니다.")
-document.getElementById('allagree').focus();
-return false;
-}
-return true;
+function frmchk() {
+	var chk = document.apagree;
+	var checked_items = 0;
+	for (i=0;i<chk.elements.length;i++) //특정 영역을 체크 할때는 숫자로 대신 한다 예: for(i=3;i<21;i++)
+	{
+		if ((chk.elements[i].name == "answer") &&
+			(chk.elements[i].checked))
+			checked_items++;
+		}
+		if (checked_items < 2) 
+		{
+			alert("개인정보와 고유식별정보의 수집 동의는 필수 동의 사항입니다.")
+			document.getElementById('allagree').focus();
+			return false;
+		}
+	return true;
 }
 $(document).ready(function(){
 	
@@ -104,26 +103,34 @@ function check_jumin() {
   return true;
 }
 
+var checkRrnDuplicated = 0;
 function checks(){
+	
 	if(check_jumin()){//올바른 값이 들어왔을 때 실행될 코드
-			alert("주민번호 인증완료.");
-			checkRrnDuplicated = 1
+			alert("주민번호 인증완료");
+			checkRrnDuplicated = 1;
 	}else{//올바른 값이 들어오지 않았을 때 실행될 코드
-			alert("주민번호 인증실패.");
-			checkRrnDuplicated = 2
+			alert("주민번호 인증실패");
+			checkRrnDuplicated = 0;
 	}
-	$('#apply_register').submit(function(){
-		if(check_jumin() == null){
-			alert('주민번호 체크 필수!');
-			if($('#ap_rrnfront').val()==''){
-				$('#id').focus();
-			}else{
-				$('#ap_rrnfront').focus();
-			}
-			return false;
-		}
-	});
+	
 }
+
+
+$('#Bapply_register').submit(function(){
+	
+	checks();
+	
+	if(checkRrnDuplicated == 0){
+		$('#endRrn').focus();
+		return false;
+		
+	}else if(checkRrnDuplicated == 1){
+		return true;
+	}
+	
+});
+
 
 
 

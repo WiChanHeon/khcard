@@ -175,7 +175,7 @@ $(function(){
 					<option>농업,수련업 및 임업</option>
 					<option>어업</option>
 					<option>광업</option>
-					<option>무직 or 주부 or 학생,기타</option>
+					<option value="무직or기타">무직 or 주부 or 학생,기타</option>
 				</form:select>
 				<form:input path="ap_job2" maxlength="20"/>
 				<form:errors path="ap_job2" class="error-color"/><hr><br>

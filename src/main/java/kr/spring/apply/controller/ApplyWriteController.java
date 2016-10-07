@@ -46,6 +46,6 @@ public class ApplyWriteController {
 		  }
 		  applyService.applyinsert(applyCommand);
 		  
-		  return "redirect:/main/main.do";
+		  return "redirect:/apply/applycomplete.do";
 	  }
 }

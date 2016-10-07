@@ -9,12 +9,17 @@ import org.springframework.transaction.annotation.Transactional;
 import kr.spring.apply.domain.ApplyCommand;
 import kr.spring.card.domain.CardCommand;
 import kr.spring.donan.domain.DonanCommand;
+import kr.spring.simpleapply.domain.SimpleApplyCommand;
 @Transactional
 public interface AdminService {
    @Transactional(readOnly=true)
    public List<ApplyCommand> applyList(Map<String,Object> map);
    @Transactional(readOnly=true)
+   public List<SimpleApplyCommand> simpleApplyList(Map<String,Object> map);
+   @Transactional(readOnly=true)
    public int applyGetRowCount(Map<String,Object> map);
+   @Transactional(readOnly=true)
+   public int simpleApplyGetRowCount(Map<String,Object> map);
    @Transactional(readOnly=true)
    public List<DonanCommand> missingList(Map<String,Object> map);
    @Transactional(readOnly=true)
@@ -30,4 +35,7 @@ public interface AdminService {
    public int getCardMonthApplyCount(String getCardMonthApplyCount,String info_id );
    public int getCardYearApplyCount(String ap_reg,String info_id);
    public void insertLog(String m_id, String log_content);
+   public void updateReturnStatus(String ap_status,String card_num);
+   public ApplyCommand selectCardApplyMember(String card_num);
+   public void insertReissueCard(ApplyCommand applyCommand);
 }

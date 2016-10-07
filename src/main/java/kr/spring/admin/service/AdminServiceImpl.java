@@ -11,6 +11,7 @@ import kr.spring.admin.dao.AdminMapper;
 import kr.spring.apply.domain.ApplyCommand;
 import kr.spring.card.domain.CardCommand;
 import kr.spring.donan.domain.DonanCommand;
+import kr.spring.simpleapply.domain.SimpleApplyCommand;
 
 @Service("adminService")
 public class AdminServiceImpl implements AdminService{
@@ -108,6 +109,37 @@ public class AdminServiceImpl implements AdminService{
       adminMapper.insertLog(m_id, log_content);
       
    }
+
+@Override
+public void updateReturnStatus(String ap_status, String card_num) {
+	
+	adminMapper.updateReturnStatus(ap_status, card_num);
+	
+}
+
+@Override
+public ApplyCommand selectCardApplyMember(String card_num) {
+	
+	return adminMapper.selectCardApplyMember(card_num);
+}
+
+@Override
+public void insertReissueCard(ApplyCommand applyCommand) {
+	adminMapper.insertReissueCard(applyCommand);
+	
+}
+
+@Override
+public int simpleApplyGetRowCount(Map<String, Object> map) {
+	
+	return adminMapper.simpleApplyGetRowCount(map);
+}
+
+@Override
+public List<SimpleApplyCommand> simpleApplyList(Map<String,Object> map) {
+	
+	return adminMapper.simpleApplyList(map);
+}
 
 
    

@@ -27,6 +27,8 @@ public interface CoboardService {
 	@Transactional(readOnly=true)
 	public int getCoboardReplyCount(Integer co_num);
 	@Transactional(readOnly=true)
+	public CoboardReplyCommand selectCoboardReply(Integer co_re_num);
+	@Transactional(readOnly=true)
 	public List<CoboardReplyCommand> getCoboardReplyList(Map<String,Object> map);
 	public void updateCoboardReply(CoboardReplyCommand core);
 	public void deleteCoboardReply(Integer co_re_num);

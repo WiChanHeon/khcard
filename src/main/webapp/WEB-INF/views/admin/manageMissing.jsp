@@ -2,11 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/resources/js/confirmCard.js"></script>
 <div class="row">
 	<div class="col-lg-12">
 		<h1>
@@ -32,45 +30,90 @@
 				<!--테이블 시작  -->
 				<div>
 					<h3 align="center">카드 분실신고 목록</h3>
+					<div class="search-position">
+						<form action="manageMissingList.do" id="search_form" method="get">
+							<ul class="search">
+								<li><select name="keyfield"
+									style="color: black; font-size: 12pt;">
+										<option value="all">전체</option>
+										<option value="card_num">카드번호</option>
+										<option value="loss_reg">분실신고일자</option>
+										<option value="loss_num">분실신고번호</option>
 
+								</select></li>
+								<li style="color: black; font-size: 12pt;"><input
+									type="text" size="16" name="keyword"></li>
+								<li style="color: black; font-size: 12pt;"><input
+									type="submit" value="찾기"></li>
+							</ul>
+						</form>
+					</div>
 					<c:if test="${count==0 }">
 						<h4 class="empty-list">해당하는 분실신고 목록이 없습니다.</h4>
 					</c:if>
 					<c:if test="${count>0 }">
-						<div class="search-position">
-							<form action="missingApplyList.do" id="search_form" method="get">
-								<ul class="search">
-									<li><select name="keyfield"
-										style="color: black; font-size: 12pt;">
-											<option value="all">전체</option>
-											<option value="card_num">카드번호</option>
-											<option value="loss_reg">분실신고일자</option>
-											<option value="loss_num">분실신고번호</option>
 
-									</select></li>
-									<li style="color: black; font-size: 12pt;"><input
-										type="text" size="16" name="keyword"></li>
-									<li style="color: black; font-size: 12pt;"><input
-										type="submit" value="찾기"></li>
-								</ul>
-							</form>
-						</div>
 						<table border="1">
 							<tr>
 								<th>분실신고번호</th>
 								<th>카드번호</th>
 								<th>분실신고 날짜</th>
-								<th>분실내용</th>
-								<th id="1"></th>
+								<th>재발급 여부</th>
+								<th>상태</th>
+								<th>관리</th>
 							</tr>
 							<c:forEach var="article" items="${list }">
 								<tr>
 									<td>${article.loss_num }</td>
+
 									<td>${article.card_num }</td>
-									<td><fmt:formatDate value="${article.loss_reg}" pattern="yyyy-MM-dd"/></td>
-									<td>${article.loss_memo }</td>
-									<td><input type="button" value="카드정지" id="buttonstyle">
-										<input type="button" value="재발급" id="buttonstyle"></td>
+									<td><fmt:formatDate value="${article.loss_reg}"
+											pattern="yyyy-MM-dd" /></td>
+									<c:if test="${article.loss_memo==0 }">
+										<td>NO</td>
+									</c:if>
+									<c:if test="${article.loss_memo==1 }">
+										<td>YES</td>
+									</c:if>
+									<c:if test="${article.ap_status==1 }">
+										<td id="${article.loss_num }" style="width: 200px;">정상</td>
+									</c:if>
+									<c:if test="${article.ap_status==2 }">
+										<td id="${article.loss_num }" style="width: 200px;">일시정지</td>
+									</c:if>
+									<c:if test="${article.ap_status==9 }">
+										<td id="${article.loss_num }" style="width: 200px;">파기</td>
+									</c:if>
+									<c:if test="${article.ap_status==8 }">
+										<td id="${article.loss_num }" style="width: 200px;">재발급</td>
+									</c:if>
+									<c:if test="${article.ap_status==2}">
+
+										<td id="a${article.loss_num}" style="width: 300px;"><input
+											type="button" value="정상처리" data-num="${article.card_num }"
+											data-num2="${article.loss_num }" class="returnCard">
+											<input type="button" value="파기처리"
+											data-num="${article.loss_num }" class="destroyButtonView">
+										</td>
+										<td id="b${article.loss_num }"
+											style="display: none; width: 300px;"><input
+											type="button" value="재발급" data-num="${article.card_num }"
+											data-num2="${article.loss_num }" class="reissue"> <input
+											type="button" value="완전파기" data-num="${article.card_num }"
+											data-num2="${article.loss_num }" class="destroy"></td>
+										
+									   </c:if>
+									   <c:if test="${article.ap_status==8||article.ap_status==9||article.ap_status==1}">
+									     
+										<td style="width: 300px;" ></td>
+									   
+									   </c:if>
+									   
+									
+								
+
+
+
 								</tr>
 							</c:forEach>
 						</table>

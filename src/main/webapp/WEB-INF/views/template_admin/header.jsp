@@ -15,15 +15,11 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul id="active" class="nav navbar-nav side-nav">
 	        <li class="selected"><a href="adminMain.do"><i class="fa fa-bullseye"></i> 관리자 </a></li>
-	        <li><a href="manageApplyList.do"><i class="fa fa-tasks"></i> 카드 신청관리</a></li>
-	        <li><a href="${pageContext.request.contextPath}/admin/coboardList.do"><i class="fa fa-globe"></i> 사내게시판</a></li>
+	        <li><a href="manageSimpleApplyList.do"><i class="fa fa-tasks"></i> 카드 간편신청관리</a></li>
+	        <li><a href="manageApplyList.do"><i class="fa fa-tasks"></i> 카드 정식신청관리</a></li>
 	        <li><a href="manageMissingList.do"><i class="fa fa-list-ol"></i> 카드 분실관리</a></li>
-	        <li><a href="analysis.do"><i class="fa fa-font"></i> 카드통계</a></li>
-	        <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
-	        <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
-	        <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
-	        <li><a href="bootstrap-elements.html"><i class="fa fa-list-ul"></i> Bootstrap Elements</a></li>
-	        <li><a href="bootstrap-grid.html"><i class="fa fa-table"></i> Bootstrap Grid</a></li>
+	        <li><a href="analysis.do"><i class="fa fa-font"></i> 신청 통계분석</a></li>
+	        <li><a href="${pageContext.request.contextPath}/admin/coboardList.do"><i class="fa fa-globe"></i> 사내게시판</a></li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right navbar-user">
 	        <li class="dropdown messages-dropdown">

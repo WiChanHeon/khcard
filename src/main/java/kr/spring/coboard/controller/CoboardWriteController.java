@@ -38,6 +38,7 @@ public class CoboardWriteController {
 			return "coboardLogout";
 		}
 		
+		
 		//파일 이름 변경
 		String newName = "";
 		if(!coboardCommand.getUpload().isEmpty()){

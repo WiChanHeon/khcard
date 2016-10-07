@@ -13,7 +13,8 @@
 		  co_title,
 		  to_char(co_reg,'YYYY-MM-DD HH24:MI:SS') co_reg,
 		  co_hit,
-		  co_sort
+		  co_sort,
+		  co_re_count
 		FROM
 			(SELECT
 				a.*,
@@ -21,7 +22,8 @@
 			FROM
 				(SELECT
 					*
-				FROM f_coboard
+				FROM f_coboard b LEFT JOIN
+					(SELECT co_num, count(*) co_re_count FROM f_coboard_re GROUP BY co_num)r USING(co_num)
 					<where>
 						<if test="keyword!='' and keyfield=='co_title'">
 							co_title like '%' || #{keyword} || '%'

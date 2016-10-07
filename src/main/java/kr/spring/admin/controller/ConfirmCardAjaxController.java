@@ -102,7 +102,7 @@ public class ConfirmCardAjaxController {
 				cardCommand.setCard_cvc(cvcNum);
 
 				//개별 카드테이블 sql
-				String create_table =" CREATE TABLE f_"+cardNum+"(  pay_num number not null,  pay_reg date not null,  pay_price number not null,  pay_spot varchar2(30) not null,  pay_rate number(3,1),  pay_point number,  CONSTRAINT f_"+cardNum+"_PK PRIMARY KEY (pay_num)  )";
+				String create_table =" CREATE TABLE f_"+cardNum+"(  pay_num number not null,  pay_reg date not null,  pay_price number not null,  pay_spot varchar2(30) not null,  pay_rate number(3,1) default(0),  pay_point number default(0),  CONSTRAINT f_"+cardNum+"_PK PRIMARY KEY (pay_num)  )";
 
 				Map<String,String> createMap = new HashMap<String,String>();
 				createMap.put("create_table", create_table);

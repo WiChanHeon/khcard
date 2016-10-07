@@ -63,7 +63,12 @@ public class CoboardServiceImpl implements CoboardService{
 	public int getCoboardReplyCount(Integer co_num) {
 		return coboardMapper.getCoboardReplyCount(co_num);
 	}
-
+	
+	@Override
+	public CoboardReplyCommand selectCoboardReply(Integer co_re_num) {
+		return coboardMapper.selectCoboardReply(co_re_num);
+	}
+	
 	@Override
 	public List<CoboardReplyCommand> getCoboardReplyList(Map<String, Object> map) {
 		return coboardMapper.getCoboardReplyList(map);
@@ -78,10 +83,6 @@ public class CoboardServiceImpl implements CoboardService{
 	public void deleteCoboardReply(Integer co_re_num) {
 		coboardMapper.deleteCoboardReply(co_re_num);
 	}
-
-	
-
-	
 
 
 }
